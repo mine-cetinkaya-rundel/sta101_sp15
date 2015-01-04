@@ -91,6 +91,9 @@
 % Styling fonts, bullets, etc.
 %%%%%%%%%%%%%%%%
 
+% color of alerted text
+\setbeamercolor{alerted text}{fg=custom_orange}
+
 % styling of itemize bullets
 \setbeamercolor{item}{fg=custom_blue}
 \setbeamertemplate{itemize item}{{{\small$\blacktriangleright$}}}
@@ -214,6 +217,7 @@
 \setbeamercolor{block body}{fg=black, bg=custom_orange!20!white!80}
 \setbeamerfont{block body}{size=\small}
 \begin{block}{Activity: #1}
+\setlength\abovedisplayskip{0pt}
 #2
 \end{block}
 }
