@@ -3,7 +3,8 @@
 *.nav
 *.out
 *.snm
-*.syntext.gz(busy)
+*.synctex.gz(busy)
 *.toc
 *.vrb
 *.DS_Store
+*.Rhistory
