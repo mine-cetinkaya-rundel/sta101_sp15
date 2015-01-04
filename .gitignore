@@ -8,4 +8,5 @@
 *.vrb
 *.DS_Store
 *.Rhistory
+*.key
 Private/
