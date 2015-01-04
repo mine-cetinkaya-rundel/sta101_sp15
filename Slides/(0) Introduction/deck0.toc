@@ -1,6 +1,0 @@
-\beamer@endinputifotherversion {3.22pt}
-\select@language {english}
-\beamer@sectionintoc {1}{General info}{2}{0}{1}
-\beamer@sectionintoc {2}{Example: Baby names}{58}{0}{2}
-\beamer@sectionintoc {3}{Example: Geotagged data}{62}{0}{3}
-\beamer@sectionintoc {4}{Why study statistics?}{65}{0}{4}
