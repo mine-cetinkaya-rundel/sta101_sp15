@@ -6,3 +6,4 @@
 *.syntext.gz(busy)
 *.toc
 *.vrb
+*.DS_Store
