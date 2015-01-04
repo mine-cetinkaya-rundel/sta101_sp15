@@ -1,0 +1,738 @@
+% Compile with XeLaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Option 1: Slides: (comment for handouts)   %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
+
+\newcommand{\solnMult}[1]{
+\only<1>{#1}
+\only<2->{\red{\textbf{#1}}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 2: Handouts, without solutions (post before class)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\documentclass[11pt,containsverbatim,handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+%
+%\newcommand{\solnMult}[1]{
+%#1
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 3: Handouts, with solutions (may post after class if need be)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\documentclass[11pt,containsverbatim,handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+%
+%\newcommand{\solnMult}[1]{
+%\red{\textbf{#1}}
+%}
+
+
+%%%%%%%%%%
+% Load style file   %
+%%%%%%%%%%
+
+\input{../lec_style.tex}
+
+
+%%%%%%%%%%%
+% Cover slide info    %
+%%%%%%%%%%%
+
+\title[Introduction]{Data Analysis and Statistical Inference \\ Introduction}
+\author{Statistics 101}
+\date{January 7, 2015}
+\institute{Dr. \c{C}etinkaya-Rundel}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document and set Helvetica Neue font   %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\fontspec[BoldFont={Helvetica Neue}]{Helvetica Neue Light}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title Page
+
+\begin{frame}[plain]
+
+\titlepage
+\addtocounter{framenumber}{-1} 
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{General info}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Teaching team}
+
+\begin{itemize}
+
+\item Professor: Dr. Mine \c{C}etinkaya-Rundel - \mail{mine@stat.duke.edu}
+
+\item TAs:
+\begin{itemize}
+\item TBA
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Required materials}
+
+\begin{itemize}
+
+\item OpenIntro Statistics, 2nd Edition
+
+\item i$>$clicker2 - See Google Doc for a list of students selling used clickers (link emailed)
+
+\item (optional) Calculator
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Webpage}
+
+\vfill
+
+\centering
+{\Large 
+\webURL{http://bit.ly/sta101sp15}
+}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Grading}
+
+\begin{center}
+\rowcolors{1}{}{custom_lightGray}
+\renewcommand\arraystretch{1.25}
+{\scriptsize
+\begin{tabular}{ r | l }
+\textbf{Component} & \textbf{Weight} \\
+Attendance \& participation + peer evaluation	& 7.5\% \\
+Problem sets							& 10\%  \\ 
+Labs									& 10\% \\    
+Readiness assessments					& 10\%   \\  
+Performance assessments 				& 2.5\%  \\  
+Project 1								& 5\%   \\   
+Project 2								& 10\% \\   
+Midterm 1								& 10\% \\    
+Midterm 2 							& 10\% \\    
+Final 								& 25\%     
+\end{tabular}
+}
+\end{center}
+
+\begin{itemize}
+
+\item Grades curved at the end of the course after overall averages have been calculated.
+\begin{itemize}
+\item average of 90-100 guaranteed A-
+\item average of 80-90 guaranteed B-
+\item average of 70-80 guaranteed C-
+\end{itemize}
+
+\item The more evidence there is that the class has mastered the material, the more generous the curve will be.
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Course goals and objectives}
+
+\setbeamercovered{transparent}
+
+{\footnotesize
+\begin{itemize}[<+->]
+\item Recognize the importance of data collection, identify limitations in data collection methods, and determine how they affect the scope of inference.
+\item Use statistical software to summarize data numerically and visually, and to perform data analysis.
+\item Have a conceptual understanding of the unified nature of statistical inference.
+\item Apply estimation and testing methods to analyze single variables or the relationship between two variables in order to understand natural phenomena and make data-based decisions.
+\item Model numerical response variables using a single or multiple explanatory variables.
+\item Interpret results correctly, effectively, and in context without relying on statistical jargon.
+\item Critique data-based claims and evaluate data-based decisions.
+\item Complete two research projects: one that focuses on statistical inference and one that focuses on modeling. 
+\end{itemize}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Learning units}
+
+{\footnotesize
+\begin{itemize}[<+->]
+\item \hl{Unit 1 - Introduction to data:} Observational studies and non-causal inference, principles of experimental design and causal inference, exploratory data analysis: description, summary and visualization, introduction to statistical inference.
+\item \hl{Unit 2 - Probability and distributions:} The basics of probability and chance processes, Bayesian perspective in statistical inference, the normal distribution.
+\item \hl{Unit 3 - Framework for inference:} Central Limit Theorem and sampling distributions
+\item \hl{Unit 4 - Statistical inference for numerical variables}
+\item \hl{Unit 5 - Statistical inference for categorical variables}
+\item \hl{Unit 6 - Simple linear regression:} Bivariate correlation and causality, introduction to modeling
+\item \hl{Unit 7 - Multiple linear regression:} More advanced modeling with multiple predictors
+\end{itemize}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Course structure}
+
+\setbeamercovered{transparent}
+
+\begin{itemize}[<+->]
+\item Set of learning objectives and required and suggested readings, videos, etc. for each unit
+\item Prior to beginning the unit, complete the readings and familiarize yourselves with the learning objectives
+\item Begin a new unit with a readiness assessment: individual, then team 
+\item Class time: split between lecture, discussion/application, and lab
+\item Complement your learning with problem sets
+\item Wrap up a unit with a performance assessment
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Teams}
+
+\setbeamercovered{transparent}
+
+\begin{itemize}[<+->]
+\item Highly functional teams of learners based on survey and pre-test
+
+\item Team members first point of contact
+
+\item Application exercises, team readiness assessments, projects
+
+\item Study together, but anything that is not explicitly a team assignment must be your own work
+
+\item Peer evaluations to ensure that all team members contribute to the success of the group and to address any potential issues early on
+
+\item If you feel that there are issues within your team, you are encouraged to discuss it with your team members and to bring it to my or your TA's attention ASAP (don't wait till things get worse)
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Clickers}
+
+\red{Objective:} Two-way communication and instant feedback
+
+\begin{itemize}
+\item Readiness assessments (graded for accuracy)
+
+\item Questions throughout lecture (graded for participation)
+\begin{itemize}
+\item to get credit for the day you must respond to at least 75\% of the questions
+\item up to three unexcused late arrivals or absences will not affect your clicker grade
+\end{itemize}
+
+\item Register your clicker
+\begin{itemize}
+\item \webURL{https://www1.iclicker.com/register-clicker} (Student ID = Net ID)
+\item grading starts Mon, Jan 26
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Attendance \& participation}
+
+\red{Objective:} Make you an active participant and help me pace the class. 
+
+\begin{itemize}
+
+\item Attendance and participation during class, as well as your activity on Piazza make up a non-insignificant portion of your grade in this class
+
+\item Might sometimes call on you during the class discussion, however it is your responsibility to be an active participant without being called on
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Problem sets}
+
+\red{Objective:} Help you develop a more in-depth understanding of the material and help you prepare for exams and projects.
+
+\begin{itemize}
+
+\item Questions from the textbook
+
+\item Show all your work to receive credit, type your answers in the text box on Sakai (and attach any plots/images as separate files, properly named) or attach a PDF of your answers (no other file types will be accepted)
+
+\item Welcomed and encouraged to work with others, but turn in your own work
+\begin{itemize}
+\item If you copy someone else's work, both parties will receive a 0 for the problem set grade as well as being reported to the Office of Student Conduct
+\end{itemize}
+
+\item Lowest score will be dropped
+
+\item No make-ups
+
+\item Excused absences (e.g. STINF) do not excuse homework
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Labs}
+
+\red{Objective:} Give you hands on experience with data analysis using statistical software and provide you with tools for the projects.
+
+\begin{itemize}
+
+\item Work in teams: author / discussants
+
+\item Must be present in lab session to get credit
+
+\item Lowest lab score will be dropped
+
+\end{itemize}
+
+\vfill
+
+\pause
+
+\activity{Get started with R/RStudio}{
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+\item Go to the course website, \webURL{http://bit.ly/sta101sp15}, and click on the RStudio link on the top right
+\item Log in using your Net ID and password
+\item In the Console, generate a random number between 1 and 5, and introduce yourself to that many people sitting around you:
+\code{sample(1:5, size = 1)}
+\end{itemize}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Readiness assessments}
+
+\red{Objective:} Encourage you to watch the videos and complete the reading assignment prior to coming to class and evaluate your conceptual understanding of the learning objectives.
+
+\begin{itemize}
+
+\item 10 multiple choice questions, at the beginning of a unit
+
+\item Conceptual questions addressing the learning objectives of the new unit, assessing familiarity and reasoning, not mastery
+
+\item Take the individual RA using clickers, then re-take in teams
+
+\item Individual RA score 3/4 of grade, team RA score 1/4 \& your input during the team portion will factor into your participation grade
+
+\item Lowest score will be dropped
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Performance assessments}
+
+\red{Objective:} Evaluate your mastery of the material by the end of a unit and give you instant feedback on your performance.
+
+\begin{itemize}
+
+\item 10 multiple choice questions, at the end of a unit
+
+\item Taken individually on Sakai
+
+\item Lowest score will be dropped
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Projects}
+
+\red{Objective:} Give you independent applied research experience using real data and statistical methods.
+
+\begin{itemize}
+
+\item Project 1: For a parameter of interest to you, you will describe the relevant data, compute a confidence interval and conduct a hypothesis test, and summarize your findings in a written, fully reproducible, data analysis report
+
+\item Project 2: You will use all (relevant) techniques learned in this class to analyze a dataset provided by me. You will share your results in a poster session
+
+\item Must complete both projects and score at least 30\% of the points on each project in order to pass this class
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Exams}
+
+\begin{center}
+\rowcolors{1}{}{custom_lightGray}
+\renewcommand\arraystretch{1.25}
+{\footnotesize
+\begin{tabular}{ r | l }
+Midterm 1								& Wed, Feb 18 \\    
+Midterm 2 							& Wed, Mar 25 \\    
+Final 								& Sat, May 2 (2-5pm)     
+\end{tabular}
+}
+\end{center}
+
+\begin{itemize}
+
+\item Exam dates cannot be changed, no make-up exams will be given
+
+\item If you cannot take the exams on these dates you should drop this class. 
+
+\item Calculator + cheat sheet allowed
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Email \& Piazza}
+
+\begin{itemize}
+
+\item I will regularly send announcements by email, so make sure to check your email  daily
+
+\item While email is the quickest way to reach me outside of class, sometimes it may be more efficient to answer most statistical questions ``in person" so make use of OH
+
+\item Any non-personal questions related to the material covered in class, problem sets, labs, projects, etc. should be posted on Piazza forum
+
+\item Before posting a new question please make sure to check if your question has already been answered, and answer others' questions
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Students with disabilities}
+
+Students with disabilities who believe they may need accommodations in this class are encouraged to contact the \webLink{http://www.access.duke.edu/students/requesting/index.php}{Student Disability Access Office} at (919) 668-1267 as soon as possible to better ensure that such accommodations can be made.
+
+\vfill
+
+\ct{\webURL{http://www.access.duke.edu/students/requesting/index.php}}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Late work policy}
+
+\begin{itemize}
+
+\item Late work policy for problem sets and labs reports:
+\begin{itemize}
+\item next day: lose 30\% of points (within 24 hours of due date)
+\item later than next day: lose all points
+\end{itemize}
+
+\item Late work policy for projects: 10\% off for each day late
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Regrades}
+
+Regrade requests must be made \hl{within 3 days} of when the assignment is returned, and must be submitted in writing. 
+
+\begin{itemize}
+
+\item These will be honored if points were tallied incorrectly, or if you feel your answer is correct but it was marked wrong
+
+\item No regrade will be made to alter the number of points deducted for a mistake
+
+\item There will be no grade changes after the final exam
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Make up policy}
+
+\begin{itemize}
+
+\item No make-up for attendance, individual and team readiness assessments, labs, problem sets, projects, or exams
+
+\item If the midterm exam must be missed due to a documented medical excuse, absence must be officially excused \hl{in advance}, in which case the missing exam score will be imputed using the final exam score
+
+\item The final exam must be taken at the stated time
+
+\item If you can’t take the exams on these dates you should drop this class
+
+\item You must take the final exam and turn in the projects in order to pass this course
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Other policies}
+
+\begin{itemize}
+
+\item Clickers may not be shared, and the clicker registered to a person may only be used by that person, failure to abide by this will result in a 0 clicker grade for everyone involved
+
+\item Use of disallowed materials (textbook, class notes, web references, any form of communication with classmates or other persons, etc.) during exams will not be tolerated
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Academic Dishonesty}
+
+Any form of academic dishonesty will result in an immediate 0 on the given assignment and will be reported to the Office of Student Conduct. Additional penalties may also be assessed if deemed appropriate. If you have any questions about whether something is or is not allowed, ask me beforehand.
+
+Some examples:
+
+\begin{itemize}
+
+\item Use of disallowed materials (including any form of communication with classmates or accessing the web) during exams and readiness assessments.
+
+\item Plagiarism of any kind.
+
+\item Use of outside answer keys or solution manuals for the homework.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Tips for success}
+
+\setbeamercovered{transparent}
+
+{\footnotesize
+\begin{itemize}[<+->]
+\item Complete the reading before a new unit begins, and then review again after the unit is over.
+\item Be an active participant during lectures and labs.
+\item Ask questions - during class or office hours, or by email. Ask me and your classmates.
+\item Do the problem sets - start early and make sure you attempt and understand all questions.
+\item Start your projects early and and allow adequate time to complete them.
+\item Give yourself plenty of time time to prepare a good cheat sheet for exams. This requires going through the material and taking the time to review the concepts that you're not comfortable with.
+\item Do not procrastinate - don't let a unit go by with unanswered questions as it will just make the following unit's material even more difficult to follow. 
+\end{itemize}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{To do}
+
+\begin{itemize}
+
+\item Download or purchase the textbook
+
+\item Obtain and register your clicker
+
+\item Complete the pretest and survey
+
+\item Read the syllabus and let me know if you have any questions
+
+\item Start reviewing the resources for Unit 1 - readiness assessment on Monday (not graded, for practice)
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Example: Baby names}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Baby names in the US}
+
+\begin{itemize}
+
+\item Each year the Social Security Administration collects and releases data on the how many babies are given a certain name.
+
+\item They released these data for years 1880 onwards for each gender.
+
+\item For privacy reasons they restrict the list of names to those with at least 5 occurrences.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Top 10 baby names for 2013}
+
+\centering
+\includegraphics[width=0.9\textwidth]{figures/babynames2013}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Name voyager}
+
+\centering
+
+\webURL{http://www.babynamewizard.com/voyager}
+
+\vfill
+
+\includegraphics[width=0.9\textwidth]{figures/mine}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Example: Geotagged data}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{}
+
+\clicker{Do you geotag your posts on social networking sites, like Facebook, 
+Twitter, Instagram, etc.?}
+
+\begin{enumerate}[(a)]
+\item yes
+\item no
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Maps based on clicker tags}
+
+\twocol{0.65}{0.35}
+{
+\begin{center}
+\includegraphics[width=\textwidth]{figures/flickr_ny}
+\end{center}
+}
+{
+\begin{itemize}
+\item[] \textcolor{red}{tourists}
+\item[] \textcolor{blue}{local}
+\item[] \textcolor{yellow}{both}
+\end{itemize}
+}
+
+\ct{\webURL{http://aaronstraupcope.com}}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Why study statistics?}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Why study statistics?}
+
+\begin{center}
+\includegraphics[width=0.55\textwidth]{figures/lottery}
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Why study statistics?}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{figures/why_stats}
+\end{center}
+
+\vspace{-0.25cm}
+
+\ct{\webURL{http://thisisstatistics.org}}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\end{document}

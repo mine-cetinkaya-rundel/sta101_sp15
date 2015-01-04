@@ -1,0 +1,286 @@
+---
+title: "Project 1 - Grading rubric"
+output:
+  html_document:
+    css: ../project.css
+    highlight: pygments
+    theme: cerulean
+  pdf_document: default
+---
+
+* * * 
+
+### Part 1: Introduction - 10 points
+<small>
+What is your research question? Why do you care? Why should others care?
+</small>
+
+<br>
+
+**1.1 Is there an informative title, i.e. something other than "Project 1"? (1)**
+
+0 - No
+
+1 - Yes
+
+**1.2 Is there a well-defined and clearly stated research question? (5)**
+
+0 - Research question is not well defined or not clear
+
+2 - Research question is well defined but implies causality even though the scope of inference doesn't allow for establishing causality
+
+5 - Research question is well defined and clear
+
+**1.3 Did the authors provide background on the research question as to why they care and why others should also care? (4)**
+
+0 - No
+
+2 - The authors provided some background, however it's insufficient / trivial, and I do not understand why the writer cares or why anyone should care
+
+4 - It is clear why the writer cares, and they persuaded me to care about this question as well
+
+* * * 
+
+### Part 2:  Data - 15 points
+
+<small>
+Write about the data from your proposal in text (not bullet-point) form. Address the following points:
+<br>
+    * Data collection: Describe how the data were collected. <br>
+    * Cases: What are the cases? (Remember: case = units of observation or units of experiment) <br>
+    * Variables: What are the two variables you will be studying? State the type of each variable. <br>
+    * Type of study: What is the type of study, observational or an experiment? Explain how you've arrived at your conclusion using information on the sampling and/or experimental design. <br>
+    * Scope of inference - generalizability: Identify the population of interest, and whether the findings from this analysis can be generalized to that population, or, if not, a subsection of that population. Explain why or why not. Also discuss any potential sources of bias that might prevent generalizability. <br>
+    * Scope of inference - causality: Can these data be used to establish causal links between the variables of interest? Explain why or why not.
+</small>
+
+<br>
+
+**2.1 Data collection: Is the data collection explained clearly? (2)**
+
+0 - No, not even mentioned
+
+1 - Mentioned but not explained clearly, or appears to be taken directly from the source and not synthesized (e.g. contains terminology not encountered in the course and not defined)
+
+2 - Yes, explanation is clear, terminology not encountered in class (if any) is defined
+
+**2.2 Cases: Are the cases (the units of observation or experimental units) identified correctly? (1)**
+
+0 - No
+
+1 - Yes
+
+**2.3 Variables: Are the variable types identified accurately, including type (numerical / categorical)? (2)**
+
+0 - No
+
+1 - Only one of them is identified accurately
+
+2 - Both of them are identified accurately
+
+**2.4 Study: Is the type of study identified correctly? Is the supporting information on the sampling and/or experimental design of the study satisfactory for making the decision on the type of study? (3)**
+
+0 - No
+
+1 - Study correctly identified, but no reasoning provided.
+
+3 - Study correctly identified, and satisfactory reasoning provided.
+
+**2.5 Scope of inference - generalizability: Did the writer correctly identify the population of interest? Did the writer correctly decide whether the findings from this analysis can be generalized to that population, or, if not, a subsection of that population? Is their explanation satisfactory to make this decision? Are potential sources of bias discussed, and if so, is the discussion satisfactory? (3)**
+
+0 - No
+
+1 - Correctly identified the population of interest, but incorrect decision on generalizability
+
+2 - Correctly identified the population of interest and correct decision on generalizability, but unsatisfactory reasoning
+
+3 - Correctly identified the population of interest, correct decision on generalizability, and satisfactory reasoning
+
+**2.6 Scope of inference - causality: Did the writer identify correctly whether these data can be used to establish causal links between the variables of interest. Is the explanation satisfactory? (3)**
+
+0 - No
+
+1 - Correct decision on causality, but unsatisfactory reasoning
+
+3 - Correct decision on causality, and satisfactory reasoning
+
+**2.7: References: Is a citation included for the data and other references? (1)**
+
+0 - No
+
+1 - Yes
+
+* * *
+
+### Part 3: Exploratory data analysis - 15 points
+
+<small>
+Calculate and discuss relevant descriptive statistics, including summary statistics and visualizations of the data. Also address what the exploratory data analysis suggests about your research question.
+</small>
+
+<br>
+
+**3.1 Are appropriate univariate statistics for each variable calculated and explained? (4)**
+
+0 - No
+
+2 - Yes, but explanation is missing or lacking for one or both of the variables
+
+4 - Yes, and there is satisfactory explanation
+
+**3.2 Are appropriate bivariate summary statistics calculated, and are they explained/interpreted in context of the data and the research question? (5)**
+
+0 - No
+
+2 - Yes, but explanation/interpretation missing or lacking
+
+5 - Yes, and there is satisfactory explanation/interpretation
+
+**3.2 Are appropriate visualizations included, and are they explained/interpreted in context of the data and the research question? (5)**
+
+0 - No
+
+1 - Yes, but there is no explanation/interpretation
+
+2 - Yes, but the explanation/interpretation is unsatisfactory, e.g. incorrect interpretations and/or not mentioning obvious outliers
+
+4 - Yes, but there are some visualizations without any explanation
+
+5 - Yes, and there is satisfactory explanation/interpretation
+
+**3.3 Did the writer address what the findings from the exploratory analysis suggests about the research question? (1)**
+
+0 - Not present or not accurate
+
+1 - Present and accurate
+
+* * *
+
+### Part 4: Inference - 25 points
+<small>
+    * Check conditions <br>
+    * Theoretical inference (if possible) - hypothesis test and confidence interval <br>
+    * Simulation based inference - hypothesis test and confidence interval <br>
+    * Brief description of methodology that reflects your conceptual understanding <br>
+If your data fails some conditions and you can't use a theoretical method, then you should use simulation. It is your responsibility to figure out the appropriate methodology. 
+</small>
+
+<br>
+
+**4.1 Are the hypotheses is stated clearly and do they match the research question? (4)**
+
+0 - Not present or not clear
+
+1 - Yes hypotheses are stated clearly and correctly, but they do not match research question
+
+4 - Yes hypotheses are stated clearly and correctly, and they match the research question
+
+**4.2 Are the conditions checked in context of the data (not just a generic bullet point list of the conditions, but reasoning through them for the given dataset)? (5)**
+
+0 - Not present or incorrect
+
+2 - Conditions are listed as a generic list, but not checked in context of the data
+
+5 - All conditions checked correctly and in context of the data
+
+**4.3 Are the appropriate method(s) the writer will be using stated? Did the authors provide a discussion of why they chose these methods, and described how they work? Note that in this part the authors should display a thorough and conceptual understanding of how the methodology works, however the write-up does not need to be as detailed as if they were teaching the method to someone with no background in statistics. (1)**
+
+0 - Not present or incorrect
+
+1 - Present and correct
+
+**4.4 Was the correct code used and output provided for all required techniques? (6)** 
+
+See below for which situation requires which technique:
+
+* One numerical and one categorical variable (with only 2 levels): hypothesis test + confidence interval
+    * parameter of interest = difference between two means (theoretical or simulation)
+    * parameter of interest = difference between two medians (simulation only)
+* One numerical and one categorical variable (with more than 2 levels): hypothesis test only
+    * compare means across several groups
+    * no defined parameter of interest, ANOVA and pairwise tests (theoretical only)
+* Two categorical variables (each with only 2 levels): hypothesis test + confidence interval
+    * parameter of interest = difference between two proportions (theoretical if success-failure condition met, simulation if not)
+* Two categorical variables (either one or both with more than 2 levels): hypothesis test only
+    * compare proportions across several groups
+    * no defined parameter of interest, Chi-square test only (theoretical if expected sample size condition met, simulation if not)
+    
+0 - Not present or incorrect
+
+3 - Only some of the required techniques are presented, but others are missing
+
+6 - All required code and output present and correct
+
+**4.5 Are correct interpretations and conclusions for all output provided? Note that this portion should be evaluated based on criteria stated earlier about which technique is required when). This includes (some or all of) conclusions of hypothesis tests, interpretations of p-values as conditional probabilities, and interpretations of confidence intervals depending on the methods used. All interpretations must be in context of the data and the research question. (7)**
+
+0 - Not present or incorrect
+
+3 - Conclusions/interpretations are provided and correct for only some of the required techniques
+
+4 - All conclusions/interpretations present and correct, but not put in context of the data and the research question
+
+7 - All conclusions/interpretations present, correct, and in context of the data and the research question
+
+**4.6 Is whether or not results from hypothesis test and confidence interval agree stated? Or, if doing ANOVA or chi-square testing, did the authors state that no other methods were applicable and hence there's nothing to compare? (2)**
+
+0 - Not present or incorrect
+
+2 - Present and correct
+
+* * *
+
+### Part 5: Conclusion - 10 points
+
+Write a brief summary of your findings without repeating your statements from earlier. Include a discussion of what you have learned about your research question and the data you collected, and include ideas for possible future research.
+
+**5.1 Is there a brief summary of findings that does not repeat previous statements? (2)**
+
+0 - Not present
+
+2 - Present
+
+**5.2 Is a discussion of what was learned about the research question provided? (4)**
+
+0 - Not present
+
+2 - Present, but lacking
+
+4 - Present
+
+**5.3 Are ideas for possible future research and/or discussion of additional synthesis or possible shortcomings of study provided? (4)**
+
+0 - Not present
+
+2 - Present, but lacking
+
+4 - Present
+
+* * *
+
+### Overall - 5 points:
+
+**O1 - Is the writing clear, with few or no grammar, spelling or organization mistakes? (3)**
+
+Give a score between 0 to 3 reflecting the quality of the writing.
+
+**O2 - Does the paper have a single authorial tone, or does it appear to be written by distinct team members and patched together? (2)**
+
+0 - The paper appears to be written by distinct team members and patched together
+
+2 - The paper has a single authorial tone
+
+* * *
+
+### Possible deductions:
+
+* Late: -10 points for each day late
+
+* Did not follow five part format: -5 points
+
+* Difficult to follow, requiring to go back to the data and replicate the analysis: -10 points
+
+* Each page over limit: - 5 points per page (view print preview to confirm length)
+
+* * *
+
+**Please make any general constructive comments on this project that the student would find helpful.**
