@@ -25,7 +25,7 @@ noita:
       - name: Resources
         url: /resources/
       - name: Sakai
-        url: https://sakai.duke.edu/portal/site/ba0d1c18-ba55-473f-9d70-b6a1f9559bbe/page/08b2daf5-e24e-4401-97a1-ba4b8839895a#
+        url: https://sakai.duke.edu/portal/site/ba0d1c18-ba55-473f-9d70-b6a1f9559bbe/page/8052e4d1-3af6-425b-bed2-0bc37ab0ef26
         absolute: true
       - name: RStudio
         url: https://vm-manage.oit.duke.edu/containers
