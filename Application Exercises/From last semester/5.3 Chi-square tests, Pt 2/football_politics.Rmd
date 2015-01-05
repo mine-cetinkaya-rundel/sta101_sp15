@@ -1,0 +1,50 @@
+---
+title: "Football and Politics in NC"
+author: "Dr. Cetinkaya-Rundel"
+date: "October 31, 2014"
+output:
+  html_document:
+    fig_height: 4
+    fig_width: 8
+---
+
+```{r echo=FALSE}
+library(downloader)
+```
+
+Public Policy Polling surveyed 780 likely voters from October 16th to 18th, 2014. The full report on the poll results can be found at http://www.publicpolicypolling.com/pdf/2014/PPP_Release_NC_10201118.pdf. We are going to focus on responses to the following questions:
+
+* Which is your favorite college football team in North Carolina?
+* In the last presidential election, did you vote for Barack Obama or Mitt Romney?
+
+We want to evaluate whether college football allegiance of NC residents is associated with how they voted in the 2012 presidential election.
+
+First, let's load the dataset:
+
+```{r}
+download("https://stat.duke.edu/~mc301/data/fb_pol.csv", destfile = "fb_pol.csv")
+fb_pol = read.csv("fb_pol.csv")
+```
+
+The distribution of responses is as follows:
+
+```{r}
+table(fb_pol$team, fb_pol$vote)
+```
+
+To evaluate the relationship between these variables we need to use a chi-square independence test. Our hypotheses. We can use the `inference` function to do this.
+
+First, let's load the inference function:
+
+```{r}
+download("https://stat.duke.edu/~mc301/R/inference.RData", destfile = "inference.RData")
+load("inference.RData")
+```
+
+Then we use the familiar format of `inference(response variable, explanatory variable, ...)`:
+
+```{r}
+inference(fb_pol$vote, fb_pol$team, est = "proportion", type = "ht", alternative = "greater", method = "theoretical")
+```
+
+

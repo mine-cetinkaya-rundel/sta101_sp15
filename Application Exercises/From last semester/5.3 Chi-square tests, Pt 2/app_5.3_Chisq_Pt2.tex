@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+\usepackage[top=1.5cm,bottom=1.5cm,left=1.5cm,right= 1.5cm]{geometry}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{setspace}            
+\usepackage{amsmath}            
+\usepackage{multirow}    
+\usepackage{changepage}
+\usepackage{lscape}
+\usepackage{ulem}
+\usepackage{multicol}
+\usepackage{dashrule}
+\usepackage[usenames,dvipsnames]{color}       
+\usepackage{enumerate}
+\newcommand{\urlwofont}[1]{\urlstyle{same}\url{#1}}
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newenvironment{choices}{
+\begin{enumerate}[(a)]
+}{\end{enumerate}}
+
+\pagestyle{empty}
+
+%\newcommand{\soln}[1]{\textcolor{MidnightBlue}{\textit{#1}}}	% delete #1 to get rid of solutions for handouts
+\newcommand{\soln}[1]{ \vspace{2.7cm} }
+
+\newcommand{\solnMult}[1]{\textbf{\textcolor{MidnightBlue}{\textit{#1}}}}	% uncomment for solutions
+%\newcommand{\solnMult}[1]{ #1 }	% uncomment for handouts
+
+%\newcommand{\pts}[1]{ \textbf{{\footnotesize \textcolor{black}{(#1)}}} }	% uncomment for handouts
+\newcommand{\pts}[1]{ \textbf{{\footnotesize \textcolor{red}{(#1)}}} }	% uncomment for handouts
+
+\newcommand{\note}[1]{ \textbf{\textcolor{red}{[#1]}} }	% uncomment for handouts
+
+\definecolor{oiG}{rgb}{.298,.447,.114}
+\definecolor{oiB}{rgb}{.337,.608,.741}
+
+\usepackage[colorlinks=false,pdfborder={0 0 0},urlcolor= oiG,colorlinks=true,linkcolor= oiG, citecolor= oiG,backref=true]{hyperref}
+
+%\usepackage{draftwatermark}
+%\SetWatermarkScale{4}
+
+\usepackage{titlesec}
+\titleformat{\section}
+{\color{oiB}\normalfont\Large\bfseries}
+{\color{oiB}\thesection}{1em}{}
+\titleformat{\subsection}
+{\color{oiB}\normalfont}
+{\color{oiB}\thesubsection}{1em}{}
+
+\newcommand{\ttl}[1]{ \textsc{{\LARGE \textbf{{\color{oiB} #1} } }}}
+
+\newcommand{\tl}[1]{ \textsc{{\large \textbf{{\color{oiB} #1} } }}}
+
+\begin{document}
+
+Dr. \c{C}etinkaya-Rundel \hfill Data Analysis and Statistical Inference \\
+
+\ttl{Application exercise: 5.3 \\
+Chi-square tests, Pt. 2}
+
+\section*{Football and politics in NC}
+
+Public Policy Polling surveyed 780 likely voters from October 16th to 18th, 2014. The full report on the poll results can be found at \url{http://www.publicpolicypolling.com/pdf/2014/PPP_Release_NC_10201118.pdf}. We are going to focus on responses to the following questions:
+
+\begin{itemize}
+\item Which is your favorite college football team in North Carolina?
+\item In the last presidential election, did you vote for Barack Obama or Mitt Romney?
+\end{itemize}
+
+%
+Below is the distribution of the responses are as follows:
+\begin{center}
+\begin{tabular}{r | l | l | l | l}
+				& Barack Obama	& Mitt Romney	& Other / Don't remember	& Total \\
+\hline
+Duke			& 53				& 69			& 7					& 129 \\
+UNC				& 95				& 76			& 8					& 179 \\
+NC State			& 35				& 54			& 8					& 97 \\
+Other / no favorite	& 168			& 183		& 24					& 375 \\
+\hline
+Total				& 351			& 382		& 47					& 780 \\
+\end{tabular}
+\end{center}
+
+$\:$ \\
+We want to evaluate whether college football allegiance of NC residents is associated with how they voted in the 2012 presidential election.
+$\:$ \\
+\begin{enumerate}
+
+\item What type of test is most appropriate? Explain your reasoning.
+
+\item What are the hypotheses?
+
+\item Calculate the expected counts for cells with low observed counts (Other / Don't remember and Duke, UNC, or NC State).
+
+\item Assuming that all other expected counts are high enough, check if the conditions for inference are met.
+
+\item Calculate the contribution of the Duke and Other / Don't remember cell to the test statistic.
+
+\item The test statistic is given as 9.4063. Calculate the p-value.
+
+\item What is the conclusion of the hypothesis test?
+
+\end{enumerate}
+
+This analysis completed in R can be found at \url{https://stat.duke.edu/courses/Fall14/sta101.001/app/football_politics.html}.
+
+%
+
+\end{document}

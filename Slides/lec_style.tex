@@ -48,6 +48,7 @@
 \usepackage{listings}
 \usepackage{tikz}
 \usepackage{fancyvrb}
+\usepackage{nameref}
 
 %%%%%%%%%%%%%%%%
 % Remove navigation symbols
@@ -91,6 +92,11 @@
 % Styling fonts, bullets, etc.
 %%%%%%%%%%%%%%%%
 
+% title slide
+\setbeamerfont{title}{size=\large,series=\bfseries}
+\setbeamerfont{subtitle}{size=\large,series=\mdseries}
+%\setbeamerfont{institute}{size=\large,series=\mdseries}
+
 % color of alerted text
 \setbeamercolor{alerted text}{fg=custom_orange}
 
@@ -119,6 +125,13 @@
 \setbeamerfont{footline}{family={\fontspec{Helvetica Neue}}}
 \setbeamerfont{subsection in toc}{family={\fontspec{Helvetica Neue}}}
 \setbeamerfont{block title}{family={\fontspec{Helvetica Neue}}}
+
+%%%%%%%%%%%%%%%%
+% New fonts accessed by fontspec package
+%%%%%%%%%%%%%%%%
+
+% Monaco font for code
+\newfontfamily{\monaco}{Monaco}
 
 %%%%%%%%%%%%%%%%
 % Color text commands
@@ -233,10 +246,12 @@
 
 % disc: discussion question
 \newcommand{\disc}[1]{
+\vspace*{-2ex}
 \setbeamercolor{block body}{bg=custom_blue!25!white!80, fg=custom_blue!55!black!95}
 \begin{block}{\vspace*{-3ex}}
 #1
 \end{block}
+\vspace*{-1ex}
 }
 
 % clicker: clicker question
@@ -258,7 +273,6 @@
 
 % code
 \newcommand{\code}[1]{
-\newfontfamily{\monaco}{Monaco}
 {\monaco {\footnotesize \textcolor{custom_darkBlue}{#1}}}
 }
 
@@ -316,15 +330,33 @@
 % TOC slides
 %%%%%%%%%%%%%%%%
 
-% TRY TO CHANGE THE ENUMERATE SYMBOLS HERE FROM CIRCLES TO PLAIN NUMBERS
+\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
+\setbeamertemplate{subsection in toc}{$\qquad$\inserttocsubsectionnumber.~\inserttocsubsection \\}
 
 \AtBeginSection[] 
 { 
   \addtocounter{framenumber}{-1} 
   % 
   {\removepagenumbers 
+  {\small
     \begin{frame}<beamer> 
+    \frametitle{Outline} 
     \tableofcontents[currentsection] 
   \end{frame} 
   } 
+  }
+} 
+
+\AtBeginSubsection[] 
+{ 
+  \addtocounter{framenumber}{-1} 
+  % 
+  {\removepagenumbers 
+  {\small
+    \begin{frame}<beamer> 
+    \frametitle{Outline} 
+    \tableofcontents[currentsection,currentsubsection] 
+  \end{frame} 
+  } 
+  }
 }

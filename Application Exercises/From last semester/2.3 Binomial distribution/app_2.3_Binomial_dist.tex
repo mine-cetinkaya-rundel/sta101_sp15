@@ -1,0 +1,147 @@
+\documentclass[11pt]{article}
+\usepackage[top=1.5cm,bottom=1.5cm,left=1.5cm,right= 1.5cm]{geometry}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{setspace}            
+\usepackage{amsmath}            
+\usepackage{multirow}    
+\usepackage{changepage}
+\usepackage{lscape}
+\usepackage{ulem}
+\usepackage{multicol}
+\usepackage{dashrule}
+\usepackage[usenames,dvipsnames]{color}       
+\usepackage{enumerate}
+\newcommand{\urlwofont}[1]{\urlstyle{same}\url{#1}}
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newenvironment{choices}{
+\begin{enumerate}[(a)]
+}{\end{enumerate}}
+
+\pagestyle{empty}
+
+%\newcommand{\soln}[1]{\textcolor{MidnightBlue}{\textit{#1}}}	% delete #1 to get rid of solutions for handouts
+\newcommand{\soln}[1]{ \vspace{2.7cm} }
+
+\newcommand{\solnMult}[1]{\textbf{\textcolor{MidnightBlue}{\textit{#1}}}}	% uncomment for solutions
+%\newcommand{\solnMult}[1]{ #1 }	% uncomment for handouts
+
+%\newcommand{\pts}[1]{ \textbf{{\footnotesize \textcolor{black}{(#1)}}} }	% uncomment for handouts
+\newcommand{\pts}[1]{ \textbf{{\footnotesize \textcolor{red}{(#1)}}} }	% uncomment for handouts
+
+\newcommand{\note}[1]{ \textbf{\textcolor{red}{[#1]}} }	% uncomment for handouts
+
+\definecolor{oiG}{rgb}{.298,.447,.114}
+\definecolor{oiB}{rgb}{.337,.608,.741}
+
+\usepackage[colorlinks=false,pdfborder={0 0 0},urlcolor= oiG,colorlinks=true,linkcolor= oiG, citecolor= oiG,backref=true]{hyperref}
+
+%\usepackage{draftwatermark}
+%\SetWatermarkScale{4}
+
+\usepackage{titlesec}
+\titleformat{\section}
+{\color{oiB}\normalfont\Large\bfseries}
+{\color{oiB}\thesection}{1em}{}
+\titleformat{\subsection}
+{\color{oiB}\normalfont}
+{\color{oiB}\thesubsection}{1em}{}
+
+\newcommand{\ttl}[1]{ \textsc{{\LARGE \textbf{{\color{oiB} #1} } }}}
+
+\newcommand{\tl}[1]{ \textsc{{\large \textbf{{\color{oiB} #1} } }}}
+
+\begin{document}
+
+Dr. \c{C}etinkaya-Rundel \hfill Data Analysis and Statistical Inference \\
+
+\ttl{Application exercise: 2.3 Binomial distribution} 
+
+\section*{Scottish independence}
+
+A September 16, 2014 Surveynation poll suggests that 44\% of Scots favor the Scottish independence, 48\% are against it, and 8\% are undecided. Suppose we have a random sample of 1,000 Scots.
+
+\begin{enumerate}
+
+\item Calculate a range for the plausible number of Scots in this sample who believe Scotland should be an independent country.
+
+\item In order for Scotland to be an independent country there needs to be a majority of Yes votes in the referendum. Suppose a random sample of 1,000 Scots were to vote. Assuming that all those who said they were undecided on the poll vote No, what is the probability that majority in this sample (501 or more) vote Yes? Answer this question using two approaches:
+\begin{enumerate}
+\item Use the exact binomial probabilities. \textit{Hint:} Computation will be your friend for this part, you \textit{don't} want to do this by hand.
+\item Use the normal approximation to the binomial.
+\end{enumerate}
+
+%\begin{frame}[fragile]
+%\frametitle{}
+
+%\disc{Given that 44\% of Scots are for the Scottish independence, what is the probability that among a sample of 1000 Scots at least 501 are for Scottish independence?}
+%
+%\pause
+%
+%\textbf{Approach 1:} Using the binomial distribution: \\
+%{\footnotesize
+%\begin{eqnarray*} 
+%P(K \ge 501) &=& P(K = 501) + P(K = 502) + \cdots + P(K = 1000) \\
+%\pause
+%&=& {1000 \choose 501} 0.44^{501} 0.56^{499} + 
+%\pause {1000 \choose 502} 0.44^{502} 0.56^{498} + 
+%\pause \cdots + 
+%\pause {1000 \choose 1000} 0.44^{1000} 0.56^{0}  \\
+% \end{eqnarray*}
+% }
+% \pause
+%Using computation: \\
+%{\footnotesize
+%\begin{Verbatim}[frame=single, formatcom=\color{blue}]
+%> sum(dbinom(501:1000, size = 1000,  prob = 0.44))
+%\end{Verbatim}
+%}
+%\pause
+%{\footnotesize
+%\begin{Verbatim}[frame=single, formatcom=\color{gray}]
+%[1] 6.123879e-05
+%\end{Verbatim}
+%}
+%
+%
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{frame}[fragile]
+%\frametitle{}
+%
+%\disc{Given that 44\% of Scots are for the Scottish independence, what is the probability that among a sample of 1000 Scots at least 501 are for Scottish independence?}
+%
+%\pause
+%
+%\textbf{Approach 2:} Using the normal approximation to the binomial: \\
+%\pause
+%We know that since $np = 1000 \times 0.44 = 440$ and $n(1-p) = 1000 \times 0.56 = 560$ are both greater than 10, the shape of the binomial distribution can be approximated by the normal. \\
+%\pause
+%\[ \mu = 1000 \times 0.44 = 440 \pause \qquad \sigma = \sqrt{1000 \times 0.44 \times 0.56} = 15.7 \]
+%\pause
+%Therefore $Binomial(n = 1000, p = 0.44) \approx N(\mu = 440, \sigma = 15.7)$.
+%\pause
+%\[ P(K \ge 501) \pause = P\left(Z > \frac{501 - 440}{15.7}\right) \pause = P(Z > 3.89) \pause \approx 5.012211e-05 \]
+%\pause
+%Pretty close, though not exactly equal to the answer obtained using the exact binomial distribution.
+%
+%
+%\end{frame}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{enumerate}
+
+%
+
+\end{document}

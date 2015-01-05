@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage[top=3cm,bottom=3cm,left=3cm,right= 3cm]{geometry}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{amsmath}            
+\usepackage{multirow}    
+\usepackage{changepage}
+\usepackage{lscape}
+\usepackage{ulem}
+\usepackage{multicol}
+\usepackage{dashrule}
+\usepackage[usenames,dvipsnames]{color}       
+\usepackage{enumerate}
+\newcommand{\urlwofont}[1]{\urlstyle{same}\url{#1}}
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newenvironment{choices}{
+\begin{enumerate}[(a)]
+}{\end{enumerate}}
+
+%\newcommand{\soln}[1]{\textcolor{MidnightBlue}{\textit{#1}}}	% delete #1 to get rid of solutions for handouts
+\newcommand{\soln}[1]{ \vspace{2.7cm} }
+
+\newcommand{\solnMult}[1]{\textbf{\textcolor{MidnightBlue}{\textit{#1}}}}	% uncomment for solutions
+%\newcommand{\solnMult}[1]{ #1 }	% uncomment for handouts
+
+%\newcommand{\pts}[1]{ \textbf{{\footnotesize \textcolor{black}{(#1)}}} }	% uncomment for handouts
+\newcommand{\pts}[1]{ \textbf{{\footnotesize \textcolor{red}{(#1)}}} }	% uncomment for handouts
+
+\newcommand{\note}[1]{ \textbf{\textcolor{red}{[#1]}} }	% uncomment for handouts
+
+\definecolor{oiG}{rgb}{.298,.447,.114}
+\definecolor{oiB}{rgb}{.337,.608,.741}
+
+\usepackage[colorlinks=false,pdfborder={0 0 0},urlcolor= oiG,colorlinks=true,linkcolor= oiG, citecolor= oiG,backref=true]{hyperref}
+
+%\usepackage{draftwatermark}
+%\SetWatermarkScale{4}
+
+\thispagestyle{empty}
+
+\usepackage{titlesec}
+\titleformat{\section}
+{\color{oiB}\normalfont\Large\bfseries}
+{\color{oiB}\thesection}{1em}{}
+\titleformat{\subsection}
+{\color{oiB}\normalfont}
+{\color{oiB}\thesubsection}{1em}{}
+
+\newcommand{\ttl}[1]{ \textsc{{\LARGE \textbf{{\color{oiB} #1} } }}}
+
+\newcommand{\tl}[1]{ \textsc{{\large \textbf{{\color{oiB} #1} } }}}
+
+\begin{document}
+
+Dr. \c{C}etinkaya-Rundel \hfill Data Analysis and Statistical Inference \\
+
+\ttl{Application exercise: \\
+1.1 Sampling methods} \\
+
+You have \textcolor{oiB}{{\sc 10 minutes}} to complete this application exercise. Submit your responses on \href{https://sakai.duke.edu/portal/site/2aca0626-74aa-4e80-94cf-744eb75122b1}{Sakai}, under the appropriate assignment. One team will be randomly selected and their responses will be discussed on the screen. \\
+
+\begin{enumerate}
+
+\item Come up with one sentence summarizing the key difference between stratified and cluster sampling as if you were teaching this concept to a student who is just starting off in a statistics course.
+
+\item Suppose you are going to be conducting a study on Duke students, asking for their opinion on an issue of interest to you (could be related to the university, or a wider societal issue). First, formulate your research question. Then, describe how you would carry out the sampling of students using the following methods:
+\begin{enumerate}
+\item simple random sampling
+\item stratified sampling
+\item cluster sampling
+\end{enumerate}
+Think about what attributes of the Duke student population make sense to stratify vs. cluster on with respect to your research question.
+
+\end{enumerate}
+
+
+\end{document}
