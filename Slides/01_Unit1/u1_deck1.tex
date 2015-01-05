@@ -11,6 +11,10 @@
 \only<2->{\red{\textbf{#1}}}
 }
 
+\newcommand{\soln}[1]{
+\textit{#1}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option 2: Handouts, without solutions (post before class)    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,6 +26,8 @@
 %\newcommand{\solnMult}[1]{
 %#1
 %}
+
+%\newcommand{\soln}[1]{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option 3: Handouts, with solutions (may post after class if need be)    %
@@ -35,6 +41,7 @@
 %\red{\textbf{#1}}
 %}
 
+%\newcommand{\soln}[1]{}
 
 %%%%%%%%%%
 % Load style file   %
@@ -47,10 +54,11 @@
 % Cover slide info    %
 %%%%%%%%%%%
 
-\title{Unit 1: Introduction to data \\ Lecture 1: Data Collection + Observational studies \& experiments}
-\author{Statistics 101}
+\title{Unit 1: Introduction to data}
+\subtitle{1. Data Collection +\\Observational studies \& experiments}
+\author{Sta 101 - Spring 2015}
 \date{January 12, 2015}
-\institute{Dr. \c{C}etinkaya-Rundel}
+\institute{Duke University, Department of Statistical Science}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -67,7 +75,43 @@
 \begin{frame}[plain]
 
 \titlepage
+\vfill
+{\scriptsize \webLink{http://stat.duke.edu/~mc301}{Dr. \c{C}etinkaya-Rundel} \hfill Slides posted at  \webLink{http://bitly.com/sta101sp15}{bitly.com/sta101sp15}}
 \addtocounter{framenumber}{-1} 
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Readiness assessment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Readiness assessment}
+
+\begin{itemize}
+
+\item \hl{Individual:} 15 minutes, using clickers
+
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{figures/clicker_self_paced/self_paced_1}
+\hspace{1mm}
+\includegraphics[width=0.3\textwidth]{figures/clicker_self_paced/self_paced_2}
+\hspace{1mm}
+\includegraphics[width=0.3\textwidth]{figures/clicker_self_paced/self_paced_3} \\
+\includegraphics[width=0.3\textwidth]{figures/clicker_self_paced/self_paced_4}
+\hspace{1mm}
+\includegraphics[width=0.3\textwidth]{figures/clicker_self_paced/self_paced_5}
+\end{center}
+
+\begin{itemize}
+
+\item \hl{Team:} 10 minutes, using scratch off sheets (1 per team)
+
+\end{itemize}
 
 \end{frame}
 
@@ -82,7 +126,9 @@
 
 \begin{itemize}
 
-\item 
+\item PS 1 due Wednesday on Sakai, by the beginning of class
+
+\item Lab tomorrow, sit with your teams
 
 \end{itemize}
 
@@ -90,18 +136,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Main points}
+\section{Main ideas}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{1. Use a sample to make inferences about the population}
+\subsection{Use a sample to make inferences about the population}
+\label{mi1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
 \frametitle{1. Use a sample to make inferences about the population}
-
-\setbeamercovered{transparent}
 
 \begin{itemize}[<+->]
 \item Our ultimate goal is to make inferences about populations
@@ -148,16 +193,19 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{2. Ideally use a simple random sample, stratify to control for a variable, and cluster to make sampling easier}
+\subsection{Ideally use a simple random sample, stratify to control for a variable, and cluster to make sampling easier} 
+\label{mi2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
 \frametitle{2. Ideally use a simple random sample, stratify to control for a variable, and cluster to make sampling easier}
 
-\setbeamercovered{transparent}
+\begin{center}
+\textbf{Demo:} \webURL{http://bl.ocks.org/avimoondra}
+\end{center}
 
-\begin{itemize}[<+->]
+\begin{itemize}
 \item \hl{Simple random sampling:} Randomly select cases from the population, each case is equally likely to be selected
 
 \item \hl{Stratified sampling:} First divide the population into homogenous \hl{strata}, then randomly sample from \underline{each} stratum
@@ -165,19 +213,14 @@
 \item e.g. Stratify to control for socio-economic status
 \end{itemize}
 
-\item \hl{Cluster sampling:} \hl{Clusters} are not necessarily homogenous. First randomly sample \underline{a few} clusters, then randomly sample from within them
+\item \hl{Cluster sampling:} First randomly sample \underline{a few} clusters, then randomly sample from within them
 \begin{itemize}
-\item e.g. 
+\item \hl{Clusters} are not necessarily homogenous, but ideally they're not too different from each other
+\item e.g. First sample a few schools from a school district, and then only sample students from within those schools
 \item Usually preferred for economical reasons
 \end{itemize}
 
 \end{itemize}
-
-\pause
-
-\begin{center}
-\textbf{Demo:} \webURL{http://bl.ocks.org/avimoondra}
-\end{center}
 
 \end{frame}
 
@@ -197,22 +240,21 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{3. Sampling schemes can suffer from a variety of biases}
+\subsection{Sampling schemes can suffer from a variety of biases}
+\label{mi3}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
 \frametitle{3. Sampling schemes can suffer from a variety of biases}
 
-\setbeamercovered{transparent}
-
 \begin{itemize}[<+->]
 
-\item \hl{Non-response:} If only a small fraction of the randomly sampled people choose to respond to a survey, the sample may no longer be representative of the population.
+\item \hl{Non-response:} If only a small fraction of the randomly sampled people choose to respond to a survey, the sample may no longer be representative of the population
 
-\item \hl{Voluntary response:} Occurs when the sample consists of people who volunteer to respond because they have strong opinions on the issue since such a sample will also not be representative of the population.
+\item \hl{Voluntary response:} Occurs when the sample consists of people who volunteer to respond because they have strong opinions on the issue since such a sample will also not be representative of the population
 
-\item \hl{Convenience sample:} Individuals who are easily accessible are more likely to be included in the sample.
+\item \hl{Convenience sample:} Individuals who are easily accessible are more likely to be included in the sample
 
 \end{itemize}
 
@@ -247,12 +289,158 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{4. NOTE COMPARING OBS STUDIES AND EXPERIMENTS}
+\subsection{Experiments use random assignment to treatment groups, observational studies do not}
+\label{mi4}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% TO BE COMPLETED
+\begin{frame}
+\frametitle{}
+
+\disc{What type of study is this? What is the scope of inference (causality / generalizability)?}
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{figures/facebook_study}
+\end{center}
+
+\ct{\webURL{http://www.nytimes.com/2014/06/30/technology/facebook-tinkers-with-users-emotions-in-news-feed-experiment-stirring-outcry.html}}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{4. Experiments use random assignment to treatment groups, observational studies do not}
+
+{\small
+\disc{A study that surveyed a random sample of otherwise healthy adults found that people are more likely to get muscle cramps when they're stressed. The study also noted that people drink more coffee and sleep less when they're stressed. What type of study is this?}
+
+\soln{\onslide<2->{Observational}}
+
+\disc{What is the conclusion of the study?}
+
+\soln{\onslide<3->{There is an \hl{association} between increased stress \& muscle cramps.}}
+
+\disc{Can this study be used to conclude a causal relationship between increased stress and muscle cramps?}
+
+\soln{\onslide<4->{Muscle cramps might also be due to increased caffeine consumption or sleeping less -- these are potential \hl{confounding} variables.}}
+}
+
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Four principles of experimental design: randomize, control, block, replicate}
+\label{mi5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{5. Four principles of experimental design:\\ randomize, control, block, replicate}
+
+\begin{itemize}
+\item We would like to design an experiment to investigate if increased stress causes muscle cramps:
+
+\pause
+
+\begin{itemize}
+\item Treatment: increased stress
+\item Control: no or baseline stress
+\end{itemize}
+
+\pause
+
+\item It is suspected that the effect of stress might be different on younger and older people: \hl{block} for age.
+
+\end{itemize}
+
+\pause
+
+\disc{Why is this important? Can you think of other variables to block for?}
+
+\pause
+
+\begin{center}
+\textbf{Demo:} \webURL{http://bl.ocks.org/avimoondra}
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Random sampling helps generalizability, random assignment helps causality}
+\label{mi6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{6. Random sampling helps generalizability,\\ random assignment helps causality}
+
+\begin{center}
+\includegraphics[width=\textwidth]{figures/random_sample_assignment}
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\app{1.1 Scientific studies in the press}
+{{\small Read media coverage of a study titled ``Haters Are Gonna Hate, Study Confirms" and answer the following questions. If the relevant information isn't in the article, refer to the original study.}}
+
+\twocol{0.75}{0.25}{
+{\footnotesize
+\begin{enumerate}
+\item What are the cases?
+\item What is (are) the response variable(s) in this study?
+\item What is (are) the explanatory variable(s) in this study?
+\item Does the study employ random sampling? How about random assignment?
+\item Is this an observational study or an experiment? Explain your reasoning.
+\item Can we establish a causal link between the explanatory and response variables?
+\item Can the results of the study be generalized to the population at large?
+\end{enumerate}
+}
+}
+{
+\begin{center}
+\includegraphics[width=\textwidth]{figures/haters}
+\end{center}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Summary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Summary of main ideas}
+
+\vfill
+
+\begin{enumerate}
+
+\item \nameref{mi1}
+
+\item \nameref{mi2}
+
+\item \nameref{mi3}
+
+\item \nameref{mi4}
+
+\item \nameref{mi5}
+
+\item \nameref{mi6}
+
+\end{enumerate}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}

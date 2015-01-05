@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage[top=2cm,bottom=2cm,left=2cm,right= 2cm]{geometry}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{setspace}            
+\usepackage{amsmath}            
+\usepackage{multirow}    
+\usepackage{changepage}
+\usepackage{lscape}
+\usepackage{ulem}
+\usepackage{multicol}
+\usepackage{dashrule}
+\usepackage[usenames,dvipsnames]{color}       
+\usepackage{enumerate}
+\newcommand{\urlwofont}[1]{\urlstyle{same}\url{#1}}
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newenvironment{choices}{
+\begin{enumerate}[(a)]
+}{\end{enumerate}}
+
+\thispagestyle{empty}
+
+%\newcommand{\soln}[1]{\textcolor{MidnightBlue}{\textit{#1}}}	% delete #1 to get rid of solutions for handouts
+\newcommand{\soln}[1]{ \vspace{2.7cm} }
+
+\newcommand{\solnMult}[1]{\textbf{\textcolor{MidnightBlue}{\textit{#1}}}}	% uncomment for solutions
+%\newcommand{\solnMult}[1]{ #1 }	% uncomment for handouts
+
+%\newcommand{\pts}[1]{ \textbf{{\footnotesize \textcolor{black}{(#1)}}} }	% uncomment for handouts
+\newcommand{\pts}[1]{ \textbf{{\footnotesize \textcolor{red}{(#1)}}} }	% uncomment for handouts
+
+\newcommand{\note}[1]{ \textbf{\textcolor{red}{[#1]}} }	% uncomment for handouts
+
+\definecolor{oiG}{rgb}{.298,.447,.114}
+\definecolor{oiB}{rgb}{.337,.608,.741}
+
+\usepackage[colorlinks=false,pdfborder={0 0 0},urlcolor= oiG,colorlinks=true,linkcolor= oiG, citecolor= oiG,backref=true]{hyperref}
+
+%\usepackage{draftwatermark}
+%\SetWatermarkScale{4}
+
+\usepackage{titlesec}
+\titleformat{\section}
+{\color{oiB}\normalfont\Large\bfseries}
+{\color{oiB}\thesection}{1em}{}
+\titleformat{\subsection}
+{\color{oiB}\normalfont}
+{\color{oiB}\thesubsection}{1em}{}
+
+\newcommand{\ttl}[1]{ \textsc{{\LARGE \textbf{{\color{oiB} #1} } }}}
+
+\newcommand{\tl}[1]{ \textsc{{\large \textbf{{\color{oiB} #1} } }}}
+
+\begin{document}
+
+Dr. \c{C}etinkaya-Rundel \hfill Data Analysis and Statistical Inference \\
+
+\ttl{Application exercise: 6.1 \\
+Estimating and interpreting regression coefficients}
+
+\section*{Driver age and highway sign-reading distance}
+
+In a study of the legibility and visibility of highway signs, a Pennsylvania research firm determined the maximum distance at which each of thirty drivers could read a newly designed sign. The thirty participants in the study ranged in age from 18 to 82 years old. The government agency that funded the research hoped to improve highway safety for older drivers, and wanted to examine the relationship between age and the sign legibility distance.
+
+First, load the dataset:
+
+\begin{verbatim}
+download("http://stat.duke.edu/~mc301/data/vision.csv", destfile = "vision.csv")
+vision = read.csv("vision.csv")
+\end{verbatim}
+
+Then,
+
+\begin{enumerate}
+\item Fit a linear model predicting distance at which drivers can read highway signs (in feet) based on age (in years). Save this model as \texttt{mod}, include the regression output in your answer, and write the linear model. \\
+\textit{Hint:} The function for fitting a linear model in R is \texttt{lm}: \\
+\texttt{mod = lm(y $\sim$ x, data)}
+\item Confirm the values of the slope and the intercept using summary statistics of the data, i.e. means and standard deviations of the variables as well as the correlation between them. \\
+\textit{Hint:} The function for calculating a correlation in R is \texttt{cor}: \\
+\texttt{cor(data\$y, data\$x})
+\item Confirm the t-score given on the regression output for the slope, i.e. show how it can be calculated using other values from the output. \\
+\textit{Hint:} The function for obtaining a summary of a linear model in R is \texttt{summary}: \\\texttt{summary(mod)}
+\item Interpret the p-value for the slope in context of the data.
+\item Based on this p-value, does age appear to be a significant predictor of distance at which drivers can read highway signs?
+\item Construct a 95\% confidence interval for the slope and interpret it.
+\item Calculate the $R^2$ using the ANOVA output for this model. Confirm that this value matches the value of $R^2$ reported in the regression output.
+\textit{Hint:} The function for obtaining an ANOVA summary of a linear model in R is \texttt{anova}: \\\texttt{anova(mod)}
+ \end{enumerate}
+ 
+Include your R code and your write up in your submission. 
+
+If you have questions about the R syntax, refer to \url{https://stat.duke.edu/~mc301/R/Rcommands.pdf} or ask.
+
+%
+
+\end{document}
