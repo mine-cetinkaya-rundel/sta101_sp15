@@ -37,7 +37,7 @@ If you would like to purchase a used clicker from a former student, see the list
 
 * * *
 
-### Exams:
+### <a name="exams"></a>Exams:
 
 * Midterm 1: Wednesday, Feb 18, in class
 * Midterm 2: Wednesday, Mar 25, in class
