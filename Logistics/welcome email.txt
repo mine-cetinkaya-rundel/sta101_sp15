@@ -1,0 +1,35 @@
+# send out ~week before beginning of classes
+
+Welcome to Sta 101: Data Analysis and Statistical Inference!
+
+Hi class,
+
+Happy new year!
+
+The course website is at https://stat.duke.edu/courses/Spring15/sta101.001/, and is still under construction so anticipate further updates between now and the beginning of the semester. All relevant course material will be posted here.
+
+I wanted to send a quick email about the required materials for this course:
+
+1. Textbook: OpenIntro Statistics, 2nd Edition (ISBN: 1478217200):
+    - The textbook is freely available online at http://www.openintro.org/stat/textbook.php. You're welcomed to read on screen or print it out.
+    - If you prefer a paperback version you can buy it at the cost of printing (under $10) on Amazon at http://www.amazon.com/dp/1478217200.
+    - The textbook store will not carry copies of this text.
+
+2. Clicker: i>clicker2 (ISBN: 1429280476):
+    - If you would like to purchase a used clicker from a former student, see the list of students selling their clickers at https://docs.google.com/spreadsheet/ccc?key=0AkY2lFgS9uiDdE1fMkZUZnp6alJDSG9tYlIwTFJWdnc#gid=0. You can contact them directly, or leave your name on the list under "Wants to buy clicker".
+    - The clickers will also be available at the Duke textbook store.
+    - Or you can get them for slightly cheaper on Amazon at http://www.amazon.com/I-Clicker-2-I-Clicker/dp/1429280476).
+    - Note that this is i>clicker2, and not i>clicker+.
+
+* Optional: You will be allowed to use a calculator in this class. There is no restrictions on the type of calculator. A simple calculator that can take square roots should be sufficient.
+
+If you are planning on ordering your materials online I recommend that you do so right away so that they arrive by the time classes begin. Note that Amazon offers free 2-day Prime shipping to students: http://www.amazon.com/gp/student/signup/info.
+
+Lastly, please bring your laptops to class on Wednesday.
+
+Enjoy the last few days of the winter break.
+
+Looking forward to meeting all of you soon.
+
+Best,
+Dr. Çetinkaya-Rundel
