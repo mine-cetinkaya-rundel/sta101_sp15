@@ -70,8 +70,7 @@ Your goal is to submit a completely reproducible project (i.e. if I download you
 Your paper should be written using the markdown template, so that all R code, output, and plots will be automatically included in your write up. In order to download the template for the project type the following in RStudio:
 
 ```{r tidy=FALSE, eval=FALSE}
-download.file("http://stat.duke.edu/courses/Spring15/sta101.001/projects/sta101_prj1.Rmd", destfile = "sta101_prj1.Rmd",  
-              method = "wget")
+download("http://stat.duke.edu/courses/Spring15/sta101.001/post/projects/sta101_prj1.Rmd", destfile = "sta101_prj1.Rmd")
 ```
 
 Your write up should be at most 7 pages (including figures and R code). This is not very long, you will need to be concise. Every sentence should add something to your paper. Note that you can change sizes of figures, hide/reveal code, etc. If you're not sure how to do these ask during class or office hours, or on Piazza.

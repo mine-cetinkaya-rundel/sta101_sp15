@@ -38,7 +38,6 @@
 \usepackage{colortbl}	% allows for color usage in tables
 \usepackage{multirow}	% allows for rows that span multiple rows in tables
 \usepackage{color}		% this package has a variety of color options
-\usepackage{colortbl}
 \usepackage{pgf}
 \usepackage{calc}
 \usepackage{ulem}
@@ -272,12 +271,12 @@
 }
 
 % code
-\newcommand{\code}[1]{
+\newcommand{\Rcode}[1]{
 {\monaco {\footnotesize \textcolor{custom_darkBlue}{#1}}}
 }
 
 % output
-\renewcommand{\output}[1]{
+\newcommand{\Rout}[1]{
 {\monaco {\footnotesize \textcolor{custom_darkGray}{#1}}}
 }
 
