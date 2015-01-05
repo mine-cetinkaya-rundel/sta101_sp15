@@ -4,48 +4,48 @@
 % Option 1: Slides: (comment for handouts)   %
 %%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
-
-% solution stuff
-\newcommand{\solnMult}[1]{
-\only<1>{#1}
-\only<2->{\red{\textbf{#1}}}
-}
-\newcommand{\soln}[1]{\textit{#1}}
+%\documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
+%
+%% solution stuff
+%\newcommand{\solnMult}[1]{
+%\only<1>{#1}
+%\only<2->{\red{\textbf{#1}}}
+%}
+%\newcommand{\soln}[1]{\textit{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option 2: Handouts, without solutions (post before class)    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
-%
-%% handout layout
-%\usepackage{pgfpages}
-%\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
-%
-%% solution stuff
-%\newcommand{\solnMult}[1]{#1}
-%\newcommand{\soln}[1]{}
-%
-%% tell pgfpages how to set page sizes in XeLaTeX
-%\renewcommand\pgfsetupphysicalpagesizes{%
-%    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
-%}
+\documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% handout layout
+\usepackage{pgfpages}
+\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% solution stuff
+\newcommand{\solnMult}[1]{#1}
+\newcommand{\soln}[1]{}
+
+% tell pgfpages how to set page sizes in XeLaTeX
+\renewcommand\pgfsetupphysicalpagesizes{%
+    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option 3: Handouts, with solutions (may post after class if need be)    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
-
+%
 %% handout layout
 %\usepackage{pgfpages}
 %\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
-
+%
 %% solution stuff
 %\newcommand{\solnMult}[1]{\red{\textbf{#1}}}
 %\newcommand{\soln}[1]{\textit{#1}}
-
+%
 %% tell pgfpages how to set page sizes in XeLaTeX
 %\renewcommand\pgfsetupphysicalpagesizes{%
 %    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
