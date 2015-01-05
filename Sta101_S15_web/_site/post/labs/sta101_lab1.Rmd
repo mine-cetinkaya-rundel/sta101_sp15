@@ -1,7 +1,8 @@
 **Author:** [Enter author name here]
 
-**Discussants:** [Enter discussant names here. Remember, these are other team members present in lab.]
+**Discussants:** [Enter discussant names here. Remember, these are other team members **present** in lab.]
 
+* * *
 
 **Load Arbuthnot's data:**
 ```{r}

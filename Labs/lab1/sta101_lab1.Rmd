@@ -1,7 +1,7 @@
 ---
 title: "Lab 1 - Introduction to R and RStudio"
-author: '[Enter team name here]'
-date: '[Enter date here]'
+author: "[Enter team name here]"
+date: "[Enter date here]"
 output:
   html_document:
     highlight: pygments
@@ -10,8 +10,9 @@ output:
 
 **Author:** [Enter author name here]
 
-**Discussants:** [Enter discussant names here. Remember, these are other team members present in lab.]
+**Discussants:** [Enter discussant names here. Remember, these are other team members **present** in lab.]
 
+* * *
 
 **Load Arbuthnot's data:**
 ```{r}
