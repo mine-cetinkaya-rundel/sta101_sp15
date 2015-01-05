@@ -1,0 +1,17 @@
+---
+title: "Sta 101 TA Responsibilities"
+author: "Dr. Cetinkaya-Rundel & Dr. Windle"
+output: html_document
+---
+
+* Problem set & lab grading: Problem sets and labs must be graded within 6 days of the due date, so that students can review feedback before submitting the next assigment.
+    + Note where you take off points
+    + Provide ample feedback
+    + 
+
+* Regrades: You should only consider regrade requests in the case of addition errors of points. All other regrade requests must go through the professor. You can simply direct the students to the professor.
+
+* Weekly meetings: During the weekly meetings we will share experiences from the past week and prepare for the following.
+    + Each week one TA will present the lab. This presentation should take roughly 5-10 minutes and should be a complete rehearsal of how you plan on presenting the lab to the students. Then, also take a few minutes to discuss any potential difficulties that might arise during the lab. The presenter will also be responsible for either creating or reviewing the key for the week's lab.
+    + All TAs must also review the lab and come to the meeting with questions regarding how best to present the lab to the students.
+    + During the meeting you should also be prepared to provide feedback on what students seem to be having an easy/difficult time with.
