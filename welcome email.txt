@@ -1,3 +1,5 @@
+# send out ~week before beginning of classes
+
 Welcome to Sta 101: Data Analysis and Statistical Inference!
 
 Hi class,
