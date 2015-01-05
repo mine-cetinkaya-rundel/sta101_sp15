@@ -9,4 +9,6 @@
 *.DS_Store
 *.Rhistory
 *.key
+*Key.Rmd
+*Key.html
 Private/
