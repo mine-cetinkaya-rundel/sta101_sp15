@@ -38,12 +38,9 @@ $ git merge upstream/master
 ```
 This document <https://help.github.com/articles/syncing-a-fork/> describes the process in more detail.
 
-After you have updated your master branch, you can merge that update to your custom branch.
-```
-$ git merge master custom
-```
-Once those changes are merged, go back to your custom branch to access the personalizations
+After you have updated your master branch, you can merge that update to your custom branch.  Switch to custom and then merge the changes:
 ```
 $ git checkout custom
+$ git merge master
 ```
 
