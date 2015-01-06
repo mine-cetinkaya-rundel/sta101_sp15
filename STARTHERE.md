@@ -1,5 +1,7 @@
 This file provides a brief description of what you will find in this repository and how to create certain documents.
 
+Make sure to read BEFORECLONING.md before proceeding with changes!
+
 # Slides
 
 The slides are written in latex.  There are actually several different ways to compile latex files.  The slides use a special package that enables one to pick the font---a non-trivial task for latex as of 2014.  In order to use that package one must compile the files using xelatex.  Some other packages are incompatible with xelatex, such as inputenc.  So take care when reading error messages to look for such behavior.
