@@ -42,7 +42,7 @@ The course is divided into seven learning units. For each unit a set of learning
 
 See [course info](/info/#grading) for grading breakdown.
 
-Cumulative numerical averages of 90 - 100 are guaranteed at least an A-, 80 - 89 at least a B-, and 70 - 79 at least a C-.  These ranges may be lowered, but they will not be raised, e.g., if everyone has averages in the 90s, everyone gets at least an A-.  The exact ranges for letter grades will be determined after the final exam. The more evidence there is that the class has mastered the material, the more generous the curve will be. 
+Grades will be curved and exact ranges for letter grades will be determined after the final exam (at the end of the course after overall averages have been calculated). As a point of reference, an average of 70 or above is guaranteed a C-. The more evidence there is that the class has mastered the material, the more generous the curve will be.
 
 * * *
 
@@ -90,7 +90,8 @@ The objective of the problem sets is to help you develop a more in-depth underst
 
 You are welcomed, and encouraged, to work with each other on the problems, but you must turn in your own work. If you copy someone else's work, both parties will receive a 0 for the problem set grade as well as being reported to the [Office of Student Conduct](http://www.studentaffairs.duke.edu/conduct). Work submitted on Sakai will be checked for instances of plagiarism prior to being graded.
 
-**Submittion instructions:** You will turn in your problem sets on Sakai using one of the following methods:
+**Submission instructions:** You will turn in your problem sets on Sakai using one of the following methods:
+
 * Type your answers in the text box on Sakai and attach any plots/images as separate files, properly named, or
 * Attach a PDF (**not** Word, Google Doc, etc.) of your answers
 If you choose the former, you might want to also maintain a copy of your work in a word processor. No other formats will be accepted. It is your responsibility to follow these instructions. If the TAs cannot view your work, or read your handwriting, you will lose points accordingly.

@@ -1,5 +1,6 @@
 ---
 title: "Sta 101 TA Responsibilities"
+subtitle: "Spring 2015"
 author: "Dr. Cetinkaya-Rundel & Dr. Windle"
 output: html_document
 ---
