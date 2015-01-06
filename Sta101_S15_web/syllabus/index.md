@@ -36,9 +36,11 @@ The course goals are as follows:
 
 The course is divided into seven learning units. For each unit a set of learning objectives and required and suggested readings, videos, etc. will be posted on the course website. You are expected to watch the videos and/or complete the readings and familiarize yourselves with the learning objectives. We will begin the unit with a readiness assessment: 10 multiple choice questions that you answer using your clickers in class. You will then re-take this assessment in teams. The rest of the class time will be split between discussion of the material and application exercises that you'll complete in teams. Slides and other relevant materials for each class and lab will be available on the
 <!-- REPLACE REPLACE -->
-[schedule](https://stat.duke.edu/courses/Spring15/sta101.001/) page before each class. Videos and other relevant prep materials for each unit will be available on the
+[schedule](https://stat.duke.edu/courses/Spring15/sta101.001/)
+page before each class. Videos and other relevant prep materials for each unit will be available on the
 <!-- REPLACE REPLACE -->
-[resources](https://stat.duke.edu/courses/Spring15/sta101.001/resources/) page. Within each unit you will complement your learning with problem sets and labs, and wrap up each unit with a performance assessment.
+[resources](https://stat.duke.edu/courses/Spring15/sta101.001/resources/)
+page. Within each unit you will complement your learning with problem sets and labs, and wrap up each unit with a performance assessment.
 
 * * *
 
@@ -46,7 +48,7 @@ The course is divided into seven learning units. For each unit a set of learning
 
 See [course info](/info/#grading) for grading breakdown.
 
-Cumulative numerical averages of 90 - 100 are guaranteed at least an A-, 80 - 89 at least a B-, and 70 - 79 at least a C-.  These ranges may be lowered, but they will not be raised, e.g., if everyone has averages in the 90s, everyone gets at least an A-.  The exact ranges for letter grades will be determined after the final exam. The more evidence there is that the class has mastered the material, the more generous the curve will be. 
+Grades will be curved and exact ranges for letter grades will be determined after the final exam (at the end of the course after overall averages have been calculated). As a point of reference, an average of 70 or above is guaranteed a C-. The more evidence there is that the class has mastered the material, the more generous the curve will be.
 
 * * *
 
@@ -94,7 +96,8 @@ The objective of the problem sets is to help you develop a more in-depth underst
 
 You are welcomed, and encouraged, to work with each other on the problems, but you must turn in your own work. If you copy someone else's work, both parties will receive a 0 for the problem set grade as well as being reported to the [Office of Student Conduct](http://www.studentaffairs.duke.edu/conduct). Work submitted on Sakai will be checked for instances of plagiarism prior to being graded.
 
-**Submittion instructions:** You will turn in your problem sets on Sakai using one of the following methods:
+**Submission instructions:** You will turn in your problem sets on Sakai using one of the following methods:
+
 * Type your answers in the text box on Sakai and attach any plots/images as separate files, properly named, or
 * Attach a PDF (**not** Word, Google Doc, etc.) of your answers
 If you choose the former, you might want to also maintain a copy of your work in a word processor. No other formats will be accepted. It is your responsibility to follow these instructions. If the TAs cannot view your work, or read your handwriting, you will lose points accordingly.
@@ -201,3 +204,7 @@ Students who miss graded work due to a scheduled varsity trip, religious holiday
 * Clickers may not be shared, and the clicker registered to a person may only be used by that person.  Failure to abide by this will result in a 0 clicker grade for everyone involved.
 
 * Use of disallowed materials (textbook, class notes, web references, any form of communication with classmates or other persons, etc.) during exams will not be tolerated. This will result in a 0 on the exam for all students involved, possible failure of the course, and will be reported to the [Office of Student Conduct](http://www.studentaffairs.duke.edu/conduct). If you have any questions about whether something is or is not allowed, ask me beforehand.
+
+* * *
+
+<a href="../post/sta101s15.pdf" download><img src="pdf.jpg" height="42" width="42"></a> Click on the icon to download printer-friendly PDF of the syllabus.
