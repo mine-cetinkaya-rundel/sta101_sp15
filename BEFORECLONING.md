@@ -32,8 +32,9 @@ You can now make changes to your custom repository, like adjusting the schedule 
 
 Sometimes you might want to make a change that Mine would want to incorporate into her repository.  To do that checkout the master branch and make your changes.  You can then do a pull request if you have set up your forked branch properly.  See <https://help.github.com/articles/using-pull-requests/>.
 
-Conversely, if Mine makes changes to her master branch, then you can incorporate those changes.  Checkout the master branch and then do
+Conversely, if Mine makes changes to her master branch, then you can incorporate those changes.  *Checkout the master branch* and then do
 ```
+$ git fetch upstream
 $ git merge upstream/master
 ```
 This document <https://help.github.com/articles/syncing-a-fork/> describes the process in more detail.
