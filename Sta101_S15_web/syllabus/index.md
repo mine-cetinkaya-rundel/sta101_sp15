@@ -34,7 +34,13 @@ The course goals are as follows:
 
 ### Course structure:
 
-The course is divided into seven learning units. For each unit a set of learning objectives and required and suggested readings, videos, etc. will be posted on the course website. You are expected to watch the videos and/or complete the readings and familiarize yourselves with the learning objectives. We will begin the unit with a readiness assessment: 10 multiple choice questions that you answer using your clickers in class. You will then re-take this assessment in teams. The rest of the class time will be split between discussion of the material and application exercises that you'll complete in teams. Slides and other relevant materials for each class and lab will be available on the [schedule](https://stat.duke.edu/courses/Spring15/sta101.001/) page before each class. Videos and other relevant prep materials for each unit will be available on the [resources](https://stat.duke.edu/courses/Spring15/sta101.001/resources/) page. Within each unit you will complement your learning with problem sets and labs, and wrap up each unit with a performance assessment.
+The course is divided into seven learning units. For each unit a set of learning objectives and required and suggested readings, videos, etc. will be posted on the course website. You are expected to watch the videos and/or complete the readings and familiarize yourselves with the learning objectives. We will begin the unit with a readiness assessment: 10 multiple choice questions that you answer using your clickers in class. You will then re-take this assessment in teams. The rest of the class time will be split between discussion of the material and application exercises that you'll complete in teams. Slides and other relevant materials for each class and lab will be available on the
+<!-- REPLACE REPLACE -->
+[schedule](https://stat.duke.edu/courses/Spring15/sta101.001/)
+page before each class. Videos and other relevant prep materials for each unit will be available on the
+<!-- REPLACE REPLACE -->
+[resources](https://stat.duke.edu/courses/Spring15/sta101.001/resources/)
+page. Within each unit you will complement your learning with problem sets and labs, and wrap up each unit with a performance assessment.
 
 * * *
 
@@ -150,7 +156,10 @@ You are allowed to use one sheet of notes (``cheat sheet") to the midterm and th
 
 I will regularly send announcements by email, please make sure to check your email  daily.
 
-Any non-personal questions related to the material covered in class, problem sets, labs, projects, etc. should be posted on [Piazza forum](https://sakai.duke.edu/portal/site/ba0d1c18-ba55-473f-9d70-b6a1f9559bbe/page/08b2daf5-e24e-4401-97a1-ba4b8839895a#). Before posting a new question please make sure to check if your question has already been answered. The TAs and myself will be answering questions on the forum daily and all students are expected to answer questions as well. Please use informative titles for your posts.
+Any non-personal questions related to the material covered in class, problem sets, labs, projects, etc. should be posted on
+<!-- REPLACE REPLACE -->
+[Piazza forum](https://sakai.duke.edu/portal/site/ba0d1c18-ba55-473f-9d70-b6a1f9559bbe/page/08b2daf5-e24e-4401-97a1-ba4b8839895a#).
+Before posting a new question please make sure to check if your question has already been answered. The TAs and myself will be answering questions on the forum daily and all students are expected to answer questions as well. Please use informative titles for your posts.
 
 Note that it is more efficient to answer most statistical questions ``in person" so make use of OH.
 
