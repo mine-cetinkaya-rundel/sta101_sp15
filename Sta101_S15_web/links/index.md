@@ -17,6 +17,7 @@ title: Links
 * Probability calculations:
     * [Probability tables](https://www.openintro.org/download.php?file=os2_prob_tables&referrer=/stat/textbook.php)
     * [Distribution calculator applet](https://bitly.com/dist_calc)
+* [Class recordings](http://trinity.capture.duke.edu/Panopto/Pages/Sessions/List.aspx?folderID=0c75737e-d9c0-418a-93f9-9976fa3b05c0​) via DukeCapture
 * [R commands](https://stat.duke.edu/~mc301/R/Rcommands.html): List of R commands commonly used in this course
 
 
