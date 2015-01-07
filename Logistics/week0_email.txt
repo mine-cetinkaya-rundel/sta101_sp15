@@ -4,7 +4,7 @@ Subject: To do items for this week
 
 Hi class,
 
-Here are your to do items for this week. It looks like a lot, but each one is pretty short (except for the pretest for which you should spare about 40 minutes).
+Here are your to do items for this week, we'll talk more about them in class today.
 
 - Download or purchase the textbook:
     - Download: https://www.openintro.org/stat/textbook.php?stat_book=os
@@ -18,24 +18,31 @@ Here are your to do items for this week. It looks like a lot, but each one is pr
 
 - Complete the pretest (do your best, but don't worry if you don't know the answers, it's meant to be a *pre*test):
     - Deadline: 11:59pm on Friday, Jan 9
+    - Set aside ~40 minutes for this
     - Link to pretest: https://apps3.cehd.umn.edu/artist/user/scale_select.html
     - Access code: ACCESS CODE =  NDN6862JJJ
 
 - Complete the "Getting to know you survey"
     - Deadline: 11:59pm on Friday, Jan 9
-    - Link to survey: https://sakai.duke.edu/samigo-app/servlet/Login?id=6fa7ebf3-01af-42a6-91ba-3e813d3901221420471705847
+    - Set aside ~15 minutes for this
+    - Link to survey: Tests & Quizzes https://sakai.duke.edu/portal/site/ba0d1c18-ba55-473f-9d70-b6a1f9559bbe/page/bfd87236-13e3-41ac-88c4-725eb4d2c35d
 
 - Take the performance assessment (PA 0 - on course policies etc., not graded, for practice with the quiz module on Sakai):
     - Deadline: 11:59pm on Friday, Jan 9
-    - Link to PA0: [insert link]
+    - Set aside ~15 minutes for this (though you have 30 minutes to complete it)
+    - Link to PA0: Tests & Quizzes https://sakai.duke.edu/portal/site/ba0d1c18-ba55-473f-9d70-b6a1f9559bbe/page/bfd87236-13e3-41ac-88c4-725eb4d2c35d
 
 - Read the syllabus and let me know if you have any questions
     - Link to syllabus: https://stat.duke.edu/courses/Spring15/sta101.001/syllabus/
 
-- Start reviewing the resources for Unit 1 - readiness assessment on Monday (not graded, for practice):
+- Watch/Read/Review the resources for Unit 1
+    - Deadline: 1:25pm on Monday, Jan 12
+    - Reviewing the material will take some time so plan ahead.
+    - There is a readiness assessment on Monday (not graded, for practice) covering Unit 1
+    - Make sure to make use of the learning objectives
     - Link to resources: https://stat.duke.edu/courses/Spring15/sta101.001/resources/
 
-If you have any questions, post on Piazza!
+If you have any questions, post on Piazza! Log onto Sakai and then click Piazza in the menubar on the left hand side.
 
 Best,
 Dr. Cetinkaya-Rundel
