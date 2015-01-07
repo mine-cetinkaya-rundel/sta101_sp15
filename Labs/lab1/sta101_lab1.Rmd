@@ -1,13 +1,3 @@
----
-title: "Lab 1 - Introduction to R and RStudio"
-author: "[Enter team name here]"
-date: "[Enter date here]"
-output:
-  html_document:
-    highlight: pygments
-    theme: cerulean
----
-
 **Author:** [Enter author name here]
 
 **Discussants:** [Enter discussant names here. Remember, these are other team members **present** in lab.]
@@ -20,7 +10,7 @@ source("http://www.openintro.org/stat/data/arbuthnot.R")
 ```
 
 #### Exercise 1: 
-
+jkshdkjhkjhfskjh
 ```{r}
 # code for Exercise 1 is already entered below as an example
 arbuthnot$girls
@@ -31,6 +21,12 @@ plot(arbuthnot$girls)
 
 [Enter your response for Exercise 2 here.]
 
+```{r}
+plot(x = arbuthnot$year, y = arbuthnot$boys)
+x
+```
+
+x
 #### Exercise 3:
 
 
