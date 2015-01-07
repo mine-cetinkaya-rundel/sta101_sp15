@@ -110,7 +110,7 @@ All assignments will be time stamped and late work will be penalized based on th
 
 The objective of the labs is to give you hands on experience with data analysis using modern statistical software. The labs will also provide you with tools that you will need to complete the projects successfully. We will use a statistical analysis package called RStudio, which is a front end for the R statistical language.
 
-In class your TAs will give a brief overview of the lab and learning goals, and guide you through some of the exercises. You will start working on the lab during the class session, but note that the labs are designed to take more than just the class time, so you will meet up with your team at a later time to finish the lab before the due date (which will be the following lab session).
+In class your TAs will give a brief overview of the lab and learning goals, and guide you through some of the exercises. You will start working on the lab during the class session, but note that the labs are designed to take more than just the class time, so you will meet up with your team at a later time to finish the lab before the due date (which will be the following lab session). In order to get credit for a lab report, you must be in the lab session on the day that lab is introduced.
 
 *Lowest score will be dropped.*
 
