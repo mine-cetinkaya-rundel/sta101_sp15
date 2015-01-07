@@ -206,5 +206,7 @@ Students who miss graded work due to a scheduled varsity trip, religious holiday
 * Use of disallowed materials (textbook, class notes, web references, any form of communication with classmates or other persons, etc.) during exams will not be tolerated. This will result in a 0 on the exam for all students involved, possible failure of the course, and will be reported to the [Office of Student Conduct](http://www.studentaffairs.duke.edu/conduct). If you have any questions about whether something is or is not allowed, ask me beforehand.
 
 * * *
-
-<a href="../post/sta101s15.pdf" download><img src="pdf.jpg" height="42" width="42"></a> Click on the icon to download printer-friendly PDF of the syllabus.
+<!-- REPLACE REPLACE -->
+<a href="../post/sta101s15.pdf" download>
+<!-- REPLACE REPLACE -->
+<img src="../syllabus/pdf.jpg" height="30" width="30"></a> <font size="2">Click on the icon to download printer-friendly PDF of the syllabus.</font>
