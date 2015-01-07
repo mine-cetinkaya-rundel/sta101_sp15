@@ -48,7 +48,7 @@ page. Within each unit you will complement your learning with problem sets and l
 
 See [course info](/info/#grading) for grading breakdown.
 
-Grades will be curved and exact ranges for letter grades will be determined after the final exam (at the end of the course after overall averages have been calculated). As a point of reference, an average of 70 or above is guaranteed a C-. The more evidence there is that the class has mastered the material, the more generous the curve will be.
+Grades may be curved at the end of the semester. Cumulative numerical averages of 90 - 100 are guaranteed at least an A-, 80 - 89 at least a B-, and 70 - 79 at least a C-, however the exact ranges for letter grades will be determined after the final exam. The more evidence there is that the class has mastered the material, the more generous the curve will be.
 
 * * *
 
