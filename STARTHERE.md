@@ -106,20 +106,21 @@ First, ask yourself if you could grant the request to everyone in class.  If you
 
 Second, tell the student that any requests they make need to be passed through their academic dean.  Their academic dean is supposed to be apprised of personal reaons that might justify a student missing class.  If they are unwilling to go through their dean, then it isn't a legitimate request.
 
-# Text Editors
+* * *
+
+# Advanced Topics
+
+## Text Editors
 
 If multiple people are contributing to the repository it is helpful to use the same text editor.  The tex files in this repository were created using TeXShop.  TeXShop wraps lines.
 
 In contrast, Emacs can deal with long lines in two ways.  It breaks them or wraps them.  You can toggle these behaviors by doing M-X and auto-fill-mode or visual-line-mode respectively.  Most files in this repository are created using the visual-line-mode.
 
-* * *
-
-# Advanced Topics
+To get Emacs to run XeLaTeX see <http://tex.stackexchange.com/questions/21200/auctex-and-xetex>.
 
 ## Merging
 
-You can use Emacs to manually merge two files.  This might be useful if you have
-a custom file but want to incorporate changes made to the default file.
+You can use Emacs to manually merge two files.  This might be useful if you have a custom file but want to incorporate changes made to the default file.
 
 This
 [page](https://www.gnu.org/software/emacs/manual/html_node/emacs/Overview-of-Emerge.html#Overview-of-Emerge)
