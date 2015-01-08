@@ -9,7 +9,7 @@
 
 ## $ Rscript 00_pull_first_names.R --file coursegradefile.csv > firstnames.csv
 
-## Then open up firstnames.txt using a spreadsheet application and paste them
+## Then open up firstnames.csv using a spreadsheet application and paste them
 ## into 00_CountFirstNames.ods to count the instances of the popular names.
 
 ## You can print off a copy of the silver-feature-*.png files in the figures
