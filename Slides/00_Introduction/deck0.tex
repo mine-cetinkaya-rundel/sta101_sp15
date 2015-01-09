@@ -1,4 +1,12 @@
+% -*- TeX-engine: xetex; -*-
 % Compile with XeLaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% To do before class
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Send the Logistics/Week0Annoucnement (the night before).
+% Send an email reminding students to bring a charged computer (the night before).
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Option 1: Slides: (comment for handouts)   %
@@ -17,45 +25,71 @@
 % Option 2: Handouts, without solutions (post before class)    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
-%
-%% handout layout
-%\usepackage{pgfpages}
-%\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
-%
-%% solution stuff
-%\newcommand{\solnMult}[1]{#1}
-%\newcommand{\soln}[1]{}
-%
-%% tell pgfpages how to set page sizes in XeLaTeX
-%\renewcommand\pgfsetupphysicalpagesizes{%
-%    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
-%}
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % This breaks things for me for some reason.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% %\renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option 3: Handouts, with solutions (may post after class if need be)    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
 
-%% handout layout
-%\usepackage{pgfpages}
-%\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
 
-%% solution stuff
-%\newcommand{\solnMult}[1]{\red{\textbf{#1}}}
-%\newcommand{\soln}[1]{\textit{#1}}
+% % solution stuff
+% \newcommand{\solnMult}[1]{\red{\textbf{#1}}}
+% \newcommand{\soln}[1]{\textit{#1}}
 
-%% tell pgfpages how to set page sizes in XeLaTeX
-%\renewcommand\pgfsetupphysicalpagesizes{%
-%    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
-%}
+% % % This breaks things for me for some reason.
+% % % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% % }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 4: Notes Only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% % See http://tex.stackexchange.com/questions/114219/add-notes-to-latex-beamer
+% \documentclass[10pt,containsverbatim,xcolor=xelatex,dvipsnames,table,notes=only]{beamer}
+
+% % handout layout
+% % \usepackage{pgfpages}
+% % \pgfpagesuselayout{1 on 1}[letterpaper, landscape, border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % Having a problem with this.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
 
 %%%%%%%%%%
-% Load style file   %
+% Load style file, defaults  %
 %%%%%%%%%%
 
 \input{../lec_style.tex}
+\input{../definitions_default.tex}
+% ALT ALT
+% \input{../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -65,6 +99,8 @@
 \subtitle{Introduction}
 \author{Sta 101 - Spring 2015}
 \date{January 7, 2015}
+% ALT ALT
+% \date{January 8, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 
@@ -83,7 +119,7 @@
 
 \titlepage
 \vfill
-{\scriptsize \webLink{http://stat.duke.edu/~mc301}{Dr. \c{C}etinkaya-Rundel} \hfill Slides posted at  \webLink{http://bitly.com/sta101sp15}{bitly.com/sta101sp15}}
+{\scriptsize \webLink{\PersonalSite}{Dr. \LastName{}} \hfill Slides posted at  \webLink{\CourseSite}{\CourseSite}}
 \addtocounter{framenumber}{-1} 
 
 \end{frame}
@@ -108,17 +144,30 @@
 
 \begin{itemize}
 
-\item Professor: Dr. Mine \c{C}etinkaya-Rundel - \mail{mine@stat.duke.edu}
+\item Professor: Dr. \FirstName{} \LastName{} - \mail{\Email{}}
 
 \item TAs:
 \begin{itemize}
-\item Anthony Weishampel
-\item Radhika Anand
-\item Jialiang Mao
-\item Christine Chai
+\item \TAA{}
+\item \TAB{}
+\item \TAC{}
+\item \TAD{}
 \end{itemize}
 
 \end{itemize}
+
+%---NOTE---%
+\note{
+
+  \begin{itemize}
+    \item State your name and title.
+    \item State what your research interests are.
+    \item State any other useful/interesting information about yourself.
+    \item Introduce the TAs.
+    \item Mention that you sent an email describing the materials and list of to-dos.
+  \end{itemize}
+
+}
 
 \end{frame}
 
@@ -134,8 +183,23 @@
 \item i$>$clicker2 - See Google Doc for a list of students selling used clickers (link emailed)
 
 \item (optional) Calculator
+% ALT ALT
+% \item Calculator (just something that can do square roots)
 
 \end{itemize}
+
+%---Note---%
+\note{
+
+  \begin{itemize}
+  \item Mention book
+  \item SHOW Clicker.  iClicker2 not another version.
+  \item Google doc for used clickers on syllabus.
+  \item Make sure to take your name off the list if you purchase a clicker.
+  \item Calculator: can get for under \$6 on Amazon (prime even).
+  \end{itemize}
+
+}
 
 \end{frame}
 
@@ -148,10 +212,23 @@
 
 \centering
 {\Large 
-\webURL{http://bit.ly/sta101sp15}
+\webURL{\CourseSite}
 }
 
 \vfill
+
+%---Note---%
+\note{
+
+  \begin{itemize}
+  \item Please bring a computer: use for in-class work.
+  \item You can read notes.
+  \item Okay to use for class-related purposes, not for surfing the web.
+  \item If you watch a cat video, it will draw the attention of those around you.  That is distracting.  And I will know...
+  \item If not on task I or TA will tap you on your shoulder and ask you to stop.
+  \end{itemize}
+
+}
 
 \end{frame}
 
@@ -185,10 +262,14 @@ Final 								& 25\%
 \item Grades may be curved at the end of the semester. 
 
 \item Cumulative numerical averages of 90 - 100 are guaranteed at least an A-, 80 - 89 at least a B-, and 70 - 79 at least a C-, however the exact ranges for letter grades will be determined after the final exam. 
+% ALT ALT
+% \item The exact ranges for letter grades will be determined after the final exam.
 
 \item The more evidence there is that the class has mastered the material, the more generous the curve will be.
 
 \end{itemize}
+
+
 
 \end{frame}
 
@@ -212,6 +293,11 @@ Final 								& 25\%
 \item Critique data-based claims and evaluate data-based decisions.
 \item Complete two research projects: one that focuses on statistical inference and one that focuses on modeling. 
 \end{itemize}
+}
+
+%---Note---&
+\note{
+  Need to add note.
 }
 
 \end{frame}
@@ -242,6 +328,18 @@ Final 								& 25\%
 \end{itemize}
 }
 
+%---Note---%
+\note{
+  \begin{itemize}
+    \item We can think of breaking this down into chunks.
+      \begin{itemize}
+        \item Pictures and other summaries of data.
+        \item Mathematics behind statistics.
+        \item A common framework for rigorously answering research questions.
+      \end{itemize}
+  \end{itemize}
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -261,6 +359,14 @@ Final 								& 25\%
 \item Complement your learning with problem sets
 \item Wrap up a unit with a performance assessment
 \end{itemize}
+
+%---Note---%
+\note{
+  \begin{itemize}
+    \item Go over process from start to finish.
+    \item In the remaining classes I will talk less and you will do more.
+  \end{itemize}
+}
 
 \end{frame}
 
@@ -285,6 +391,19 @@ Final 								& 25\%
 
 \end{itemize}
 
+%---Note---%
+\note{
+
+  \begin{itemize}
+  \item Describe how teams are chosen.
+  \item \; \; We try to find commonalities: year, age, location.
+  \item \; \; And complementaries: calculus experience, statistics experience, programming experience.
+  \item Rely on team members, but make sure on individual assignments to try first before asking for help.
+  \item Peer evaluations.
+  \end{itemize}
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -306,10 +425,20 @@ Final 								& 25\%
 \item Register your clicker
 \begin{itemize}
 \item \webURL{https://www1.iclicker.com/register-clicker} (Student ID = Net ID)
-\item grading starts Mon, Jan 26
+\item grading starts \ClickerRegistrationDD{}
 \end{itemize}
 
 \end{itemize}
+
+%---Note---%
+\note{
+  \begin{itemize}
+  \item Go over how they will be used for readiness assessments.
+  \item Used to answer questions in lecture
+  \item I will use them to figure out if we need to talk more about something.
+  \item Register your clicker - quick demo?
+  \end{itemize}
+}
 
 \end{frame}
 
@@ -327,6 +456,11 @@ Final 								& 25\%
 \item Might sometimes call on you during the class discussion, however it is your responsibility to be an active participant without being called on
 
 \end{itemize}
+
+%---Note---%
+\note{
+  You may get called on.
+}
 
 \end{frame}
 
@@ -357,6 +491,16 @@ Final 								& 25\%
 
 \end{itemize}
 
+%---Note---%
+\note{
+  \begin{itemize}
+  \item Do not submit a word document.
+  \item Save often and keep a backup of your work.
+  \item Try to do the problems on your own first before talking to others.
+  \item STINF: 24 hour extension.
+  \end{itemize}
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -384,7 +528,7 @@ Final 								& 25\%
 \begin{itemize}
     \setlength{\itemsep}{0pt}
     \setlength{\parskip}{0pt}
-\item Go to the course website, \webURL{http://bit.ly/sta101sp15}, click on the RStudio link (top right)
+\item Go to the course website, \webURL{\CourseSite}, click on the RStudio link (top right)
 \begin{itemize}
 \item {\footnotesize Make sure you're on the Duke network, not visitor}
 \end{itemize}
@@ -392,6 +536,27 @@ Final 								& 25\%
 \item In the Console, generate a random number between 1 and 5, and introduce yourself to that many people sitting around you:
 \Rcode{sample(1:5, size = 1)}
 \end{itemize}
+}
+
+%---Note---%
+\note{
+  \begin{itemize}
+  \item Reiterate that you MUST be in lab to get credit.
+  \end{itemize}
+
+  \begin{itemize}
+  \item Go to course website (create a clicker question?)
+  \item Click on Rstudio.
+  \item We may crash the system.  Post on Piazza if this ever occurs and I will try to take care of it.
+  \item Explain what is going on in Rstudio a bit.
+  \item You tell R what to do.  It will yell at your crypticall if you get it wrong. (CASE/spelling).
+  \item Sample: %\texttt{sample(1:5, size=1)}
+    \begin{itemize}
+    \item Does everyone get the same answer?
+    \item No? Why not?  (Because it is random)
+    \end{itemize}
+  \item Take 2 minutes to introduce yourself.
+  \end{itemize}
 }
 
 \end{frame}
@@ -417,6 +582,18 @@ Final 								& 25\%
 
 \end{itemize}
 
+%---Note---%
+\note{
+  \begin{itemize}
+    \item The questions aren't intended to be super difficult, but you will need to study.
+    \item We have one coming up this Tuesday.  Make sure to study to get an idea of what you need to do for the future RA.
+    \item Watching a set of videos is roughly 1.5-2 hours.
+    \item Get you clickers by then so you can practice using them.
+    \item Look at the learning objectives.
+    \item Questions will pop-up to check in, but not recorded.
+  \end{itemize}
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -435,6 +612,11 @@ Final 								& 25\%
 \item Lowest PA score will be dropped
 
 \end{itemize}
+
+%---Note---%
+\note{
+Unlike RA, this is trying to gauge if you have mastered the material.
+}
 
 \end{frame}
 
@@ -455,6 +637,15 @@ Final 								& 25\%
 
 \end{itemize}
 
+%---Note---%
+\note{
+  \begin{itemize}
+    \item The first project you will be coming up with a research question and data set.
+    \item Keep an eye out for interesting data.
+    \item The second project you will work on data set provided by me.
+  \end{itemize}
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -467,9 +658,9 @@ Final 								& 25\%
 \renewcommand\arraystretch{1.25}
 {\footnotesize
 \begin{tabular}{ r | l }
-Midterm 1								& Wed, Feb 18 \\    
-Midterm 2 							& Wed, Mar 25 \\    
-Final 								& Sat, May 2 (2-5pm)     
+Midterm 1								& \ExamADate \\    
+Midterm 2 							& \ExamBDate \\    
+Final 								& \FinalDate   
 \end{tabular}
 }
 \end{center}
@@ -483,6 +674,15 @@ Final 								& Sat, May 2 (2-5pm)
 \item Calculator + cheat sheet allowed
 
 \end{itemize}
+
+%---Note---%
+\note{
+  \begin{itemize}
+    \item Cousins aren't allowed to have weddings, brother is not allowed to graduate.
+    \item If medical issues come up, you need to work through your dean.
+    \item Final on Mon. Apr. 27, 9am-noon.
+  \end{itemize}
+}
 
 \end{frame}
 
@@ -509,6 +709,29 @@ Final 								& Sat, May 2 (2-5pm)
 
 \end{itemize}
 
+%---Notes---%
+\note{
+
+  \begin{itemize}
+    \item Regularly check your email.  I will be sending out important communications.
+    \item All content related questions should go on piazza.
+    \item Title your question informatively.  ``Confused'' or ``Question'' is not informative.
+  \end{itemize}
+  
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Office Hours}
+
+\begin{itemize}
+\item Prof. \LastName{}: \OfficeHours{}
+\item TAs: TBD
+\end{itemize}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -521,6 +744,11 @@ Students with disabilities who believe they may need accommodations in this clas
 \vfill
 
 \ct{\webURL{http://www.access.duke.edu/students/requesting/index.php}}
+
+%---Note---%
+\note{
+  If you need extra time contact the student disability access office immediately so that they can contact me.
+}
 
 \end{frame}
 
@@ -541,7 +769,7 @@ Students with disabilities who believe they may need accommodations in this clas
 \item later than next day: lose all points
 \end{itemize}
 
-\item Late work policy for projects: 10\% off for each day late
+\item Late work policy for projects: 20\% off for each day late
 
 \end{itemize}
 
@@ -583,6 +811,11 @@ Regrade requests must be made \hl{within 3 days} of when the assignment is retur
 
 \end{itemize}
 
+%---Note---%
+\note{
+  If you have any issue come up, you must go through your dean.
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -597,6 +830,11 @@ Regrade requests must be made \hl{within 3 days} of when the assignment is retur
 \item Use of disallowed materials (textbook, class notes, web references, any form of communication with classmates or other persons, etc.) during exams will not be tolerated
 
 \end{itemize}
+
+%---Note---%
+\note{
+  You get three days to miss your clicker particiption.
+}
 
 \end{frame}
 
@@ -662,9 +900,11 @@ Some examples:
 \item \webURL{https://www1.iclicker.com/register-clicker} (Student ID = Net ID)
 \end{itemize}
 
-\item Complete the following by Friday, Jan 9, 11:59pm
+\item Complete the following by \GettingToKnowYouDD{}
 \begin{itemize}
 \item Pretest
+% ALT ALT
+% \item Pretest ({\color{red}Due Sunday at 11:59pm})
 \item Getting to know you survey
 \item Performance assessment 0 (on course policies etc., not graded, for practice with the quiz module on Sakai)
 \end{itemize}
@@ -674,6 +914,11 @@ Some examples:
 \item Watch/Read/Review the resources for Unit 1
 
 \end{itemize}
+
+%---Note---%
+\note{
+  Go over to do.
+}
 
 \end{frame}
 
@@ -696,6 +941,16 @@ Some examples:
 
 \end{itemize}
 
+%---Note---%
+\note{
+
+  \begin{itemize}
+    \item Go through points.
+    \item ... so Blue Iny probably isn't on the list.
+  \end{itemize}
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -708,6 +963,19 @@ Some examples:
 \end{center}
 
 \ct{\webURL{http://www.ssa.gov/oact/babynames}}
+
+%---Note---%
+\note{
+
+  \begin{itemize}
+    \item Top Baby names of 2013
+    \item Go over female names.
+    \item Ask if there is anyone with these names.
+    \item Do the same for men.
+    \item Tell them that they are all ahead of the fashion curve for names.
+  \end{itemize}
+
+}
 
 \end{frame}
 
@@ -722,6 +990,19 @@ Some examples:
 
 \ct{\webURL{http://www.babynamewizard.com/voyager}}
 
+%---Note---%
+\note{
+
+  \begin{itemize}
+    \item My friend that created these slides is named Mine.
+    \item Closest thing is Minerva.
+    \item Really popular back in the day.  Now there are none.
+    \item Does anyone here know a Minerva?
+    \item If you want to child to have a unique name, think about Minerva.
+  \end{itemize}
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -734,6 +1015,22 @@ Some examples:
 \end{center}
 
 \ct{\webURL{http://fivethirtyeight.com/features/how-to-tell-someones-age-when-all-you-know-is-her-name}}
+
+%---Note---%
+\note{
+\small
+
+  \begin{itemize}
+    \item Name is just one piece of information.
+    \item It is often interesting to look at two pieces of information together. What if we combine name and year?
+    \item Is anyone familiar with 538?  What is it?
+    \item Nate Silver started this blog back in the 2008 election of Obama vs. McCain.  538 refers to the number of votes in the electoral college.  Since then it has branched out into all sorts of ``data news''.
+    \item This article... How to Tell Someone's age... tries to figure out what we can tell about someone's age, given their name.
+    \item If I told you that you were about to meet Gertrude, what would you guess her age to be?  60, 70?
+    \item You can use SSD data and actuarial tables, which tell you about how long someone is going to live to figure out the distribution of ages for a given name.
+  \end{itemize}
+
+}
 
 \end{frame}
 
@@ -752,6 +1049,29 @@ Some examples:
 \includegraphics[width=0.7\textwidth]{figures/popnamesclass538_female}
 \end{center}
 
+%---Note---%
+\note{
+\small
+
+  \begin{itemize}
+  \item Here we have a plot of names, their interquartile ranges, and the their medians.
+  \item Basically we have a data set in which each observation is the name of an individual and her age.
+  \item Does anyone know what a percentile is?
+  \item There are actually a couple definitions of percentile.
+  \item All of them ultimately have to do with expressing how many observations in our data set our below a certain threshold.
+  \item We take all the Anna's and order them by age from youngest to oldest.
+  \item We then look at the cutoff age for a certain fraction of the observations.
+  \item For the name Anna, the 25th percentile is 14 years.
+  \item That means that 25\% of the Anna's are 14 years of age or younger.
+  \item For the name Anna, the 75th percentile is 62 years.
+  \item That means that 75\% of the Anna's are 62 years of age or younger.
+  \item The median is the 50\% percential.
+  \item 50\% of Anna's are 31 years of age or younger.
+  \item Women of wisdom.
+  \end{itemize}
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -765,6 +1085,12 @@ Some examples:
 \includegraphics[width=0.7\textwidth]{figures/popnamesclass538_male}
 \end{center}
 
+  \begin{itemize}
+  \item If I didn't know anything about you, I would guess that...
+  \item Men of maturity.  
+  \item I don't know you that well so that is probably up for debate.
+  \end{itemize}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -775,6 +1101,17 @@ Some examples:
 \begin{center}
 \includegraphics[width=\textwidth]{figures/youngnamesclass538_female}
 \end{center}
+
+%---Notes---%
+\note{
+
+  Your parents were ahead of their time in naming you.
+
+  All of these other people are just copycats.
+  
+  For Madison the 75th percentiale doesn't even get up to 15.
+
+}
 
 \end{frame}
 
@@ -806,6 +1143,17 @@ Twitter, Instagram, etc.?}
 \item no
 \end{enumerate}
 
+%---Note---%
+\note{
+  \begin{itemize}
+  \item Explain how clickers work.
+  \item Do the countdown.
+  \item Look at your results.
+  \item Why don't you geotag your posts.
+  \item Hey, look, I'm visiting friends, rob me!
+  \end{itemize}
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -829,6 +1177,24 @@ Twitter, Instagram, etc.?}
 
 \ct{\webURL{http://aaronstraupcope.com}}
 
+%---Note---%
+\note{
+\small
+
+  \begin{itemize}
+  \item Is anyone here from the New York Region?  What is this a map of?
+  \item This image was created using data from Flickr, which is where people posted pictures before instagram and Facebook.
+  \item Along with the pictures and geotagging info, there is text posted by the photographer.
+  \item Based on that text we can categorize the photographer as a tourist or native.
+  \item Where are the tourists hanging out? Broadway, Times Square, South Street Port
+  \item Where are the locals: anywhere but Times Square.  At home.
+  \item Staten Island is a crap shoot.
+  \item Why are there no pictures in the upper middle right?  Riker prison.  You can't take pictures in prison.
+  \item Why is this data useful: targetted marketing.  Serve up adds based on WHO you are and WHERE you are.
+  \end{itemize}
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -843,6 +1209,17 @@ Twitter, Instagram, etc.?}
 \begin{center}
 \includegraphics[width=0.55\textwidth]{figures/lottery}
 \end{center}
+
+%---Note---%
+\note{
+  
+  \begin{itemize}
+    \item I will not be showing you how to win the lottery.
+    \item If I knew how to win the lottery using statistics, I wouldn't be here.
+    \item If anything, I will be trying to convince you not to play the lottery.
+  \end{itemize}
+
+}
 
 \end{frame}
 
@@ -859,6 +1236,19 @@ Twitter, Instagram, etc.?}
 
 \ct{\webURL{http://thisisstatistics.org}}
 
+%---Note---%
+\note{
+
+  \begin{itemize}
+    \item This website has very good information on waht you can do with statistics.
+    \item Data scienctist.  Fancy name for statistician.  Hot job in silicon valley.
+    \item Policy, medicine, biology, psychology.
+    \item Go over growth: growing faster --- more jobs.
+    \item Go over wages: wages growing faster.
+  \end{itemize}
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -871,6 +1261,7 @@ Twitter, Instagram, etc.?}
 \frametitle{}
 
 \activity{Class survey}
+
 {
 \begin{itemize}
     \setlength{\itemsep}{0pt}
@@ -882,8 +1273,23 @@ Twitter, Instagram, etc.?}
 \webURL{http://bit.ly/sta101sp15_ClassSurvey}
 \end{center}
 
-\item Before adding a question check to make sure that it hasn't already been added. If your question is already there, but you can suggest a clearer / better wording, add it as ``alternative wording" underneath the original question.
+\item Before adding a question check to make sure that it hasn't already been added. If your question is already there, but you can suggest a clearer / better wording, add it as ``alternative wording'' underneath the original question.
 \end{itemize}
+}
+
+%---Note---%
+\note{
+
+  \begin{itemize}
+    \item Work in informal teams of 3-4.
+    \item Go over examples of types of questions.
+    \item Come up with questions.
+    \item Do not put questions you (or another) would be uncomfortable answering.
+    \item But try to keep the questions interesting.
+    \item We will try to compile a set of reasonable questions for you all to answer.
+    \item You will fill out the survey and then we will use that data for examples during the semester.
+  \end{itemize}
+
 }
 
 \end{frame}
