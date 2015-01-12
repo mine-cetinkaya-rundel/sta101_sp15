@@ -1,6 +1,16 @@
+---
+title: "Lab 1"
+author: "[Enter team name here]"
+date: "[Enter date here]"
+output:
+  html_document:
+    fig_height: 4
+    fig_width: 6
+---
+
 **Author:** [Enter author name here]
 
-**Discussants:** [Enter discussant names here. Remember, these are other team members **present** in lab.]
+**Discussants:** [Enter discussant names here. Remember, these are other team members present in lab.]
 
 * * *
 
@@ -10,7 +20,7 @@ source("http://www.openintro.org/stat/data/arbuthnot.R")
 ```
 
 #### Exercise 1: 
-jkshdkjhkjhfskjh
+
 ```{r}
 # code for Exercise 1 is already entered below as an example
 arbuthnot$girls
@@ -22,17 +32,13 @@ plot(arbuthnot$girls)
 [Enter your response for Exercise 2 here.]
 
 ```{r}
-plot(x = arbuthnot$year, y = arbuthnot$boys)
-x
+# enter your code for Exercise 2 here
 ```
 
-x
 #### Exercise 3:
 
-
-```{r fig.width=7, fig.height=5}
-# enter R code for exercise 3 below,
-plot(arbuthnot$boys)
+```{r}
+# enter your code for Exercise 3 here
 ```
 
 * * *

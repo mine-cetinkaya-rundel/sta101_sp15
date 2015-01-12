@@ -88,6 +88,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <p>The Arbuthnot data set refers to Dr. John Arbuthnot, an 18<sup>th</sup> century physician, writer, and mathematician. He was interested in the ratio of newborn boys to newborn girls, so he gathered the baptism records for children born in London for every year from 1629 to 1710. We can take a look at the data by typing its name into the console.</p>
 <pre class="sourceCode r"><code class="sourceCode r">arbuthnot</code></pre>
 <p>What you should see are four columns of numbers, each row representing a different year: the first entry in each row is simply the row number (an index we can use to access the data from individual years if we want), the second is the year, and the third and fourth are the numbers of boys and girls baptized that year, respectively. Use the scrollbar on the right side of the console window to examine the complete data set.</p>
+<p>Printing out the entire dataset like this is often not a great idea, especially when the sample size is large. Instead we can look at the first few rows using</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(arbuthnot)</code></pre>
+<p>or the last few rows using</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tail</span>(arbuthnot)</code></pre>
 <p>Note that the row numbers in the first column are not part of Arbuthnot’s data. R adds them as part of its printout to help you make visual comparisons. You can think of them as the index that you see on the left side of a spreadsheet. In fact, the comparison to a spreadsheet will generally be helpful. R has stored Arbuthnot’s data in a kind of spreadsheet or table called a <em>data frame</em>.</p>
 <p>You can see the dimensions of this data frame by typing:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(arbuthnot)</code></pre>
