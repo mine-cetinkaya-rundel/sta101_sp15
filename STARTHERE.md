@@ -76,6 +76,18 @@ Do as much of the grading as possible on Sakai.  You should be able to do
 everything except the Clicker, Individual Readiness Assessment grades, and peer
 evaluations on Sakai.
 
+## Considerations when submitting final grades.
+
+Once you submit the final grades, they cannot be changed easily.  A grade can *only* be changed if there is an error in calculation or an error in transcription.  **Read this page**: <http://trinity.duke.edu/undergraduate/academic-policies/grade-changes>.
+
+Students may ask you if they can do something for a higher grade or say that they deserve a higher grade, thus knowing the above policies is important.
+
+If you want to have the opportunity to adjust students' grades after they complain to you, then do not submit the final grades until after you have posted the letter grades and given the students a chance to review them.
+
+If you want to simplify your life, then compute and submit the final grades before releasing the final exam grades.  You can then point them to the above policies when they ask about making a change.
+
+Do not look over a student's final for her or him.  S/he need to come to your office and look it over her/himself.
+
 # Roster
 
 There are several ways to download a spreadsheet of the student's in your class: Sakai and Storm.
