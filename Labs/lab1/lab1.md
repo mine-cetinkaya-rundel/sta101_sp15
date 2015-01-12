@@ -22,9 +22,11 @@ The panel on the left is where the action happens.  It's called the *console*.  
 
 To get you started, enter the following command at the R prompt (i.e. right after `>` on the console).  You can either type it in manually or copy and paste it from this document.
 
-```{r load-abrbuthnot-data, eval=TRUE}
+
+```r
 source("http://www.openintro.org/stat/data/arbuthnot.R")
 ```
+
 
 This command instructs R to access the OpenIntro website and fetch some data: the Arbuthnot baptism counts for boys and girls. You should see that the workspace area in the upper righthand corner of the RStudio window now lists a data set called `arbuthnot` that has 82 observations on 3 variables. As you interact with R, you will create a series of objects. Sometimes you load them as we have done here, and sometimes you create them yourself as the byproduct of a computation or some analysis you have performed. Note that because you are accessing data from the web, this command (and the entire assignment) will work in a computer lab, in the library, or in your dorm room; anywhere you have access to the Internet.
 
@@ -32,9 +34,12 @@ This command instructs R to access the OpenIntro website and fetch some data: th
 
 We will be using a markdown language, R Markdown, to type up the lab report. This allows you to complete your lab entirely in RStudio as well as ensuring reproducibility of your analysis and results. To help get you started we are providing a template for you. Use the following code to download this template:
 
-```{r load-template, eval=FALSE}
-download("http://stat.duke.edu/courses/Spring15/sta101.001/post/labs/sta101_lab1.Rmd", destfile = "sta101_lab1.Rmd")
+
+```r
+download("http://stat.duke.edu/courses/Spring15/sta101.001/post/labs/sta101_lab1.Rmd", 
+    destfile = "sta101_lab1.Rmd")
 ```
+
 
 You will see a new file called `sta101_lab1.Rmd` in the Files tab on the pane in the bottom right corner of your RStudio window. Click on the file name to open the file. All you need to do to complete the lab is to type up your **brief** answers and the R code (when necessary) in the spaces provided in the document. Earlier in the lab spaces are provided for you to enter R code chunks. Later in the lab you'll need to figure out whether code is needed to answer a particular question, and if so a new chunk can be inserted by clicking on the *Insert Chunk* button (dropdown menu under *Chunks* on the upper right corner of your markdown document).
 
@@ -44,37 +49,55 @@ Before you keep going type your team name, the name of the team member who is th
 
 The Arbuthnot data set refers to Dr. John Arbuthnot, an 18<sup>th</sup> century physician, writer, and mathematician.  He was interested in the ratio of newborn boys to newborn girls, so he gathered the baptism records for children born in London for every year from 1629 to 1710.  We can take a look at the data by typing its name into the console.
 
-```{r view-data, eval=FALSE}
+
+```r
 arbuthnot
 ```
+
 
 What you should see are four columns of numbers, each row representing a different year: the first entry in each row is simply the row number (an index we can use to access the data from individual years if we want), the second is the year, and the third and fourth are the numbers of boys and girls baptized that year, respectively. Use the scrollbar on the right side of the console window to examine the complete data set.
 
 Printing out the entire dataset like this is often not a great idea, especially when the sample size is large. Instead we can look at the first few rows using
 
-```{r head, eval=FALSE}
+
+```r
 head(arbuthnot)
 ```
 
+
 or the last few rows using
 
-```{r tail, eval=FALSE}
+
+```r
 tail(arbuthnot)
 ```
+
 
 Note that the row numbers in the first column are not part of Arbuthnot's data. R adds them as part of its printout to help you make visual comparisons. You can think of them as the index that you see on the left side of a spreadsheet. In fact, the comparison to a spreadsheet will generally be helpful. R has stored Arbuthnot's data in a kind of spreadsheet or table called a *data frame*.
 
 You can see the dimensions of this data frame by typing:
 
-```{r dim-data, eval=TRUE}
+
+```r
 dim(arbuthnot)
 ```
 
+```
+## [1] 82  3
+```
+
+
 This command should output `[1] 82 3`, indicating that there are 82 rows and 3 columns (we'll get to what the `[1]` means in a bit), just as it says next to the object in your workspace. You can see the names of these columns (or variables) by typing:
 
-```{r names-data, eval=TRUE}
+
+```r
 names(arbuthnot)
 ```
+
+```
+## [1] "year"  "boys"  "girls"
+```
+
 
 You should see that the data frame contains the columns `year`,  `boys`, and `girls`. At this point, you might notice that many of the commands in R look a lot like functions from math class; that is, invoking R commands means supplying a function with some number of arguments. The `dim` and `names` commands, for example, each took a single argument, the name of a data frame. 
 
@@ -83,9 +106,11 @@ One advantage of RStudio is that it comes with a built-in data viewer. Click on 
 ## Some Exploration
 Let's start to examine the data a little more closely. We can access the data in a single column of a data frame separately using a command like
 
-```{r view-boys, eval=FALSE}
+
+```r
 arbuthnot$boys
 ```
+
 
 This command will only show the number of boys baptized each year.
 
@@ -95,21 +120,27 @@ Notice that the way R has printed these data is different. When we looked at the
 
 R has some powerful functions for making graphics. We can create a simple plot of the number of girls baptized per year with the command
 
-```{r plot-girls-vs-year, eval=FALSE}
+
+```r
 plot(x = arbuthnot$year, y = arbuthnot$girls)
 ```
 
+
 By default, R creates a scatterplot with each x,y pair indicated by an open circle. The plot itself should appear under the *Plots* tab of the lower right panel of RStudio. Notice that the command above again looks like a function, this time with two arguments separated by a comma.  The first argument in the plot function specifies the variable for the x-axis and the second for the y-axis. If we wanted to connect the data points with lines, we could add a third argument, the letter `l` for **l**ine.
 
-```{r plot-girls-vs-year-line, eval=FALSE}
+
+```r
 plot(x = arbuthnot$year, y = arbuthnot$girls, type = "l")
 ```
 
+
 You might wonder how you are supposed to know that it was possible to add that third argument.  Thankfully, R documents all of its functions extensively. To read what a function does and learn the arguments that are available to you, just type in a question mark followed by the name of the function that you're interested in. Try the following.
 
-```{r plot-help, eval=FALSE, tidy = FALSE}
+
+```r
 ?plot
 ```
+
 
 Notice that the help file replaces the plot  in the lower right panel. You can toggle between plots and help files using the tabs at the top of that panel.
 
@@ -117,47 +148,61 @@ Notice that the help file replaces the plot  in the lower right panel. You can t
 
 Now, suppose we want to plot the total number of baptisms.  To compute this, we could use the fact that R is really just a big calculator. We can type in mathematical expressions like
 
-```{r calc-total-bapt-numbers, eval=FALSE}
+
+```r
 5218 + 4683
 ```
 
+
 to see the total number of baptisms in 1629. We could repeat this once for each year, but there is a faster way. If we add the vector for baptisms for boys and girls, R will compute all sums simultaneously.
 
-```{r calc-total-bapt-vars, eval=FALSE}
+
+```r
 arbuthnot$boys + arbuthnot$girls
 ```
 
+
 What you will see are 82 numbers (in that packed display, because we aren't looking at a data frame here), each one representing the sum we're after. Take a look at a few of them and verify that they are right. Therefore, we can make a plot of the total number of baptisms per year with the command
 
-```{r plot-total-vs-year, eval=FALSE}
+
+```r
 plot(arbuthnot$year, arbuthnot$boys + arbuthnot$girls, type = "l")
 ```
+
 
 This time, note that we left out the names of the first two arguments.  We can do this because the help file shows that the default for `plot` is for the first argument to be the x-variable and the second argument to be the y-variable.
 
 Similarly to how we computed the proportion of boys, we can compute the ratio of the number of boys to the number of girls baptized in 1629 with
 
-```{r calc-prop-boys-to-girls-numbers, eval=FALSE}
-5218 / 4683
+
+```r
+5218/4683
 ```
+
 
 or we can act on the complete vectors with the expression
 
-```{r calc-prop-boys-to-girls-vars, eval=FALSE}
-arbuthnot$boys / arbuthnot$girls
+
+```r
+arbuthnot$boys/arbuthnot$girls
 ```
+
 
 The proportion of newborns that are boys
 
-```{r calc-prop-boys-numbers, eval=FALSE}
-5218 / (5218 + 4683)
+
+```r
+5218/(5218 + 4683)
 ```
+
 
 or this may also be computed for all years simultaneously:
 
-```{r calc-prop-boys-vars, eval=FALSE}
-arbuthnot$boys / (arbuthnot$boys + arbuthnot$girls)
+
+```r
+arbuthnot$boys/(arbuthnot$boys + arbuthnot$girls)
 ```
+
 
 Note that with R as with your calculator, you need to be conscious of the order of operations.  Here, we want to divide the number of boys by the total number of newborns, so we have to use parentheses.  Without them, R will first do the division, then the addition, giving you something that is not a proportion.
 
@@ -165,9 +210,11 @@ Note that with R as with your calculator, you need to be conscious of the order 
 
 Finally, in addition to simple mathematical operators like subtraction and division, you can ask R to make comparisons like greater than, `>`, less than, `<`, and equality, `==`. For example, we can ask if boys outnumber girls in each year with the expression
 
-```{r boys-more-than-girls, eval=FALSE}
+
+```r
 arbuthnot$boys > arbuthnot$girls
 ```
+
 
 This command returns 82 values of either `TRUE` if that year had more boys than girls, or `FALSE` if that year did not (the answer may surprise you). This output shows a different kind of data than we have considered so far. In the `arbuthnot` data frame our values are numerical (the year, the number of boys and girls). Here, we've asked R to create *logical* data, data where the values are either `TRUE` or `FALSE`. In general, data analysis will involve many different kinds of data types, and one reason for using R is that it is able to represent and compute with many of them.
 
@@ -181,9 +228,11 @@ In this section you're "on your own", meaning that there is less handholding wit
 
 Earlier you recreated some of the displays and preliminary analysis of Arbuthnot's baptism data. Your assignment involves repeating these steps, but for present day birth records in the United States.  Load up the present day data with the following command.
 
-```{r load-present-data, eval=FALSE}
+
+```r
 source("http://www.openintro.org/stat/data/present.R")
 ```
+
 
 The data are stored in a data frame called `present`.
 
