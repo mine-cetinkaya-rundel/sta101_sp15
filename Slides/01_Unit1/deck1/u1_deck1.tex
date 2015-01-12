@@ -1,4 +1,12 @@
+% -*- TeX-engine: xetex; -*-
 % Compile with XeLaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% To do before class
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Send the Logistics/Week0Annoucnement (the night before).
+% Send an email reminding students to bring a charged computer (the night before).
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Option 1: Slides: (comment for handouts)   %
@@ -17,46 +25,71 @@
 % Option 2: Handouts, without solutions (post before class)    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
-%
-%% handout layout
-%\usepackage{pgfpages}
-%\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
-%
-%% solution stuff
-%\newcommand{\solnMult}[1]{#1}
-%\newcommand{\soln}[1]{}
-%
-%% tell pgfpages how to set page sizes in XeLaTeX
-%\renewcommand\pgfsetupphysicalpagesizes{%
-%    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
-%}
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % This breaks things for me for some reason.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% %\renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option 3: Handouts, with solutions (may post after class if need be)    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
 
-%% handout layout
-%\usepackage{pgfpages}
-%\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
 
-%% solution stuff
-%\newcommand{\solnMult}[1]{\red{\textbf{#1}}}
-%\newcommand{\soln}[1]{\textit{#1}}
+% % solution stuff
+% \newcommand{\solnMult}[1]{\red{\textbf{#1}}}
+% \newcommand{\soln}[1]{\textit{#1}}
 
-%% tell pgfpages how to set page sizes in XeLaTeX
-%\renewcommand\pgfsetupphysicalpagesizes{%
-%    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
-%}
+% % % This breaks things for me for some reason.
+% % % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% % }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 4: Notes Only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% % See http://tex.stackexchange.com/questions/114219/add-notes-to-latex-beamer
+% \documentclass[10pt,containsverbatim,xcolor=xelatex,dvipsnames,table,notes=only]{beamer}
+
+% % handout layout
+% % \usepackage{pgfpages}
+% % \pgfpagesuselayout{1 on 1}[letterpaper, landscape, border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % Having a problem with this.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
 
 %%%%%%%%%%
-% Load style file   %
+% Load style file, defaults  %
 %%%%%%%%%%
 
 \input{../../lec_style.tex}
-
+\input{../../definitions_default.tex}
+% ALT ALT
+% \input{../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -84,7 +117,7 @@
 
 \titlepage
 \vfill
-{\scriptsize \webLink{http://stat.duke.edu/~mc301}{Dr. \c{C}etinkaya-Rundel} \hfill Slides posted at  \webLink{http://bitly.com/sta101sp15}{bitly.com/sta101sp15}}
+{\scriptsize \webLink{\PersonalSite}{Dr. \LastName{}} \hfill Slides posted at  \webLink{\CourseSite}{\CourseSite}}
 \addtocounter{framenumber}{-1} 
 
 \end{frame}
@@ -137,6 +170,10 @@
 \item PS 1 due Wednesday on Sakai, by the beginning of class
 
 \item Lab tomorrow, sit with your teams
+
+\item My office hours: MTWR 3-4pm at my office
+
+\item Class sessions recorded via Duke Capture (link emailed)
 
 \end{itemize}
 

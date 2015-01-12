@@ -50,6 +50,18 @@ arbuthnot
 
 What you should see are four columns of numbers, each row representing a different year: the first entry in each row is simply the row number (an index we can use to access the data from individual years if we want), the second is the year, and the third and fourth are the numbers of boys and girls baptized that year, respectively. Use the scrollbar on the right side of the console window to examine the complete data set.
 
+Printing out the entire dataset like this is often not a great idea, especially when the sample size is large. Instead we can look at the first few rows using
+
+```{r head, eval=FALSE}
+head(arbuthnot)
+```
+
+or the last few rows using
+
+```{r tail, eval=FALSE}
+tail(arbuthnot)
+```
+
 Note that the row numbers in the first column are not part of Arbuthnot's data. R adds them as part of its printout to help you make visual comparisons. You can think of them as the index that you see on the left side of a spreadsheet. In fact, the comparison to a spreadsheet will generally be helpful. R has stored Arbuthnot's data in a kind of spreadsheet or table called a *data frame*.
 
 You can see the dimensions of this data frame by typing:

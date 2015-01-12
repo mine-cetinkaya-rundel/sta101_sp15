@@ -1,4 +1,12 @@
+% -*- TeX-engine: xetex; -*-
 % Compile with XeLaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% To do before class
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Send the Logistics/Week0Annoucnement (the night before).
+% Send an email reminding students to bring a charged computer (the night before).
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Option 1: Slides: (comment for handouts)   %
@@ -6,58 +14,91 @@
 
 \documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
 
+% solution stuff
 \newcommand{\solnMult}[1]{
 \only<1>{#1}
 \only<2->{\red{\textbf{#1}}}
 }
-
-\newcommand{\soln}[1]{
-\textit{#1}
-}
+\newcommand{\soln}[1]{\textit{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option 2: Handouts, without solutions (post before class)    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\documentclass[11pt,containsverbatim,handout]{beamer}
-%\usepackage{pgfpages}
-%\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
-%
-%\newcommand{\solnMult}[1]{
-%#1
-%}
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
 
-%\newcommand{\soln}[1]{}
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % This breaks things for me for some reason.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% %\renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option 3: Handouts, with solutions (may post after class if need be)    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\documentclass[11pt,containsverbatim,handout]{beamer}
-%\usepackage{pgfpages}
-%\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
-%
-%\newcommand{\solnMult}[1]{
-%\red{\textbf{#1}}
-%}
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
 
-%\newcommand{\soln}[1]{}
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{\red{\textbf{#1}}}
+% \newcommand{\soln}[1]{\textit{#1}}
+
+% % % This breaks things for me for some reason.
+% % % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% % }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 4: Notes Only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% % See http://tex.stackexchange.com/questions/114219/add-notes-to-latex-beamer
+% \documentclass[10pt,containsverbatim,xcolor=xelatex,dvipsnames,table,notes=only]{beamer}
+
+% % handout layout
+% % \usepackage{pgfpages}
+% % \pgfpagesuselayout{1 on 1}[letterpaper, landscape, border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % Having a problem with this.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
 
 %%%%%%%%%%
-% Load style file   %
+% Load style file, defaults  %
 %%%%%%%%%%
 
-\input{../lec_style.tex}
-
+\input{../../lec_style.tex}
+\input{../../definitions_default.tex}
+% ALT ALT
+% \input{../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
 %%%%%%%%%%%
 
 \title{Unit 1: Introduction to data}
-\subtitle{1. Data Collection +\\Observational studies \& experiments}
+\subtitle{2. Exploratory data analysis}
 \author{Sta 101 - Spring 2015}
-\date{January 12, 2015}
+\date{January 14, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 
@@ -76,7 +117,7 @@
 
 \titlepage
 \vfill
-{\scriptsize \webLink{http://stat.duke.edu/~mc301}{Dr. \c{C}etinkaya-Rundel} \hfill Slides posted at  \webLink{http://bitly.com/sta101sp15}{bitly.com/sta101sp15}}
+{\scriptsize \webLink{\PersonalSite}{Dr. \LastName{}} \hfill Slides posted at  \webLink{\CourseSite}{\CourseSite}}
 \addtocounter{framenumber}{-1} 
 
 \end{frame}
@@ -117,12 +158,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Announcements}
+\section{Housekeeping}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Housekeeping}
+\frametitle{Announcements}
 
 \begin{itemize}
 
