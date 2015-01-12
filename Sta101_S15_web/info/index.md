@@ -5,11 +5,15 @@ title: Course Information
 
 ### Teaching team:
 
-|---------------------+---------------------+---------------------+---------------------+---------------------+---------------------|
-|Professor            | TAs                            |
-|:--------------------|:--------------------|:-------------------:|:-------------------:|:-------------------:|:-------------------:|
-|[Dr. Çetinkaya-Rundel](http://stat.duke.edu/~mc301) | TBA |  |  |  |
-|---------------------+---------------------+---------------------+---------------------+---------------------+---------------------|
+|------------+---------------------+---------------------|
+|Professor   | [Dr. Çetinkaya-Rundel](http://stat.duke.edu/~mc301) | [mine@stat.duke.edu](mailto:mine@stat.duke.edu)
+|:-----------|:--------------------|:-------------------|
+|TAs         | Christine Chai      | [cpc21@stat.duke.edu](mailto:) |
+|            | Phillip Lee         | [phillip.lee@duke.edu](mailto:phillip.lee@duke.edu) |
+|            | Fiamma Li           | [ql36@duke.edu](mailto:ql36@duke.edu) |
+|            | Jialiang Mao        | [jialiang.mao@duke.edu](mailto:jialiang.mao@duke.edu) |
+|            | Anthony Weishampel  | [anthony.weishampel@duke.edu](mailto:anthony.weishampel@duke.edu) |
+|------------+---------------------+---------------------|
 
 * * *
 
@@ -29,11 +33,11 @@ If you would like to purchase a used clicker from a former student, see the list
 ### Class meetings:
 * Lectures: Mondays and Wednesdays, 1:25 pm - 2:40 pm, Bio Sci 111 
 * Labs: Tuesdays, Old Chem 101
-    * 10:05 am - 11:20 am - TA: TBD
-    * 11:45 am - 1:00 pm - TA: TBD
-    * 1:25 pm - 2:40 pm - TA: TBD
-    * 3:05 pm - 4:20 pm - TA: TBD
-    * 4:40 pm - 5:55 pm - TA: TBD
+    * 10:05 am - 11:20 am - TA: Philip
+    * 11:45 am - 1:00 pm - TA: Fiamma
+    * 1:25 pm - 2:40 pm - TA: Mao
+    * 3:05 pm - 4:20 pm - TA: Anthony
+    * 4:40 pm - 5:55 pm - TA: Anthony
 
 * * *
 
@@ -46,14 +50,14 @@ If you would like to purchase a used clicker from a former student, see the list
 * * *
 
 ### <a name="oh"></a>Office Hours:
-* Professor Cetinkaya-Rundel -  Old Chemistry 213 or by appointment.
-    * Mondays - 11am-1pm
-    * Wednesdays - 12:30-2:30pm
+* Professor Cetinkaya-Rundel -  Old Chemistry 213 or by appointment
+    * MTWR 3-4pm
 * Teaching Assistants - Old Chemistry 211A
-    * Mao - Mondays 7-9pm
-    * Michael - Wednesday 5-7pm
-    * Andrew - Monday 6-9pm + Thursday 3-6pm
-    * Anthony - Monday 4-6pm
+    * Anthony Weishampel - TBA
+    * Fiamma Li - TBA
+    * Jialiang Mao - TBA
+    * Phillip Lee - TBA
+    * Christine Chai - TBA
 * [SECC](https://stat.duke.edu/courses/sec-schedule) - Sunday to Thursday, 4:00 pm - 9:00 pm, Old Chemistry 211A. You should be able to seek help from any TA, but you might want to start with our TAs or the TAs for the other Sta 101 section (both sections cover the same material roughly around the same time).
 
 * * *
