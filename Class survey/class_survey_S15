@@ -163,7 +163,8 @@ b.  Time
 32. pepsi_or_coke: Pepsi or Coke?
 *a. Pepsi
 b.  Coke
-c.  Neither they’re nasty
+c.  No preference
+d.  Neither they’re nasty
 
 33. fav_friend_character: Who is your favorite “Friend”?
 *a. Joey
@@ -250,13 +251,8 @@ e.  sweet-and-salty
 f.  other
 g.  I don’t eat dessert because I don’t like fun
 
-44. shooters: How often do you go to Shooters a month?
-*a. 1
-b.  2
-c.  3
-d.  4
-e.  5
-f.  6+
+44. shooters: How often do you go to Shooters a month? Enter a positive whole number. Enter 0 if you never go to Shooters. Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
 
 45. fav_off_campus_restaurant: What is your favorite off-campus Restaurant? 
 *a. Satisfactions
