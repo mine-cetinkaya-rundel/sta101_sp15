@@ -10,5 +10,6 @@ output: html_document
 * Discuss any questions on the TA Responsibilities document
 * Finalize office hours
 * Make sure everyone has access to Lab and PS Dropbox folders
+* Reschedule Week 2 meeting (Jan 19 is a holiday)
 * Go over Lab 1
 
