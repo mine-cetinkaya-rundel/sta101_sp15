@@ -24,7 +24,6 @@ source("http://www.openintro.org/stat/data/arbuthnot.R")
 ```{r}
 # code for Exercise 1 is already entered below as an example
 arbuthnot$girls
-plot(arbuthnot$girls)
 ```
 
 #### Exercise 2:
