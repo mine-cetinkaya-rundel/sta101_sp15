@@ -251,10 +251,7 @@ e.  sweet-and-salty
 f.  other
 g.  I don’t eat dessert because I don’t like fun
 
-44. shooters: How often do you go to Shooters a month? Enter a positive whole number. Enter 0 if you never go to Shooters. Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
-*0
-
-45. fav_off_campus_restaurant: What is your favorite off-campus Restaurant? 
+44. fav_off_campus_restaurant: What is your favorite off-campus Restaurant? 
 *a. Satisfactions
 b.  Cosmic
 c.  Harris Teeter’s
@@ -262,17 +259,17 @@ d.  Parker and Otis
 e.  Chamas
 f.  Chipotle
 
-46. vending_machine: Do you raid the vending machine at night?
+45. vending_machine: Do you raid the vending machine at night?
 *a. Yes
 b.  No
 c.  Sometimes
 d.  Shhhhh….
 
-47. multicultural: Do you consider yourself multicultural?
+46. multicultural: Do you consider yourself multicultural?
 *a. Yes
 b.  No
 
-48. smell: Which smell do you prefer?
+47. smell: Which smell do you prefer?
 *a. Pine
 b.  Clean Laundry
 c.  Pizza
@@ -280,31 +277,34 @@ d.  Bakery
 e.  Old Spice/Axe/Perfume
 f.  Sharpie
 
-49. parents_age: What is the average age of your parents?  Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+48. parents_age: What is the average age of your parents?  Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
 *0
 
-50. marketplace_worst_meal: What is Marketplace’s worst meal?
+49. marketplace_worst_meal: What is Marketplace’s worst meal?
 *a. chocolate covered crickets
 b.  salad bar
 c.  powdered eggs
 d.  the giant roasted hog 
 e.  watery pasta 
 
-51. best_book_turned_show: Favorite book series turned Movie/TV Show:
+50. best_book_turned_show: Favorite book series turned Movie/TV Show?
 *a. Harry Potter
 b.  Game of Thrones
 c.  Lord of the Rings/Hobbit
 d.  Hunger Games
 e.  Twilight
 
-52. fav_fantasy_universe: Favorite fantasy universe?
+51. fav_fantasy_universe: Favorite fantasy universe?
 *a. Legend of Zelda
 b.  Game of Thrones
 c.  Lord of the Rings
 d.  Harry Potter
 
-53. hogwarts_house: Which Harry Potter house do you belong to?
+52. hogwarts_house: Which Harry Potter house do you belong to?
 *a. Gryffindor (because I’m a badass)
 b.  Ravenclaw (because I’m better than you)
 c.  Hufflepuff (because I’m good at something)
 d.  Slytherin (because I’ll cut you)
+
+53. shooters: How often do you go to Shooters a month? Enter a positive whole number. Enter 0 if you never go to Shooters. Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0

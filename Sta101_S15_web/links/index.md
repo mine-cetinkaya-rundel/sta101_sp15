@@ -19,6 +19,7 @@ title: Links
     * [Distribution calculator applet](https://bitly.com/dist_calc)
 * [Class recordings](http://trinity.capture.duke.edu/Panopto/Pages/Sessions/List.aspx?folderID=0c75737e-d9c0-418a-93f9-9976fa3b05c0​) via DukeCapture
 * [R commands](https://stat.duke.edu/~mc301/R/Rcommands.html): List of R commands commonly used in this course
+* [Teams & lab authors](https://docs.google.com/spreadsheets/d/1i6GHlBtSQ8lFZYdSgFA9YWJv2kDaFkOGyAh2BX6U8Do/edit?usp=sharing)
 
 
 * * *

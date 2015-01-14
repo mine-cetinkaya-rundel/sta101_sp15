@@ -53,12 +53,17 @@ If you would like to purchase a used clicker from a former student, see the list
 * Professor Cetinkaya-Rundel -  Old Chemistry 213 or by appointment
     * MTWR 3-4pm
 * Teaching Assistants - Old Chemistry 211A
-    * Anthony Weishampel - TBA
-    * Fiamma Li - TBA
-    * Jialiang Mao - TBA
-    * Phillip Lee - TBA
-    * Christine Chai - TBA
-* [SECC](https://stat.duke.edu/courses/sec-schedule) - Sunday to Thursday, 4:00 pm - 9:00 pm, Old Chemistry 211A. You should be able to seek help from any TA, but you might want to start with our TAs or the TAs for the other Sta 101 section (both sections cover the same material roughly around the same time).
+    * Christine - Sun, 4-6pm
+    * Anthony - Mon, 7-9pm
+    * Mao - Wed, 5-7pm
+    * Fiamma - Thur, 6-7pm
+    * Phillip - TBA
+    * TAs for the other 101 section:
+        + David - Mon, 4-6pm
+        + Chris (Xinyi) - Tues, 5-7pm
+        + Radhika - Tues, 7-9pm
+        + Tori - Wed, 7-9pm
+* [SEC](https://stat.duke.edu/courses/sec-schedule) - Sunday to Thursday, 4:00 pm - 9:00 pm, Old Chemistry 211A. You should be able to seek help from any TA, but you might want to start with our TAs or the TAs for the other Sta 101 section (both sections cover the same material roughly around the same time).
 
 * * *
 
