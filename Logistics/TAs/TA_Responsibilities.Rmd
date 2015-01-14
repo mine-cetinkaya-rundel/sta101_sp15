@@ -50,4 +50,40 @@ output: html_document
 - Ensure that answer keys are ready when an assignment is *assigned*.
 - Prepare peer evaluations on Qualtrics and compile peer evaluation data (more on this later).
 - Review exams and other course material as needed.
+- Create lab assignments on Sakai for each lab and section. Instructions below:
+    + Title: Lab X - [section time]
+        * 10:05 - 11:20am
+        * 11:45am - 1pm
+        * 1:25 - 2:40pm
+        * 3:05 - 4:20pm
+        * 4:40 - 5:55pm
+    + Open date: day&time of lab
+    + Due date: day&time of due date (beginning of that lab section)
+    + Accept date: due date + 1 day
+    + Student submissions: Inline and Attachments
+    + Number of resubmissions allowed: Unlimited
+    + Resubmission accept until: same date&time as Accept Until
+    + Released Resubmission notification email options: Do not send notification email to student when the grade is released and resubmission is availabl
+    + Grade Scale: Points / 20 points
+    + Assignment Instructions: See the course website at [link to course website] for instructions for the relevant Lab.
+        * Mine: https://bitly.com/sta101sp15
+        * Jesse: https://bitly.com/windle2
+    + (check) Add due date to Schedule
+    + (don't check) Add an announcement about the open date to Announcements
+    + (check) Add honor pledge
+    + Grading: Add to gradebook for the first section (10:05), associate with existing Gradebook entry for the later sections for that lab -- this way in the gradebook they appear in one column
+    + Peer assessment: (don't check) Use peer assessment
+    + Access:
+        * (check) Are submissions for a group
+        * (choose) Display to selected groups: check the names for the teams in that section
+    + Submission Notification Email Options: (choose) Do not send me notification emails for any student submissions
+    + Released Grade Notification Email Options: (choose) Do not send notification email to student when the grade is released 
+
+[POST] 
+
+
+
+
+
+
     
