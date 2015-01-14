@@ -1,9 +1,9 @@
----
-title: "Sta 101 TA Responsibilities"
-author: "Dr. Cetinkaya-Rundel & Dr. Windle"
-date: "Spring 2015"
-output: html_document
----
+Sta 101 TA Responsibilities
+===========================
+
+#### Dr. Cetinkaya-Rundel & Dr. Windle
+#### Spring 2015
+
 
 <br>
 
