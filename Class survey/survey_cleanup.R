@@ -3,7 +3,7 @@ library(stringr)
 library(dplyr)
 
 # load data
-d = read.csv("survey_1_13.csv")
+d = read.csv("survey_raw_1_13.csv")
 
 # weird empty columns created by sakai 
 comment_columns = which(str_detect(names(d), "Grader.s.comments"))
