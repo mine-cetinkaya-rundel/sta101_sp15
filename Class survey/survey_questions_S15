@@ -1,0 +1,310 @@
+1.  pets: How many pets do you have? Enter a positive whole number. Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+2.  us_region: What part of the US are you from?
+*a. New England
+b.  Mid-Atlantic
+c.  Midwest
+d.  Southwest
+e.  Southeast
+f.  California
+g.  Pacific Northwest
+h.  Not from the US
+
+3.  class_year: What is your class year?
+*a. First-year
+b.  Sophomore
+c.  Junior
+d.  Senior
+
+4.  hair_color: What color hair do you have? 
+*a. Brown
+b.  Blonde
+c.  Black
+d.  Red
+e.  Other
+
+5.  campus: What campus do you live on?
+*a. East
+b.  West
+c.  Central
+d.  Off campus
+
+6.  watch_sports: What is your favorite sport to watch?
+*a. Basketball
+b.  Football
+c.  Soccer
+d.  Other
+e.  I don’t watch sports
+
+7.  beyonce_love: DO YOU LOVE BEYONCE?
+*a. hell yes
+b.  yes
+c.  meh
+d.  no
+e.  I don’t care. #teamnicki
+
+8.  fav_artist: Who is your favorite artist?
+*a. Beyonce
+b.  Taylor swift
+c.  Kanye West
+d.  Kendrick Lamar
+e.  Florida-Georgia Line
+f.  none of these 
+
+9.  social_network: Favorite social network?
+*a. Facebook
+b.  Twitter
+c.  Instagram
+d.  Yikyak 
+e.  Vine
+f.  Snapchat 
+g.  Youtube
+h.  I don’t use social media 
+
+10. relationship_status: Are you currently in a relationship?
+*a. yes
+b.  no
+c.  it’s complicated
+
+11. num_siblings: How many siblings do you have? Enter a positive whole number. If you are an only child, enter 0. Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+12. num_languages: How many languages can you carry a conversation in? Enter a number 1 or above, since you at least speak your native language fluently. Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+13. nights_drinking: How many times a week do you drink, on average?  Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+14. pbj_or_n: Nutella, Peanut Butter, or Jelly?
+*a. Nutella
+b.  Peanut butter
+c.  Jelly
+d.  Some combination of two
+e.  All three
+f.  None 
+
+15. tenting: What level of tenting are you doing?
+*a. none
+b.  black
+c.  blue
+d.  white
+e.  unsure
+
+16. countries_visited: How many countries have you visited excluding your home country?  Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+17. first_kiss: How old were you when you had your first kiss? If you have yet to have your first kiss, enter NA. Otherwise, enter your age in years when you had your first kiss. Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+18. hours_watching_television: How many hours of television do you watch per week (includes Netflix and online streaming)?   Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+19. perimeter: Inside or Outside the Perimeter?
+*a. Inside
+b.  Outside
+c.  N/A
+d.  What even is the Perimeter??
+e.  All of the Above
+
+20. fav_campus_eatery: What is your favorite on-campus eatery?
+*a. The Loop
+b.  Divinity Refectory
+c.  Edens Cafe (lol)
+d.  Blue Express
+e.  Other
+f.  None of the above
+
+21. fb_visits_per_day: How many times do you go on Facebook per day? Enter a positive whole number. If you never visit Facebook, enter 0. Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+22. ac: Does your house/apt/dorm have AC?
+*a. Yes
+b.  No
+
+23. condiment: If you were a condiment what would you be?
+*a. Soy Sauce
+b.  Ketchup
+c.  Sriracha 
+d.  Honey Mustard 
+e.  Maple Syrup 
+    
+24. vegetarian: Do you consider yourself a vegetarian?
+*a. yes
+b.  no
+
+25. voted_for_president: Did you vote in last year’s presidential election? 
+*a. yes
+b.  no, I was not eligible due to age or citizenship status
+c.  no, I was eligible but chose not to vote
+
+26. social_club: What kind of social group do you belong to?
+*a. Greek life
+b.  SLG
+c.  Athletic Team
+d.  Independent
+
+27. space_time: Would you rather travel through outer space or time?
+*a. Outer space
+b.  Time
+
+28. university_applications: How many universities did you apply to? Enter a positive whole number 1 or above.  Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+29. pizza_consumption: How many pieces of pizza do you eat per week on average? Enter a positive whole number. If you never eat pizza, enter 0. Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+30. sick: How many days were you sick in the past month? Enter a positive whole number. If you were never sick in the past month, enter 0. Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+31. games_attended: How many basketball games did you attend in 2014? Enter a positive whole number. If you were didn’t attend any basketball games in 2014, enter 0. Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+32. pepsi_or_coke: Pepsi or Coke?
+*a. Pepsi
+b.  Coke
+c.  No preference
+d.  Neither they’re nasty
+
+33. fav_friend_character: Who is your favorite “Friend”?
+*a. Joey
+b.  Chandler
+c.  Monica
+d.  Rachel
+e.  Phoebe
+f.  Ross
+g.  Janice
+h.  Gunther
+
+34. continents_visited: How many continents have you been to?
+*a. 1
+b.  2
+c.  3
+d.  4
+e.  5
+f.  6
+g.  7
+
+35. game_of_thrones: Who shall rule the Realm?
+*a. House Targaryen 
+b.  House Tyrell 
+c.  House Stark 
+d.  House Lannister
+e.  House Martell 
+f.  House Greyjoy 
+g.  I don’t know what you are talking about.
+
+36. netflix_binge_show: What is your Netflix binge show?
+*a. House of Cards
+b.  Gilmore Girls
+c.  Breaking Bad
+d.  How I Met Your Mother
+e.  Friends
+f.  Battlestar Galactica 
+
+37. chipotle_order: What do you order at Chipotle?
+*a. Burrito Bowl
+b.  Quesadilla
+c.  Salad
+d.  Margarita (no food)
+e.  Hard tacos
+f.  Soft tacos
+g.  Burrito
+
+38. fav_pokemon: What is your favorite pokemon?
+*a.  Charizard
+b.  Blastoise
+c.  Venusaur
+d.  Jigglypuff
+e.  Rayquaza
+
+39. first_tooth: When did you lose your first tooth?  Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+40. fav_cheese: What is your favorite cheese?
+*a. Blue
+b.  Goat
+c.  Feta
+d.  Cheddar
+e.  Pepperjack
+f.  Brie
+g.  None of the above
+
+41. cat_or_dog: Cat or Dog?
+*a. Cat
+b.  Dog
+c.  I’m not an animal person
+
+42. fav_late_night_food: What is your late night food of choice?
+*a. Pizza
+b.  Jimmy John’s
+c.  Cosmic
+d.  Cookout
+e.  Pitchforks
+
+43. fav_dessert_flavor: What your favorite dessert flavor?
+*a. chocolate
+b.  vanilla
+c.  fruity
+d.  sour
+e.  sweet-and-salty
+f.  other
+g.  I don’t eat dessert because I don’t like fun
+
+44. fav_off_campus_restaurant: What is your favorite off-campus Restaurant? 
+*a. Satisfactions
+b.  Cosmic
+c.  Harris Teeter’s
+d.  Parker and Otis
+e.  Chamas
+f.  Chipotle
+
+45. vending_machine: Do you raid the vending machine at night?
+*a. Yes
+b.  No
+c.  Sometimes
+d.  Shhhhh….
+
+46. multicultural: Do you consider yourself multicultural?
+*a. Yes
+b.  No
+
+47. smell: Which smell do you prefer?
+*a. Pine
+b.  Clean Laundry
+c.  Pizza
+d.  Bakery
+e.  Old Spice/Axe/Perfume
+f.  Sharpie
+
+48. parents_age: What is the average age of your parents?  Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
+
+49. marketplace_worst_meal: What is Marketplace’s worst meal?
+*a. chocolate covered crickets
+b.  salad bar
+c.  powdered eggs
+d.  the giant roasted hog 
+e.  watery pasta 
+
+50. best_book_turned_show: Favorite book series turned Movie/TV Show?
+*a. Harry Potter
+b.  Game of Thrones
+c.  Lord of the Rings/Hobbit
+d.  Hunger Games
+e.  Twilight
+
+51. fav_fantasy_universe: Favorite fantasy universe?
+*a. Legend of Zelda
+b.  Game of Thrones
+c.  Lord of the Rings
+d.  Harry Potter
+
+52. hogwarts_house: Which Harry Potter house do you belong to?
+*a. Gryffindor (because I’m a badass)
+b.  Ravenclaw (because I’m better than you)
+c.  Hufflepuff (because I’m good at something)
+d.  Slytherin (because I’ll cut you)
+
+53. shooters: How often do you go to Shooters a month? Enter a positive whole number. Enter 0 if you never go to Shooters. Please enter a numerical value instead of writing out the number, e.g. 2 instead of two. ___
+*0
