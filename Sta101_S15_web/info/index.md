@@ -57,7 +57,7 @@ If you would like to purchase a used clicker from a former student, see the list
     * Anthony - Mon, 7-9pm
     * Mao - Wed, 5-7pm
     * Fiamma - Thur, 6-7pm
-    * Phillip - TBA
+    * Phillip - Thur, 6-8pm
     * TAs for the other 101 section:
         + David - Mon, 4-6pm
         + Chris (Xinyi) - Tues, 5-7pm
