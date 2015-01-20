@@ -40,8 +40,6 @@ This data frame contains 152 observations (rows), each representing a Duke Sta 1
     + `Brown`
     + `Blonde`
     + `Black`
-    + `Red`
-    + `Other`
 
 5. `campus` - What campus do you live on? 
     + `East`

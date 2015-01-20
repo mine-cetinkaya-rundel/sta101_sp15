@@ -4,8 +4,10 @@ library(dplyr)
 
 # load data
 #d = read.csv("survey_raw_1_13.csv")
-d1 = read.csv("survey_raw_1_15_m.csv", stringsAsFactors = FALSE)
-d2 = read.csv("survey_raw_1_15_j.csv", stringsAsFactors = FALSE)
+#d1 = read.csv("survey_raw_1_15_m.csv", stringsAsFactors = FALSE)
+#d2 = read.csv("survey_raw_1_15_j.csv", stringsAsFactors = FALSE)
+d1 = read.csv("survey_raw_1_19_m.csv", stringsAsFactors = FALSE)
+d2 = read.csv("survey_raw_1_19_j.csv", stringsAsFactors = FALSE)
 names(d2) = names(d1)
 d = rbind(d1, d2)
 
@@ -45,6 +47,7 @@ d[,num_vars2] = lapply(d[,num_vars2], function(x) str_replace(x, "1: ", ""))
 # replace encoding for apostrophe with "'"
 d = lapply(d, function(x) str_replace(x, "\xd5", "'"))
 d = lapply(d, function(x) str_replace(x, "\xfc\xbe\x8d\x96\x90\xbc", "'"))
+d = lapply(d, function(x) str_replace(x, fixed("\325"), fixed("'")))
 
 # replace "N/A" with NA
 d = lapply(d, function(x) str_replace(x, "N/A", NA))
@@ -65,6 +68,12 @@ d = lapply(d, function(x) str_replace(x, fixed("5?"), fixed("5")))
 # replace "10+" with 10
 d = lapply(d, function(x) str_replace(x, fixed("10+"), fixed("10")))
 
+# replace "2-3" with 2
+d = lapply(d, function(x) str_replace(x, fixed("2-3"), fixed("2")))
+
+# replace "50, 52" with 51
+d = lapply(d, function(x) str_replace(x, fixed("50, 52"), fixed("51")))
+
 # replace written out numbers
 number_words = c("fourteen", "fourty one", "Sixty", "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "Ten")
 numbers = as.character(c(14, 41, 60, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
@@ -82,14 +91,17 @@ for(i in 1:53){
   print(table(d[,i]))
 }
 
+# privacy
+d = d[d$hair_color != "Red" & d$hair_color != "Other",]
+
 # shuffle
 n = nrow(d)
 new_order = sample(1:n, n, replace = FALSE)
 d = d[new_order,]
 
 # write out
-write.csv(d, file = "surveyS15_1_15.csv", row.names = FALSE)
+write.csv(d, file = "surveyS15.csv", row.names = FALSE)
 
-# read in and check
-dd = read.csv("surveyS15_1_15.csv")
+# read in and check column classes
+dd = read.csv("surveyS15.csv")
 str(dd)
