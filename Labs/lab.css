@@ -51,6 +51,11 @@ li ol,
 li ul {margin-top:6px;}
 ol ol li:last-child {margin-bottom:0;}
 
+
+.oyo ul li{
+    list-style-type:decimal;
+}
+
 div#license { 
     margin-top: 30px;
     margin-bottom: 30px;
@@ -68,11 +73,6 @@ div#template {
     padding: 10px 10px;
     background: rgba(220,220,220, 0.8);
     border-radius: 5px;
-}
-
-
-ul {
-    list-style-type:decimal;
 }
 
 hr {

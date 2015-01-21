@@ -1,19 +1,25 @@
-<!-- Instructions: This is the template you will use to type up your responses to the exercises and the on your own questions. To produce a document that you can print out and turn in just click on Knit HTML above. All you need to do to complete the lab is to type up your BRIEF answers and the R code (when necessary) in the spaces provided below. If you want to find out more about the markdown language click on the MD icon. -->
+---
+title: "Lab 2"
+author: "[Enter team name here]"
+date: "[Enter date here]"
+output:
+  html_document:
+    fig_height: 4
+    fig_width: 6
+---
 
-Lab 2
-========================================================
+**Author:** [Enter author name here]
 
-#### Team name: [Enter team name here]
+**Discussants:** [Enter discussant names here. Remember, these are other team members present in lab.]
 
-#### Author: [Enter author name here]
+* * *
 
-#### Discussants (other team members present in lab): [Enter discussant names here]
-
-
-**Load data:**
+**Load CDC data:**
 ```{r}
 
 ```
+
+* * *
 
 #### Exercise 1: 
 
@@ -30,8 +36,22 @@ Lab 2
 #### Exercise 5:
 
 
+#### Exercise 6:
+
+
+#### Exercise 7:
+
+
+#### Exercise 8:
+
 * * *
 
+**Load class survey data:**
+```{r}
+
+```
+
+* * *
 ### On your own:
 
 
@@ -43,15 +63,4 @@ Lab 2
 
 #### 3:
 
-
-#### 4:
-
-
-#### 5:
-
-
-#### 6:
-
-
-#### 7:
 

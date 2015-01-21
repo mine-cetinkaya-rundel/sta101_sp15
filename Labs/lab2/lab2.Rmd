@@ -9,12 +9,12 @@ output:
 
 <div id="template">
 Before you begin the lab, download the lab report template. This template makes it very simple to include code and output in your write up from within RStudio as well as ensuring reproducibility of your results.
-```{r template, eval=FALSE}
-download("http://stat.duke.edu/courses/Spring15/sta101.001/labs/sta101_lab2.Rmd", destfile = "sta101_lab2.Rmd")
+```{r load-template, eval=FALSE}
+download("https://stat.duke.edu/courses/Spring15/sta101.001/post/labs/sta101_lab2.Rmd", destfile = "sta101_lab2.Rmd")
 ```
 </div>
 
-Some define Statistics as the field that focuses on turning information into knowledge.  The first step in that process is to summarize and describe the raw information - the data.  In this lab, you will gain insight into public health by generating simple graphical and numerical summaries of a data set collected by the Centers for Disease Control and Prevention (CDC).  As this is a large data set, along the way you'll also learn the indispensable skills of data processing and subsetting.
+Some define Statistics as the field that focuses on turning information into knowledge. The first step in that process is to summarize and describe the raw information - the data. In this lab, you will gain insight into public health by generating simple graphical and numerical summaries of a data set collected by the Centers for Disease Control and Prevention (CDC). As this is a large data set, along the way you'll also learn the indispensable skills of data processing and subsetting.
 
 ## Getting started
 
@@ -28,7 +28,7 @@ We begin by loading the data set of 20,000 observations into the R workspace. Af
 source("http://www.openintro.org/stat/data/cdc.R")
 ```
 
-The data set `cdc` that shows up in your workspace is a *data matrix*, with each row representing a *case* and each column representing a *variable*.  R calls this data format a *data frame*, which is a term that will be used throughout the labs.
+The data set `cdc` that shows up in your workspace is a *data matrix*, with each row representing a *case* and each column representing a *variable*. R calls this data format a *data frame*, which is a term that will be used throughout the labs.
 
 To view the names of the variables, type the command
 
@@ -36,7 +36,17 @@ To view the names of the variables, type the command
 names(cdc)
 ```
 
-This returns the names `genhlth`, `exerany`, `hlthplan`, `smoke100`, `height`, `weight`, `wtdesire`, `age`, and `gender`. Each one of these variables corresponds to a question that was asked in the survey.  For example, for `genhlth`, respondents were asked to evaluate their general health, responding either excellent, very good, good, fair or poor. The `exerany` variable indicates whether the respondent exercised in the past month (1) or did not (0). Likewise, `hlthplan` indicates whether the respondent had some form of health coverage (1) or did not (0). The `smoke100` variable indicates whether the respondent had smoked at least 100 cigarettes in her lifetime. The other variables record the respondent's `height` in inches, `weight` in pounds as well as their desired weight, `wtdesire`, `age` in years, and `gender`.
+This returns the names `genhlth`, `exerany`, `hlthplan`, `smoke100`, `height`, `weight`, `wtdesire`, `age`, and `gender`. Each one of these variables corresponds to a question that was asked in the survey. A list of the variables and what they represent is given below:
+
+* `genhlth`: general health - excellent, very good, good, fair or poor
+* `exerany`: whether the respondent exercised in the past month (1) or did not (0)
+* `hlthplan`: whether the respondent had some form of health coverage (1) or did not (0)
+* `smoke100`: whether the respondent had smoked at least 100 cigarettes in her lifetime
+* `height`: height, in inches
+* `weight`: weight, in pounds
+* `wtdesire`: desired weight, in pounds
+* `age`: age, in years
+* `gender`: gender, male (m) or female (f)
 
 1.  How many cases are there in this data set?  How many variables?  For each variable, identify its data type (e.g. categorical, discrete).
 
@@ -52,23 +62,23 @@ and similarly we can look at the last few by typing
 tail(cdc)
 ```
 
-You could also look at *all* of the data frame at once by typing its name into the console, but that might be unwise here.  We know `cdc` has 20,000 rows, so viewing the entire data set would mean flooding your screen.  It's better to take small peeks at the data with `head`, `tail` or the subsetting techniques that you'll learn in a moment.
+You could also look at *all* of the data frame at once by typing its name into the console, but that might be unwise here. We know `cdc` has 20,000 rows, so viewing the entire data set would mean flooding your screen. It's better to take small peeks at the data with `head`, `tail` or the subsetting techniques that you'll learn in a moment.
 
 ## Summaries and tables
 
-The BRFSS questionnaire is a massive trove of information.  A good first step in any analysis is to distill all of that information into a few summary statistics and graphics.  As a simple example, the function `summary` returns a numerical summary: minimum, first quartile, median, mean, second quartile, and maximum. For `weight` this is
+The BRFSS questionnaire is a massive trove of information. A good first step in any analysis is to distill all of that information into a few summary statistics and graphics. As a simple example, the function `summary` returns a numerical summary: minimum, first quartile, median, mean, second quartile, and maximum. For `weight` this is
 
 ```{r summary-weight, eval=FALSE}
 summary(cdc$weight)
 ```
 
-R also functions like a very fancy calculator.  If you wanted to compute the interquartile range for the respondents' weight, you would look at the output from the summary command above and then enter
+R also functions like a very fancy calculator. If you wanted to compute the interquartile range for the respondents' weight, you would look at the output from the summary command above and then enter
 
 ```{r weight-range-arith, eval=FALSE}
 190 - 140
 ```
 
-R also has built-in functions to compute summary statistics one by one.  For instance, to calculate the mean, median, and variance of `weight`, type 
+R also has built-in functions to compute summary statistics one by one. For instance, to calculate the mean, median, and variance of `weight`, type 
 
 ```{r weight-mean-var-median, eval=FALSE}
 mean(cdc$weight) 
@@ -76,7 +86,7 @@ var(cdc$weight)
 median(cdc$weight)
 ```
 
-While it makes sense to describe a quantitative variable like `weight` in terms of these statistics, what about categorical data?  We would instead consider the sample frequency or relative frequency distribution.  The function `table` does this for you by counting the number of times each kind of response was given. For example, to see the number of people who have smoked 100 cigarettes in their lifetime, type
+While it makes sense to describe a quantitative variable like `weight` in terms of these statistics, what about categorical data?  We would instead consider the sample frequency or relative frequency distribution. The function `table` does this for you by counting the number of times each kind of response was given. For example, to see the number of people who have smoked 100 cigarettes in their lifetime, type
 
 ```{r table-smoke, eval=FALSE}
 table(cdc$smoke100)
@@ -102,11 +112,11 @@ smoke <- table(cdc$smoke100)
 barplot(smoke)
 ```
 
-Here, we've made a new object, a table, called `smoke` (the contents of which we can see by typing `smoke` into the console) and then used it in as the input for `barplot`. The special symbol `<-` performs an *assignment*, taking the output of one line of code and saving it into an object in your workspace.   This is another important idea that we'll return to later.
+Here, we've made a new object, a table, called `smoke` (the contents of which we can see by typing `smoke` into the console) and then used it in as the input for `barplot`. The special symbol `<-` performs an *assignment*, taking the output of one line of code and saving it into an object in your workspace. This is another important idea that we'll return to later.
 
 2.  Create a numerical summary for `height` and `age`, and compute the interquartile range for each. Compute the relative frequency distribution for `gender` and `exerany`. How many males are in the sample? What proportion of the sample reports being in excellent health?
 
-The `table` command can be used to tabulate any number of variables that you provide.  For example, to examine which participants have smoked across each gender, we could use the following.
+The `table` command can be used to tabulate any number of variables that you provide. For example, to examine which participants have smoked across each gender, we could use the following.
 
 ```{r table-smoke-gender, eval=FALSE}
 table(cdc$gender,cdc$smoke100)
@@ -148,7 +158,7 @@ To see the weights for the first 10 respondents we can type
 cdc[1:10,6]
 ```
 
-In this expression, we have asked just for rows in the range 1 through 10.  R uses the `:` to create a range of values, so 1:10 expands to 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. You can see this by entering
+In this expression, we have asked just for rows in the range 1 through 10. R uses the `:` to create a range of values, so 1:10 expands to 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. You can see this by entering
 
 ```{r numbers-1to10, eval=FALSE}
 1:10
@@ -166,13 +176,13 @@ By leaving out an index or a range (we didn't type anything between the comma an
 cdc[,6]
 ```
 
-Recall that column 6 represents respondents' weight, so the command above reported all of the weights in the data set. An alternative method to access the weight data is by referring to the name.  Previously, we typed `names(cdc)` to see all the variables contained in the cdc data set. We can use any of the variable names to select items in our data set. 
+Recall that column 6 represents respondents' weight, so the command above reported all of the weights in the data set. An alternative method to access the weight data is by referring to the name. Previously, we typed `names(cdc)` to see all the variables contained in the cdc data set. We can use any of the variable names to select items in our data set. 
 
 ```{r weight, eval=FALSE}
 cdc$weight
 ```
 
-The dollar-sign tells R to look in data frame `cdc` for the column called `weight`.  Since that's a single vector, we can subset it with just a single index inside square brackets.  We see the weight for the 567<sup>th</sup> respondent by typing
+The dollar-sign tells R to look in data frame `cdc` for the column called `weight`. Since that's a single vector, we can subset it with just a single index inside square brackets. We see the weight for the 567<sup>th</sup> respondent by typing
 
 ```{r weight-567, eval=FALSE}
 cdc$weight[567]
@@ -188,7 +198,7 @@ The command above returns the same result as the `cdc[1:10,6]` command. Both row
 
 ## A little more on subsetting
 
-It's often useful to extract all individuals (cases) in a data set that have specific characteristics. We accomplish this through *conditioning* commands.  First, consider expressions like
+It's often useful to extract all individuals (cases) in a data set that have specific characteristics. We accomplish this through *conditioning* commands. First, consider expressions like
 
 ```{r true-male, eval=FALSE}
 cdc$gender == "m"
@@ -234,7 +244,7 @@ will take people who are men or over the age of 30 (why that's an interesting gr
 
 ## Quantitative data
 
-With our subsetting tools in hand, we'll now return to the task of the day: making basic summaries of the BRFSS questionnaire.  We've already looked at categorical data such as `smoke` and `gender` so now let's turn our attention to quantitative data.  Two common ways to visualize quantitative data are with box plots and histograms.  We can construct a box plot for a single variable with the following command.
+With our subsetting tools in hand, we'll now return to the task of the day: making basic summaries of the BRFSS questionnaire. We've already looked at categorical data such as `smoke` and `gender` so now let's turn our attention to quantitative data. Two common ways to visualize quantitative data are with box plots and histograms. We can construct a box plot for a single variable with the following command.
 
 ```{r boxplot-height, eval=FALSE}
 boxplot(cdc$height)
@@ -278,30 +288,30 @@ Finally, let's make some histograms. We can look at the histogram for the age of
 hist(cdc$age)
 ```
 
-Histograms are generally a very good way to see the shape of a single distribution, but that shape can change depending on how the data is split between the different bins.  You can control the number of bins by adding an argument to the command. In the next two lines, we first make a default histogram of `bmi` and then one with 50 breaks.
+Histograms are generally a very good way to see the shape of a single distribution, but that shape can change depending on how the data is split between the different bins. You can control the number of bins by adding an argument to the command. In the next two lines, we first make a default histogram of `bmi` and then one with 50 breaks.
 
 ```{r hist-bmi, eval=FALSE}
 hist(bmi)
 hist(bmi, breaks = 50)
 ```
 
-Note that you can flip between plots that you've created by clicking the forward and backward arrows in the lower right region of RStudio, just above the plots.  How do these two histograms compare?
+Note that you can flip between plots that you've created by clicking the forward and backward arrows in the lower right region of RStudio, just above the plots. How do these two histograms compare?
 
-At this point, we've done a good first pass at analyzing the information in the BRFSS questionnaire.  We've found an interesting association between smoking and gender, and we can say something about the relationship between people's assessment of their general health and their own BMI.  We've also picked up essential computing tools -- summary statistics, subsetting, and plots -- that will serve us well throughout this course.
+At this point, we've done a good first pass at analyzing the information in the BRFSS questionnaire. We've found an interesting association between smoking and gender, and we can say something about the relationship between people's assessment of their general health and their own BMI. We've also picked up essential computing tools -- summary statistics, subsetting, and plots -- that will serve us well throughout this course.
 
-## Data wrangling
+## Data manipulation
 
 Sometimes you might need to alter the dataset you have in some way to make it better serve your analysis goals. In this section you will learn a few useful "data wrangling" skills. These might come in especially handy when you're working on your projects.
 
 ### Changing level names
 
-Suppose you want to recode the `exerany` variable to use informative level names, instead of 0/1. Remember that this variable indicates whether the respondent exercised in the past month (1) or did not (0). We'll create a new variable called `exerany2` and fill it in with `exercised` and `didn't exercise` where we have 1s and 0s, respectively, for the original variable.
+Suppose you want to recode the `exerany` variable to use informative level names, instead of 0/1. Remember that this variable indicates whether the respondent exercised in the past month (1) or did not (0). We'll create a new variable called `exerany_cat` and fill it in with `exercised` and `didn't exercise` where we have 1s and 0s, respectively, for the original variable.
 
 ```{r eval=FALSE}
-cdc$exerany2 = NA  # create new variable, and fill it in with NAs first
-cdc$exerany2[cdc$exerany == 1] = "exercised"
-cdc$exerany2[cdc$exerany == 0] = "didn't exercise"
-cdc$exerany2 = as.factor(cdc$exerany2)  # save new variable as factor
+cdc$exerany_cat = NA  # create new variable, and fill it in with NAs first
+cdc$exerany_cat[cdc$exerany == 1] = "exercised"
+cdc$exerany_cat[cdc$exerany == 0] = "didn't exercise"
+cdc$exerany_cat = as.factor(cdc$exerany_cat)  # save new variable as factor
 ```
 
 5.  Create a box plot of BMI vs. this new variable and confirm that the level names have been changed.
@@ -311,21 +321,68 @@ cdc$exerany2 = as.factor(cdc$exerany2)  # save new variable as factor
 You might also want to combine certain levels and re-level a variable. Suppose in the `genhlth` variable, you want to combine the levels `fair` and `poor` to indicate `bad` health, and `good`, `very good`, and `excellent` to indicate `better` health.
 
 ```{r eval=FALSE}
-cdc$genhlth2 = NA  # create new variable, and fill it in with NAs first
-cdc$genhlth2[cdc$genhlth %in% c("fair", "poor")] = "bad"
-cdc$genhlth2[cdc$genhlth %in% c("good", "very good", "excellent")] = "better"
-cdc$genhlth2 = as.factor(cdc$genhlth2)  # save new variable as factor
+cdc$genhlth_twolevs = NA  # create new variable, and fill it in with NAs first
+cdc$genhlth_twolevs[cdc$genhlth %in% c("fair", "poor")] = "bad"
+cdc$genhlth_twolevs[cdc$genhlth %in% c("good", "very good", "excellent")] = "better"
+cdc$genhlth_twolevs = as.factor(cdc$genhlth_twolevs)  # save new variable as factor
 ```
 
 6.  Make a plot of this new variable vs. another variable and confirm that the change has been implemented.
 
+We can also re-level numerical variables to be categorical. Suppose we want to create a categorical variable for height, `height_cat`, that identifies people's heights to be `below median` and `at or above median`.
+
+```{r eval=FALSE}
+median_height = median(cdc$height)
+cdc$height_cat = NA  # create new variable, and fill it in with NAs first
+cdc$height_cat[cdc$height < median_height] = "below median"
+cdc$height_cat[cdc$height >= median_height] = "at or above median"
+cdc$height_cat = as.factor(cdc$height_cat)  # save new variable as factor
+```
+
+Let's make a table of this new variable to view its distribution:
+```{r eval=FALSE}
+table(cdc$height_cat)
+```
+
+The output lists the `at or above median` level first, and `below median` level second. This is because by default R lists levels of a categorical variable in alphabetical order. To change the order, we need to specify the order we would like the levels to be displayed:
+```{r eval=FALSE}
+cdc$height_cat = factor(cdc$height_cat, levels = c("below median", "at or above median"))
+```
+
+7.  Confirm that the order of the levels has been changed by making another table of the `height_cat` variable.
+
 * * *
 
 ## On Your Own
+<div class="oyo">
 
-Some steps with the survey data...
+In this section you will work with data from the class survey you designed. Instead of downloading the data directly into RStudio via a URL (like we did at the beginning of this and the last lab), you will first download the data file to your computer and then upload it to RStudio. We wanted to show you this alternative approach of loading data since this is likely what you will be using for your project.
 
--   What concepts from the textbook are covered in this lab?  What concepts, if any, are not covered in the textbook?  Have you seen these concepts elsewhere, e.g. lecture, discussion section, previous labs, or homework problems?  Be specific in your answer.
+Click [here](https://stat.duke.edu/~mc301/data/surveyS15.html) to view the codebook for the class survey data. You can use the following to download the data:
+
+```{r eval=FALSE}
+download("https://stat.duke.edu/~mc301/data/surveyS15.csv", destfile = "surveyS15.csv") 
+```
+
+The data are released in CSV (comma separated values) format, which is a commonly used format for storing tabular data (spreadsheet) in plain-text form.
+
+Next, you will need to import the data into your workspace:
+
+```{r eval=FALSE}
+surveyS15 = read.csv("surveyS15.csv")
+```
+
+Note that you should do this in your Console as well as in your Markdown document.
+
+Answer the following questions using the survey data. You are welcomed to use the variables as they are presented, or manipulate them using the skills you learned above. There will be **extra credit awarded for *correctly* manipulating the data**.
+
+* Pick a numerical variable and a categorical variable from the survey and examine the relationship between them. Use numerical summaries and graphical displays. You can also manipulate the data as you like: re-level, change order of levels for better displays, subset (examine the relationship for only a sub-group), etc.
+
+* Do the same with two categorical variables.
+
+* What concepts from the textbook are covered in this lab?  What concepts, if any, are not covered in the textbook?  Have you seen these concepts elsewhere, e.g. lecture, discussion section, previous labs, or homework problems?  Be specific in your answer.
+
+</div>
 
 <div id="license">
 This is a product of OpenIntro that is released under a [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0). This lab was adapted for OpenIntro by Andrew Bray and Mine &Ccedil;etinkaya-Rundel from a lab written by Mark Hansen of UCLA Statistics.

@@ -177,6 +177,8 @@ This seems like a fair bit for your first lab, so let's stop here. To exit RStud
 
 ## On Your Own
 
+<div class="oyo">
+
 In this section you're "on your own", meaning that there is less handholding with the code. Using what you learned so far you are expected to be able to figure out the necessary code to answer the questions below. Of course, you are not really "on your own", as you're working in teams and you are welcomed and encouraged to ask questions to your TAs.
 
 Earlier you recreated some of the displays and preliminary analysis of Arbuthnot's baptism data. Your assignment involves repeating these steps, but for present day birth records in the United States.  Load up the present day data with the following command.
@@ -187,19 +189,21 @@ source("http://www.openintro.org/stat/data/present.R")
 
 The data are stored in a data frame called `present`.
 
--   What years are included in this data set? What are the dimensions of the data frame and what are the variable or column names?
+* What years are included in this data set? What are the dimensions of the data frame and what are the variable or column names?
 
--   How do these counts compare to Arbuthnot's? Are they on a similar scale?
+* How do these counts compare to Arbuthnot's? Are they on a similar scale?
 
--   Make a plot that displays the boy-to-girl ratio for every year in the data set. What do
+* Make a plot that displays the boy-to-girl ratio for every year in the data set. What do
 you see? Does Arbuthnot's observation about boys being born in greater proportion than girls
 hold up in the U.S.? Include the plot in your response.
 
--   In what year did we see the most total number of births in the U.S.? You can refer to the help files or the R reference card [http://cran.r-project.org/doc/contrib/Short-refcard.pdf](http://cran.r-project.org/doc/contrib/Short-refcard.pdf) to find helpful commands.
+* In what year did we see the most total number of births in the U.S.? You can refer to the help files or the R reference card [http://cran.r-project.org/doc/contrib/Short-refcard.pdf](http://cran.r-project.org/doc/contrib/Short-refcard.pdf) to find helpful commands.
 
 These data come from a report by the Centers for Disease Control [http://www.cdc.gov/nchs/data/nvsr/nvsr53/nvsr53_20.pdf](http://www.cdc.gov/nchs/data/nvsr/nvsr53/nvsr53_20.pdf). Check it out if you would like to read more about an analysis of sex ratios at birth in the United States.
 
 That was a short introduction to R and RStudio, but we will provide you with more functions and a more complete sense of the language as the course progresses. Feel free to browse around the websites for [R](http://www.r-project.org) and [RStudio](http://rstudio.org) if you're interested in learning more, or see http://tryr.codeschool.com for a more advanced introduction to R.
+
+</div>
 
 * * *
 
