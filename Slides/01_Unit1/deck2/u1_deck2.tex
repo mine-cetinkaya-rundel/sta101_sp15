@@ -5,7 +5,6 @@
 % To do before class
 %%%%%%%%%%%%%%%%%%%%%%%
 
-% Send the Logistics/Week0Annoucnement (the night before).
 % Send an email reminding students to bring a charged computer (the night before).
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -89,7 +88,7 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-% \input{../definitions_custom.tex}
+% \input{../../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -99,6 +98,8 @@
 \subtitle{2. Exploratory data analysis}
 \author{Sta 101 - Spring 2015}
 \date{January 14, 2015}
+% ALT ALT
+% \date{January 15, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 
@@ -137,10 +138,13 @@
 
 \item If you haven't yet done so, take the class survey
 
-\item Lab 1 due by your lab session next Monday -- one submission per team sufficient
-\begin{itemize}
-\item Questions about labs?
-\end{itemize}
+\item Lab 1 due by your lab session next Tue -- one submission per team sufficient
+% ALT ALT Lab Due Date
+% \item Lab 1 due by your lab session next Wed -- one submission per team sufficient
+
+% \begin{itemize}
+% \item Questions about labs?
+% \end{itemize}
 
 \item TA office hours:
 \begin{itemize}
@@ -166,31 +170,79 @@
 \end{itemize}
 
 \item No class and no OH on Monday, review randomization test video before Wednesday's class
+% ALT ALT
+% \item OH today 3-3:30.
 
-\item PS 2 due Wednesday
+\item Next week.  No OH Tuesday. OH 3:30-5:30pm on Wednesday!
+
+\item Prof. Cetinkaya-Rundel will be subbing for me on Tuesday.
+
+\item PS 2 due Wednesday.
+% ALT ALT
+% \item PS 2 due Thursday.
 
 \end{itemize}
+
+%---Note---%
+\note{
+
+- Lab is due Tuesday.
+
+- One submission per group.
+
+- TAs associated with this class.
+
+- Before Tuesdays' class make sure you review last video.
+
+- Next problem set due next Thursday.
+
+- Waitlist if class is at 120: drop earlier than later so others can add.
+
+}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\frametitle{From last time - App Ex 1.1: Haters gonna hate}
+% \begin{frame}
+% \frametitle{From last time - App Ex 1.1: Haters gonna hate}
 
-\begin{enumerate}
+% \begin{enumerate}
 
-\item Cases: 200 men and women
-\item Response: Attitude towards the microwave oven
-\item Explanatory: Whether the participant is a hater or not
-\item Random sampling / assignment: Via Amazon's MTurk - self selected sample, no random assignment.
-\item Type: Observational, doesn't use random assignment. 
-\item Causality: No
-\item Generalizability: Only if we could assume sample from Amazon's MTurk's sample is representative
+% \item Cases: 200 men and women
+% \item Response: Attitude towards the microwave oven
+% \item Explanatory: Whether the participant is a hater or not
+% \item Random sampling / assignment: Via Amazon's MTurk - self selected sample, no random assignment.
+% \item Type: Observational, doesn't use random assignment. 
+% \item Causality: No
+% \item Generalizability: Only if we could assume sample from Amazon's MTurk's sample is representative
 
-\end{enumerate}
+% \end{enumerate}
 
-\end{frame}
+% %---Note---%
+% \note{
+
+% - Ask someone to summarize what was happening in article.
+
+% - Repeat what it was about.
+
+% - Sampling/assignemnt?  Did they come as haters or did we make them haters?
+
+% - What is mechanical turk: kind of like a bunch of people wiling to take
+% surveys?  or to do otherwise simple task?
+
+% - Since we don't have random assignemnt is it an experiement?
+
+% - Can we talk about causality?
+
+% - What can we say about generalizability?
+
+% - If we can't take a random sample we can try to justify that it is
+% representative of the population.
+
+% }
+
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -215,7 +267,26 @@
 
 \pause
 
-\soln{Some people reported very low ages, which might suggest the survey question wasn't clear: romantic kiss or any kiss?}
+\soln{Some people reported very low ages, which might suggest the survey
+  question wasn't clear: romantic kiss or any kiss?}
+
+%---Note---%
+\note{
+
+To day we are going to talk about exploratory data analysis.
+
+- the important thing is to always start your exploratory data analysis with
+visualization.
+
+- this is from your survey, though not for everyone from both classes.
+
+- is there anything out of the ordinary about this?  you probably were first
+kissed when you were a baby, but it isn't clear what we are talking about.
+
+- so this is an example of how we need to be careful how we phrase a question.
+we want to phrase it so that there is only one interpretation.
+
+}
 
 \end{frame}
 
@@ -234,6 +305,17 @@
 
 \soln{Finer scale for lower numbers.}
 
+%---Note---%
+\note{
+
+How many people reporting lower vs. higher values of FB?  It is either 100 or
+200, not 107, 113.
+
+We can see that if you don't give guidance on data then it can be tough to
+analyze.
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -249,6 +331,21 @@
 
 \ct{\webURL{http://spark.rstudio.com/jkatz/SurveyMaps}}
 
+%---Note---%
+\note{
+
+How do we refer to these maps?
+
+An intensity map.
+
+Do people call there sweetened carbontated drink pop, etc.
+
+Describe how people do.
+
+Really we are looking at two variables: geographic location and terminology.
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -263,6 +360,25 @@
 \end{center}
 
 \ct{\webURL{http://spark.rstudio.com/jkatz/SurveyMaps}}
+
+%---Note---%
+\note{
+
+ How do you address a group.
+
+ Describe.
+
+ What do you think is missing in this visualization.
+
+ What would be useful beyond the colors?  What does the shade of the color
+ represent?  We have no idea of what value it corresponds to?
+
+ It is missing some information about the numerical intensity that would help us
+ compare across colors
+
+ Important point: always start with a visualization.
+
+}
 
 \end{frame}
 
@@ -291,6 +407,39 @@
 
 \end{itemize}
 
+%---Note---%
+\note{
+
+  Always talk about shape, center, spread, etc.
+
+  Shape
+
+  What do I mean by modality: promenent peaks.
+
+  When talking about center, what is most common measure of center: mean
+
+  What else: median.
+
+  Mode is also used, though it isn't always that useful.  It is the most
+  frequent observation.  But it is sometimes hard to determine what that is when
+  working with continuous numerical data.
+
+  Just a note for notation: $\mu$ or any greek letter denotes a pop. param.
+  $\mu$ is pop bar.
+
+  xbar is a sample statistic.  Often times we want to know mu, but we don't have
+  pop, so we caompute xbar and call that best guess.
+
+  how can we put some uncertainty around best guess to refelect that this comes
+  from sample and not whole pop.
+
+  when we talk about spread we are talking about variability in the distrbution.
+
+  unusual observations.  sometimes people just remove outliers.  you should not
+  do that unless you have good reason to do so, they may convey important information.
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -306,6 +455,41 @@
 \item scores on an well-designed exam
 \item last digits of phone numbers
 \end{enumerate}
+
+%---Note---%
+\note{
+
+which of the following is mostly likely to have a roughly symmetric
+distribution.
+
+things all over the place.  talk to each other and vote again.
+
+let them have a minute.  Make sure to go again whether you changed your answer
+or not.
+
+C is now most popular.
+
+if i were to design example that was symmetic, you would be in trouble.  what is
+max, what is min.  so what would this look like.  can everyone get 90s and
+above.
+
+usually scores on a well designed exam are left skewed.  decent center, but not
+at 100.
+
+left or right skewed?
+
+left.
+
+what about b?  some aveerage weight.  Do we expect sampe number to be above and
+below?  we don't expect one end to be more frequent than others.
+
+what about random samples of salary from nc.  what we we expect the shape of
+that to be?
+
+last digits of phone numbers?  what type of shape might we expect?  there is not
+one digit that is more popular than the others.n
+
+}
 
 \end{frame}
 
@@ -328,6 +512,22 @@ Dataset 2: 30, 50, 70, 1000
 \item $\bar{x}_1 > \bar{x}_2$, $median_1 = median_2$
 \end{enumerate}
 
+%---Note---%
+\note{
+
+how do the mean and median of the following compare.  do by yourself first.
+
+give you a minute.
+
+b is the winner.  everyone got it.
+
+% can I explain this in words?
+
+what is the idea we are getting at here?  some extreme value is affecting the
+mean, but not the median.  so it is more robust.
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -349,6 +549,31 @@ Dataset 2: 30, 50, 70, 1000
 \item Square of the standard deviation is called the \hl{variance}.
 
 \end{itemize}
+
+%---Note---%
+\note{
+
+spread.  here we are going to go about standard deviation.
+
+one of the more tedious computations.
+
+it roughly measures the average deviation from the mean.
+
+we want to think about how far or how close the data are from the mean on
+average.
+
+notation: sigma, greek population standard devaition.  s: sample standard
+deviation.
+
+gray here is population data, we rarely have this.
+
+a couple things: used square.  and divide by $n-1$.
+
+why use squares.
+
+standard deviation is nice because it is the same units as what you measure.
+
+}
 
 \end{frame}
 
@@ -376,6 +601,33 @@ $\:$ \\
 \item To weigh larger deviations more heavily.
 \end{itemize}
 
+%---Note---%
+\note{
+
+why divide by $n-1$ instead of $n$?
+
+go back.  comopare equations.  ideally use population mean.  this introduces
+extra uncertatiny.  for that we need to penalize ourselves.
+
+if i divide by $n-1$ or $n$ which yields a higher value?  if i divide by
+something smaller, I get a larger number.
+
+so we are in effect reporting a larger estimate of the standard deviation.  this
+is conservative.
+
+go forward.  why square things?  what happens if we add a positive and a
+negative number?  they cancel out.
+
+one reaons, you don't want poitives and negatives to cancle.
+
+what would be a more intuitive way?
+
+abs.
+
+what does square do?  it weights larger deviations more heavily?
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -383,7 +635,7 @@ $\:$ \\
 \begin{frame}
 \frametitle{Range and IQR}
 
-\clicker{True / False: The range is always larger than the IQR for a given dataset.}
+\clicker{True / False: The range is always at least as large as the IQR for a given dataset.}
 
 \begin{enumerate}[(a)]
 \item \solnMult{Yes}
@@ -398,6 +650,24 @@ $\:$ \\
 \disc{Is the range or the IQR more robust to outliers?}
 
 \soln{\pause{IQR}}
+
+%---Note---%
+\note{
+
+Give about 45 seconds.
+
+many yeses some nos.  can i hear from someone that said no?
+
+what is definition of iqr.
+
+what is definition of range.
+
+is the range or iqr more robust to iqr robust to outliers?  outliers are most
+likely minimum or maximum points.  calculation of range is based on exactly
+these values.
+
+
+}
 
 \end{frame}
 
@@ -421,6 +691,22 @@ $\:$ \\
 
 \end{itemize}
 
+%---Note---%
+\note{
+
+median and iqr are robust.  this is why use them do describe skewed
+distribution.
+
+which is more informative for skewed distribution?
+
+when describing dist, first think about shape, then think about numbers to use
+to describe.
+
+it is on you to get an idea on visualization and then pick.
+
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -433,6 +719,55 @@ $\:$ \\
 \app{1.2 Distributions of numerical variables}{$\:$\\ See the course website for instructions. \\$\:$}
 
 \vfill
+
+%---Note---%
+\note{
+
+you get 10 minutes to work on in teams.
+
+randomly pick a team to discuss answers on board.
+
+make sure you are concise, but clear.
+
+1. 
+
+a: digits
+b: marriage
+
+2. 
+
+a: 2
+b: 1 why 1 and not 4?
+c: 6: right skewed
+d: 3: a few people pulling all nighters
+e: 4: on campus
+f: 5: what do we think the numbers are?  what are most common?
+
+3. think about numerical/categorical (are we looking at bar plot or histogram);
+think about natural boundaries---there is a lower bound on piercings; then think
+about shape: skew, symmetry, think about the modes.
+
+4. Need to actually compute.
+
+team claimed, a, c, b for variability.
+
+Be careful about explain your reasoning.
+
+5. E is more variable. 
+
+Be careful about explain your reasoning.  more values that are closer to the
+mean.
+
+variability vs diversity.  diversity is not smooth.
+
+Ask if people need more time.  Tell people they are welcome to go onto next app
+ex if they are done.
+
+Make sure you go ahead and submit your responses.
+
+state names.
+
+}
 
 \end{frame}
 
@@ -452,6 +787,23 @@ A \hl{box plot} visualizes the median, the quartiles, and suspected outliers. An
 \includegraphics[width=0.6\textwidth]{figures/boxPlotLayoutNumVar}
 \end{center}
 
+%---Note---%
+\note{
+
+boxplot is useful for median, iqr.
+
+data set of 5, where will the median be.
+
+if 6, where will it be?
+
+boxplots are good for showing where outliers are.
+
+fence: 1.5 iqr.
+
+explain whiskers.  whiskers are 1.5 from interquartile range.
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -464,6 +816,21 @@ A \hl{box plot} visualizes the median, the quartiles, and suspected outliers. An
 \app{1.3 Boxplots}{$\:$\\ See the course website for instructions. \\$\:$}
 
 \vfill
+
+%---Note---%
+\note{
+
+Give 10 minutes.
+
+There are 80 observations make sure to take a note of that.
+
+Sketch a box plot.  Be meticulous.
+
+Can I turn that into a stem plot?
+
+Have them go through it
+
+}
 
 \end{frame}
 
@@ -482,6 +849,11 @@ A \hl{box plot} visualizes the median, the quartiles, and suspected outliers. An
 \begin{center}
 \includegraphics[width=0.9\textwidth]{figures/survey/mosaic_relstatus_class.pdf}
 \end{center}
+
+%---Note---%
+\note{
+
+}
 
 \end{frame}
 
@@ -517,6 +889,11 @@ Total				& 68		& 606	& 674
 
 \ct{Adapted from Subsection 2.3.2 of A. Agresti (2002), Categorical Data Analysis, 2nd ed., and \webURL{http://math.stackexchange.com/questions/83756/examples-of-simpsons-paradox}.}
 
+%---Note---%
+\note{
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -546,6 +923,11 @@ Total				&				& 68		& 606	& 674
 \disc{Who is more likely to get the death penalty?}
 }
 
+%---Note---%
+\note{
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -567,6 +949,10 @@ Total				&				& 68		& 606	& 674
 
 \end{itemize}
 
+%---Note---%
+\note{
+
+}
 
 \end{frame}
 
@@ -585,6 +971,11 @@ Total				&				& 68		& 606	& 674
 \begin{center}
 \includegraphics[width=0.9\textwidth]{figures/survey/box_drinks_veg}
 \end{center}
+
+%---Note---%
+\note{
+
+}
 
 \end{frame}
 
@@ -618,6 +1009,11 @@ Total				&				& 68		& 606	& 674
 \end{enumerate}
 
 \vfill
+
+%---Note---%
+\note{
+
+}
 
 \end{frame}
 
