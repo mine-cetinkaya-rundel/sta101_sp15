@@ -155,3 +155,5 @@ This
 shows how to invoke emerge while this
 [page](https://www.gnu.org/software/emacs/manual/html_node/emacs/Merge-Commands.html#Merge-Commands)
 shows how to control the merging process.
+
+This [page](http://stackoverflow.com/questions/278081/resolving-a-git-conflict-with-binary-files) shows you how to resolve conflicts for binary files while this [page](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/) shows you how to resolve conflicts for text files.
