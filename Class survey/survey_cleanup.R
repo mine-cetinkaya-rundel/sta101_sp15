@@ -7,7 +7,7 @@ library(dplyr)
 #d1 = read.csv("survey_raw_1_15_m.csv", stringsAsFactors = FALSE)
 #d2 = read.csv("survey_raw_1_15_j.csv", stringsAsFactors = FALSE)
 d1 = read.csv("survey_raw_1_19_m.csv", stringsAsFactors = FALSE)
-d2 = read.csv("survey_raw_1_19_j.csv", stringsAsFactors = FALSE)
+d2 = read.csv("survey_raw_1_21_j.csv", stringsAsFactors = FALSE)
 names(d2) = names(d1)
 d = rbind(d1, d2)
 
@@ -22,7 +22,7 @@ d = d[,-columns_to_remove]
 dim(d)
 
 # read survey questions file
-survey_questions <- data.frame(name = readLines("~/Desktop/Teaching/Sta101_S15/Class survey/survey_questions_S15"), stringsAsFactors = FALSE)
+survey_questions <- data.frame(name = readLines("survey_questions_S15"), stringsAsFactors = FALSE)
 
 # find rows in the text file starting with numbers
 # subset the text file for those rows only

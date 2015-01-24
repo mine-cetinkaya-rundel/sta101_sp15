@@ -1,3 +1,5 @@
+<!-- -*- eval: (auto-fill-mode 0); eval: (visual-line-mode 1); -*- -->
+
 This file provides a brief description of what you will find in this repository and how to create certain documents.
 
 Make sure to read BEFORECLONING.md before proceeding with changes!
@@ -98,6 +100,20 @@ When you open the iGrader Application it should load the names.  Click Sync in t
 
 Details can be found [here](http://assistly-production.s3.amazonaws.com/178165/kb_article_attachments/31733/lmsguide_Sakai2.7_original.pdf?AWSAccessKeyId=AKIAJNSFWOZ6ZS23BMKQ&Expires=1420653356&Signature=hEchJgYbII8WmSpJhbUPb1cspJg%3D&response-content-disposition=filename%3D%22lmsguide_Sakai2.7.pdf%22&response-content-type=application%2Fpdf).  This may be a more permanent link: <http://support.iclicker.com/#ic-LMSSakai>.  Go to Sakai -> Manual Integration.  Then look for a link to the PDF below the videos.
 
+## iClicker2 Registration
+
+iClicker recently changed a policy so that people that bought used clickers must pay a fee to re-register their clickers.
+
+You get get around this by manually entering student's clicker information.  There are two ways to do this.  In either case you need to have put the Sakai gradebook roster in the proper place---see above.
+
+If you open up iGrader, you can double click on a student's name an manually enter his or her clicker number.
+
+Alternatively, you can do a roll-call registration.  In that case, start a clicker session and then click on the sprocket on the right had side of the timer and go to Roll Call Registration.  It will go through the roster in alphabetical order allowing student's to register.  The problem is that this is a potentially slow process.
+
+## iClicker Instructor Remote
+
+You need to register your instructor remote in the course settings.
+
 # Student Requests
 
 Sometimes students will make special requests about missing class or something else.
@@ -127,3 +143,5 @@ This
 shows how to invoke emerge while this
 [page](https://www.gnu.org/software/emacs/manual/html_node/emacs/Merge-Commands.html#Merge-Commands)
 shows how to control the merging process.
+
+This [page](http://stackoverflow.com/questions/278081/resolving-a-git-conflict-with-binary-files) shows you how to resolve conflicts for binary files while this [page](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/) shows you how to resolve conflicts for text files.
