@@ -252,7 +252,7 @@ cdc$height_cat =<span class="st"> </span><span class="kw">as.factor</span>(cdc$h
 <div class="oyo">
 <p>In this section you will work with data from the class survey you designed. Instead of downloading the data directly into RStudio via a URL (like we did at the beginning of this and the last lab), you will first download the data file to your computer and then upload it to RStudio. We wanted to show you this alternative approach of loading data since this is likely what you will be using for your project.</p>
 <p>Click <a href="https://stat.duke.edu/~mc301/data/surveyS15.html">here</a> to view the codebook for the class survey data. You can use the following to download the data:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download</span>(<span class="st">&quot;https://stat.duke.edu/~mc301/data/surveyS15.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;surveyS15&quot;</span>) </code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download</span>(<span class="st">&quot;https://stat.duke.edu/~mc301/data/surveyS15.csv&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;surveyS15.csv&quot;</span>) </code></pre>
 <p>The data are released in CSV (comma separated values) format, which is a commonly used format for storing tabular data (spreadsheet) in plain-text form.</p>
 <p>Next, you will need to import the data into your workspace:</p>
 <pre class="sourceCode r"><code class="sourceCode r">surveyS15 =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;surveyS15.csv&quot;</span>)</code></pre>

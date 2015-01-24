@@ -143,6 +143,10 @@
 \item We covered 3 (good) methods of sampling (SRS, stratified, cluster), there are other methods as well (convenience, volunteer, etc.), they just happen to be not good methods for obtaining representative samples
 \end{itemize}
 
+\item Sakai error: No resubmission on assignments
+
+\item Teams: set up weekly meeting times + meet with me throughout the semester
+
 \item Finish up remaining material from last class...
 
 \end{itemize}
@@ -399,7 +403,7 @@ Seeing someone yawn and yawning are \hl{dependent}, observed difference in propo
 
 \item Count the number of face cards (yawners) in each deck
 
-\item Calculate the difference in proportions of yawners \red{(treatment - control)}, and submit this value using your clicker - \textbf{only one submission per team}
+\item Calculate the difference in proportions of yawners \red{(treatment - control)}, and submit this value using your clicker - \textbf{only one submission per team per simulation}
 
 \item Repeat steps (1) - (4) many times
 
@@ -582,7 +586,21 @@ $H_A: \mu_{caff} \ne \mu_{no~caff}$
 \begin{frame}
 \frametitle{Making a decision}
 
-\disc{Calculate the p-value based on the randomization distribution below and determine the conclusion of the hypothesis test. (100 simulations)}
+\vspace{-0.5cm}
+
+\disc{Below is a randomization distribution of 100 simulated differences in means ($\bar{x}_c - \bar{x}_{nc}$). Calculate the p-value for the hypothesis test evaluating whether caffeine \underline{increases} average tapping rate.
+\begin{center}
+{\footnotesize
+\begin{tabular}{l | c | c | c}
+\hline
+		& Caffeine	& No Caffeine	& Difference \\
+\hline
+mean	&  248.3		& 244.8 		& 3.5 \\
+\hline
+\end{tabular}
+}
+\end{center}
+}
 
 \begin{center}
 \includegraphics[width=0.9\textwidth]{figures/caffeine/caffeinetaps_mean_ht.pdf}
@@ -611,16 +629,21 @@ $H_A: \mu_{caff} \ne \mu_{no~caff}$
 \begin{frame}
 \frametitle{Testing for the median (cont.)}
 
-\disc{Using the randomization distribution below of simulated differences in means, determine whether the data provide convincing evidence that caffeine increases \underline{median} tapping rate.}
+\vspace{-0.5cm}
 
+\disc{Below is a randomization distribution of 100 simulated differences in medians ($med_c - med_{nc}$). Do the data provide convincing evidence that caffeine increases \underline{median} tapping rate?
 \begin{center}
+{\footnotesize
 \begin{tabular}{l | c | c | c}
 \hline
 		& Caffeine	& No Caffeine	& Difference \\
 \hline
-median	& 248.0		& 245.5 		& 3.5 \\
-\hline\end{tabular}
+median	& 248		& 245 		& 3 \\
+\hline
+\end{tabular}
+}
 \end{center}
+}
 
 \begin{center}
 \includegraphics[width=0.65\textwidth]{figures/caffeine/caffeinetaps_median_ht.pdf}
