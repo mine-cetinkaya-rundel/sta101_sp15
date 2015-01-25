@@ -1,0 +1,248 @@
+% -*- TeX-engine: xetex; -*-
+% Compile with XeLaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% To do before class
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Send the Logistics/Week0Annoucnement (the night before).
+% Send an email reminding students to bring a charged computer (the night before).
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Option 1: Slides: (comment for handouts)   %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
+
+% solution stuff
+\newcommand{\solnMult}[1]{
+\only<1>{#1}
+\only<2->{\red{\textbf{#1}}}
+}
+\newcommand{\soln}[1]{\textit{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 2: Handouts, without solutions (post before class)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % This breaks things for me for some reason.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% %\renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 3: Handouts, with solutions (may post after class if need be)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{\red{\textbf{#1}}}
+% \newcommand{\soln}[1]{\textit{#1}}
+
+% % % This breaks things for me for some reason.
+% % % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% % }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 4: Notes Only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% % See http://tex.stackexchange.com/questions/114219/add-notes-to-latex-beamer
+% \documentclass[10pt,containsverbatim,xcolor=xelatex,dvipsnames,table,notes=only]{beamer}
+
+% % handout layout
+% % \usepackage{pgfpages}
+% % \pgfpagesuselayout{1 on 1}[letterpaper, landscape, border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % Having a problem with this.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
+
+%%%%%%%%%%
+% Load style file, defaults  %
+%%%%%%%%%%
+
+\input{../../lec_style.tex}
+\input{../../definitions_default.tex}
+% ALT ALT
+% \input{../definitions_custom.tex}
+
+%%%%%%%%%%%
+% Cover slide info    %
+%%%%%%%%%%%
+
+\title{Unit 2: Probability and distributions}
+\subtitle{3. Probability and conditional probability}
+\author{Sta 101 - Spring 2015}
+\date{January 26, 2015}
+\institute{Duke University, Department of Statistical Science}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document and set Helvetica Neue font   %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\fontspec[Ligatures=TeX]{Helvetica Neue Light}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title Page
+
+\begin{frame}[plain]
+
+\titlepage
+\vfill
+{\scriptsize \webLink{\PersonalSite}{Dr. \LastName{}} \hfill Slides posted at  \webLink{\CourseSite}{\CourseSite}}
+\addtocounter{framenumber}{-1} 
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Housekeeping}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Announcements}
+
+\begin{itemize}
+
+\item 
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Main ideas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Disjoint and independent does not mean the same thing}
+\label{mi1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{1. Disjoint and independent does not mean the same thing}
+
+\begin{itemize}
+
+\item \hl{Disjoint (mutually exclusive) outcomes} cannot happen at the same time
+\begin{itemize}
+\item A voter cannot register as a Democrat and a Republican at the same time
+\item But s/he might be a Republican and a Moderate at the same time -- \hl{non-disjoint outcomes}
+\item For disjoint A and B: $P(A~and~B) = 0$
+\end{itemize}
+
+\pause
+
+\item If A and B are \hl{Independent events}, having information on A does not tell us anything about B (and vice versa)
+\begin{itemize}
+\item If A and B are independent: 
+\begin{itemize}
+\item $P(A~|~B) = P(A)$
+\item $P(A~and~B) = P(A) \times P(B)$
+\end{itemize}
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{2. Bayes' theorem works for all types of events}
+
+\begin{itemize}
+
+\item \hl{Bayes' theorem:} $P(A~|~B) = \frac{P(A~and~B)}{P(B)}$
+
+\pause
+
+\item ... can be rewritten as: $P(A~and~B) = P(A~|~B) \times P(B)$
+
+\end{itemize}
+
+\pause
+
+\textbf{For disjoint outcomes:}
+
+\begin{itemize}
+\item We know $P(A~|~B) = 0$, since if B happened A could not have happened
+\item Then, $P(A~and~B) = P(A~|~B) \times P(B) = \red{0} \times P(B) = 0$
+\end{itemize}
+
+\textbf{For independent events:}
+
+\begin{itemize}
+\item We know $P(A~|~B) = P(A)$, since knowing B doesn't tell us anything about A
+\item Then, $P(A~and~B) = P(A~|~B) \times P(B) = \red{P(A)} \times P(B)$
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Summary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Summary of main ideas}
+
+\vfill
+
+\begin{enumerate}
+
+\item \nameref{mi1}
+
+\item \nameref{mi2}
+
+\item \nameref{mi3}
+
+\item \nameref{mi4}
+
+\item \nameref{mi5}
+
+\item \nameref{mi6}
+
+\item \nameref{mi7}
+
+\end{enumerate}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
