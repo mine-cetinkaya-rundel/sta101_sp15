@@ -1,12 +1,23 @@
-% -*- TeX-engine: xetex; -*-
+% -*- TeX-engine: xetex; eval: (auto-fill-mode 0); eval: (visual-line-mode 1); -*-
 % Compile with XeLaTeX
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % To do before class
 %%%%%%%%%%%%%%%%%%%%%%%
 
+% Print off Readiness Assessment 1
+
+% Send email about registering clicker.
+% Test run readiness assessment on iClicker.
+% I need to get scratch off sheet from Mine.
+
 % Send the Logistics/Week0Annoucnement (the night before).
 % Send an email reminding students to bring a charged computer (the night before).
+
+% Questions for Mine
+% Can I get scratch off sheets.
+% What do you do during group portion?
+% Question: voluntary vs. non-response
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Option 1: Slides: (comment for handouts)   %
@@ -69,8 +80,8 @@
 % \documentclass[10pt,containsverbatim,xcolor=xelatex,dvipsnames,table,notes=only]{beamer}
 
 % % handout layout
-% % \usepackage{pgfpages}
-% % \pgfpagesuselayout{1 on 1}[letterpaper, landscape, border shrink=5mm]
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{2 on 1}[letterpaper, landscape, border shrink=5mm]
 
 % % solution stuff
 % \newcommand{\solnMult}[1]{#1}
@@ -89,7 +100,7 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-% \input{../definitions_custom.tex}
+% \input{../../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -99,6 +110,8 @@
 \subtitle{1. Data Collection +\\Observational studies \& experiments}
 \author{Sta 101 - Spring 2015}
 \date{January 12, 2015}
+% ALT ALT
+% \date{January 13, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 
@@ -154,6 +167,125 @@
 
 \end{itemize}
 
+%---Note---%
+\note{
+
+Explain individual RA/clickers:
+\begin{itemize}
+\item Set frequency (hold down power, click AA).
+
+\item Normally, I'd ask you to put everything away.
+
+\item Normally, 15 minutes, today a little onger.
+
+\item Click on blue button.  You should see square brackets.  Click on A, check
+mark.  Your answer has been sent.  Go up down to change question.
+
+\item If you don't see brackets click on blue button.
+
+\item Whether you are registered are not should not matter.
+
+\item You might have questions.  Raise hand and someone will help you.
+
+\item When you are done, turn your clicker over and set it on your desk.
+
+\item Write your name on the piece of paper and circle your answer on the piecen of paper.  This is the only record I will have if we encounter technical difficulties.
+
+\end{itemize}
+
+- Informally put together teams during clicker.
+- About 8 minutes in, say if you are done, turn over your clicker.
+- Stop once people are done.
+- Pause individual portion.
+
+Explain teams/team portion of RA.
+\begin{itemize}
+\item Normally, you would be with team, today you are with impromptu teams.
+
+\item It would be too hard for everyone to find each other today.  Tomorrow in lab you will be put into teams.
+
+\item I want you to sit with your team in class.
+
+\end{itemize}
+
+Explain scratch sheet:
+\begin{itemize}
+\item Use doc cam.
+
+\item For the team portion you will use scratch out sheets.
+
+\item Scratch once, if correct good.  Scratch again for second try.
+
+\item 10 minutes for group scratching. (Set up timer.)
+
+\item When you are done, I will pick up your scratch off sheet AND your paper readiness assessment.
+
+\end{itemize}
+
+Give 1 minute warning:
+\begin{itemize}
+\item You have one minute.
+
+\item When time is up if you haven't given me your scratch off or readiness assessment, walk it up to the front and set it on the table.
+
+\end{itemize}
+
+While the team portion of the RA is going:
+\begin{itemize}
+
+\item Write percentage next to each question and circle correct answer.  Usually, pick off two or three questions to go over.
+
+\item pick a couple to go over.
+
+\item read the question back to them.
+
+\item tell the students which learning objectives each question covered.
+
+\end{itemize}
+
+Question 1: types of variables
+\begin{itemize}
+\item first learning objective: describing variables.
+
+\item question 1: populations can only take on whole numbers.  Can you yave 1000.5 people?
+
+\end{itemize}
+
+Question 5: skewed distributions
+\begin{itemize}
+\item we want to figure out shape of distribution: symmetric, skewed
+
+\item It really helps to draaw things out.  Use doc cam.  Minimum amount 0:
+  boundary.  put 50k marks, try to draw to scale.  What is the total area under
+  the curve?  100\%.  Break into quarters.  Are there any natural boundaries?
+  Costs, salaries, etc.
+
+\end{itemize}
+
+
+Question 10: randomization test.
+\begin{itemize}
+
+\item Just based on data what is it pointing to?  Are people with pets more less likely to be stressed?
+
+\item But this is just true of sample.  Want to say something about the
+entire population.  One method is simulation based method.  Randomization.  Last
+video you watched.
+
+\item Total of 40 cards.  18 cards.  Wrote word overstressed on 18.  Shuffle.
+Randomly split into two groups of 20.  Do I have any control over how many went
+to one group or another.  
+
+\item What would I expect the number to be in each group.
+
+\item What would the expected difference be?  0. 
+
+\item If you expect 0 but you see 2 is that something that is due to chance? What we will learn is whether difference of 2 is statistically significant.  This is what we are learning in this class?  Is this difference suprisingly large?
+
+\end{itemize} 
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -167,15 +299,28 @@
 
 \begin{itemize}
 
-\item PS 1 due Wednesday on Sakai, by the beginning of class
+\item PS 1 due \ProblemSetADD{} on Sakai, by the beginning of class
 
 \item Lab tomorrow, sit with your teams
 
-\item My office hours: MTWR 3-4pm at my office
+\item My office hours: \OfficeHours{} at \OfficeHoursLocation{}
+% ALT ALT
+
+% \item This week my Thursday Office Hours will be from after class to 3:30PM.
 
 \item Class sessions recorded via Duke Capture (link emailed)
+% ALT ALT
 
 \end{itemize}
+
+%---Note---%
+\note{
+
+  Read bullet points.  
+
+  Emphasize that tomorrow they are sitting in teams!  And in future classes they will be sitting in teams.
+
+}
 
 \end{frame}
 
@@ -211,7 +356,75 @@
 
 \pause
 
-\disc{Can you see any limitations to using data from the Duke Lemur Center to make inferences about all lemurs?}
+\disc{Can you see any limitations to using data from the Duke Lemur Center to
+  make inferences about all lemurs?}
+
+%---Note---%
+\note{
+
+First main idea: use a sample to make an inference about a population.
+
+Get to idea bullet point on population parameters.
+
+\begin{itemize}
+
+\item We will take a survey from you.  You all are interesting, but all duke students is more
+interesting.
+
+\item We will assume you are random sample to say something about whole population.
+
+\item Why do we take samples?  Populatiosn are hard to access.
+
+\item How would we get access to all duke students?  Registrar?  Registrar won't give out contact info for all students---privacy considerations.
+
+\item U.S.\ pop., to much money to survey all.
+
+\item Bottom line: usually don't have access to population so we must sample.
+
+\item Then use that sample to make inferences about population we are interested in.
+
+\end{itemize}
+
+Say we want to know how many offspring female lemurs have on average.
+\begin{itemize}
+
+\item trip to madagascar?
+
+\item use data from duke lemur center
+
+\item use sample mean from these data as estimate for unknown population parameter
+
+\item sample statistics vs. pop param---things we don't have access to.
+
+\item the better (more representative) sample, the better inferences.
+
+\end{itemize}
+
+To take another example, say we want to estimate the average number of hours enrolled by Duke student's this semester.
+\begin{itemize}
+
+\item want to estimate average number of hours
+
+\item used you as a sample.
+
+\item Q: would you make up a good sample?
+
+\item  this is a trinity course.  most pub pol and poli sci., not pratt.
+pratt may have more labs or something.
+
+\item but if asking about favorite music may not be a problem.  So whether a sample is representative depends in part on the question.
+
+\end{itemize}
+
+Can you see any limitations to lemur center?
+\begin{itemize}
+\item they are a captive population of lemurs, there is always going to be some
+potential biases that come from that.
+\end{itemize}
+
+We want to watch out for and try to avoid such biases, and if we can't we want to report that they might exist.
+
+}
 
 \end{frame}
 
@@ -233,6 +446,25 @@
 \item For your inference to be valid, the spoonful you tasted (the sample) needs to be \hl{representative} of the entire pot (the population)
 
 \end{itemize}
+
+%---Note---%
+\note{
+
+tasting food analogy
+\begin{itemize}
+\item do you taste entire pot to see if it is salty enough.
+
+\item one taste: exploratory analysis.
+
+\item going from taste, to entire pot is inference.  this soup is too salty.
+
+\item if you haven't mixed things up are you actually going to get a representative
+smaple.
+
+\item you need to mix things up to get representative sample.
+\end{itemize}
+
+}
 
 \end{frame}
 
@@ -267,6 +499,46 @@
 
 \end{itemize}
 
+%---Note---%
+\note{
+
+Simple random sampling:
+\begin{itemize}
+
+\item simple random sample is equally likely to be selected.
+
+\end{itemize}
+
+Stratified sampling:
+\begin{itemize}
+\item denotted by different colors.
+
+\item when stratifying, first group by what is common about them, say socio-economic status.  Then go into each group, each strata, and randomly sample.
+\end{itemize}
+
+Clustering:
+\begin{itemize}
+
+\item maybe based on geographical information or something like that.
+
+\item figure out what clusters are, since you don't have resources, pick just some clusters, and then sample.
+
+\item ideally, clusters are similar
+
+\item if clusters are similar then this isn't going to be a problem.
+
+\end{itemize}
+
+R: when might you use clustering?
+\begin{itemize}
+\item schools very similar in school district.
+\item first sample a few schools.  then send surveys.
+\end{itemize}
+
+Lots of us surveys do clustering by county
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -280,6 +552,17 @@
 \item Stratified sampling, where each cluster is a neighborhood
 \item \solnMult{Cluster sampling, where each cluster is a neighborhood}
 \end{enumerate}
+
+%---Note---%
+\note{
+
+Clicker question: read question and answers, 45-50 seconds.
+
+C is most popular by far.  Someone that chose C, why?  clusters sound dissimilar.
+
+Give exmaple of duke forrest, lots of Professors live there. That isn't representative of Durhams population.
+
+}
 
 \end{frame}
 
@@ -302,6 +585,43 @@
 \item \hl{Convenience sample:} Individuals who are easily accessible are more likely to be included in the sample
 
 \end{itemize}
+
+%---Note---%
+\note{
+
+Non-response: 
+\begin{itemize}
+\item R: when do we generally have non-response errors?
+\item when we have reached out to sample and people still refuse to respond.
+\end{itemize}
+
+Voluntary response bias:
+\begin{itemize}
+
+\item voluntary response issue: people volunteer to respond.  
+
+\item cnn always has a poll.  disclaimer: this is not a scientific poll.
+
+\item Q: who takes time to repsond to somethign that shows up on screen?
+
+\item people that have really strong opinions.
+
+\end{itemize}
+
+The big distinction between voluntary and non-response is that with non-response the person designing the survey has done everything possible to avoid biasing the results.  Voluntary response may be due to a lack of effort on the part of the scientist.
+
+convenience samples:
+\begin{itemize}
+
+\item invididuals who are easily accessible are more likely to be included
+
+\item ask friends, friends more likeliy to be like minded
+
+\item how much you work out, and you like to work out, and you run survey at gym...
+
+\end{itemize}
+
+}
 
 \end{frame}
 
@@ -330,6 +650,19 @@
 \end{multicols}
 }
 
+%---Note---%
+\note{
+
+Clicker question (school district), read Q\&A, give 1min.
+
+blue clicker
+
+quite a few for C
+
+TODO TODO
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -350,6 +683,33 @@
 
 \ct{\webURL{http://www.nytimes.com/2014/06/30/technology/facebook-tinkers-with-users-emotions-in-news-feed-experiment-stirring-outcry.html}}
 
+%---Note---%
+\note{
+
+Facebook example:
+\begin{itemize}
+\item go over difference between experiements and observational studies.  Random assignment.  Random sampling.
+
+\item News with facebook, they published a paper in conjuction with researchers... read from article.
+
+\item Q: what type of study is this? experment.
+
+\item Q: why?  they were actually randomly assigning people.
+
+\item R: how would we make this an observational study?
+
+\item What is the scope of inference.  Q: What can we say about causality, what can we talk about generalizability?
+
+\item R: what does causality require: random assignment
+
+\item R: what does generalizabiltiy require: random sample.
+
+\item Facebook got in big trouble: didn't tell anybody.  big no-no in research.
+
+\end{itemize}
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -369,6 +729,24 @@
 \disc{Can this study be used to conclude a causal relationship between increased stress and muscle cramps?}
 
 \soln{\onslide<4->{Muscle cramps might also be due to increased caffeine consumption or sleeping less -- these are potential \hl{confounding} variables.}}
+}
+
+%---Note---%
+\note{
+
+Muscle cramp study:
+\begin{itemize}
+\item Read about study.
+
+\item Q: What type of study? observational.
+
+\item What is the conclusion, what type of wording would be appropriate?  There is an association between these things.
+
+\item Can we make a causal statement?  no.
+
+\item Read.  we don't know if it is whatever or whatever.  what we call these are potential confounding variables.
+\end{itemize}
+
 }
 
 \end{frame}
@@ -409,6 +787,27 @@
 \textbf{Demo:} \webURL{http://bl.ocks.org/avimoondra}
 \end{center}
 
+%---Note---%
+\note{
+
+Four principles of experimental design.
+
+\begin{itemize}
+\item We want to know if increased stress CAUSES muscle cramps.  Need random assignment.
+\item Effect of stress might be different on younger than older people.  Block for age if you think age will effect how people will respond.  Then do random assignment within each group.
+\item Q: What other variables might we block for?  Sex/gender.  You want the same number of males and females in each group.
+\item Blocking gives us an equal distribution of each group to the control and experiment.
+\end{itemize}
+
+
+Demo: 54 patients.  color is important.
+\begin{itemize}
+\item assign some to treatment and some to control.
+\item blocking gives us equal distribution of each type to control and treatment.
+\end{itemize}
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -424,6 +823,23 @@
 \begin{center}
 \includegraphics[width=\textwidth]{figures/random_sample_assignment}
 \end{center}
+
+%---Note---%
+\note{
+
+random assignment: causality
+
+random sample is hard to get: rarely we will get these.
+
+volunteers: voluntary response bias.
+
+usually most experiments lower left.
+
+most surveys: upper right. (social sciences)
+
+lower right: weakest type of study.
+
+}
 
 \end{frame}
 
@@ -451,6 +867,25 @@
 \begin{center}
 \includegraphics[width=\textwidth]{figures/haters}
 \end{center}
+}
+
+%---Note---%
+\note{
+
+\begin{itemize}
+
+\item work on application exercise: we will talk about next time.  read study and answer a few questions.
+
+\item let me walk you through how you are going to do that.
+
+\item In the same teams.  Put up app exercise on Sakai.  Explain what to do.
+
+\item I will tell you when you are free to leave.
+
+\item Normally, I'd ask you to work with your team for a few minutes outside of class before wednesday.  It's fine if you don't finish today.
+
+\end{itemize}
+
 }
 
 \end{frame}
