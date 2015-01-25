@@ -22,3 +22,9 @@ Sta 101 TA Meeting Agendas
     + Confusion over random sampling as a requirement for causality -- Remind students random sampling -> generalizability, random assignment -> causality.
     + Confusion over cluster sampling as opposed to convenience sampling -- remind students we covered 3 (good) methods of sampling and there are other methods to (convenience, volunteer, etc.), they just happen to be not so good methods
 * Mine to send TAs standard text to be used for requesting PDF submission from students who submitted Word document. Going forward Word submission (or other not allowed format) -> 0 on PS.
+
+### Week 3: Jan 26, 2015
+* Responding to questions on Piazza
+    + If it says "anon to students" do not use the student's name in your response, as it means the student wanted to keep their name anonymous to other students in the class
+    + Always first invite the students to start the discussion / provide their thoughts if they haven't done so in their original question
+    
