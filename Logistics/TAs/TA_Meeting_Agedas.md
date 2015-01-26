@@ -27,4 +27,10 @@ Sta 101 TA Meeting Agendas
 * Responding to questions on Piazza
     + If it says "anon to students" do not use the student's name in your response, as it means the student wanted to keep their name anonymous to other students in the class
     + Always first invite the students to start the discussion / provide their thoughts if they haven't done so in their original question
+* Regrade requests
+    + All regrade requests must go through the professor
+    + If a student emails you, forward the email to the prof, and cc the student letting them know this is what you're doing
+* Peer evaluations
+    + Walk head TAs through how to set up the Qualtrics surveys
+    + Ask for feedback on wording of peer evaluation questions
     
