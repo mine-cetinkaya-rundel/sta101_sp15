@@ -82,6 +82,8 @@
 % %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
 % %}
 
+\usepackage{outlines}
+
 %%%%%%%%%%
 % Load style file, defaults  %
 %%%%%%%%%%
@@ -89,7 +91,7 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-% \input{../definitions_custom.tex}
+% \input{../../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -99,6 +101,8 @@
 \subtitle{1. Probability and conditional probability}
 \author{Sta 101 - Spring 2015}
 \date{January 26, 2015}
+% ALT ALT
+% \date{January 27, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 
@@ -140,6 +144,11 @@
 
 \end{itemize}
 
+%---Note---
+\note{
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -155,9 +164,70 @@
 
 \item 15 minutes individual -- turn your clicker over when you're done
 
-\item 10 minutes team -- put your team name on the front of the scratch off sheet + put \textbf{only} the names of the members who are present today on the back
+\item 10 minutes team -- put your team name on the front of the scratch off
+  sheet + Lab Time + put \textbf{only} the names of the members who are present today on the back
 
 \end{itemize}
+
+%---Note---
+\note{
+
+\begin{outline}
+
+\1 Stuff to clarify, perhaps beforehand.
+
+\2 Sit to the sides.
+\2 They will be tempted to talk during RA.  Don't talk during individual portion.
+\2 How are scores determined, it is a weighted average.
+
+\1 People will do pretty well
+
+\1 Two pretty good to go over.
+
+\2 Q2. Do Venn diagram representation.  How many both?  How many premeds?  How
+many not both?  Same for social sciences.  What is the question asking?  GIVEN.
+Know the denomenator out of 50.
+
+\2 Q3.  What is min?  What is max?  Probs. only occur between zero and one.
+Sample space has to add up to what percent.  
+
+\3 Go through
+
+What is wrong with the first option?  Adds up to more that 100.
+
+What is wrong with B?  It does not add up to 100.
+
+C is the proper one.
+
+What is rong with D? can't have a negative probability.
+
+\1 Two not so good.
+
+\2 Q6: Which, on its own is the least useful method if to determine if normal.
+
+Okay to check for percentiles
+
+QQ plot okay.
+
+Median/mode is worst option.  Why?  Doesn't tell you about the shape.  Two
+symmetric multimodal.
+
+\2 Q7: Bring up answer key to show learning objectives.
+
+Draw a left skewed distribution.
+
+Where is median, closer to hump or tail?
+
+Where is mean?  Going to be at least a little closer to the tail.
+
+Why will mean be less than?  Lower observations will be pulling it down.  (Can
+do dot plot to show.)
+
+Write down formula for z-score
+
+\end{outline}
+
+}
 
 \end{frame}
 
@@ -167,7 +237,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Disjoint and independent do mean the same thing}
+\subsection{Disjoint and independent do not mean the same thing}
 \label{mi1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -196,6 +266,89 @@
 \end{itemize}
 
 \end{itemize}
+
+%---Note---
+\note{
+
+\begin{outline}
+\1  3 main ideas
+
+\2 First idea: disjoint and independent do not mean the same thing.
+
+\end{outline}
+
+Let's look at the definitions of disjoint and independent.
+
+\textbf{Disjoint}:
+
+\begin{outline}
+
+\1 Disjoint events are events that cannot happen at the same time.
+
+\1 Disjoint events are also called \textbf{mutually exclusive}.
+
+\1 If disjoint events cannot happen at the same time, the probability that both
+occur is zero.
+
+\1 Suppose I consider the population of US voters.
+
+\2 In this setup the cases of interest are people.
+
+\1 Now suppose I reached into this population and randomly sampled a person.
+
+\1 One event: This person is a Democrat.
+
+\2 And then I could ask, what is the probability of this event, and as we saw
+last time, this would be the proportion of voters that are registered as Democrats.
+
+\1 Another event: This person is a Republican.
+
+\2 And I could also ask, what is the probability of this event.  And this would
+also relate back to proportions.
+
+\1 But these two events are mutually exclusive.  You can't be a registered
+Democrate and a registered Republican at the same time.  So the probability that
+the person is a Democrate and a Republican is zero.
+
+\1 Let's consider yet another event: This person is a moderate.
+
+\2 It is totally possible that a person is both a Republican and a moderate.  So
+these two events are not disjoint.
+
+\2 Disjointness is all about if two events can occur simultaneously.
+
+\end{outline}
+
+\textbf{Independence}
+
+\begin{outline}
+
+\1 independence has to do with one event informing another.
+
+\1 What is the probability that I roll a 1,2,3? 1/2
+
+\1 What is the probability that I roll a 1? 1/6
+
+\1 Now, what if I roll this die, but don't show you what landed up.  I just say
+that I rolled a 1,2,3, what is the probability that I rolled a 1? 1/3
+
+\1 So if I don't know anything, then the probability is 1/6, but if I know that
+the roll resulted in a 1,2,3, then that tells me something about the probability
+of having rolled a 1.
+
+\1 independent: two events are independent if having information on one doesn't
+tell us anything about the other.
+
+\2 ASK: can anyone think of two events that are obviously independent of each
+other.  any examples?
+
+\3 two coins example.  Bring up if they don't say.
+
+\3 Go through conditional notation using coin example.
+
+\end{outline}
+
+}
 
 \end{frame}
 
@@ -239,6 +392,43 @@ P(A or B) \\
 \begin{center}
 \includegraphics[width = 0.9\textwidth]{figures/venn/venn_non_disjoint}
 \end{center}
+}
+
+%---Note---
+\note{
+
+\begin{outline}
+
+\1 This is the general addition rule.
+
+\1 We need to watch out for this because this may be slightly different than how
+we use the word OR in English.
+
+For instance, I might ask, do you want to go to a movie or a play on Friday
+night.  What I mean when I ask that is do you want to go to either a movie or a
+play, but not both.
+
+But the definition of OR always includes the possibility of both events
+occuring.  
+
+\textbf{Does either A occur or B occur or both.}
+
+\1 It is possible to visualize the general addition rule.  
+
+\2 When two events are disjoint we draw two blobs that don't overlap to indicate
+that they are mutually exclusive and write the probability of each occuring
+within the blob.
+
+\2 When two events are not disjoint, we draw two blobs that do overlap to
+indicate that it is possible for both events to occur.
+
+The probability of A is still 0.4, the probability of B is still 0.3.  If we
+just add 0.4 to 0.3 we double count the overlaps of the two events.  But we just
+want to single count it.  So we need to subtract the amount that is in the
+intersection.
+
+\end{outline}
+
 }
 
 \end{frame}
@@ -294,6 +484,50 @@ P(A or B) \\
 \end{itemize}
 }
 
+%---Note---
+\note{
+
+\begin{outline}
+
+\1 First, a bit about terminology.
+
+\2 This is a conditional distribution because we are asking what is the
+probability that A occurs given that we know B occurs.
+
+\2 This is a joint probability, it is asking what is the probability that BOTH A
+and B jointly occur.
+
+\2 And this a a marginal probability, it is asking what is the probability that
+B occurs, without reference to A.
+
+\2 So the probability of A knowing B is the probability of A and B occuring
+divided by the probability of B occuring.
+
+\1 We can rewrite this as...
+
+\1 Let's see how this relates back to disjoint and independent sets.
+
+\1 What if A and B are disjoint:
+
+\2 Say a family member is about to have a baby and the A represents the event of
+having a girl while B represent the event of having a boy.
+
+\2 Then the probability of having a girl given that the baby is a boy is zero.
+
+\2 We can relate this back to what we said earlier, what is the probability that
+the baby is a boy and the baby is a girl?
+
+\1 What if A and B are independent?
+
+\1 This is like what we said earlier.  Suppose a I roll a die twice.  What I get
+on the first roll doesn't affect the second roll.  So the probability of rolling
+a 4 on the second roll and a 1 on the first roll is just the probability of
+rolling a 4 on the second roll times rolling a 1 on the first roll.
+
+\end{outline}
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -306,6 +540,52 @@ P(A or B) \\
 \app{2.1 Probability and conditional probability}{$\:$\\ See the course website for instructions. \\$\:$}
 
 \vfill
+
+%---Note---
+\note{
+
+\begin{outline}
+
+\1 State beforehand
+
+\2 8 questions, brief.
+
+\2 Show your work since we will review.
+
+\2 If you get done, start reading about project I.
+
+\2 Read through each question as you go along.  Bring up sakai side by side app ex.
+
+\1 Go over table a bit.
+
+\1 The questions
+
+\2 2.  We are looking for people with BOTH of these attributes.  AND.
+
+\2 3.  GIVEN.
+
+\2 4. What is the definition of marginal probability.  Grab number from MARGINS
+of the table.  Not JOINT.  Not CONDITIONAL.
+
+p-value is a CONDITIONAL probability.
+
+We will talk more about this on Wednesday.
+
+\2 5. OR
+
+\2 6. What is the difference between 5 and 6?  There is no difference.
+Probability vs. PERCENT.
+
+\2 7. 
+
+\2 8. Bring up h-plot.
+
+\2 9. Extra question: what is the response, what is the explanatory?  Probably go
+from year to decision to vote.
+
+\end{outline}
+
+}
 
 \end{frame}
 
