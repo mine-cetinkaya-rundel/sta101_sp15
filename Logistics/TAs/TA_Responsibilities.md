@@ -36,14 +36,21 @@ Sta 101 TA Responsibilities
     + Piazza can be accessed via the Sakai site.
     + You will be assigned a TA role on Piazza, which means that your responses will be tagged as such.
     + Adjust your settings so that you're notified when a note is posted on Piazza.
-    + Respond to student questions periodically. Do not just give away the answers, instead respond in a way that enables the students to get to the right answer. Don't hesitate to answer a question with a question that helps the student think through the problem. <br><br>
+    + Respond to student questions periodically. Do not just give away the answers, instead respond in a way that enables the students to get to the right answer. Don't hesitate to answer a question with a question that helps the student think through the problem. 
+    + If it says "anon to students" do not use the student's name in your response, as it means the student wanted to keep their name anonymous to other students in the class.
+    + Always first invite the students to start the discussion / provide their thoughts if they haven't done so in their original question/
+    <br><br>
 
 - **Weekly meetings:** During the weekly meetings we will share experiences from the past week and prepare for the following.
     + Each week one TA will present the lab. This presentation should take roughly 5-10 minutes and should be a complete rehearsal of how you plan on presenting the lab to the students. Then, also take a few minutes to discuss any potential difficulties that might arise during the lab. The presenter will also be responsible for either creating or reviewing the key for the week's lab.
     + All TAs must also review the lab (i.e. actually do the entire lab) and come to the meeting with suggestions/questions regarding how best to present the lab to the students.
     + During the meeting you should also be prepared to provide feedback on the past week (what seems to be challenging for students, commonly missed questions on the assignments, questions that commonly come up during office hours, team dynamics, etc.). <br><br>
 
-- **Regrades:** You should only consider regrade requests in the case of errors in tallying points. All other regrade requests must go through the professor -- simply direct the students to the professor. <br><br>
+- **Regrades:** 
+    + We only consider regrade requests in the case of errors in tallying points. 
+    + All regrade requests must go through the professor -- simply direct the students to the professor. 
+    + If a student emails you about a regrade, forward the email to the prof, and cc the student letting them know this is what you're doing.
+    <br><br>
 
 ### Responsibilities of the head TAs:
 - Ensure that grading is completed by the due date (check a couple days prior and send timely reminders if need be).

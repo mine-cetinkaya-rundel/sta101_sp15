@@ -70,19 +70,40 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <p>Your first data analysis project is writing a research paper addressing a research question that can be answered using a hypothesis test and/or confidence interval. You can choose to work with one numerical or one categorical variable, or you can choose to evaluate the relationship between a categorical and a numerical or two categorical variables (so the only combination that is out is two numerical variables – that is the focus of the second project). This is a team project.</p>
 <div id="data" class="section level3">
 <h3>Data</h3>
-<p>You can use a dataset of your own choosing, or use one of the datasets curated by the Duke Data and GIS Library, the General Social Survey (GSS) or American National Election Survey (ANES). See their course guide at <a href="http://guides.library.duke.edu/stat101">http://guides.library.duke.edu/stat101</a>. (The World Values Dataset will also be available shortly.)</p>
-<p>Note that the GSS dataset is huge because it contains responses from many years. When doing your analysis you might wan to first limit your dataset to one or a few recent years since opinions may have changed on certain topics. Or you might choose to compare opinions across two or more years.</p>
-<p>If you choose to not use one of these datasets, you can find a dataset online or from another source, or collect your own data. You may not use any dataset used in this class - from labs, textbook, etc. Avoid using population datasets (such as data from all countries, all counties, etc.) – the purpose of this project is to do statistical inference, which means you should be starting with sample data. If you collect your own data and your sampling method isn’t perfect, or find a dataset where you are worried the data may not have been sampled randomly, you may still use the dataset with appropriate discussion of the shortcomings of the study, biases, etc.</p>
-<p>I would recommend that you choose to work with two variables and explore the relationshis between them, unless you have an interesting research question that involves only one variable.</p>
+<p>You can use a dataset of your own choosing, or use one of the datasets curated by the Duke Data and Visualization Services. See their course guide at <a href="http://guides.library.duke.edu/stat101">http://guides.library.duke.edu/stat101</a>. Available datasets include:</p>
+<ul>
+<li>Behavioral Risk Factor Surveillance System (BRFSS)</li>
+<li>World Values Survey</li>
+<li>American National Election Survey (ANES)</li>
+<li>General Social Survey (GSS)</li>
+</ul>
+<p>Note that the GSS dataset is huge because it contains responses from many years. When doing your analysis you should first limit your dataset to one or few years you’re interested in since opinions may have changed on certain topics over the years. Or you might choose to compare opinions on a specific issue across two or more years.</p>
+<p>If you choose to not use one of these datasets, you can find a dataset online or from another source, or collect your own data (either via a survey or experiment). Some ground rules:</p>
+<ul>
+<li>You may <strong>not</strong> use any dataset used in this class - from labs, textbook, etc.</li>
+<li>You should avoid using population datasets (such as data from all countries, all counties, etc.) – the purpose of this project is to do statistical inference, which means you should be starting with sample data.</li>
+<li>If you collect your own data and your sampling method isn’t perfect, or find a dataset where you are worried the data may not have been sampled randomly, you may still use the dataset with appropriate discussion of the shortcomings of the study, biases, etc.</li>
+</ul>
 </div>
 <div id="getting-your-data-into-rstudio" class="section level3">
 <h3>Getting your data into RStudio</h3>
 <p>For the datasets provided by the library download the zipped data folders, unzip them, and upload the .Rdata file onto RStudio (there is an upload button in the Files tab on the bottom right page). You can view the codebook using the html files in the zipped archive you download (simply drag them to your browser), or by using the Survey Documentation tool provided on the library website.</p>
-<p>If you prefer to work with a different dataset of your choosing, you will need to put your dataset in an Excel file, save it as a comma separated file (.csv) and uploading that file to RStudio. You can find more detailed instructions on this on the <a href="https://stat.duke.edu/courses/Spring15/sta101.001/faq/">course FAQ</a> page (See under R related, ``My dataset is in a .csv file on my computer. How can I get it into RStudio?“.)</p>
+<p>If you prefer to work with a different dataset of your choosing, you will need to put your dataset in a Google Spreadsheet or Excel file, save it as a comma separated file (.csv), and upload that file to RStudio. You can find more detailed instructions on this on the <a href="https://stat.duke.edu/courses/Spring15/sta101.001/faq/">course FAQ</a> page (See under R related, ``My dataset is in a .csv file on my computer. How can I get it into RStudio?“.)</p>
 </div>
 <div id="proposal" class="section level3">
 <h3>Proposal</h3>
-<p>Your proposal should answer the following questions. You can input your information on the Google Doc at [to be posted].</p>
+<p>Your proposal should answer the following questions on the Google Doc at <a href="https://docs.google.com/spreadsheets/d/1FVg_Pu5hOWHX5dhRd9P9Sqv_RMU4r6wmES489rgZ7IE/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1FVg_Pu5hOWHX5dhRd9P9Sqv_RMU4r6wmES489rgZ7IE/edit?usp=sharing</a>.</p>
+<ul>
+<li>Research question - You should phrase your research question in a way that matches up with the scope of inference your dataset allows for.</li>
+<li>Cases - What are the cases, and how many are there?</li>
+<li>Data collection - Describe the method of data collection.</li>
+<li>Type of study - What type of study is this (observational/experiment)?</li>
+<li>Data Source - If you collected the data, state self-collected. If not, provide a citation/link.</li>
+<li>Link to data - If using a dataset other than those provided by the library, provide a link to a Google Spreadsheet that you have shared with me at <a href="mailto:cetinkaya.mine@gmail.com">cetinkaya.mine@gmail.com</a>.</li>
+<li>Response - What is the response variable, and what type is it (numerical/categorival)?</li>
+<li>Explanatory - What is the explanatory variable, and what type is it (numerical/categorival)?</li>
+<li>Relevant summary statistics - Provide summary statistics relevant to your research question. For example, if you’re comparing means across groups provide means, SDs, sample sizes of each group. <strong>This step requires the use of R.</strong></li>
+</ul>
 <p>Fill out all required fields briefly but thoroughly.</p>
 <p>For your proposal, you will receive a check+, check, check-, or 0, and feedback. Note that proposals make up 10% of the Project 1 grade.</p>
 </div>
@@ -122,7 +143,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <h3>Format &amp; length</h3>
 <p>Your paper should be written using the markdown template, so that all R code, output, and plots will be automatically included in your write up. In order to download the template for the project type the following in RStudio:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download</span>(<span class="st">&quot;http://stat.duke.edu/courses/Spring15/sta101.001/post/projects/sta101_prj1.Rmd&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;sta101_prj1.Rmd&quot;</span>)</code></pre>
-<p>Your write up should be at most 7 pages (including figures and R code). This is not very long, you will need to be concise. Every sentence should add something to your paper. Note that you can change sizes of figures, hide/reveal code, etc. If you’re not sure how to do these ask during class or office hours, or on Piazza.</p>
+<p>Your write up should be <strong>at most 7 pages (including figures and R code)</strong>. This is not very long, you will need to be concise. Every sentence should add something to your paper. Note that you can resize figures, hide/reveal code, etc. If you’re not sure how to do these ask during class or office hours, or on Piazza.</p>
 </div>
 <div id="tone" class="section level3">
 <h3>Tone</h3>

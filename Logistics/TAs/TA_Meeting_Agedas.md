@@ -33,4 +33,10 @@ Sta 101 TA Meeting Agendas
 * Peer evaluations
     + Walk head TAs through how to set up the Qualtrics surveys
     + Ask for feedback on wording of peer evaluation questions
+* For future review:
+    + Review question on estimating measures of position based on relative frequency histogram
+
+
+
+
     
