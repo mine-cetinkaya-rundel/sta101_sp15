@@ -1,0 +1,447 @@
+% -*- TeX-engine: xetex; -*-
+% Compile with XeLaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% To do before class
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Send the Logistics/Week0Annoucnement (the night before).
+% Send an email reminding students to bring a charged computer (the night before).
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Option 1: Slides: (comment for handouts)   %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
+
+% solution stuff
+\newcommand{\solnMult}[1]{
+\only<1>{#1}
+\only<2->{\red{\textbf{#1}}}
+}
+\newcommand{\soln}[1]{\textit{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 2: Handouts, without solutions (post before class)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % This breaks things for me for some reason.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% %\renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 3: Handouts, with solutions (may post after class if need be)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{\red{\textbf{#1}}}
+% \newcommand{\soln}[1]{\textit{#1}}
+
+% % % This breaks things for me for some reason.
+% % % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% % }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 4: Notes Only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% % See http://tex.stackexchange.com/questions/114219/add-notes-to-latex-beamer
+% \documentclass[10pt,containsverbatim,xcolor=xelatex,dvipsnames,table,notes=only]{beamer}
+
+% % handout layout
+% % \usepackage{pgfpages}
+% % \pgfpagesuselayout{1 on 1}[letterpaper, landscape, border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % Having a problem with this.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
+
+%%%%%%%%%%
+% Load style file, defaults  %
+%%%%%%%%%%
+
+\input{../../lec_style.tex}
+\input{../../definitions_default.tex}
+% ALT ALT
+% \input{../definitions_custom.tex}
+
+%%%%%%%%%%%
+% Cover slide info    %
+%%%%%%%%%%%
+
+\title{Unit 2: Probability and distributions}
+\subtitle{4. Binomial distribution}
+\author{Sta 101 - Spring 2015}
+\date{February 4, 2015}
+\institute{Duke University, Department of Statistical Science}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document and set Helvetica Neue font   %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\fontspec[Ligatures=TeX]{Helvetica Neue Light}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title Page
+
+\begin{frame}[plain]
+
+\titlepage
+\vfill
+{\scriptsize \webLink{\PersonalSite}{Dr. \LastName{}} \hfill Slides posted at  \webLink{\CourseSite}{\CourseSite}}
+\addtocounter{framenumber}{-1} 
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Housekeeping}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Announcements}
+
+Due by Friday 11:59pm:
+\begin{itemize}
+
+\item Peer evaluations
+
+\item PA 2
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Main ideas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Binomial distribution is used for calculating the probability of exact number of successes for a given number of trials}
+\label{mi1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{High-speed broadband connection at home in the US}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{figures/pew_internet_access}
+\end{center}
+
+\pause
+
+\begin{itemize}
+\item Each person in the poll be thought of as a \hl{trial}
+\pause
+\item A person is labeled a \hl{success} if s/he has high-speed broadband connection at home, \hl{failure} if not
+\pause
+\item Since 70\% have high-speed broadband connection at home, \hl{probability of success} is \hl{p = 0.70}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Considering many scenarios}
+
+\disc{Suppose we randomly select three individuals from the US, what is the probability that exactly 1 has high-speed broadband connection at home?}
+\pause
+Let's call these people Anthony (A), Barry (B), Cam (C). Each one of the three scenarios below will satisfy the condition of ``exactly 1 of them says Yes": \\
+\vspace{0.25cm}
+\pause
+\begin{changemargin}{+1.5cm}{+0cm}
+{\footnotesize
+\begin{enumerate}
+\item[Scenario 1:] $\slot{0.70}{\text{(A) \red{yes}}} \times \slot{0.30}{\text{(B) not yes}} \times \slot{0.30}{\text{(C) not yes}} \approx 0.063$
+\pause
+\item[Scenario 2:]  $\slot{0.30}{\text{(B) not yes}} \times \slot{0.70}{\text{(A) \red{yes}}} \times \slot{0.30}{\text{(C) not yes}} \approx 0.063$
+\pause
+\item[Scenario 3:]  $\slot{0.30}{\text{(B) not yes}} \times \slot{0.30}{\text{(C) not yes}} \times \slot{0.70}{\text{(A) \red{yes}}} \approx 0.063$
+\end{enumerate}
+}
+\end{changemargin}
+\pause
+The probability of exactly one 1 of 3 people saying Yes is the sum of all of these probabilities.
+\[ 0.063 + 0.063 + 0.063 = 3 \times 0.063 = 0.189 \]
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Binomial distribution}
+
+The question from the prior slide asked for the probability of given number of successes, \mathhl{k}, in a given number of trials, \mathhl{n}, ($k = 1$ success in $n = 3$ trials), and we calculated this probability as
+\[ \#~of~scenarios \times P(single~scenario) \]
+
+\pause
+
+\begin{itemize}
+
+\item $P(single~scenario) = p^k~(1-p)^{(n-k)}$ \\
+{\tiny probability of success to the power of number of successes, probability of failure to the power of number of failures}
+
+\pause
+
+\item number of scenarios: ${n \choose k} = \frac{n!}{k! (n - k)!}$
+
+\end{itemize}
+
+\pause
+$\:$ \\
+
+The \hl{Binomial distribution} describes the probability of having exactly $k$ successes in $n$ independent trials (with only two possible outcomes) with probability of success $p$.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Binomial distribution (cont.)}
+
+\[P(k~successes~in~n~trials) = {n \choose k}~p^k~(1-p)^{(n-k)} \] 
+
+\pause
+
+\Note{You can also use R for the calculation of number of scenarios:}
+{\footnotesize
+\begin{Verbatim}[frame=single, formatcom=\color{blue}]
+> choose(5,3)
+\end{Verbatim}
+}
+{\footnotesize
+\begin{Verbatim}[frame=single, formatcom=\color{gray}]
+[1] 10
+\end{Verbatim}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Properties of the choose function}
+
+\clicker{Which of the following is false?}
+
+\begin{enumerate}[(a)]
+\item There are $n$ ways of getting 1 success in $n$ trials, ${n \choose 1} = n$.
+\item There is only 1 way of getting $n$ successes in $n$ trials, ${n \choose n} = 1$.
+\item There is only 1 way of getting $n$ failures in $n$ trials, ${n \choose 0} = 1$.
+\item \solnMult{There are $n-1$ ways of getting $n-1$ successes in $n$ trials, ${n \choose n-1} = n-1$.}
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\clicker{Which of the following is not a condition that needs to be met for the binomial distribution to be applicable?}
+
+\begin{enumerate}[(a)]
+\item the trials must be independent
+\item the number of trials, $n$, must be fixed
+\item each trial outcome must be classified as a \textit{success} or a \textit{failure}
+\item \solnMult{the number of desired successes, $k$, must be greater than the number of trials}
+\item the probability of success, $p$, must be the same for each trial
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{}
+
+\clicker{According to the results of the Pew poll suggesting that 70\% of Americans have high-speed broadband connection at home, is the probability of exactly 2 out of 15 randomly sampled Americans having such connection at home pretty high or pretty low?}
+
+\begin{enumerate}[(a)]
+\item pretty high
+\item \solnMult{pretty low}
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\clicker{According to the results of the Pew poll 70\% of Americans have high-speed broadband connection at home, what is the probability that exactly 2 out of 15 randomly sampled Americans have such connection at home?}
+
+\begin{enumerate}[(a)]
+\item $0.70^{2} \times 0.30^{13}$
+
+\item ${2 \choose 15} \times 0.70^{2} \times 0.30^{13}$
+
+\item \solnMult{${15 \choose 2} \times 0.70^{2} \times 0.30^{13}$} \soln{\red{\only<2>{$ = \frac{15!}{13! \times 2!} \times  0.70^{2} \times 0.30^{13} = 105 \times  0.70^{2} \times 0.30^{13} = 8.2e-06$}}}
+
+\item ${15 \choose 2} \times 0.70^{13} \times 0.30^2$
+
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Expected value and standard deviation of the binomial can be calculated using its parameters n and p}
+\label{mi2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Expected value and standard deviation of binomial}
+
+\disc{According to the results of the Pew poll suggestion that 70\% of Americans have high-speed broadband connection at home, among a random sample of 100 Americans, how many would you expect to have such connection at home?}
+
+\pause
+
+\begin{itemize}
+
+\item Easy enough, $100 \times 0.70 = 70$
+\pause
+\begin{itemize}
+\item Or more formally, $\mu = np = 100 \times 0.44 = 44$
+\end{itemize}
+
+\pause
+
+\item But this doesn't mean in every random sample of 100 Americans exactly 70 will have high-speed broadband connection at home. In some samples there will be fewer of those, and in others more. How much would we expect this value to vary?
+\pause
+\begin{itemize}
+\item $\sigma = \sqrt{np(1-p)} = \sqrt{100 \times 0.70 \times 0.30} \approx  4.58$
+\end{itemize}
+
+\end{itemize}
+
+\Note{Mean and standard deviation of a binomial might not always be whole numbers, and that is alright, these values represent what we would expect to see on average.}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Shape of the binomial distribution approaches normal when the S-F rule is met}
+\label{mi3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Shape of the binomial distribution}
+
+\vfill
+
+\begin{center}
+\webURL{http://bitly.com/dist_calc}
+\end{center}
+\vfill
+
+\pause
+\hl{S-F rule:} The sample size is considered large enough if the expected number of successes and failures are both at least 10
+\[ np \ge 10 \qquad \text{ and } \qquad n(1-p) \ge 10 \]
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{}
+
+\clicker{Below are four pairs of Binomial distribution parameters. Which distribution's shape can be approximated by the normal distribution?}
+
+\begin{enumerate}[(a)]
+\item \solnMult{$n = 25, p = 0.45$}
+\item $n = 100, p = 0.95$
+\item $n = 150, p = 0.05$
+\item $n = 500, p = 0.015$
+\end{enumerate}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\vfill
+
+\app{2.4 Binomial distribution}{See course website for details.}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Binomial $\rightarrow$ normal}
+
+\vfill
+
+\disc{Why do we care?}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Summary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Summary of main ideas}
+
+\vfill
+
+\begin{enumerate}
+
+\item \nameref{mi1}
+
+\item \nameref{mi2}
+
+\item \nameref{mi3}
+
+\end{enumerate}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
