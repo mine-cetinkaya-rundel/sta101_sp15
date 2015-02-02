@@ -89,7 +89,7 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-% \input{../definitions_custom.tex}
+% \input{../../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -98,7 +98,9 @@
 \title{Unit 2: Probability and distributions}
 \subtitle{2. Bayes' theorem and Bayesian inference}
 \author{Sta 101 - Spring 2015}
-\date{January 28, 2015}
+% \date{January 28, 2015}
+% ALT ALT
+% \date{January 29, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 
@@ -133,17 +135,26 @@
 
 \begin{itemize}
 
+\item After this week, Thu OH is moving to Mon, 11:30am-1:00pm.
+
 \item Review Project 1 assignment and start thinking about data you might want to find / collect for your project
+
+\item See \webLink{\CourseSite}{\CourseSite} for the document and due dates.
+
+\item Think carefully about what the poplution is and the cases in the population.  Do note use summary statistics for your data set.
+
+\hfill \\
+
+Differences in blood pressure by gender: \webLink{https://spreadsheets.google.com/spreadsheet/pub?key=0ArfEDsV3bBwCdHNwRm9DN1FnT3hXWWZVSncxMkZyS2c&gid=0}{example of what not to do}
 
 \end{itemize}
 
 %---Note---%
 \note{
-Talk about project.
 
-You as a team are going to find your own data set.
+Show where Project 1 document is.  What the due dates are.
 
-The library has provided some data sets for you to use.
+Mention data sets provided by the library.
 
 These tend to be survey data.
 
@@ -151,7 +162,7 @@ The library actually has office hours.
 
 We can help you upload the data set.  But FINDING the data set is on you.
 
-Go over due dates on Schedule.
+Show example of what NOT to do.
 }
 
 \end{frame}
@@ -183,14 +194,9 @@ Go over due dates on Schedule.
 
 Assigned one problem with prob tree to prepare for today.
 
-Prob. Trees: Not necesssary.  But a good way to organize information.  Very
-useful when reversing the conditioning information.
+Probability trees provide a way to organize information.  We use the rules of probability to fill in the tree (General addition rule, Bayes Theorem).
 
-Bayes Thoerem: using this theorem to actually make decisions.  
-
-Learned one method: the p-value method.
-
-GIVE A REAL WORLD EXAMPLE OF BAYES.
+Probability trees are especially useful when trying to reverse the order of conditioning.
 
 }
 
@@ -202,6 +208,31 @@ GIVE A REAL WORLD EXAMPLE OF BAYES.
 \label{mi2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{2. Bayesian inference: start with a prior, collect data, calculate posterior, make a decision or iterate}
+
+\begin{itemize}[<+->]
+
+\item In Bayesian inference, probabilities are at times interpreted as \textbf{degrees of belief}.
+
+\item You start with a set of \textbf{prior beliefs} (or prior probabilities).
+
+\item You observe some data.
+
+\item Based on that data, you update your beliefs.  
+
+\item These new beleifs are called \textbf{posterior beliefs} (or posterior probabilities), because they are \textbf{post}-data.
+
+\item You can iterate this process.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Dice Game}
 
 \begin{frame}
 \frametitle{2. Bayesian inference: start with a prior, collect data, calculate posterior, make a decision or iterate}
@@ -223,12 +254,16 @@ We'll play a game to demonstrate this approach...
 
 \item Two dice: 6-sided and 12-sided
 \begin{itemize}
-\item I keep one die in my left hand and one die on the right
+\item I keep one die on the left and one die on the right
 \end{itemize}
 
 \pause
 
-\item Ultimate goal: come to a class consensus about whether the die on the left or the die on the right is the ``good die"
+\item The ``good die'' is the 12-sided die.
+
+\pause
+
+\item Ultimate goal: come to a class consensus about whether the die on the left or the die on the right is the ``good die''
 
 \pause
 
@@ -268,16 +303,16 @@ One nice aspect of this is that probabilities go like your brain is thinking.
 
 \item At each roll I tell you whether you won or not (win = $\ge 4$)
 \begin{itemize}
-\item P(win on 6-sided die) = 0.5 $\rightarrow$ bad die
-\item P(win on 12-sided die) = 0.75 $\rightarrow$ good die
+\item P(win $\mid$ 6-sided die) = 0.5 $\rightarrow$ bad die
+\item P(win $\mid$ 12-sided die) = 0.75 $\rightarrow$ good die
 \end{itemize}
 
 \pause
 
 \item The two competing claims are
 \begin{itemize}
-\item[] $H_1$: Good die is in left hand
-\item[] $H_2$: Good die is in right hand
+\item[] $H_1$: Good die is on left 
+\item[] $H_2$: Good die is on right 
 \end{itemize}
 
 \pause
@@ -380,6 +415,42 @@ Roll 7	& 				& 				\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% % ALT ALT 
+% \subsubsection{Fair or Unfair?}
+
+% \begin{frame}
+
+%  \tableofcontents[currentsubsection]
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Updating beliefs: coin flipping}
+
+% \begin{itemize}[<+->]
+
+% \item Two coins: a coin that is fair and one that lands heads up only 25\% of the time.
+
+% \item I pick one of those coins, but do not tell you which one.
+
+% \item Two competing claims:
+% \begin{itemize}
+% \item[] $H_1$: picked the unfair coin.
+% \item[] $H_2$: picked the fair coin.
+% \end{itemize}
+
+% \item I flip the coin and tell you which side lands up.
+
+% \item You update your beliefs with each flip.
+
+% \item \webLink{https://stat.duke.edu/~jbw44/Teaching/Spring2015/post/R/u2_deck2.R.txt}{Demo in R}.
+
+% \end{itemize}
+
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}
 \frametitle{Posterior probability}
 
@@ -391,7 +462,7 @@ Roll 7	& 				& 				\\
 
 \item Using Bayes' theorem
 \begin{eqnarray*}
-P(hypothesis~data) &=& \frac{P(hypothesis~and~data)}{P(data)} \\
+P(hypothesis \mid data) &=& \frac{P(hypothesis~and~data)}{P(data)} \\
 \pause
 &=& \frac{P(data~|~hypothesis) \times P(hypothesis)}{P(data)}
 \end{eqnarray*}
@@ -405,7 +476,10 @@ P(hypothesis~data) &=& \frac{P(hypothesis~and~data)}{P(data)} \\
 \begin{frame}
 \frametitle{}
 
+
 \disc{Calculate the posterior probability for the hypothesis chosen in the first roll, and discuss how this might influence your decision for the next roll.}
+% ALT ALT
+% \disc{Calculate the posterior probability after flipping the coin once.}
 
 % Set the overall layout of the tree
 \tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
@@ -459,8 +533,6 @@ Show how to repeat.
 
 Each person may have a different cost.  You may stop at different times.
 
-Can I come up with a demo.
-
 }
 
 \end{frame}
@@ -479,7 +551,7 @@ Can I come up with a demo.
 
 \item $\hl{p-value}:$ P(observed or more extreme outcome $|$ null hypothesis is true)
 \begin{itemize}
-\item This is roughly P(data $|$ hypothesis)
+\item This is more like P(data $|$ hyp) than P(hyp $|$ data).
 \end{itemize}
 
 \item $\hl{posterior}:$ P(hypothesis $|$ data)
@@ -487,14 +559,18 @@ Can I come up with a demo.
 \item Bayesian approach avoids the counter-intuitive Frequentist p-value for decision making, and more advanced Bayesian techniques offer flexibility not present in Frequentist models
 
 \item \hl{Watch out!} \\
-A good prior helps, a bad prior hurts, but the prior matters less the more data you have.
+\begin{itemize}
+\item $\hl{Bayes}$: A good prior helps, a bad prior hurts, but the prior matters less the more data you have.
+\item $\hl{p-value}$: {It is really easy to mess up p-values}: \webLink{https://sakai.duke.edu/access/content/group/8d786209-ab9d-4d66-9a00-e138eaadd9c9/Articles/goodman-2008.pdf}{Goodman, 2008}
+
+\end{itemize}
 
 \end{itemize}
 
 %---Note---%
 \note{
 
-GET PAPER about p-values and put up.
+Read start of paper on p-values.
 
 }
 
@@ -507,7 +583,7 @@ GET PAPER about p-values and put up.
 
 \vfill
 
-\app{2.2 Bayesian inference for drug testing}{$\:$\\ See the course website for instructions. \\$\:$}
+\app{2.2 Bayesian inference for drug testing}{$\:$\\ See the \webLink{\CourseSite}{course website} for instructions. \\$\:$}
 
 \vfill
 
