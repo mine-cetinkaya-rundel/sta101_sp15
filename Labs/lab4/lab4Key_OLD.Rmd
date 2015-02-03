@@ -1,0 +1,136 @@
+---
+title: "Lab 4 - KEY - OLD, USE AS REFERENCE ONLYs"
+author: "[Enter team name here]"
+date: "[Enter date here]"
+output:
+  html_document:
+    fig_height: 4
+    fig_width: 6
+---
+
+**Author:** [Enter author name here]
+
+**Discussants:** [Enter discussant names here. Remember, these are other team members present in lab.]
+
+* * *
+
+#### Load data and create male and female subsets:
+```{r}
+download.file("http://www.openintro.org/stat/data/bdims.RData", destfile = "bdims.RData")
+load("bdims.RData")
+mdims <- subset(bdims, bdims$sex == 1)
+fdims <- subset(bdims, bdims$sex == 0)
+```
+
+#### Exercise 1: (3 pts: 0.5 for male, 0.5 for female, 1 for comparison, 0.5 for each histogram)
+
+The distribution of male heights had a unimodal and symmetric distribution, with mean 178 cm and standard deviation 7.184 cm. The distribution of female heights is also unimodal though not as symmetric as the male heights, with mean 165 cm and standard deviation 6.545 cm. On average women are shorter and their heights are less variable.
+
+```{r fig.width=7, fig.height=5}
+hist(mdims$hgt)
+summary(mdims$hgt)
+sd(mdims$hgt)
+hist(fdims$hgt)
+summary(fdims$hgt)
+sd(fdims$hgt)
+```
+
+#### Exercise 2: (1 pt)
+
+Based on this plot, the heights of females do not seem to exactly follow a normal distribution, but the distribution is not too far off from normal either, i.e. it's hard to tell.
+
+```{r fig.width=7, fig.height=5}
+# code already provided in lab
+fhgtmean <- mean(fdims$hgt)
+fhgtsd <- sd(fdims$hgt)
+hist(fdims$hgt, probability = TRUE)
+x <- 140:190
+y <- dnorm(x = x, mean = fhgtmean, sd = fhgtsd)
+lines(x = x, y = y, col = "blue")
+```
+
+#### Exercise 3: (2 pts - 1 for interpretation, 1 for plot)
+
+Not all of the points fall on the line, while in the center of points fall on the line, toward the tails there is some deviation. However the points are much closer to the line than in the plot for the real data.
+
+```{r fig.width=7, fig.height=5}
+sim_norm <- rnorm(n = length(fdims$hgt), mean = fhgtmean, sd = fhgtsd)
+qqnorm(sim_norm)
+qqline(sim_norm)
+```
+
+#### Exercise 4: (2 pts - 1 for interpretation, 1 for plot)
+
+The normal probability plot for the female heights looks somewhat similar to the ones created for the simulated data, however female heights show a stepwise pattern and hence deviate more from the line in the center of the plot than the simulated (truly continuous) data.
+
+```{r fig.width=9, fig.height=9}
+qqnormsim(fdims$hgt)
+```
+
+#### Exercise 5: (2 pts - 1 for interpretation, 1 for plot (histogram optional))
+
+The distribution of female weights is not normal, instead the points bend up and to the left of the normal line, indicating a long tail to the right.
+
+```{r fig.width=9, fig.height=9}
+qqnormsim(fdims$wgt)
+```
+
+```{r fig.width=7, fig.height=5}
+hist(fdims$wgt)
+```
+
+#### Exercise 6: (Answers may vary) (3.5 pts - 0.5 for each question, 0.5 for each theoretical calculation, 0.5 for each empirical calculation, 0.5 for comparison - It's ok if they didn't also put their answers for the probabilities in sentences, and ok if they didn't do the comparison by dividing, but remind them in class that this is a reliable method)
+
+- Height: What is the probability that a randomly chosen female is less than 5 feet tall? (152.4 cm)
+
+The probability that a randomly chosen female is less than 5 feet tall is calculated as 0.02834 using the normal distribution (theoretical), and empirically this probability is 0.02692.
+
+```{r}
+pnorm(q = 152.4, mean = fhgtmean, sd = fhgtsd)
+sum(fdims$hgt < 152.4) / length(fdims$hgt)
+```
+
+- Weight: What is the probability that a randomly chosen female weighs more than 170 pounds? (77.11 kg)
+
+The probability that a randomly chosen female is weighs more than 170 pounds is calculated as 0.04299 using the normal distribution (theoretical), and empirically this probability is 0.05.
+
+```{r}
+1 - pnorm(q = 77.11, mean = mean(fdims$wgt), sd = sd(fdims$wgt))
+sum(fdims$wgt > 77.11) / length(fdims$wgt)
+```
+
+- Comparison of probabilities: The theoretical and empirical probabilities are closer for heights than for weights (see ratios below), which is expected since the distribution of heights is much more symmetric and closer to a normal distribution than the distribution of weights.
+
+```{r}
+(pnorm(q = 152.4, mean = fhgtmean, sd = fhgtsd)) / (sum(fdims$hgt < 152.4) / length(fdims$hgt))
+
+(1 - pnorm(q = 77.11, mean = mean(fdims$wgt), sd = sd(fdims$wgt))) / (sum(fdims$wgt > 77.11) / length(fdims$wgt))
+```
+
+### On your own
+
+
+#### Question 1: (2 pts - 0.5 pt for each answer)
+
+a. The histogram for female biiliac (pelvic) diameter (bii.di) belongs to normal probability plot letter B.
+b. The histogram for female elbow diameter (elb.di) belongs to normal probability plot letter C.
+c. The histogram for general age (age) belongs to normal probability plot letter D.
+d. The histogram for female chest depth (che.de) belongs to normal probability plot letter A.
+
+#### Question 2: (1 pt)
+
+The stepwise pattern is the result of the data being rounded to the nearest number. For example with age the data was rounded to years and therefore the number of intervals would decrease resulting in the stepwise pattern.
+
+#### Question 3: (3 pts - 1 for qq plot, 1 for histogram, 1 for skew)
+
+The distribution of female knee diameters is right skewed - we see a longer tail on the right  in the histogram, and in the normal probability plot the points bend upwards from the line.
+
+```{r fig.width=7, fig.height=5}
+qqnorm(fdims$kne.di)
+qqline(fdims$kne.di)
+hist(fdims$kne.di)
+```
+
+#### Question 4: (Answers may vary) (0.5 pts)
+
+Normal distribution, normal probabilities, normal probability plot.
