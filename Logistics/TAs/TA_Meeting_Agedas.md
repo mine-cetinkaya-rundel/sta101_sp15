@@ -36,6 +36,23 @@ Sta 101 TA Meeting Agendas
 * For future review:
     + Review question on estimating measures of position based on relative frequency histogram
 
+### Week 4: February 2, 2015
+* Review questions on Coursera will be revealed after RA3 
+    + If you catch issues/typos let me know
+* Peer evaluation 1: Due Friday 2/2
+    + Mine to write R code to parse through the data and create output to post + share with instructor
+    + Meetings with teams where a chat could be helpful
+* Feedback from last lab: 
+    + calc_streak: some error that says you don't have Hs and Ms
+    + setting seeds
+* Feedback from PS + office hours:
+    + conditional probability
+    + venn diagrams
+
+
+
+
+
 
 
 
