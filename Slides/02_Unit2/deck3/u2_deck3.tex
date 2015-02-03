@@ -98,7 +98,9 @@
 \title{Unit 2: Probability and distributions}
 \subtitle{3. Normal distribution}
 \author{Sta 101 - Spring 2015}
-\date{February 2, 2015}
+% \date{February 2, 2015}
+% ALT ALT
+\date{February 3, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 
@@ -133,18 +135,36 @@
 
 \begin{itemize}
 
-\item Peer evaluation 1 by Friday 11:59pm
+% \item Peer evaluation 1 by Friday 11:59pm
+% ALT ALT
+\item Peer evaluation 1 by Saturday 11:59pm.
 
 \item Office hours: 
+% \begin{itemize}
+% \item currently MTWR 3-4pm
+% \item propose changing to TR 3-5pm, is this better? \\
+% \end{itemize}
+
+% \clicker{(a) No, keep OH at MTWR 3-4pm \\
+% (b) Change to TR 3-5pm} 
+
+% ALT ALT
+
 \begin{itemize}
-\item currently MTWR 3-4pm
-\item propose changing to TR 3-5pm, is this better? \\
+\item M 11:30-1:00pm.
+\item T 3:00-4:30pm.
 \end{itemize}
 
-\clicker{(a) No, keep OH at MTWR 3-4pm \\
-(b) Change to TR 3-5pm} 
-
 \end{itemize}
+
+%---Note---%
+\note{
+
+Peer evaluation.
+
+Some manual entry.  May have misspelled your name.  Let me know.
+
+}
 
 \end{frame}
 
@@ -183,42 +203,180 @@
 
 \end{itemize}
 
+%---Note---%
+\note{
+
+Insert: Distinguish between outcomes and events?
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\frametitle{Examples}
+% \begin{frame}
+% \frametitle{Examples}
 
-{\small
-\twocol{0.6}{0.4}{
-\textbf{Discrete:} \\
-In a card game if you draw an ace from a well-shuffled full deck you win \$10. If you draw a red card, you lose \$2.
-\pause
-{\footnotesize
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{l | c | c}
-Outcome		& X	& P(X) \\
-\hline
-Win \$10 (black aces)		& 10	& $\frac{2}{52}$ \\
-Win \$8 (red aces: 10 - 2)		& 8	& $\frac{2}{52}$ \\
-Lose \$2 (non-ace reds)		& -2	& $\frac{24}{52}$ \\
-No win / loss	& 0	& $\frac{24}{52}$ \\
-\hline
-			&	& $\frac{52}{52} = 1$
-\end{tabular}
-\end{center}
-}
-}
-{
-\pause
-\textbf{Continuous:} \\
-Distribution of weekly expenditures of entertainment for a family is right skewed with median of \$70. \\
-\vspace{3.3cm}
-}
-}
+% {\small
+% \twocol{0.6}{0.4}{
+% \textbf{Discrete:} \\
+% In a card game if you draw an ace from a well-shuffled full deck you win \$10. If you draw a red card, you lose \$2.
+% \pause
+% {\footnotesize
+% \begin{center}
+% \renewcommand{\arraystretch}{1.5}
+% \begin{tabular}{l | c | c}
+% Outcome	(\$)	& X	& P(X) \\
+% \hline
+% Win \$10 (black aces)		& 10	& $\frac{2}{52}$ \\
+% Win \$8 (red aces: 10 - 2)		& 8	& $\frac{2}{52}$ \\
+% Lose \$2 (non-ace reds)		& -2	& $\frac{24}{52}$ \\
+% No win / loss	& 0	& $\frac{24}{52}$ \\
+% \hline
+% 			&	& $\frac{52}{52} = 1$
+% \end{tabular}
+% \end{center}
+% }
+% }
+% {
+% \pause
+% \textbf{Continuous:} \\
+% % Distribution of weekly expenditures of entertainment for a family is right skewed with median of \$70. \\
+% % ALT ALT
+% Distribution of female heights is unimodal and nearly symmetric with a mean of 65'' and a sd of 3.5''
+% \webLink{http://www.usablestats.com/lessons/normal}{(source)}.
+% \vspace{3.3cm}
+% }
+% }
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{Continuous variables}
+
+  \disc{How would you measure adult female heights (age 18-40) in North Carolina?}
+  
+  % Distribution of female heights is unimodal and nearly symmetric with a mean of 65'' and a sd of 3.5''
+  % \webLink{http://www.usablestats.com/lessons/normal}{(source)}.
+
+  % \begin{center}
+  %   \includegraphics[scale=0.5]{figures/frequency-histogram-6.png}
+  %   \end{center}
+
 \end{frame}
+
+\begin{frame}
+  \frametitle{Height: histogram}
+
+  \begin{center}
+    \includegraphics[scale=0.7]{figures/frequency-histogram-6.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Height: barplot}
+
+  \begin{center}
+    \includegraphics[scale=0.7]{figures/frequency-barplot-6.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Height: h-plot}
+
+  \begin{center}
+    \includegraphics[scale=0.7]{figures/frequency-hplot-6.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Height: relative frequency histogram}
+
+  \begin{center}
+    \includegraphics[scale=0.7]{figures/relfreq-histogram-6.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Height: barplot (relative frequencies)}
+
+  \begin{center}
+    \includegraphics[scale=0.7]{figures/relfreq-barplot-6.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Height: h-plot (relative frequencies)}
+
+  \begin{center}
+    \includegraphics[scale=0.7]{figures/relfreq-hplot-6.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Height: relative frequency histogram}
+
+  \begin{center}
+    \includegraphics[scale=0.7]{figures/relfreq-histogram-6.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Height: density histogram}
+
+  \begin{center}
+    \includegraphics[scale=0.7]{figures/density-histogram-6.png}
+    \end{center}
+
+    $P(62 < \textmd{Height} \leq 68) = \textmd{area under curve between 56 and 62}$.
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Height: density histogram}
+
+  \begin{center}
+    \includegraphics[scale=0.7]{figures/density-histogram-3.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Height: density histogram}
+
+  \begin{center}
+    \includegraphics[scale=0.7]{figures/density-histogram-1.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Height: density histogram}
+
+  \begin{center}
+    \includegraphics[scale=0.7]{figures/density-histogram-1-line.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Height: probability density function}
+
+  \begin{center}
+    \includegraphics[scale=0.7]{figures/pdf-line.png}
+    \end{center}
+
+\end{frame}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -250,9 +408,18 @@ Distribution of weekly expenditures of entertainment for a family is right skewe
 
 \pause
 
-\item While most variables are nearly normal, but none are exactly normal
+% \item While most variables are nearly normal, but none are exactly normal
+% ALT ALT
+\item Lots of variables are nearly normal, but few are actually normal.
 
 \end{itemize}
+
+%---Note---%
+\note{
+
+Is it possible to make observations thare are more than 3 sd from mean?
+
+}
 
 \end{frame}
 
@@ -271,6 +438,16 @@ Distribution of weekly expenditures of entertainment for a family is right skewe
 \item 30 \only<2>{\soln{\darkgray{$\rightarrow 65 \pm (3 \times 30) = (-25, 155)$}}}
 \end{enumerate}
 
+%---Note---%
+\note{
+
+  Mine has them talk it over, even though plurality supports correct answer.
+  Gives them a minute to talk about it.
+
+  Asks someone to reason through answer.
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -279,6 +456,27 @@ Distribution of weekly expenditures of entertainment for a family is right skewe
 \label{mi3}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{3. Z scores serve as a ruler for any distribution}
+
+\disc{Would it be unusual for an adult woman in North Carolina to be 96'' (8 ft) tall?}
+
+\pause
+
+\hfill \\
+
+\disc{Would it be unusual for an adult alien woman(?) to be 103 metreloots tall, assuming the distribution of heights is approximately normally distributed?}
+
+\pause
+
+\hfill \\
+
+A Z score creates a common scale so you can assess data without worrying about the specific units in which it was measured.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
 \frametitle{3. Z scores serve as a ruler for any distribution}
@@ -295,9 +493,25 @@ Distribution of weekly expenditures of entertainment for a family is right skewe
 
 \pause
 
-\item Observations with $|Z| > 2$ are usually considered \hl{unusual}
+\item Observations with $|Z| > 2$ are usually considered \hl{unusual}.
 
 \end{itemize}
+
+%---Note---%
+\note{
+
+Z: standardiZe.
+
+Z score tells us number of standard deviations above or below the mean.
+
+Defined for any distribution... this formula can be used for any distribution.
+But if you are going to use them to calculate probabilities then you need a
+normal distribution.
+
+Convention says that observations that are more than 2 standard deviations away
+are ``unusual.''
+
+}
 
 \end{frame}
 
@@ -325,7 +539,25 @@ then
 
 \item Z distribution is a special case of the normal distribution where $\mu = 0$ and $\sigma = 1$ (unit normal distribution)
 
+\item The Z distribution is also called the ``standard normal'' distribution.
+
 \end{itemize}
+
+%---Note---%
+\note{
+
+A ``Z distribution'' is also commonly called a ``Standard normal distribution''.  Standard because it has mean zero and variance 1.
+
+Z-score and calculator zoom example.
+
+Going through class room exmaple.  Heights of you.  Now computed z-score of each
+of you would have standard normal distribution.
+
+Really it is about creating a standard unit of measure.
+
+Can we give an example?
+
+}
 
 \end{frame}
 
@@ -344,6 +576,26 @@ then
 \item A score of 70 is considered unusually low on this test.
 \end{enumerate}
 
+%---Note---%
+\note{
+
+Read through clicker question.
+
+Probably will be disagreement.  Have groups talk about it.
+
+Go over it.
+- Z score for mean of any distribution is 0.
+
+Q. How will mean and median compare for a symmetric distribution?
+A. They will be the same.
+
+Thus the Z-score should be the same.
+
+Look at (e) briefly.  How do I compute something that is ``unusual''...
+
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -356,6 +608,18 @@ then
 \app{2.3 Normal distribution}{$\:$\\ See the course website for instructions. \\$\:$}
 
 \vfill
+
+%---Note---%
+\note{
+
+Give 15 minutes.  (Added time)
+
+Tell the student's to
+- Ask questions early so you don't get stuck.
+
+- Show how to use tables.
+
+}
 
 \end{frame}
 
@@ -390,11 +654,11 @@ then
 
 \pause
 
-\item If there is a one-to-one relationship between the data and the theoretical quantiles, then the data follow a nearly normal distribution
+\item If there is a linear relationship between the data and the theoretical quantiles, then the data follow a nearly normal distribution
 
 \pause
 
-\item Since a one-to-one relationship would appear as a straight line on a scatter plot, the closer the points are to a perfect straight line, the more confident we can be that the data follow the normal model
+\item Since a linear relationship would appear as a straight line on a scatter plot, the closer the points are to a perfect straight line, the more confident we can be that the data follow the normal model
 
 \pause
 
@@ -433,7 +697,7 @@ We construct a normal probability plot for the heights of a sample of 100 men as
 
 \item Determine the percentile of each observation in the ordered data set.
 
-\item Identify the Z score corresponding to each percentile.
+\item Identify the Z scores corresponding to the each percentile \emph{for a Z distribution}.
 
 \item Create a scatterplot of the observations (vertical) against the Z scores (horizontal)
 
