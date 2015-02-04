@@ -89,7 +89,7 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-% \input{../definitions_custom.tex}
+\input{../../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -138,6 +138,12 @@
 % \item Peer evaluation 1 by Friday 11:59pm
 % ALT ALT
 \item Peer evaluation 1 by Saturday 11:59pm.
+
+\item Lab due Wednesday.
+
+\item PS due Thursday.
+
+\item PA due Friday.
 
 \item Office hours: 
 % \begin{itemize}
@@ -214,41 +220,41 @@ Insert: Distinguish between outcomes and events?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{frame}
-% \frametitle{Examples}
+\begin{frame}
+\frametitle{Examples}
 
-% {\small
-% \twocol{0.6}{0.4}{
-% \textbf{Discrete:} \\
-% In a card game if you draw an ace from a well-shuffled full deck you win \$10. If you draw a red card, you lose \$2.
-% \pause
-% {\footnotesize
-% \begin{center}
-% \renewcommand{\arraystretch}{1.5}
-% \begin{tabular}{l | c | c}
-% Outcome	(\$)	& X	& P(X) \\
-% \hline
-% Win \$10 (black aces)		& 10	& $\frac{2}{52}$ \\
-% Win \$8 (red aces: 10 - 2)		& 8	& $\frac{2}{52}$ \\
-% Lose \$2 (non-ace reds)		& -2	& $\frac{24}{52}$ \\
-% No win / loss	& 0	& $\frac{24}{52}$ \\
-% \hline
-% 			&	& $\frac{52}{52} = 1$
-% \end{tabular}
-% \end{center}
-% }
-% }
-% {
-% \pause
-% \textbf{Continuous:} \\
-% % Distribution of weekly expenditures of entertainment for a family is right skewed with median of \$70. \\
-% % ALT ALT
-% Distribution of female heights is unimodal and nearly symmetric with a mean of 65'' and a sd of 3.5''
-% \webLink{http://www.usablestats.com/lessons/normal}{(source)}.
-% \vspace{3.3cm}
-% }
-% }
-% \end{frame}
+{\small
+\twocol{0.6}{0.4}{
+\textbf{Discrete:} \\
+In a card game if you draw an ace from a well-shuffled full deck you win \$10. If you draw a red card, you lose \$2.
+\pause
+{\footnotesize
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l | c | c}
+Outcome	(\$)	& X	& P(X) \\
+\hline
+Win \$10 (black aces)		& 10	& $\frac{2}{52}$ \\
+Win \$8 (red aces: 10 - 2)		& 8	& $\frac{2}{52}$ \\
+Lose \$2 (non-ace reds)		& -2	& $\frac{24}{52}$ \\
+No win / loss	& 0	& $\frac{24}{52}$ \\
+\hline
+			&	& $\frac{52}{52} = 1$
+\end{tabular}
+\end{center}
+}
+}
+{
+\pause
+\textbf{Continuous:} \\
+% Distribution of weekly expenditures of entertainment for a family is right skewed with median of \$70. \\
+% ALT ALT
+Distribution of female heights is unimodal and nearly symmetric with a mean of 65'' and a sd of 3.5''
+\webLink{http://www.usablestats.com/lessons/normal}{(source)}.
+\vspace{3.3cm}
+}
+}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -257,6 +263,16 @@ Insert: Distinguish between outcomes and events?
 
   \disc{How would you measure adult female heights (age 18-40) in North Carolina?}
   
+  \pause
+
+  \hfill \\
+  
+  At least two options:
+  \begin{itemize}
+    \item Round.
+    \item Bin.
+    \end{itemize}
+
   % Distribution of female heights is unimodal and nearly symmetric with a mean of 65'' and a sd of 3.5''
   % \webLink{http://www.usablestats.com/lessons/normal}{(source)}.
 
@@ -417,7 +433,7 @@ Insert: Distinguish between outcomes and events?
 %---Note---%
 \note{
 
-Is it possible to make observations thare are more than 3 sd from mean?
+Is it possible to make observations there are more than 3 sd from mean?
 
 }
 
@@ -527,7 +543,31 @@ are ``unusual.''
 
 \begin{itemize}
 
-\item Linear transformations of normally distributed random variable will also be normally distributed.
+\item Linear transformations of a normally distributed random variable will also be normally distributed.
+
+If
+\[
+X \sim N(\mu, \sigma)
+\]
+and
+\[
+Y = a + b \cdot X,
+\]
+then
+\[
+Y \sim N(a + b \cdot \mu, b \cdot \sigma).
+\]
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{4. Z distribution is normal with $\mu = 0$ and $\sigma = 1$}
+
+\begin{itemize}
 
 \item Hence, if
 
@@ -550,7 +590,7 @@ A ``Z distribution'' is also commonly called a ``Standard normal distribution''.
 
 Z-score and calculator zoom example.
 
-Going through class room exmaple.  Heights of you.  Now computed z-score of each
+Going through class room example.  Heights of you.  Now computed z-score of each
 of you would have standard normal distribution.
 
 Really it is about creating a standard unit of measure.
