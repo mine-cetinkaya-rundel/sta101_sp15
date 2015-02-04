@@ -231,7 +231,7 @@ theoretical probabilities will be.
     **d.** The histogram for female chest depth (`che.de`) belongs to normal 
     probability plot letter ____.
 
-* Note that normal probability plots C and D have a slight stepwise pattern. Why do you think this is the case?
+* Note that normal probability plot C has a slight stepwise pattern. Why do you think this is the case?
 
 * As you can see, normal probability plots can be used both to assess normality and visualize skewness.  Make a normal probability plot for female knee diameter (`kne.di`).  Based on this normal probability plot, is this variable left skewed, symmetric, or right skewed?  Use a histogram to confirm your findings.
 
@@ -252,8 +252,8 @@ qqline(s_che.de, col = COL[1])
 # elb.di
 hist(s_elb.di, main = "Histogram of female elb.di", col = COL[1], xlab = "")
 # Plot B
-qqnorm(s_che.de, col = COL[1,3], main = "Plot B", pch = 19)
-qqline(s_che.de, col = COL[1])
+qqnorm(s_bii.di, col = COL[1,3], main = "Plot B", pch = 19)
+qqline(s_bii.di, col = COL[1])
 # age
 hist(s_age, main = "Histogram of age", col = COL[1], xlab = "")
 # Plot C
