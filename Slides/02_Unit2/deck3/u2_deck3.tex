@@ -89,7 +89,7 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-\input{../../definitions_custom.tex}
+% \input{../../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -98,9 +98,9 @@
 \title{Unit 2: Probability and distributions}
 \subtitle{3. Normal distribution}
 \author{Sta 101 - Spring 2015}
-% \date{February 2, 2015}
+\date{February 2, 2015}
 % ALT ALT
-\date{February 3, 2015}
+% \date{February 3, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 
@@ -135,31 +135,31 @@
 
 \begin{itemize}
 
-% \item Peer evaluation 1 by Friday 11:59pm
+\item Peer evaluation 1 by Friday 11:59pm
 % ALT ALT
-\item Peer evaluation 1 by Saturday 11:59pm.
+% \item Peer evaluation 1 by Saturday 11:59pm.
 
-\item Lab due Wednesday.
+% \item Lab due Wednesday.
 
-\item PS due Thursday.
+% \item PS due Thursday.
 
-\item PA due Friday.
+% \item PA due Friday.
 
 \item Office hours: 
-% \begin{itemize}
-% \item currently MTWR 3-4pm
-% \item propose changing to TR 3-5pm, is this better? \\
-% \end{itemize}
+\begin{itemize}
+\item currently MTWR 3-4pm
+\item propose changing to TR 3-5pm, is this better? \\
+\end{itemize}
 
-% \clicker{(a) No, keep OH at MTWR 3-4pm \\
-% (b) Change to TR 3-5pm} 
+\clicker{(a) No, keep OH at MTWR 3-4pm \\
+(b) Change to TR 3-5pm} 
 
 % ALT ALT
 
-\begin{itemize}
-\item M 11:30-1:00pm.
-\item T 3:00-4:30pm.
-\end{itemize}
+% \begin{itemize}
+% \item M 11:30-1:00pm.
+% \item T 3:00-4:30pm.
+% \end{itemize}
 
 \end{itemize}
 
@@ -247,10 +247,9 @@ No win / loss	& 0	& $\frac{24}{52}$ \\
 {
 \pause
 \textbf{Continuous:} \\
-% Distribution of weekly expenditures of entertainment for a family is right skewed with median of \$70. \\
+Distribution of weekly expenditures of entertainment for a family is right skewed with median of \$70. \\
 % ALT ALT
-Distribution of female heights is unimodal and nearly symmetric with a mean of 65'' and a sd of 3.5''
-\webLink{http://www.usablestats.com/lessons/normal}{(source)}.
+% Distribution of female heights is unimodal and nearly symmetric with a mean of 65'' and a sd of 3.5'' \webLink{http://www.usablestats.com/lessons/normal}{(source)}.
 \vspace{3.3cm}
 }
 }
@@ -258,141 +257,140 @@ Distribution of female heights is unimodal and nearly symmetric with a mean of 6
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-  \frametitle{Continuous variables}
+% ALT ALT --- inserted the follwing figures.
+% \begin{frame}
+%   \frametitle{Continuous variables}
 
-  \disc{How would you measure adult female heights (age 18-40) in North Carolina?}
+%   \disc{How would you measure adult female heights (age 18-40) in North Carolina?}
   
-  \pause
+%   \pause
 
-  \hfill \\
+%   \hfill \\
   
-  At least two options:
-  \begin{itemize}
-    \item Round.
-    \item Bin.
-    \end{itemize}
+%   At least two options:
+%   \begin{itemize}
+%     \item Round.
+%     \item Bin.
+%     \end{itemize}
 
-  % Distribution of female heights is unimodal and nearly symmetric with a mean of 65'' and a sd of 3.5''
-  % \webLink{http://www.usablestats.com/lessons/normal}{(source)}.
+%   % Distribution of female heights is unimodal and nearly symmetric with a mean of 65'' and a sd of 3.5''
+%   % \webLink{http://www.usablestats.com/lessons/normal}{(source)}.
 
-  % \begin{center}
-  %   \includegraphics[scale=0.5]{figures/frequency-histogram-6.png}
-  %   \end{center}
+%   % \begin{center}
+%   %   \includegraphics[scale=0.5]{figures/frequency-histogram-6.png}
+%   %   \end{center}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Height: histogram}
+% \begin{frame}
+%   \frametitle{Height: histogram}
 
-  \begin{center}
-    \includegraphics[scale=0.7]{figures/frequency-histogram-6.png}
-    \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.7]{figures/frequency-histogram-6.png}
+%     \end{center}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Height: barplot}
+% \begin{frame}
+%   \frametitle{Height: barplot}
 
-  \begin{center}
-    \includegraphics[scale=0.7]{figures/frequency-barplot-6.png}
-    \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.7]{figures/frequency-barplot-6.png}
+%     \end{center}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Height: h-plot}
+% \begin{frame}
+%   \frametitle{Height: h-plot}
 
-  \begin{center}
-    \includegraphics[scale=0.7]{figures/frequency-hplot-6.png}
-    \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.7]{figures/frequency-hplot-6.png}
+%     \end{center}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Height: relative frequency histogram}
+% \begin{frame}
+%   \frametitle{Height: relative frequency histogram}
 
-  \begin{center}
-    \includegraphics[scale=0.7]{figures/relfreq-histogram-6.png}
-    \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.7]{figures/relfreq-histogram-6.png}
+%     \end{center}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Height: barplot (relative frequencies)}
+% \begin{frame}
+%   \frametitle{Height: barplot (relative frequencies)}
 
-  \begin{center}
-    \includegraphics[scale=0.7]{figures/relfreq-barplot-6.png}
-    \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.7]{figures/relfreq-barplot-6.png}
+%     \end{center}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Height: h-plot (relative frequencies)}
+% \begin{frame}
+%   \frametitle{Height: h-plot (relative frequencies)}
 
-  \begin{center}
-    \includegraphics[scale=0.7]{figures/relfreq-hplot-6.png}
-    \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.7]{figures/relfreq-hplot-6.png}
+%     \end{center}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Height: relative frequency histogram}
+% \begin{frame}
+%   \frametitle{Height: relative frequency histogram}
 
-  \begin{center}
-    \includegraphics[scale=0.7]{figures/relfreq-histogram-6.png}
-    \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.7]{figures/relfreq-histogram-6.png}
+%     \end{center}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Height: density histogram}
+% \begin{frame}
+%   \frametitle{Height: density histogram}
 
-  \begin{center}
-    \includegraphics[scale=0.7]{figures/density-histogram-6.png}
-    \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.7]{figures/density-histogram-6.png}
+%     \end{center}
 
-    $P(62 < \textmd{Height} \leq 68) = \textmd{area under curve between 56 and 62}$.
+%     $P(62 < \textmd{Height} \leq 68) = \textmd{area under curve between 56 and 62}$.
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Height: density histogram}
+% \begin{frame}
+%   \frametitle{Height: density histogram}
 
-  \begin{center}
-    \includegraphics[scale=0.7]{figures/density-histogram-3.png}
-    \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.7]{figures/density-histogram-3.png}
+%     \end{center}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Height: density histogram}
+% \begin{frame}
+%   \frametitle{Height: density histogram}
 
-  \begin{center}
-    \includegraphics[scale=0.7]{figures/density-histogram-1.png}
-    \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.7]{figures/density-histogram-1.png}
+%     \end{center}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Height: density histogram}
+% \begin{frame}
+%   \frametitle{Height: density histogram}
 
-  \begin{center}
-    \includegraphics[scale=0.7]{figures/density-histogram-1-line.png}
-    \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.7]{figures/density-histogram-1-line.png}
+%     \end{center}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Height: probability density function}
+% \begin{frame}
+%   \frametitle{Height: probability density function}
 
-  \begin{center}
-    \includegraphics[scale=0.7]{figures/pdf-line.png}
-    \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.7]{figures/pdf-line.png}
+%     \end{center}
 
-\end{frame}
-
-
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -424,9 +422,9 @@ Distribution of female heights is unimodal and nearly symmetric with a mean of 6
 
 \pause
 
-% \item While most variables are nearly normal, but none are exactly normal
+\item While most variables are nearly normal, but none are exactly normal
 % ALT ALT
-\item Lots of variables are nearly normal, but few are actually normal.
+% \item Lots of variables are nearly normal, but few are actually normal.
 
 \end{itemize}
 
