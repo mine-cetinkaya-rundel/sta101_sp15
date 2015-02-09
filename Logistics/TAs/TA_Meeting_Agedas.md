@@ -49,8 +49,22 @@ Sta 101 TA Meeting Agendas
     + conditional probability
     + venn diagrams
 
-
-
+### Week 5: February 9, 2015
+* Exam proctoring:
+    + MT1:
+        + Mine: 
+        + Jesse:
+    + MT2:
+        + Mine:
+        + Jesse:
+    + Final:
+        + Mine:
+        + Jesse:
+* MT1 grading:
+    + Mine:
+    + Jesse:
+* No new PS this week, practice problems + solutions will be posted for MT review
+* 
 
 
 
