@@ -105,7 +105,7 @@ price &lt;-<span class="st"> </span>ames$SalePrice</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">sample_means50 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="dv">5000</span>)
 
 for(i in <span class="dv">1</span>:<span class="dv">5000</span>){
-   samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dv">50</span>)
+   samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">50</span>)
    sample_means50[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
    }
 
@@ -122,23 +122,23 @@ for(i in <span class="dv">1</span>:<span class="dv">5000</span>){
 <p>Let’s take a break from the statistics for a moment to let that last block of code sink in. You have just run your first <code>for</code> loop, a cornerstone of computer programming. The idea behind the for loop is <em>iteration</em>: it allows you to execute code as many times as you want without having to type out every iteration. In the case above, we wanted to iterate the two lines of code inside the curly braces that take a random sample of size 50 from <code>area</code> then save the mean of that sample into the <code>sample_means50</code> vector. Without the <code>for</code> loop, this would be painful:</p>
 <pre class="sourceCode r"><code class="sourceCode r">sample_means50 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="dv">5000</span>)
 
-samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dv">50</span>)
+samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">50</span>)
 sample_means50[<span class="dv">1</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
 
-samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dv">50</span>)
+samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">50</span>)
 sample_means50[<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
 
-samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dv">50</span>)
+samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">50</span>)
 sample_means50[<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
 
-samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dv">50</span>)
+samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">50</span>)
 sample_means50[<span class="dv">4</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)</code></pre>
 <p>and so on…</p>
 <p>With the for loop, these thousands of lines of code are compressed into a handful of lines. We’ve added one extra line to the code below, which prints the variable <code>i</code> during each iteration of the <code>for</code> loop. Run this code.</p>
 <pre class="sourceCode r"><code class="sourceCode r">sample_means50 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="dv">5000</span>)
 
 for(i in <span class="dv">1</span>:<span class="dv">5000</span>){
-   samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dv">50</span>)
+   samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">50</span>)
    sample_means50[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
    <span class="kw">print</span>(i)
    }</code></pre>
@@ -161,9 +161,9 @@ for(i in <span class="dv">1</span>:<span class="dv">5000</span>){
 sample_means100 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="dv">5000</span>)
 
 for(i in <span class="dv">1</span>:<span class="dv">5000</span>){
-  samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dv">10</span>)
+  samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">10</span>)
   sample_means10[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
-  samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dv">100</span>)
+  samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">100</span>)
   sample_means100[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
 }</code></pre>
 <p>Here we’re able to use a single <code>for</code> loop to build two distributions by adding additional lines inside the curly braces. Don’t worry about the fact that <code>samp</code> is used for the name of two different objects. In the second command of the <code>for</code> loop, the mean of <code>samp</code> is saved to the relevant place in the vector <code>sample_means10</code>. With the mean saved, we’re now free to overwrite the object <code>samp</code> with a new sample, this time of size 100. In general, anytime you create an object using a name that is already in use, the old object will get replaced with the new one.</p>
