@@ -52,11 +52,11 @@ Sta 101 TA Meeting Agendas
 ### Week 5: February 9, 2015
 * Exam proctoring:
     + MT1:
-        + Mine: 
-        + Jesse:
+        + Mine: Christine
+        + Jesse: 
     + MT2:
-        + Mine:
-        + Jesse:
+        + Mine: 
+        + Jesse: 
     + Final:
         + Mine:
         + Jesse:
