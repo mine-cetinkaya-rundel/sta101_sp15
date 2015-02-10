@@ -50,24 +50,45 @@ Sta 101 TA Meeting Agendas
     + venn diagrams
 
 ### Week 5: February 9, 2015
+
+* Next labs:
+	+ 6: Chris
+	+ 7: Mao
+	+ 8: Fiamma
+
 * Exam proctoring:
     + MT1:
+<<<<<<< HEAD
         + Mine: Christine
         + Jesse: 
     + MT2:
         + Mine: 
         + Jesse: 
+=======
+        + Mine (Feb 18): Christine, Jesse
+        + Jesse (Feb 19): Chris, Tori
+    + MT2:
+        + Mine (Mar 25):
+        + Jesse (Mar 26):
+>>>>>>> 368f30fd2477bba6cc337a3a7f559314fb0b8d22
     + Final:
-        + Mine:
-        + Jesse:
+        + Mine (May 2):
+        + Jesse (Apr 27):
+
 * MT1 grading:
-    + Mine:
-    + Jesse:
+    + Mine: Wed, Start at 3pm.
+    + Jesse: Thu, Start at 3pm or after 6pm.
+
 * No new PS this week, practice problems + solutions will be posted for MT review
-* 
 
+* Issues from Lab:
+	+ Nothing mentioned.
 
+* Issues from PS:
+	+ Lots doing well.  A few doing not well at all.
 
+* Lab 5:
+	+ Add size=50 to sample.
+	+ Change to NA.
 
-
-    
+* Note to self: Doodle poll for final grading times?

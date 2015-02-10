@@ -89,7 +89,7 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-% \input{../definitions_custom.tex}
+% \input{../../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -99,6 +99,8 @@
 \subtitle{4. Binomial distribution}
 \author{Sta 101 - Spring 2015}
 \date{February 4, 2015}
+% ALT ALT
+% \date{February 5, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 
@@ -139,6 +141,14 @@ Due by Friday 11:59pm:
 \item PA 2
 
 \end{itemize}
+% ALT ALT
+% \begin{itemize}
+
+% \item PA 2: Friday, 11:59pm.
+
+% \item Peer evaluations: Saturday, 11:59pm.
+
+% \end{itemize}
 
 \end{frame}
 
@@ -172,6 +182,33 @@ Due by Friday 11:59pm:
 
 \end{frame}
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+% \frametitle{Considering many scenarios}
+
+% \disc{Suppose we randomly select three individuals from the US, what is the probability that exactly 1 has high-speed broadband connection at home?}
+% \pause
+% Let's call these people Anthony (A), Barry (B), Cam (C). Each one of the three scenarios below will satisfy the condition of ``exactly 1 of them says Yes": \\
+% \vspace{0.25cm}
+% \pause
+% \begin{changemargin}{+1.5cm}{+0cm}
+% {\footnotesize
+% \begin{enumerate}
+% \item[Scenario 1:] $\slot{0.70}{\text{(A) \red{yes}}} \times \slot{0.30}{\text{(B) not yes}} \times \slot{0.30}{\text{(C) not yes}} \approx 0.063$
+% \pause
+% \item[Scenario 2:]  $\slot{0.30}{\text{(A) not yes}} \times \slot{0.70}{\text{(B) \red{yes}}} \times \slot{0.30}{\text{(C) not yes}} \approx 0.063$
+% \pause
+% \item[Scenario 3:]  $\slot{0.30}{\text{(A) not yes}} \times \slot{0.30}{\text{(B) not yes}} \times \slot{0.70}{\text{(C) \red{yes}}} \approx 0.063$
+% \end{enumerate}
+% }
+% \end{changemargin}
+% \pause
+% The probability of exactly one 1 of 3 people saying Yes is the sum of all of these probabilities.
+% \[ 0.063 + 0.063 + 0.063 = 3 \times 0.063 = 0.189 \]
+
+% \end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
@@ -179,7 +216,38 @@ Due by Friday 11:59pm:
 
 \disc{Suppose we randomly select three individuals from the US, what is the probability that exactly 1 has high-speed broadband connection at home?}
 \pause
-Let's call these people Anthony (A), Barry (B), Cam (C). Each one of the three scenarios below will satisfy the condition of ``exactly 1 of them says Yes": \\
+Let's call these people Anthony (A), Barry (B), Cam (C).
+
+\hfill \\
+
+8 possible (but not equally likely) outcomes:
+\begin{center}
+\footnotesize
+\begin{tabular}{c c c}
+A & B & C \\
+\hline
+F & F & F \\
+S & F & F \\
+F & S & F \\
+F & F & S \\
+S & S & F \\
+S & F & S \\
+F & S & S \\
+S & S & S
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Considering many scenarios}
+
+\disc{Suppose we randomly select three individuals from the US, what is the probability that exactly 1 has high-speed broadband connection at home?}
+
+Let's call these people Anthony (A), Barry (B), Cam (C). Each one of the three
+scenarios below will satisfy the condition of ``exactly 1 of them says Yes'': \\
 \vspace{0.25cm}
 \pause
 \begin{changemargin}{+1.5cm}{+0cm}
@@ -187,9 +255,9 @@ Let's call these people Anthony (A), Barry (B), Cam (C). Each one of the three s
 \begin{enumerate}
 \item[Scenario 1:] $\slot{0.70}{\text{(A) \red{yes}}} \times \slot{0.30}{\text{(B) not yes}} \times \slot{0.30}{\text{(C) not yes}} \approx 0.063$
 \pause
-\item[Scenario 2:]  $\slot{0.30}{\text{(B) not yes}} \times \slot{0.70}{\text{(A) \red{yes}}} \times \slot{0.30}{\text{(C) not yes}} \approx 0.063$
+\item[Scenario 2:]  $\slot{0.30}{\text{(A) not yes}} \times \slot{0.70}{\text{(B) \red{yes}}} \times \slot{0.30}{\text{(C) not yes}} \approx 0.063$
 \pause
-\item[Scenario 3:]  $\slot{0.30}{\text{(B) not yes}} \times \slot{0.30}{\text{(C) not yes}} \times \slot{0.70}{\text{(A) \red{yes}}} \approx 0.063$
+\item[Scenario 3:]  $\slot{0.30}{\text{(A) not yes}} \times \slot{0.30}{\text{(B) not yes}} \times \slot{0.70}{\text{(C) \red{yes}}} \approx 0.063$
 \end{enumerate}
 }
 \end{changemargin}
@@ -224,7 +292,11 @@ The question from the prior slide asked for the probability of given number of s
 \pause
 $\:$ \\
 
-The \hl{Binomial distribution} describes the probability of having exactly $k$ successes in $n$ independent trials (with only two possible outcomes) with probability of success $p$.
+The \hl{Binomial distribution} describes the probability of having exactly $k$
+successes in $n$ independent trials 
+(with only two possible outcomes) 
+% ALT ALT - commented out above line.
+with probability of success $p$.
 
 \end{frame}
 
@@ -246,6 +318,18 @@ The \hl{Binomial distribution} describes the probability of having exactly $k$ s
 {\footnotesize
 \begin{Verbatim}[frame=single, formatcom=\color{gray}]
 [1] 10
+\end{Verbatim}
+}
+\pause
+\Note{And to compute probabilities}
+{\footnotesize
+\begin{Verbatim}[frame=single, formatcom=\color{blue}]
+> dbinom(1, size=3, prob=0.7)
+\end{Verbatim}
+}
+{\footnotesize
+\begin{Verbatim}[frame=single, formatcom=\color{gray}]
+[1] 0.189
 \end{Verbatim}
 }
 
@@ -318,6 +402,72 @@ The \hl{Binomial distribution} describes the probability of having exactly $k$ s
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}
+
+Probability mass function:
+\[P(k~successes~in~n~trials) = {n \choose k}~p^k~(1-p)^{(n-k)} \] 
+
+\hfill \\
+
+\pause
+
+Probability distribution for 15 trials and $p=0.7$:
+
+
+\begin{center}
+\includegraphics[scale=0.5]{figures/dbinom-15-70.png}
+\end{center}
+
+% {\footnotesize
+% \begin{tabular}{l c c c c c c}
+% N. suc. & 0 & 1 & 2 & 3 & 4 & 5\\
+% \hline
+% Prob & 0.00001 & 0.00014 & 0.00145 & 0.00900 & 0.03676  & 0.10292
+% \end{tabular}
+
+% \hfill \\
+
+% \begin{tabular}{l c c c c c}
+% N. suc. & 6 & 7 & 8 & 9 & 10 \\
+% \hline
+% Prob & 0.20012 & 0.26683 & 0.23347 & 0.12106 & 0.02825
+% \end{tabular}
+% }
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+Probability distribution for 15 trials and $p=0.7$:
+
+\hfill \\
+
+\begin{center}
+\includegraphics[scale=0.7]{figures/dbinom-15-70-barplot.png}
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+Probability distribution for 15 trials and $p=0.7$:
+
+\hfill \\
+
+\begin{center}
+\includegraphics[scale=0.7]{figures/dbinom-15-70-hist.png}
+
+Watch out: discrete variable and bin width = 1.
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Expected value and standard deviation of the binomial can be calculated using its parameters n and p}
 \label{mi2}
 
@@ -332,10 +482,10 @@ The \hl{Binomial distribution} describes the probability of having exactly $k$ s
 
 \begin{itemize}
 
-\item Easy enough, $100 \times 0.70 = 70$
+\item $100 \times 0.70 = 70$
 \pause
 \begin{itemize}
-\item Or more formally, $\mu = np = 100 \times 0.44 = 44$
+\item Or more formally, $\mu = np = 100 \times 0.7 = 7$
 \end{itemize}
 
 \pause
@@ -351,6 +501,7 @@ The \hl{Binomial distribution} describes the probability of having exactly $k$ s
 \Note{Mean and standard deviation of a binomial might not always be whole numbers, and that is alright, these values represent what we would expect to see on average.}
 
 \end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -370,7 +521,16 @@ The \hl{Binomial distribution} describes the probability of having exactly $k$ s
 \vfill
 
 \pause
-\hl{S-F rule:} The sample size is considered large enough if the expected number of successes and failures are both at least 10
+
+You can use the normal distribution to approximate binomial probabilities when
+the sample size is large enough.
+
+\hfill \\
+
+\pause
+
+\hl{S-F rule:} 
+The sample size is considered large enough if the expected number of successes and failures are both at least 10
 \[ np \ge 10 \qquad \text{ and } \qquad n(1-p) \ge 10 \]
 
 \end{frame}
@@ -406,16 +566,16 @@ The \hl{Binomial distribution} describes the probability of having exactly $k$ s
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\frametitle{Binomial $\rightarrow$ normal}
+% \begin{frame}
+% \frametitle{Binomial $\rightarrow$ normal}
 
-\vfill
+% \vfill
 
-\disc{Why do we care?}
+% \disc{Why do we care?}
 
-\vfill
+% \vfill
 
-\end{frame}
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
