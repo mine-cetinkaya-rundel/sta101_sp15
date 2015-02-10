@@ -65,7 +65,7 @@ If we were interested in estimating the mean living area in Ames based on a
 sample, we can use the following command to survey the population.
 
 ```{r samp1, eval=FALSE}
-samp1 <- sample(area, 50)
+samp1 <- sample(area, size = 50, replace = TRUE)
 ```
 
 This command collects a simple random sample of size 50 from the vector 
@@ -106,10 +106,10 @@ above steps many times. Here we will generate 5000 samples and compute the
 sample mean of each.
 
 ```{r loop, eval=FALSE}
-sample_means50 <- rep(0, 5000)
+sample_means50 <- rep(NA, 5000)
 
 for(i in 1:5000){
-   samp <- sample(area, 50)
+   samp <- sample(area, size = 50, replace = TRUE)
    sample_means50[i] <- mean(samp)
    }
 
@@ -144,18 +144,18 @@ save the mean of that sample into the `sample_means50` vector.  Without the
 `for` loop, this would be painful:
 
 ```{r loop-long, eval=FALSE}
-sample_means50 <- rep(0, 5000)
+sample_means50 <- rep(NA, 5000)
 
-samp <- sample(area, 50)
+samp <- sample(area, size = 50, replace = TRUE)
 sample_means50[1] <- mean(samp)
 
-samp <- sample(area, 50)
+samp <- sample(area, size = 50, replace = TRUE)
 sample_means50[2] <- mean(samp)
 
-samp <- sample(area, 50)
+samp <- sample(area, size = 50, replace = TRUE)
 sample_means50[3] <- mean(samp)
 
-samp <- sample(area, 50)
+samp <- sample(area, size = 50, replace = TRUE)
 sample_means50[4] <- mean(samp)
 ```
 
@@ -166,10 +166,10 @@ handful of lines. We've added one extra line to the code below, which prints
 the variable `i` during each iteration of the `for` loop. Run this code.
 
 ```{r loop-again, eval=FALSE}
-sample_means50 <- rep(0, 5000)
+sample_means50 <- rep(NA, 5000)
 
 for(i in 1:5000){
-   samp <- sample(area, 50)
+   samp <- sample(area, size = 50, replace = TRUE)
    sample_means50[i] <- mean(samp)
    print(i)
    }
@@ -177,7 +177,7 @@ for(i in 1:5000){
 
 Let's consider this code line by line to figure out what it does.  In the 
 first line we *initialized a vector*.  In this case, we created a vector of 
-5000 zeros called `sample_means50`.  This vector will will store values 
+5000 `NA`s called `sample_means50`.  This vector will will store values 
 generated within the `for` loop.
 
 The second line calls the `for` loop itself.  The syntax can be loosely read as, 
@@ -200,7 +200,7 @@ package the results, element by element, into the empty vector that we
 initialized at the outset. 
 
 5.  To make sure you understand what you've done in this loop, try running a 
-    smaller version.  Initialize a vector of 100 zeros called 
+    smaller version.  Initialize a vector of 100 `NA`s called 
     `sample_means_small`.  Run a loop that takes a sample of size 50 from 
     `area` and stores the sample mean in `sample_means_small`, but only 
     iterate from 1 to 100.  Print the output to your screen (type 
@@ -228,13 +228,13 @@ build up two more sampling distributions: one based on a sample size of 10 and
 another based on a sample size of 100.
 
 ```{r samp-10-100, eval=FALSE}
-sample_means10 <- rep(0, 5000)
-sample_means100 <- rep(0, 5000)
+sample_means10 <- rep(NA, 5000)
+sample_means100 <- rep(NA, 5000)
 
 for(i in 1:5000){
-  samp <- sample(area, 10)
+  samp <- sample(area, size = 10, replace = TRUE)
   sample_means10[i] <- mean(samp)
-  samp <- sample(area, 100)
+  samp <- sample(area, size = 100, replace = TRUE)
   sample_means100[i] <- mean(samp)
 }
 ```
@@ -269,7 +269,7 @@ specifies the range of the x-axis of the histogram, and by setting it equal
 to `xlimits` for each histogram, we ensure that all three histograms will be 
 plotted with the same limits on the x-axis.
 
-6.  When the sample size is larger, what happens to the center?  What about the spread?
+6.  When the sample size is larger, what happens to the center?  What about the spread? Make sure to include the plots in your report. You might want to increase the overall height of the figure since you're placing three plots on top of each other. To do so change the `fig.height` argument in the R chunk definition provided for this exercise. (Note: If you also wanted to customize the width of the figure, you can add a `fig.width` argument to the R chunk definition as well. The default height and width of figures is defined at the beginning of the document.)
 
 * * *
 

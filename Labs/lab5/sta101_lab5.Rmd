@@ -38,6 +38,11 @@ output:
 
 #### Exercise 6:
 
+```{r fig.height=5}
+
+```
+
+
 * * *
 ### On your own:
 
