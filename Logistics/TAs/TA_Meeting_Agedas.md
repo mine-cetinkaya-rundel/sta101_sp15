@@ -58,19 +58,11 @@ Sta 101 TA Meeting Agendas
 
 * Exam proctoring:
     + MT1:
-<<<<<<< HEAD
-        + Mine: Christine
-        + Jesse: 
-    + MT2:
-        + Mine: 
-        + Jesse: 
-=======
         + Mine (Feb 18): Christine, Jesse
         + Jesse (Feb 19): Chris, Tori
     + MT2:
         + Mine (Mar 25):
         + Jesse (Mar 26):
->>>>>>> 368f30fd2477bba6cc337a3a7f559314fb0b8d22
     + Final:
         + Mine (May 2):
         + Jesse (Apr 27):
