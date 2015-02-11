@@ -133,7 +133,12 @@
 
 \item No new PS this week, but review questions provided on new material that will be on the exam next week
 
-\item Sample midterm + review questions posted
+\item Sample midterm + review questions posted on course website
+
+\item Additional practice quizzes on Coursera
+\begin{center}
+\includegraphics[width=0.6\textwidth]{figures/coursera_quiz}
+\end{center}
 
 \item PA3 will be posted on Monday after class and will be due that evening, so budget your time accordingly for that short turnaround!
 
@@ -152,9 +157,55 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}
+\frametitle{1. Statistical inference methods based on the CLT depend on the same conditions as the CLT}
+
+Always check these in context of the data and the research question!
+
+\begin{enumerate}
+
+\item \hlGr{Independence:} Sampled observations must be independent. \\
+
+$\:$ \\
+This is difficult to verify, but is more likely if
+\begin{itemize}
+\item random sampling/assignment is used, and,
+\item if sampling without replacement, $n$ $<$ 10\% of the population.
+\end{itemize}
+
+\item \hlGr{Sample size/skew:} Either the population distribution is normal \\
+or\\
+$n > 30$ and the population distribution is not extremely skewed (the more skewed the distribution, the higher $n$ necessary for the CLT to apply).\\
+$\:$ \\
+This is also difficult to verify for the population, but we can check it using the sample data, and assume that the sample mirrors the population.
+
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Use confidence intervals to estimate population parameters}
 \label{mi2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{2. Use confidence intervals to estimate population parameters}
+
+\vfill
+
+\[ CI: point~estimate \pm margin~of~error \]
+$\:$ \\
+
+\pause
+
+If the parameter of interest is the population mean, and the point estimate is the sample mean,
+\[ \bar{x} \pm Z^\star \frac{s}{\sqrt{n}} \]
+
+\vfill
+
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -176,6 +227,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
+\frametitle{3. Critical value depends on the confidence level}
 
 \clicker{What is the critical value ($Z^\star$) for a confidence interval at the 91\% confidence level?}
 
@@ -231,6 +283,66 @@ $\:$ \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
+\frametitle{4. Use hypothesis tests to make decisions about population parameters}
+
+Hypothesis testing framework:
+
+\begin{enumerate}
+
+\item Set the hypotheses.
+
+\item Check assumptions and conditions.
+
+\item Calculate a \hl{test statistic} and a p-value.
+
+\item Make a decision, and interpret it in context of the research question.
+
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Hypothesis testing for a population mean}
+
+\begin{enumerate}
+
+\item Set the hypotheses
+\begin{itemize}
+\item $H_0: \mu = null~value$
+\item $H_A: \mu <$ or $>$ or $\ne null~value$
+\end{itemize}
+
+\pause
+
+\item Check assumptions and conditions
+\begin{itemize}
+\item Independence: random sample/assignment, 10\% condition when sampling without replacement
+\item Sample size / skew: $n \ge 30$ (or larger if sample is skewed), no extreme skew
+\end{itemize}
+
+\pause
+
+\item Calculate a \hl{test statistic} and a p-value (draw a picture!)
+\[ Z = \frac{\bar{x} - \mu}{SE},~where~SE = \frac{s}{\sqrt{n}} \]
+
+\pause
+
+\item Make a decision, and interpret it in context of the research question
+\begin{itemize}
+\item If p-value $< \alpha$, reject $H_0$, data provide evidence for $H_A$
+\item If p-value $> \alpha$, do not reject $H_0$, data do not provide evidence for $H_A$
+\end{itemize}
+
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{4. Use hypothesis tests to make decisions about population parameters}
 
 \vfill
 
@@ -277,57 +389,6 @@ $\:$ \\
 
 \item   \textcolor{gray}{A low p-value confirms the alternative hypothesis.} \\
 \textit{This is incorrect, a low p-value means the data provide convincing evidence for the alternative hypothesis, but not necessarily that it is confirmed.} \\
-
-\end{enumerate}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{Recap: Hypothesis testing framework}
-
-\begin{enumerate}
-
-\item Set the hypotheses.
-
-\item Check assumptions and conditions.
-
-\item Calculate a \hl{test statistic} and a p-value.
-
-\item Make a decision, and interpret it in context of the research question.
-
-\end{enumerate}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{Recap: Hypothesis testing for a population mean}
-
-\begin{enumerate}
-
-\item Set the hypotheses
-\begin{itemize}
-\item $H_0: \mu = null~value$
-\item $H_A: \mu <$ or $>$ or $\ne null~value$
-\end{itemize}
-
-\item Check assumptions and conditions
-\begin{itemize}
-\item Independence: random sample/assignment, 10\% condition when sampling without replacement
-\item Normality: nearly normal population or $n \ge 30$, no extreme skew
-\end{itemize}
-
-\item Calculate a \hl{test statistic} and a p-value (draw a picture!)
-\[ Z = \frac{\bar{x} - \mu}{SE},~where~SE = \frac{s}{\sqrt{n}} \]
-
-\item Make a decision, and interpret it in context of the research question
-\begin{itemize}
-\item If p-value $< \alpha$, reject $H_0$, data provide evidence for $H_A$
-\item If p-value $> \alpha$, do not reject $H_0$, data do not provide evidence for $H_A$
-\end{itemize}
 
 \end{enumerate}
 
