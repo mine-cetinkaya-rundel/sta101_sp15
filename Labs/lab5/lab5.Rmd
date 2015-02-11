@@ -65,11 +65,7 @@ If we were interested in estimating the mean living area in Ames based on a
 sample, we can use the following command to survey the population.
 
 ```{r samp1, eval=FALSE}
-<<<<<<< HEAD
 samp1 <- sample(area, size = 50, replace = TRUE)
-=======
-samp1 <- sample(area, size=50)
->>>>>>> 368f30fd2477bba6cc337a3a7f559314fb0b8d22
 ```
 
 This command collects a simple random sample of size 50 from the vector 
@@ -113,11 +109,7 @@ sample mean of each.
 sample_means50 <- rep(NA, 5000)
 
 for(i in 1:5000){
-<<<<<<< HEAD
    samp <- sample(area, size = 50, replace = TRUE)
-=======
-   samp <- sample(area, size=50)
->>>>>>> 368f30fd2477bba6cc337a3a7f559314fb0b8d22
    sample_means50[i] <- mean(samp)
    }
 
@@ -154,7 +146,6 @@ save the mean of that sample into the `sample_means50` vector.  Without the
 ```{r loop-long, eval=FALSE}
 sample_means50 <- rep(NA, 5000)
 
-<<<<<<< HEAD
 samp <- sample(area, size = 50, replace = TRUE)
 sample_means50[1] <- mean(samp)
 
@@ -165,18 +156,7 @@ samp <- sample(area, size = 50, replace = TRUE)
 sample_means50[3] <- mean(samp)
 
 samp <- sample(area, size = 50, replace = TRUE)
-=======
-samp <- sample(area, size=50)
-sample_means50[1] <- mean(samp)
 
-samp <- sample(area, size=50)
-sample_means50[2] <- mean(samp)
-
-samp <- sample(area, size=50)
-sample_means50[3] <- mean(samp)
-
-samp <- sample(area, size=50)
->>>>>>> 368f30fd2477bba6cc337a3a7f559314fb0b8d22
 sample_means50[4] <- mean(samp)
 ```
 
@@ -190,11 +170,7 @@ the variable `i` during each iteration of the `for` loop. Run this code.
 sample_means50 <- rep(NA, 5000)
 
 for(i in 1:5000){
-<<<<<<< HEAD
    samp <- sample(area, size = 50, replace = TRUE)
-=======
-   samp <- sample(area, size=50)
->>>>>>> 368f30fd2477bba6cc337a3a7f559314fb0b8d22
    sample_means50[i] <- mean(samp)
    print(i)
    }
@@ -257,15 +233,9 @@ sample_means10 <- rep(NA, 5000)
 sample_means100 <- rep(NA, 5000)
 
 for(i in 1:5000){
-<<<<<<< HEAD
   samp <- sample(area, size = 10, replace = TRUE)
   sample_means10[i] <- mean(samp)
   samp <- sample(area, size = 100, replace = TRUE)
-=======
-  samp <- sample(area, size=10)
-  sample_means10[i] <- mean(samp)
-  samp <- sample(area, size=100)
->>>>>>> 368f30fd2477bba6cc337a3a7f559314fb0b8d22
   sample_means100[i] <- mean(samp)
 }
 ```
