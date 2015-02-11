@@ -90,7 +90,11 @@ price &lt;-<span class="st"> </span>ames$SalePrice</code></pre>
 <h2>The unknown sampling distribution</h2>
 <p>In this lab we have access to the entire population, but this is rarely the case in real life. Gathering information on an entire population is often extremely costly or impossible. Because of this, we often take a sample of the population and use that to understand the properties of the population.</p>
 <p>If we were interested in estimating the mean living area in Ames based on a sample, we can use the following command to survey the population.</p>
+<<<<<<< HEAD
+<pre class="sourceCode r"><code class="sourceCode r">samp1 &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size =</span> <span class="dv">50</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</code></pre>
+=======
 <pre class="sourceCode r"><code class="sourceCode r">samp1 &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">50</span>)</code></pre>
+>>>>>>> 368f30fd2477bba6cc337a3a7f559314fb0b8d22
 <p>This command collects a simple random sample of size 50 from the vector <code>area</code>, which is assigned to <code>samp1</code>. This is like going into the City Assessor’s database and pulling up the files on 50 random home sales. Working with these 50 files would be considerably simpler than working with all 2930 home sales.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Describe the distribution of this sample? How does it compare to the distribution of the population? For this question you will need to include the code for taking a sample, and plot it. Also make sure that prior to taking a sample you set a seed (<code>set.seed()</code>) in your markdown document so that each time you knit the document you work with the same random sample.</li>
@@ -105,7 +109,11 @@ price &lt;-<span class="st"> </span>ames$SalePrice</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">sample_means50 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="dv">5000</span>)
 
 for(i in <span class="dv">1</span>:<span class="dv">5000</span>){
+<<<<<<< HEAD
+   samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size =</span> <span class="dv">50</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+=======
    samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">50</span>)
+>>>>>>> 368f30fd2477bba6cc337a3a7f559314fb0b8d22
    sample_means50[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
    }
 
@@ -122,6 +130,18 @@ for(i in <span class="dv">1</span>:<span class="dv">5000</span>){
 <p>Let’s take a break from the statistics for a moment to let that last block of code sink in. You have just run your first <code>for</code> loop, a cornerstone of computer programming. The idea behind the for loop is <em>iteration</em>: it allows you to execute code as many times as you want without having to type out every iteration. In the case above, we wanted to iterate the two lines of code inside the curly braces that take a random sample of size 50 from <code>area</code> then save the mean of that sample into the <code>sample_means50</code> vector. Without the <code>for</code> loop, this would be painful:</p>
 <pre class="sourceCode r"><code class="sourceCode r">sample_means50 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="dv">5000</span>)
 
+<<<<<<< HEAD
+samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size =</span> <span class="dv">50</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+sample_means50[<span class="dv">1</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
+
+samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size =</span> <span class="dv">50</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+sample_means50[<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
+
+samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size =</span> <span class="dv">50</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+sample_means50[<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
+
+samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size =</span> <span class="dv">50</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+=======
 samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">50</span>)
 sample_means50[<span class="dv">1</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
 
@@ -132,23 +152,28 @@ samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span cl
 sample_means50[<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
 
 samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">50</span>)
+>>>>>>> 368f30fd2477bba6cc337a3a7f559314fb0b8d22
 sample_means50[<span class="dv">4</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)</code></pre>
 <p>and so on…</p>
 <p>With the for loop, these thousands of lines of code are compressed into a handful of lines. We’ve added one extra line to the code below, which prints the variable <code>i</code> during each iteration of the <code>for</code> loop. Run this code.</p>
 <pre class="sourceCode r"><code class="sourceCode r">sample_means50 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="dv">5000</span>)
 
 for(i in <span class="dv">1</span>:<span class="dv">5000</span>){
+<<<<<<< HEAD
+   samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size =</span> <span class="dv">50</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+=======
    samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">50</span>)
+>>>>>>> 368f30fd2477bba6cc337a3a7f559314fb0b8d22
    sample_means50[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
    <span class="kw">print</span>(i)
    }</code></pre>
-<p>Let’s consider this code line by line to figure out what it does. In the first line we <em>initialized a vector</em>. In this case, we created a vector of 5000 zeros called <code>sample_means50</code>. This vector will will store values generated within the <code>for</code> loop.</p>
+<p>Let’s consider this code line by line to figure out what it does. In the first line we <em>initialized a vector</em>. In this case, we created a vector of 5000 <code>NA</code>s called <code>sample_means50</code>. This vector will will store values generated within the <code>for</code> loop.</p>
 <p>The second line calls the <code>for</code> loop itself. The syntax can be loosely read as, “for every element <code>i</code> from 1 to 5000, run the following lines of code”. You can think of <code>i</code> as the counter that keeps track of which loop you’re on. Therefore, more precisely, the loop will run once when <code>i = 1</code>, then once when <code>i = 2</code>, and so on up to <code>i = 5000</code>.</p>
 <p>The body of the <code>for</code> loop is the part inside the curly braces, and this set of code is run for each value of <code>i</code>. Here, on every loop, we take a random sample of size 50 from <code>area</code>, take its mean, and store it as the <span class="math">\(i\)</span><sup>th</sup> element of <code>sample_means50</code>.</p>
 <p>In order to display that this is really happening, we asked R to print <code>i</code> at each iteration. This line of code is optional and is only used for displaying what’s going on while the <code>for</code> loop is running.</p>
 <p>The <code>for</code> loop allows us to not just run the code 5000 times, but to neatly package the results, element by element, into the empty vector that we initialized at the outset.</p>
 <ol start="5" style="list-style-type: decimal">
-<li>To make sure you understand what you’ve done in this loop, try running a smaller version. Initialize a vector of 100 zeros called <code>sample_means_small</code>. Run a loop that takes a sample of size 50 from <code>area</code> and stores the sample mean in <code>sample_means_small</code>, but only iterate from 1 to 100. Print the output to your screen (type <code>sample_means_small</code> into the console and press enter). How many elements are there in this object called <code>sample_means_small</code>? What does each element represent?</li>
+<li>To make sure you understand what you’ve done in this loop, try running a smaller version. Initialize a vector of 100 <code>NA</code>s called <code>sample_means_small</code>. Run a loop that takes a sample of size 50 from <code>area</code> and stores the sample mean in <code>sample_means_small</code>, but only iterate from 1 to 100. Print the output to your screen (type <code>sample_means_small</code> into the console and press enter). How many elements are there in this object called <code>sample_means_small</code>? What does each element represent?</li>
 </ol>
 </div>
 <div id="sample-size-and-the-sampling-distribution" class="section level2">
@@ -161,9 +186,15 @@ for(i in <span class="dv">1</span>:<span class="dv">5000</span>){
 sample_means100 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="dv">5000</span>)
 
 for(i in <span class="dv">1</span>:<span class="dv">5000</span>){
+<<<<<<< HEAD
+  samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+  sample_means10[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
+  samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size =</span> <span class="dv">100</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+=======
   samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">10</span>)
   sample_means10[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
   samp &lt;-<span class="st"> </span><span class="kw">sample</span>(area, <span class="dt">size=</span><span class="dv">100</span>)
+>>>>>>> 368f30fd2477bba6cc337a3a7f559314fb0b8d22
   sample_means100[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp)
 }</code></pre>
 <p>Here we’re able to use a single <code>for</code> loop to build two distributions by adding additional lines inside the curly braces. Don’t worry about the fact that <code>samp</code> is used for the name of two different objects. In the second command of the <code>for</code> loop, the mean of <code>samp</code> is saved to the relevant place in the vector <code>sample_means10</code>. With the mean saved, we’re now free to overwrite the object <code>samp</code> with a new sample, this time of size 100. In general, anytime you create an object using a name that is already in use, the old object will get replaced with the new one.</p>
@@ -177,7 +208,7 @@ xlimits &lt;-<span class="st"> </span><span class="kw">range</span>(sample_means
 <span class="kw">hist</span>(sample_means100, <span class="dt">breaks =</span> <span class="dv">20</span>, <span class="dt">xlim =</span> xlimits)</code></pre>
 <p>The first command specifies that you’d like to divide the plotting area into 3 rows and 1 column of plots (to return to the default setting of plotting one at a time, use <code>par(mfrow = c(1, 1))</code>). The <code>breaks</code> argument specifies the number of bins used in constructing the histogram. The <code>xlim</code> argument specifies the range of the x-axis of the histogram, and by setting it equal to <code>xlimits</code> for each histogram, we ensure that all three histograms will be plotted with the same limits on the x-axis.</p>
 <ol start="6" style="list-style-type: decimal">
-<li>When the sample size is larger, what happens to the center? What about the spread?</li>
+<li>When the sample size is larger, what happens to the center? What about the spread? Make sure to include the plots in your report. You might want to increase the overall height of the figure since you’re placing three plots on top of each other. To do so change the <code>fig.height</code> argument in the R chunk definition provided for this exercise. (Note: If you also wanted to customize the width of the figure, you can add a <code>fig.width</code> argument to the R chunk definition as well. The default height and width of figures is defined at the beginning of the document.)</li>
 </ol>
 <hr />
 </div>
