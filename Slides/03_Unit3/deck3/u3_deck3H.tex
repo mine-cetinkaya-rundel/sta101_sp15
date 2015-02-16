@@ -1,0 +1,418 @@
+% -*- TeX-engine: xetex; -*-
+% Compile with XeLaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% To do before class
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Send the Logistics/Week0Annoucnement (the night before).
+% Send an email reminding students to bring a charged computer (the night before).
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Option 1: Slides: (comment for handouts)   %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%\documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
+%
+%% solution stuff
+%\newcommand{\solnMult}[1]{
+%\only<1>{#1}
+%\only<2->{\red{\textbf{#1}}}
+%}
+%\newcommand{\soln}[1]{\textit{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 2: Handouts, without solutions (post before class)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+ % handout layout
+ \usepackage{pgfpages}
+ \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+ % solution stuff
+ \newcommand{\solnMult}[1]{#1}
+ \newcommand{\soln}[1]{}
+
+ % % This breaks things for me for some reason.
+ % tell pgfpages how to set page sizes in XeLaTeX
+ \renewcommand\pgfsetupphysicalpagesizes{%
+    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 3: Handouts, with solutions (may post after class if need be)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{\red{\textbf{#1}}}
+% \newcommand{\soln}[1]{\textit{#1}}
+
+% % % This breaks things for me for some reason.
+% % % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% % }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 4: Notes Only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% % See http://tex.stackexchange.com/questions/114219/add-notes-to-latex-beamer
+% \documentclass[10pt,containsverbatim,xcolor=xelatex,dvipsnames,table,notes=only]{beamer}
+
+% % handout layout
+% % \usepackage{pgfpages}
+% % \pgfpagesuselayout{1 on 1}[letterpaper, landscape, border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % Having a problem with this.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
+
+%%%%%%%%%%
+% Load style file, defaults  %
+%%%%%%%%%%
+
+\input{../../lec_style.tex}
+\input{../../definitions_default.tex}
+% ALT ALT
+% \input{../definitions_custom.tex}
+
+%%%%%%%%%%%
+% Cover slide info    %
+%%%%%%%%%%%
+
+\title{Unit 3: Foundations for inference}
+\subtitle{3. Decision errors, significance levels, sample size \& power}
+\author{Sta 101 - Spring 2015}
+\date{February 16, 2015}
+\institute{Duke University, Department of Statistical Science}
+
+%%%%%%%%%%%
+% Begin document   %
+%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title Page
+
+\begin{frame}[plain]
+
+\titlepage
+\vfill
+{\scriptsize \webLink{\PersonalSite}{Dr. \LastName{}} \hfill Slides posted at  \webLink{\CourseSite}{\CourseSite}}
+\addtocounter{framenumber}{-1} 
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Housekeeping}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Announcements}
+
+\begin{itemize}
+
+\item PA3 due tonight
+
+\item Midterm review: ?
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Main ideas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Hypothesis tests and confidence intervals at equivalent significance/confidence levels should agree}
+\label{mi1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{1. Hypothesis tests and confidence intervals at equivalent significance/confidence levels should agree}
+
+\twocol{0.5}{0.5}{
+\begin{center}
+Two sided\\
+~\\
+\includegraphics[width=\textwidth]{figures/sig_conf_equiv/CL95_twosided} \\
+95\% confidence level \\
+is equivalent to \\
+two sided HT with $\alpha = 0.05$
+\end{center}
+}
+{\pause
+\begin{center}
+One sided\\
+~\\
+\includegraphics[width=\textwidth]{figures/sig_conf_equiv/CL95_onesided} \\
+95\% confidence level \\
+is equivalent to \\
+one sided HT with $\alpha = 0.025$
+\end{center}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{}
+
+\clicker{What is the significance level of a two-sided hypothesis test that is equivalent to a 90\% confidence interval? \textit{Hint: Draw a picture and mark the confidence level in the center.}}
+
+\begin{enumerate}[(a)]
+\item 0.001
+\item 0.01
+\item 0.025
+\item 0.05
+\item \solnMult{0.10}
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{}
+
+\clicker{What is the significance level of a one-sided hypothesis test that is equivalent to a 90\% confidence interval? \textit{Hint: Draw a picture and mark the confidence level in the center.}}
+
+\begin{enumerate}[(a)]
+\item 0.001
+\item 0.01
+\item 0.025
+\item \solnMult{0.05}
+\item 0.10
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{}
+
+\clicker{What is the confidence level of a confidence interval that is equivalent to a two-sided hypothesis test with $\alpha = 0.01$. \textit{Hint: Draw a picture and mark the confidence level in the center.}}
+
+\begin{enumerate}[(a)]
+\item 0.80
+\item 0.90
+\item 0.95
+\item 0.98
+\item \solnMult{0.99}
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{}
+
+\clicker{What is the confidence level of a confidence interval that is equivalent to a one-sided hypothesis test with $\alpha = 0.01$. \textit{Hint: Draw a picture and mark the confidence level in the center.}}
+
+\begin{enumerate}[(a)]
+\item 0.80
+\item 0.90
+\item 0.95
+\item \solnMult{0.98}
+\item 0.99
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{}
+
+\clicker{A 95\% confidence interval for the average normal body temperature of humans is found to be (98.1 F, 98.4 F). Which of the following is \emph{true}?}
+
+\begin{enumerate}[(a)]
+\item The hypothesis $H_A: \mu = 98.2$ would be rejected at $\alpha = 0.05$ in favor of $H_A: \mu \ne 98.2$.
+\item The hypothesis $H_A: \mu = 98.2$ would be rejected at $\alpha = 0.025$ in favor of $H_A: \mu > 98.2$.
+\item \solnMult{The hypothesis $H_A: \mu = 98$ would be rejected using a 90\% confidence interval.}
+\item The hypothesis $H_A: \mu = 98.2$ would not be rejected using a 99\% confidence interval.
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Results that are statistically significant are not necessarily practically significant}
+\label{mi2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{2. Results that are statistically significant are not necessarily practically significant}
+
+\clicker{All else held equal, will p-value be lower if $n = 100$ or $n = 10,000$?}
+
+\begin{enumerate}[(a)]
+\item $n = 100$
+\item \solnMult{$n = 10,000$}
+\end{enumerate}
+
+\soln{\pause \pause
+Suppose $\bar{x} = 5$, $s = 2$, $H_0: \mu = 4.5$, and $H_A: \mu \ge 4.5$.\\
+\pause
+{\small
+\begin{eqnarray*}
+Z_{n = 100} &=& \frac{5 - 4.5}{\frac{2}{\sqrt{100}}} \pause = \frac{5 - 4.5}{\frac{2}{10}} = \frac{0.5}{0.2} = 2.5,~~~\text{p-value} = 0.0062 \\
+\pause
+Z_{n = 10000} &=& \frac{5 - 4.5}{\frac{2}{\sqrt{10000}}} \pause = \frac{5 - 4.5}{\frac{2}{100}} = \frac{0.5}{0.02} = 25,~~~\text{p-value} \approx 0
+\end{eqnarray*}
+}
+\pause
+\begin{center}
+As $n$ increases - $SE$ $\downarrow$, $Z$ $\uparrow$, p-value $\downarrow$
+\end{center}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Calculate the sample size a priori to achieve desired margin of error}
+\label{mi3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{3. Calculate the sample size \textit{a priori} to achieve desired margin of error}
+
+\vfill
+
+\app{3.3 Sample size}{See course website for details.}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Hypothesis tests are prone to decision errors}
+\label{mi4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{4. Hypothesis tests are prone to decision errors}
+
+\begin{center}
+\begin{tabular}{l l | c c}
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{\textbf{Decision}} \\
+& & fail to reject $H_0$ &  reject $H_0$ \\
+  \cline{2-4}
+& $H_0$ true & \onslide<3->{\green{$\checkmark$}} &  \onslide<4->{\red{Type 1 Error, $\alpha$}} \\
+\raisebox{1.5ex}{\textbf{Truth}} & $H_A$ true & \onslide<5->{\red{Type 2 Error, $\beta$}} & \onslide<6->{\green{Power, $1 - \beta$}} \\
+  \cline{2-4}
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item \onslide<4->{A \hl{Type 1 Error} is rejecting the null hypothesis when $H_0$ is true: $\alpha$
+\begin{itemize}
+\item For those cases where $H_0$ is actually true, we do not want to incorrectly reject it more than 5\% of those times
+\item Increasing $\alpha$ increases the Type 1 error rate, hence we prefer to small values of $\alpha$
+\end{itemize}
+}
+
+\item \onslide<5->{A \hl{Type 2 Error} is failing to reject the null hypothesis when $H_A$ is true: $\beta$}
+
+\item \onslide<6->{\hl{Power} is the probability of correctly rejecting $H_0$, and hence the complement of the probability of a Type 2 Error: $1 - \beta$}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Power depends on the effect size, $\alpha$, $n$, and $s$}
+\label{mi5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{5. Power depends on the $n$, $a$, $\alpha$, effect size}
+
+Power can be increased (and hence Type 2 error rate can be decreased) by
+
+\pause
+
+\begin{itemize}
+
+\item increasing the sample size
+
+\pause
+
+\item decreasing the standard deviation of the sample (difficult to ensure but cautious measurement process and limiting the population so that it is more homogenous may help)
+
+\pause
+
+\item increasing $\alpha$
+
+\pause
+
+\item increasing the \hl{effect size}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Summary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Summary of main ideas}
+
+\vfill
+
+\begin{enumerate}
+
+\item \nameref{mi1}
+
+\item \nameref{mi2}
+
+\item \nameref{mi3}
+
+\item \nameref{mi4}
+
+\item \nameref{mi5}
+
+\end{enumerate}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
