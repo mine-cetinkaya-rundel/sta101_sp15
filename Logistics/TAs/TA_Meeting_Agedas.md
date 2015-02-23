@@ -84,3 +84,8 @@ Sta 101 TA Meeting Agendas
 	+ Change to NA.
 
 * Note to self: Doodle poll for final grading times?
+
+### Week 6: February 16, 2015
+* Lab 6 notes:
+    + add set seed to lab 6
+    + 
