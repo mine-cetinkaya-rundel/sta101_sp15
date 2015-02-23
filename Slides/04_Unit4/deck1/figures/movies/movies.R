@@ -1,5 +1,3 @@
-setwd("~/Desktop/Teaching/Sta101_F14/Slides/(5) Unit 4/Lec 1/figures/movies")
-
 library(openintro)
 library(BHH2)
 

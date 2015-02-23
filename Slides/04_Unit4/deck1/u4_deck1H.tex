@@ -131,7 +131,9 @@
 
 \begin{itemize}
 
-\item
+\item MT corrections extra credit: Work \textbf{as a team} to write up a collective exam corrections document that discusses all questions missed by any member of the team. Your corrections should show full work and explain reasoning, even for the multiple choice questions. Due next Tuesday (March 3) in lab. \textbf{Extra credit:} +2 points on the exam.
+
+\item No lab due tomorrow. Check lab authorship document for updated lab authorship assignments.
 
 \end{itemize}
 
@@ -427,38 +429,50 @@ median = (42 + 42) / 2 = 42 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Bootstrap set up}
+\frametitle{}
 
-\disc{The dot plot  below is the bootstrap distribution of medians constructed using 100 simulations. What does each dot on the dot plot represent?}
+\clicker{The dot plot  below is the bootstrap distribution of medians constructed using 100 simulations. What does each dot on the dot plot represent?}
 
 \begin{center}
-\includegraphics[width = 0.9\textwidth]{figures/movies/horror_boot_med_dot}
+\includegraphics[width = 0.6\textwidth]{figures/movies/horror_boot_med_dot}
 \end{center}
 
-\pause
-
-\soln{Each dot represents a bootstrap median from one simulation.}
+\begin{enumerate}[(a)]
+\item Score of a horror movie in the original sample
+\item Score of a horror movie in the population
+\item \solnMult{Median from one bootstrap sample from the original sample}
+\item Median from one sample from the population
+\end{enumerate}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Bootstrap interval, percentile}
+\frametitle{}
 
-\disc{The dot plot  below shows the distribution of medians of 100 bootstrap samples from the original sample. Estimate the 90\% bootstrap confidence interval for the median RottenTomatoes score of horror movies.}
+\clicker{The dot plot  below shows the distribution of 100 bootstrap medians. Estimate the 90\% bootstrap confidence interval for the median RT score of horror movies using the percentile method.}
 
 \only<1>{
 \begin{center}
-\includegraphics[width = 0.9\textwidth]{figures/movies/horror_boot_med_dot}
+\includegraphics[width = 0.8\textwidth]{figures/movies/horror_boot_med_dot}
 \end{center}
 }
 
 \soln{\only<2->{
 \begin{center}
-\includegraphics[width = 0.9\textwidth]{figures/movies/horror_boot_med_dot_soln}
+\includegraphics[width = 0.8\textwidth]{figures/movies/horror_boot_med_dot_soln}
 \end{center}
 }}
+
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item (29, 58.5)
+\item (34, 57)
+\item \solnMult{(37.5, 52)}
+\item (40, 49.5)
+\end{enumerate}
+\end{multicols}
 
 \end{frame}
 
@@ -467,7 +481,7 @@ median = (42 + 42) / 2 = 42 \\
 \begin{frame}
 \frametitle{Botstrap interval, standard error}
 
-\disc{The dot plot  below shows the distribution of medians of 100 bootstrap samples from the original sample. Given that the mean of the bootstrap distribution is 44.39, and the bootstrap standard error is 4.88, estimate the 90\% bootstrap confidence interval for the median RottenTomatoes score of horror movies.}
+\disc{The dot plot  below shows the distribution of 100 bootstrap medians. The median of the original sample is 43.5 and the bootstrap standard error is 4.88. Estimate the 90\% bootstrap confidence interval for the median RT score of horror movies using the standard error method.}
 
 \begin{center}
 \includegraphics[width = 0.75\textwidth]{figures/movies/horror_boot_med_dot}
@@ -475,7 +489,7 @@ median = (42 + 42) / 2 = 42 \\
 
 \pause
 
-\soln{\[ 44.39 \pm (1.65 \times 4.88) = (36.34, 52.44) \] }
+\soln{\[ 43.5 \pm (1.65 \times 4.88) = (35.45, 51.55) \] }
 
 \end{frame}
 
@@ -518,7 +532,7 @@ median = (42 + 42) / 2 = 42 \\
 \begin{frame}
 \frametitle{}
 
-\disc{Do these data provide convincing evidence that the median audience score of horror movies is greater than 40?}
+\disc{Do these data provide convincing evidence that the median audience score of horror movies is greater than 40? Remember that the median of the original sample was 43.5.}
 
 \begin{center}
 \includegraphics[width = 0.75\textwidth]{figures/movies/horror_boot_med_test_dot}
