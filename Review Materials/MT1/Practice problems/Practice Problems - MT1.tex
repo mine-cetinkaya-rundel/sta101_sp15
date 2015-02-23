@@ -267,29 +267,29 @@ Z &= \frac{x - \mu}{\sigma} \\
 \item Independent trials: In a random sample, whether or not one 18-20 year old has consumed alcohol does not depend on whether or not another one has.
 \item Fixed number of trials: $n = 10$.
 \item Only two outcomes at each trial: Consumed or did not consume alcohol.
-\item Probability of a success is the same for each trial: $p = 0.697$.
+\item Probability of a success is the same for each trial: $p = 0.7$.
 \end{cond}
 
-\item Let X = number of people who have consumed alcohol in the group, then, using a binomial distribution with $n = 10$ and $p = 0.697$:
-\[ P(X = 6) = {10 \choose 6} \times 0.697^6 \times 0.303^4 = 210 \times 0.697^6 \times 0.303^4 = 0.203 \]
+\item Let X = number of people who have consumed alcohol in the group, then, using a binomial distribution with $n = 10$ and $p = 0.7$:
+\[ P(X = 6) = {10 \choose 6} \times 0.7^6 \times 0.3^4 = 210 \times 0.7^6 \times 0.3^4 = 0.2 \]
 
-\item P(6 out of 10 have consumed alcohol) = P(4 out of 10 have not consumed alcohol) = 0.203
+\item P(6 out of 10 have consumed alcohol) = P(4 out of 10 have not consumed alcohol) = 0.2
 
 \item P(at most 2) = P(less than or equal to 2) \\
-Let $X$ be the number of people who have consumed alcohol in the group. Then, using a binomial distribution with $n = 5$ and $p = 0.697$: 
+Let $X$ be the number of people who have consumed alcohol in the group. Then, using a binomial distribution with $n = 5$ and $p = 0.7$: 
 \begin{align*}
 P(X \le 2) &= P(X = 0) + P(X = 1) + P(X = 2) \\
-&= {5 \choose 0} \times 0.697^0 \times 0.303^5 + {5 \choose 1} \times 0.697^1 \times 0.303^4 + {5 \choose 2} \times 0.697^2 \times 0.303^3 \\
-&= 0.0026 + 0.0293 + 0.1351  \\
-&= 0.167
+&= {5 \choose 0} \times 0.7^0 \times 0.3^5 + {5 \choose 1} \times 0.7^1 \times 0.3^4 + {5 \choose 2} \times 0.7^2 \times 0.3^3 \\
+&= 0.00243 + 0.02835 + 0.1323  \\
+&= 0.163
 \end{align*}
 
 \item P(at least 1) = P(greater than or equal to 1): 
 \begin{align*}
 P(X \ge 1) &= P(X = 1) + P(X = 2) + \cdots + P(X = 5) \\
 &= 1 - P(X = 0) \\
-&= 1 - 0.003 \\
-&= 0.997
+&= 1 - 0.00243 \\
+&= 0.99757
 \end{align*}
 
 \end{parts}
