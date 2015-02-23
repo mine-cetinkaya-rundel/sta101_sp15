@@ -63,7 +63,6 @@
 
 \renewcommand{\emph}[1]{\underline{\textbf{#1}}}
 
-
 %%%%%%%%%%%%%%%%
 % Begin document
 %%%%%%%%%%%%%%%%
@@ -158,19 +157,22 @@ We are 90\% confident that the true average dominant hand reaction distance of c
 
 \item  \qt{Epilepsy} A group of researchers want to test the possible effect of an epilepsy medication taken by pregnant mothers on the cognitive development of their children. As evidence, they want to estimate the IQ scores of three-year-old children born to mothers who were on this particular medication during pregnancy. Previous studies suggest that the standard deviation of IQ scores of three-year-old children is 18 points. How many such children should the researchers sample at a minimum in order to obtain a \emph{94\% confidence} interval with a margin of error \emph{of maximum 4 points}?
 
-\soln{5cm}{
+\begin{multicols}{2}
+\begin{center}
+\includegraphics[width=0.4\textwidth]{figures/epilepsy/epilepsy}
+\end{center}
 \begin{align*}
-z* &= 2.05 \\
-4 &\ge \frac{2.05 * 18}{\sqrt{n}} \\
-n &\ge \left(\frac{2.05 * 18}{4} \right)^2 \\
-n &\ge 85.1 \\
-&\textit{at least 86}
+Z^\star &= 1.88 \\
+4 &\ge \frac{1.88 * 18}{\sqrt{n}} \\
+n &\ge \left(\frac{1.88 * 18}{4} \right)^2 \\
+n &\ge 71.57 \\
+&\textit{at least 72}
 \end{align*}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{multicols}
 
 \vfill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \item \qt{Spam} It is estimated that roughly 9\% of incoming email is spam. A spam filter flags 90\% of spam emails as spam, and incorrectly flags 2\% of non-spam emails as spam.
 
@@ -199,6 +201,8 @@ P(spam~|~flagged~spam) &= \frac{P(spam \& flagged~spam)}{P(flagged~spam)} \\
 }
 
 \end{enumerate}
+
+\vfill
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

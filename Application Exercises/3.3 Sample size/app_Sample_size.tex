@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+\input{../app_style.tex}
+
+%%%%%%%%%%%%%%%%
+% Timing
+%%%%%%%%%%%%%%%%
+
+% 12-15 minutes
+
+%%%%%%%%%%%%%%%%
+% Sakai link for course
+%%%%%%%%%%%%%%%%
+
+% UPDATE FOR OWN COURSE
+% LINK TO ASSIGNMENTS TOOL IN SAKAI
+
+\newcommand{\Sakai}[1]
+{\href{https://sakai.duke.edu/portal/site/ba0d1c18-ba55-473f-9d70-b6a1f9559bbe/page/9870858b-a1a9-481e-8497-8a6ffe9e5be2}{Sakai}}
+
+%%%%%%%%%%%
+% App Ex number    %
+%%%%%%%%%%%
+
+% DON'T FORGET TO UPDATE
+
+\newcommand{\appno}[1]
+{3.3}
+
+%%%%%%%%%%%%%%
+% Turn on/off solutions       %
+%%%%%%%%%%%%%%
+
+% Off
+\newcommand{\soln}[1]{
+\vskip5pt
+}
+
+%% On
+%\newcommand{\soln}[1]{
+%\textit{\textcolor{custom_darkGray}{#1}}
+%}
+
+%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+\fontspec[Ligatures=TeX]{Helvetica Neue Light}
+
+Dr. \c{C}etinkaya-Rundel \hfill Data Analysis and Statistical Inference \\
+
+\ttl{Application exercise \appno{}: \\
+Sample size}
+
+\inst{Submit your responses on \Sakai{}, under the appropriate assignment. Only one submission per team is required. One team will be randomly selected and their responses will be discussed.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In 2001 the average GPA of students at Duke University was 3.37. Last semester 63 Sta 101 students responded to the question on GPA on the class survey. The mean was 3.58, and the standard deviation 0.53. A histogram of the data is shown below.
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{survey/hist_gpa}
+\end{center}
+
+\begin{enumerate}
+
+\item Construct a 95\% confidence interval for the average GPA of all Duke students.
+
+\item If we wanted to cut the margin of error in half while keeping the confidence level the same, how many Duke students would we need to sample?
+
+\item If we wanted to cut the margin of error in half (compared to the original confidence interval from Question 1 above) and increase the confidence level to 98\%, how many Duke students would we need to sample?
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
