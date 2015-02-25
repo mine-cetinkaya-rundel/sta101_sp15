@@ -1,5 +1,5 @@
 ---
-title: "Lab 6"
+title: "Lab 7"
 author: "[Enter team name here]"
 date: "[Enter date here]"
 output:
