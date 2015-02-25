@@ -1,5 +1,5 @@
 ---
-title: "Lab 7"
+title: "Lab 6"
 author: "[Enter team name here]"
 date: "[Enter date here]"
 output:
@@ -21,39 +21,24 @@ output:
 
 * * *
 
-#### Exercise 1: 
+#### Ex 1:
 
+#### Ex 2:
 
-#### Exercise 2:
+#### Ex 3:
 
-
-#### Exercise 3:
-
-
-#### Exercise 4:
-
+#### Ex 4:
 
 * * *
-### On your own:
-
 
 #### 1:
 
-
 #### 2:
 
-
-#### 3:
-
+#### 3: 
 
 #### 4:
 
-
 #### 5:
 
-
 #### 6:
-
-
-#### 7:
-

@@ -116,6 +116,8 @@ hypothesis sets the two population means equal to each other. The `alternative`
 hypothesis can be `"less"`, `"greater"`, or `"twosided"`. Lastly, the `method` 
 of inference can be `"theoretical"` or `"simulation"` based.
 
+Note that the `inference` function you are introduced to in this lab will be very useful for your projects. More information on the function, as well as many other functions commonly used in Sta 101, can be found at https://stat.duke.edu/~mc301/R/Rcommands.html.
+
 5.  Change the `type` argument to `"ci"` to construct and record a confidence 
 interval for the difference between the weights of babies born to smoking and 
 non-smoking mothers. Interpret this interval.
@@ -124,8 +126,7 @@ By default the function reports an interval for ($\mu_{nonsmoker} - \mu_{smoker}
 . We can easily change this order by using the `order` argument:
 
 ```{r inf-weight-habit-ci, eval=FALSE, tidy=FALSE}
-inference(y = nc$weight, x = nc$habit, est = "mean", type = "ci", null = 0, alternative = "twosided", method = "theoretical",
-          order = c("smoker","nonsmoker"))
+inference(y = nc$weight, x = nc$habit, est = "mean", type = "ci", null = 0, alternative = "twosided", method = "theoretical", order = c("smoker","nonsmoker"))
 ```
 
 * * *
@@ -161,8 +162,6 @@ any, are not covered in the textbook?  Have you seen these concepts elsewhere,
 e.g. lecture, discussion section, previous labs, or homework problems?  Be 
 specific in your answer.
 </div>
-
-Note that the `inference` function you are introduced to in this lab will be very useful for your projects. More information on the function, as well as many functions used in Sta 101, can be found at https://stat.duke.edu/~mc301/R/Rcommands.pdf.
 
 <div id="license">
 This is a product of OpenIntro that is released under a [Creative Commons 

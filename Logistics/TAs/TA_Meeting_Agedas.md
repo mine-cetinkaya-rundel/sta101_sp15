@@ -88,4 +88,6 @@ Sta 101 TA Meeting Agendas
 ### Week 6: February 16, 2015
 * Lab 6 notes:
     + add set seed to lab 6
-    + 
+
+### Week 7: February 23, 2015
+*
