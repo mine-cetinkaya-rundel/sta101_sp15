@@ -1,0 +1,309 @@
+\documentclass[slidestop,compress,mathserif]{beamer}
+
+%%% To get handouts:
+%\documentclass[11pt,containsverbatim,handout]{beamer}
+%% include when making handouts
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+%%% To get rid of solutions on handouts:
+\newcommand{\soln}[1]{\textit{#1}}				% For slides
+%\newcommand{\soln}[1]{ }	% For handouts
+
+\newcommand{\solnGr}[1]{#1}
+%\newcommand{\solnGr}{ }
+
+\input{../../lec_style.tex}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\title[U4 - L3: ANOVA]{Unit 4: Inference for Numerical Data \\ Lecture 3: Comparing many means via ANOVA}
+\author{Statistics 101}
+\date{October 21, 2014}
+\institute{Mine \c{C}etinkaya-Rundel}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+% Title Page
+
+\begin{frame}[plain]
+
+\titlepage
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Housekeeping}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Announcements}
+
+\begin{itemize}
+
+\item Extra credit on MT
+
+\item Project proposal feedback
+
+\item PA 4 due Friday at 5pm (extended)
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Main ideas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{(1) Roadmap for inference for numerical data}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{(1) Roadmap for inference for numerical data}
+
+\begin{center}
+\includegraphics[width=\textwidth]{figures/num_data_inf/num_data_inf}
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{(2) ANOVA for comparing many means}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{(2) ANOVA for comparing many means}
+
+Different framework than before: instead of comparing point estimate to null value, compare variability within and between groups.
+
+\pause
+
+\begin{itemize}
+\item[\hl{$Z$/$T$ test}] Compare means from \hl{two} groups to see whether they are so far apart that the observed difference cannot reasonably be attributed to sampling variability. The test statistic is a ratio.
+\[ H_0: \mu_1 = \mu_2 \qquad
+Z / T = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{SE(\bar{x}_1 - \bar{x}_2)} \]
+
+\pause
+
+\item[\hl{ANOVA}] Compare the means from \hl{more than two} groups to see whether they are so far apart that the observed differences cannot all reasonably be attributed to sampling variability. The test statistic is a ratio.
+\[ H_0: \mu_1 = \mu_2 = \cdots = \mu_k \qquad F = \frac{\text{variability bet. groups}}{\text{variability w/in groups}} \]
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{(3) Within group variability vs. between group variability} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{(3) Within group variability vs. between group variability}
+
+\twocol{0.5}{0.5}
+{
+\begin{center}
+Very little variability \green{within groups} \\
+{\small (observations within a group alike)} \\
+$\:$ \\
++ \\
+\pause
+lots of variability \orange{between groups} \\
+{\small (groups very different \\
+from each other)} \\
+$\downarrow$ \\
+\pause
+likely significant ANOVA
+\end{center}
+}
+{
+\begin{center}
+\pause
+Lots of variability \green{within groups} \\
+{\small (observations within a group \\
+all over the place)} \\
++ \\
+\pause
+little variability \orange{between groups} \\
+{\small (groups not so different \\
+from each other)} \\
+$\downarrow$ \\
+\pause
+likely \emph{not} significant ANOVA
+\end{center}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\clicker{Order the plots with respect to \green{within groups} variability (low to high).}
+
+\begin{center}
+\includegraphics[width=\textwidth]{figures/within_between/within_between}
+\end{center}
+
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item Plot 1, Plot 2, Plot 3
+\item Plot 1, Plot 3, Plot 1
+\solnMult{Plot 2, Plot 1, Plot 3}
+\item Plot 2, Plot 3, Plot 1
+\item Plot 3, Plot 1, Plot 2
+\item[]
+\end{enumerate}
+\end{multicols}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\clicker{Order the plots with respect to \orange{between groups} variability (low to high).}
+
+\begin{center}
+\includegraphics[width=\textwidth]{figures/within_between/within_between}
+\end{center}
+
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item Plot 1, Plot 2, Plot 3
+\item Plot 1, Plot 3, Plot 1
+\item Plot 2, Plot 1, Plot 3
+\item Plot 2, Plot 3, Plot 1
+\solnMult{Plot 3, Plot 1, Plot 2}
+\item[]
+\end{enumerate}
+\end{multicols}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{(4) First ANOVA, then multiple comparisons}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{(4) First ANOVA, then multiple comparisons}
+
+\begin{itemize}
+
+\item ANOVA: $H_A$:  At least one pair of means are different from each other.
+
+\pause
+
+\item If $H_0$ is rejected, and data provide evidence for $H_A$, we still don't know which groups have differing means.
+
+\pause
+
+\item Conduct tests that compare each pair of means to each other: \hl{multiple comparisons}.
+
+\pause
+
+\item Each one of these tests might potentially commit a Type 1 error, with a likelihood of $\alpha$.
+
+\pause
+
+\item Therefore, in order to avoid inflating the Type 1 error rate, run each of these tests at a modified (lower) significance level. 
+\[ \alpha^\star = \frac{\alpha}{number~of~tests} \]
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{}
+
+%add some clicker questions
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Application exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{}
+
+\vfill
+
+\app{4.2 ANOVA - Part 1}{See course website for instructions}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}
+\frametitle{}
+
+\vfill
+
+\app{4.3 ANOVA - Part 2}{See course website for instructions}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Recap}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Conditions for ANOVA}
+
+\begin{enumerate}
+
+\item Independence: random sampling / assignment + 10\% rule
+
+\item Approximately normal -- can be relaxed if $n$ is large
+
+\item Constant variance -- can be relaxed if $n$ is consistent
+
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Misc. notes on ANOVA}
+
+\begin{itemize}
+
+\item No such things as a confidence interval for ANOVA, since there is no parameter of interest to estimate.
+
+\item You could use a Z test for multiple comparisons if the sample sizes are large enough, but now that you're familiar with the T test (which can be used for small and large samples) you might as well use that for all inference on single means or comparing two means.
+
+\item The F distribution is always positive since the F statistic is the ratio of two variabilities (sums of squares). Also, we always shade above the observed F statistic since evidence for the alternative hypothesis means a higher ratio of the between to within variability.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
