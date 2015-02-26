@@ -1,3 +1,6 @@
+% -*- TeX-engine: xetex; -*-
+
+
 \documentclass[11pt]{article}
 \input{../app_style.tex}
 
@@ -64,9 +67,13 @@ Trace metals in drinking water affect the flavor and an unusually high concentra
 \end{center}
 
 To complete this application exercise you will need various sample statistics. You can calculate these in R using the raw data. The dataset can be loaded using the following command:
+% \begin{verbatim}
+% download("http://stat.duke.edu/~mc301/data/zinc.csv", destfile = "zinc.csv")
+% zinc = read.csv("zinc.csv")
+% \end{verbatim}
+
 \begin{verbatim}
-download("http://stat.duke.edu/~mc301/data/zinc.csv", destfile = "zinc.csv")
-zinc = read.csv("zinc.csv")
+zinc = read.csv("http://people.duke.edu/~jbw44/Data/zinc.csv")
 \end{verbatim}
 
 \begin{enumerate}
