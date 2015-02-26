@@ -156,7 +156,6 @@ samp <- sample(area, size = 50, replace = TRUE)
 sample_means50[3] <- mean(samp)
 
 samp <- sample(area, size = 50, replace = TRUE)
-
 sample_means50[4] <- mean(samp)
 ```
 
