@@ -1,0 +1,76 @@
+---
+title: "Application Exercises 4.2 and 4.3"
+output:
+  html_document:
+    theme: cerulean
+    highlight: pygments
+    css: ../../../Labs/lab.css
+---
+
+## App Ex 4.2
+
+Load the data: (I downloaded it to the "data" directory on my computer first.)
+```{r}
+zinc = read.csv("data/zinc.csv")
+```
+
+Since we have been talking about t-tests and paired t-tests versus t-tests for
+two independent samples, first consider if this is a paired situation.  Is there
+a special correspondence between the observations?  The cases are locations and
+at each location there are two attributes recorded: `bottom` and `surface`
+denoting concentrations at the bottom and the surface.
+
+As I said in class on Wednesday, another useful thing to consider is what the
+data frame looks like.  You can do that by clicking on `zinc` in the upper right
+pane or doing
+
+```{r, comment=NA}
+zinc
+```
+
+The data frame shows that there is a special correspondence between the
+concentration at the bottom and the surface, so this is paired data.
+
+To create a new variable describing the differences and print out zinc do
+
+```{r, comment=NA}
+zinc$diff = zinc$bottom - zinc$surface
+zinc
+```
+
+A new column has been added to the `zinc` data frame.  You can now
+do a hypothesis test / confindece interval / whatever on the new variable
+`diff`.
+
+For the last question, what is the code to create a bootstrap distribution?  It
+is something like:
+
+```{r, comment=NA}
+
+m               = 1000
+bootstrap.means = rep(0, m)
+n               = nrow(zinc)
+
+for (i in 1:m) {
+	bootstrap.sample   = sample(zinc$diff, size=n, replace=TRUE)
+	bootstrap.means[i] = mean(bootstrap.sample)
+}
+
+hist(bootstrap.means)
+
+```
+
+```{r, echo=FALSE}
+load("../../../Labs/inference/inference.RData")
+```
+
+Or, if you have loaded the inference function from Lab 7, you can do **something** like
+```{r, comment=NA}
+inference(y = zinc$diff, est="mean", type="ht", null=0, alternative="twosided", method="simulation")
+```
+
+## App Ex 4.3
+
+Again, since we have been talking about t-tests and paired t-tests versus
+t-tests for two independent samples, consider if this is a paired situation or
+not.
