@@ -1,4 +1,4 @@
-% -*- TeX-engine: xetex; -*-
+% -*- TeX-engine: xetex; eval: (auto-fill-mode 0); eval: (visual-line-mode 1); *-
 % Compile with XeLaTeX
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -89,7 +89,7 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-% \input{../definitions_custom.tex}
+\input{../../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -98,7 +98,8 @@
 \title{Unit 4: Inference for numerical data}
 \subtitle{2. Comparing means}
 \author{Sta 101 - Spring 2015}
-\date{February 25, 2015}
+% \date{February 25, 2015}
+\date{February 26, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 %%%%%%%%%%%
@@ -131,7 +132,10 @@
 
 \begin{itemize}
 
-\item 
+% \item 
+% ALT ALT 
+\item Individually or in teams, complete App Ex 4.2 and 4.3 by Tuesday, March 2.
+  App Ex 4.2 and 4.3 will not be turned in.
 
 \end{itemize}
 
@@ -154,12 +158,27 @@
 \begin{itemize}
 
 \item dependent (paired) groups (e.g. pre/post weights of subjects in a weight loss study, twin studies, etc.)
-\[ SE_{\bar{x}_{diff}} = \frac{s_{diff}}{n_{diff}} \]
+\[ SE_{\bar{x}_{diff}} = \frac{s_{diff}}{\sqrt{n_{diff}}} \]
 
 \item independent groups (e.g. grades of students across two sections)
 \[ SE_{\bar{x}_1 - \bar{x}_2} = \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} } \]
 
 \end{itemize}
+
+%---Note---%
+\note{
+
+- Go through some examples of where you have two groups.
+  - Twin studies for instance.
+
+- Overall SE increases when looking at two different groups.
+
+- Lemonade and cup.  Uncertainty in both.  Makes uncertainty in difference
+greater.
+
+- Comment on types of data.
+
+}
 
 \end{frame}
 
@@ -197,6 +216,19 @@
 \begin{center}
 \includegraphics[width=0.5\textwidth]{figures/tDistCompareToNormalDist/tDistCompareToNormalDist}
 \end{center}
+
+%---Note---%
+\note{
+
+- Corrects for certainty when plugging in $s$ for $\sigma$.
+
+- Question from student: when would you ever have small $n$?
+
+- Think about squishing down distribution.
+
+- Go through shape, center, symmetry, etc.
+
+}
 
 \end{frame}
 
