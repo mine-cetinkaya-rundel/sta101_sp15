@@ -89,7 +89,7 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-% \input{../definitions_custom.tex}
+% \input{../../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -99,6 +99,8 @@
 \subtitle{1. Variability in estimates and CLT}
 \author{Sta 101 - Spring 2015}
 \date{February 9, 2015}
+% ALT ALT 
+% \date{February 10, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 %%%%%%%%%%%
@@ -132,6 +134,16 @@
 \begin{itemize}
 
 \item MT Review: Monday, Feb 16, 7-8pm at Old Chemistry 116
+
+% ALT ALT
+
+% \item Exam 1: Thu, Feb. 19.
+
+% \item Rest of videos for Unit 3: I recommend you finish them by Thursday.
+
+% \item Lab 4 due Wed.
+
+% \item PS 5 due Thu.
 
 \end{itemize}
 
@@ -189,6 +201,9 @@ Weather example for confidence level.
 \item But before we get to quantifying the variability among samples, let's try to understand how and why point estimates vary from sample to sample.
 
 \end{itemize}
+
+% ALT ALT
+% \pause
 
 \disc{Suppose we randomly sample 1,000 adults from each state in the US. Would you expect the sample means of their ages to be the same, somewhat different, or very different?}
 
@@ -440,9 +455,15 @@ Make sure to go back to multiple choice.
 \begin{frame}
 \frametitle{2. CLT describes the shape, center, and spread of sampling distributions}
 
-The distribution of the sample mean is well approximated by a normal model:
+
+The distribution of the sample means is well approximated by a normal model:
 \[ \bar{x} \sim N \pr{ mean = \mu, SE = \frac{\sigma}{\sqrt{n}} } \]
 If $\sigma$ is unknown, use $s$.
+% ALT ALT
+% \emph{Under the right conditions}, the distribution of the sample means is well
+% approximated by a normal distribution:
+% \[ \bar{x} \sim N \pr{ mean = \mu, SE = \frac{\sigma}{\sqrt{n}} } \]
+% A cheat: If $\sigma$ is unknown, use $s$.
 
 \pause
 
@@ -455,6 +476,15 @@ If $\sigma$ is unknown, use $s$.
 \item As the sample size increases we would expect samples to yield more consistent sample means, hence the variability among the sample means would be lower.
 
 \end{itemize}
+% ALT ALT
+% \begin{itemize}
+
+% \item As sample size increases, spread of sampling distribution decreases:
+% \[
+% SE = \frac{\sigma}{\sqrt{n}}.
+% \]
+
+% \end{itemize}
 
 %---Note---%
 \note{
@@ -494,6 +524,20 @@ or\\
 $n > 30$ and the population distribution is not extremely skewed (the more skewed the distribution, the higher $n$ necessary for the CLT to apply).\\
 $\:$ \\
 This is also difficult to verify for the population, but we can check it using the sample data, and assume that the sample mirrors the population.
+% ALT ALT
+% \item \hlGr{Sample size/skew:} Either 
+
+% \begin{enumerate}
+% \item the population distribution is normal or
+
+% \item $n > 30$ and the population dist.\ is not extremely skewed, or
+
+% \item $n >> 30$ (approx.\ gets better as $n$ increases).
+% \end{enumerate}
+
+% This is also difficult to verify for the population, but we can check it using the sample data, and assume that the sample mirrors the population.
+
+% END ALT
 
 \end{enumerate}
 
@@ -507,6 +551,19 @@ When can you use CLT?
 How sould you actually verify this?
 
 }
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{3. CLT only applies when independence and sample size/skew conditions are met}
+
+Amongst other things, the central limit theorem is useful for 
+\begin{itemize}
+\item constructing confidence intervals and
+\item conducting hypothesis tests.
+\end{itemize}
 
 \end{frame}
 

@@ -1,0 +1,467 @@
+% -*- TeX-engine: xetex; eval: (auto-fill-mode 0); eval: (visual-line-mode 1); -*-
+% Compile with XeLaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% To do before class
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Send the Logistics/Week0Annoucnement (the night before).
+% Send an email reminding students to bring a charged computer (the night before).
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Option 1: Slides: (comment for handouts)   %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
+
+% solution stuff
+\newcommand{\solnMult}[1]{
+\only<1>{#1}
+\only<2->{\red{\textbf{#1}}}
+}
+\newcommand{\soln}[1]{\textit{#1}}
+
+\newcommand{\solnMultOn}[3]{
+\only<#1>{#3}
+\only<{#2}->{\red{\textbf{#3}}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 2: Handouts, without solutions (post before class)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+% \newcommand{\solnMultOn}[3]{#3}
+
+% % % This breaks things for me for some reason.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% %\renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 3: Handouts, with solutions (may post after class if need be)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{\red{\textbf{#1}}}
+% \newcommand{\soln}[1]{\textit{#1}}
+
+% % % This breaks things for me for some reason.
+% % % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% % }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 4: Notes Only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% % See http://tex.stackexchange.com/questions/114219/add-notes-to-latex-beamer
+% \documentclass[10pt,containsverbatim,xcolor=xelatex,dvipsnames,table,notes=only]{beamer}
+
+% % handout layout
+% % \usepackage{pgfpages}
+% % \pgfpagesuselayout{1 on 1}[letterpaper, landscape, border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % Having a problem with this.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
+
+%%%%%%%%%%
+% Load style file, defaults  %
+%%%%%%%%%%
+
+\input{../../lec_style.tex}
+\input{../../definitions_default.tex}
+% ALT ALT
+\input{../../definitions_custom.tex}
+
+%%%%%%%%%%%
+% Cover slide info    %
+%%%%%%%%%%%
+
+\title{Unit 4: Inference for numerical data}
+\subtitle{3. ANOVA}
+\author{Sta 101 - Spring 2015}
+\date{March 2, 2015}
+\institute{Duke University, Department of Statistical Science}
+
+%%%%%%%%%%%
+% Begin document   %
+%%%%%%%%%%%
+
+\newcommand{\mainideaA}{It is difficult to simultaneously compare many groups.}
+\newcommand{\mainideaB}{ANOVA is useful for testing if there is \emph{some} difference
+  between the means of many different groups.}
+\newcommand{\mainideaC}{The test is based on comparing between group to within group variation.}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title Page
+
+\begin{frame}[plain]
+
+\titlepage
+\vfill
+{\scriptsize \webLink{\PersonalSite}{Dr. \LastName{}} \hfill Slides posted at  \webLink{\CourseSite}{\CourseSite}}
+\addtocounter{framenumber}{-1} 
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Housekeeping}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Announcements}
+
+\begin{itemize}
+
+\item 
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Main ideas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{\mainideaA}
+\label{mi1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{1. mainideaA}
+
+  \begin{center}
+  {\Large NEWS FLASH!}
+
+  \hspace{12pt}
+
+  Jelly beans rumored to affect acne!!!
+  \end{center}
+
+  \pause
+
+  \disc{
+    How would you check this rumor? Imagine that doctors can assign an "acne
+    score" to patients on a 0-100 scale.
+
+    \begin{itemize}
+      \item What would your research question be?
+      \item How would you conduct your study?
+      \item What statistical test would you use?
+      \end{itemize}
+    }
+
+    \hfill \\
+
+    \pause
+   \soln{
+     Use an independent samples t-test:
+     \[
+     H_0: \mu_{\textmd{jelly beans}} = \mu_{\textmd{placebo}}
+     \]
+     \[
+     H_A: \mu_{\textmd{jelly beans}} \neq \mu_{\textmd{placebo}}
+     \]
+   }
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{1. \mainideaA}
+
+  \vfill
+  
+  \begin{center}
+  \url{http://imgs.xkcd.com/comics/significant.png}
+  \end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{1. \mainideaA}
+
+  \textbf{Suppose} $\alpha = 0.05$.
+
+  \disc{What is the probability of correctly failing to reject
+    \[
+    H_0: \mu_{\textmd{purple}} = \mu_{\textmd{placebo}} \; ?
+    \]
+    }
+
+    \pause
+
+    \hfill \\
+
+    \clicker{If no color of Jelly bean has any link to acne, what is the
+      probability of making at least one type I error in the 20 trials?}
+      \begin{enumerate}[(a)]
+      \item 5\%
+      \item 36\%
+      \item \solnMultOn{2}{3}{64\%}
+      \item 95\%
+      \end{enumerate}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{\mainideaB}
+\label{mi2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{2. \mainideaB}
+
+Null hypothesis for "F-Test" (the test associated with ANOVA):
+\[
+H_0: \mu_{\textmd{placebo}} = \mu_{\textmd{purple}} = \mu_{\textmd{brown}} =
+\ldots = \mu_{\textmd{peach}} = \mu_{\textmd{orange}} .
+\]
+
+\pause
+
+\clicker{Which of the following is a correct version of the alternative
+  hypothesis?}
+
+\begin{enumerate}[(a)]
+\item For any two groups, including the placebo group, no two group means are the same.
+\item For any two groups, not including the placebo group, no two group means are the
+  same.
+\item Amongst the jelly bean groups, there are at least two groups that have different group means.
+\item \solnMultOn{2}{3}{Amongst all groups, there are at least two groups that have different group means.}
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{2. \mainideaB}
+
+The practical implication of this alternative is: ``At least one color of
+jelly bean is linked to acne.''
+
+\pause
+
+\hfill \\
+
+At least two of the group means are not the same: \pause
+\begin{enumerate}
+\item $\mu_{\textmd{placebo}} \neq \mu_{\textmd{color}}$ for some color of jelly
+  bean, or \pause
+\item $\mu_{\textmd{A}} \neq \mu_{\textmd{B}}$ for two colors, A and B. \pause
+
+\vspace{6pt}
+
+Then 
+
+\vspace{3pt}
+
+\begin{enumerate}
+\item $\mu_{\textmd{A}} \neq \mu_{\textmd{placebo}}$, or \pause
+
+\item $\mu_{\textmd{A}} = \mu_{\textmd{placebo}}$.  Thus, $\mu_{\textmd{B}} \neq
+  \mu_{\textmd{A}} = \mu_{\textmd{placebo}}$.
+\end{enumerate}
+
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{\mainideaC}
+\label{mi3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{3. \mainideaC}
+
+\centering
+\(
+\sum {\color{blue} \mid}^2 \Big/ \sum {\color{green} \mid}^2
+\)
+
+  \includegraphics[scale=0.6]{figures/anova-middle-ground-jelly-bean.png}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Relatively large WITHIN group variation: little apparent difference}
+
+\centering
+\(
+\sum {\color{blue} \mid}^2 \Big/ \sum {\color{green} \mid}^2
+\)
+
+    \includegraphics[scale=0.6]{Figures/anova-lots-of-within-group-jelly-bean.png}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Relatively large BETWEEN group variation: there may be a difference}
+
+\centering
+\(
+\sum {\color{blue} \mid}^2 \Big/ \sum {\color{green} \mid}^2
+\)
+    
+    \includegraphics[scale=0.6]{Figures/anova-lots-of-between-group-jelly-bean.png}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{3. The F-test is based on comparing between group to within group variation}
+
+For historical reasons, we use a modification of this ratio called the $F$-statistic:
+\[
+F = \frac{\sum {\color{blue} \mid}^2 \; \; / \; \; (j-1)}{\sum {\color{green} \mid}^2 \; \; / \; \; (n-j)}
+\hspace{12pt} = \hspace{12pt} \frac{MSG}{MSE}.
+\]
+
+$j$: \# of groups; $n$: \# of obs.
+
+\pause
+
+\begin{center}
+\small
+\begin{tabular}{lllrrr}
+  \hline
+  & Df  & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+  \hline
+  Between & j-1 & $\sum {\color{blue}\mid}^2$  & MSG & $F_{obs}$ & $p_{obs}$ \\ 
+  Within  & n-j & $\sum {\color{green}\mid}^2$ & MSE &		 &  \\ 
+   \hline
+Total			& n-1 & $\sum ({\color{blue}\mid} + {\color{green}\mid})^2$    &                &                &
+\end{tabular}
+\end{center}
+
+\pause
+
+\[
+p_{obs} = p(W > F_{obs} \mid H_0) \pause = p(W > F_{obs} \mid W \sim \textmd{F-dist}_{j-1, n-j})
+\]
+
+\centering
+\url{http://spark.rstudio.com/minebocek/dist_calc/}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\centering
+\includegraphics[scale=0.6,angle=270]{figures/cartoon.png}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+Say $\alpha = 0.05$.
+
+\clicker{What is the most accurate statement of the results?}
+\begin{enumerate}[(a)]
+\item At least one color of jelly bean is linked to acne.
+\item At least one color of jelly bean is not linked to acne.
+\item \solnMultOn{1}{2}{There is little evidence that any color of jelly bean is linked to acne.}
+\item Jelly beans definitely do not cause acne.
+\end{enumerate}
+
+\pause \pause
+
+\clicker{For the $F$-test, what is the probability of incorrectly rejecting the null?}
+\begin{enumerate}[(a)]
+\item \solnMultOn{3}{4}{5\%}
+\item 36\%
+\item 64\%
+\item 95\%
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\vfill
+
+\app{4.3 ANOVA - Pt 1}{See the course webpage for details.}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Summary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Summary of main ideas}
+
+\vfill
+
+\begin{enumerate}
+
+\item \nameref{mi1}
+
+\item \nameref{mi2}
+
+\item \nameref{mi3}
+
+\end{enumerate}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

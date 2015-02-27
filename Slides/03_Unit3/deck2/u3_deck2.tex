@@ -27,19 +27,19 @@
 
 % \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
 
-% % handout layout
+% handout layout
 % \usepackage{pgfpages}
 % \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
 
-% % solution stuff
+% solution stuff
 % \newcommand{\solnMult}[1]{#1}
 % \newcommand{\soln}[1]{}
 
-% % % This breaks things for me for some reason.
-% % tell pgfpages how to set page sizes in XeLaTeX
-% %\renewcommand\pgfsetupphysicalpagesizes{%
-% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
-% %}
+% % This breaks things for me for some reason.
+% tell pgfpages how to set page sizes in XeLaTeX
+% \renewcommand\pgfsetupphysicalpagesizes{%
+%   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option 3: Handouts, with solutions (may post after class if need be)    %
@@ -89,7 +89,7 @@
 \input{../../lec_style.tex}
 \input{../../definitions_default.tex}
 % ALT ALT
-% \input{../definitions_custom.tex}
+% \input{../../definitions_custom.tex}
 
 %%%%%%%%%%%
 % Cover slide info    %
@@ -99,6 +99,8 @@
 \subtitle{2. Confidence intervals and hypothesis tests}
 \author{Sta 101 - Spring 2015}
 \date{February 11, 2015}
+% ALT ALT
+% \date{February 12, 2015}
 \institute{Duke University, Department of Statistical Science}
 
 %%%%%%%%%%%
@@ -143,6 +145,27 @@
 \item PA3 will be posted on Monday after class and will be due that evening, so budget your time accordingly for that short turnaround!
 
 \end{itemize}
+% ALT ALT
+% \begin{itemize}
+
+% \item Exam 1 next Thursday (2/19)
+
+% \item Sample exam + review questions posted on \webLink{\CourseSite}{course site} (on Feb 19 line)
+
+% \item Additional practice quizzes on Coursera
+% \begin{center}
+% \includegraphics[width=0.6\textwidth]{figures/coursera_quiz}
+% \end{center}
+
+% \item PA3 will be posted on Tuesday after class and will be due Wednesday at
+%   6pm.
+
+% \end{itemize}
+
+%---Note---%
+\note{
+
+}
 
 \end{frame}
 
@@ -150,10 +173,33 @@
 
 \section{Main ideas}
 
+\subsection{Statistical inference methods based on the CLT depend on the same conditions as the CLT}
+\label{mi1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{1. Statistical inference methods based on the CLT depend on the same conditions as the CLT}
+
+
+\begin{enumerate}
+
+
+\item \hlGr{Independence:} Sampled observations must be independent. \\
+
+\item \hlGr{Sample size/skew:} Population must be normal or sample size must be
+  large.
+
+\end{enumerate}
+
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Statistical inference methods based on the CLT depend on the same conditions as the CLT}
 \label{mi1}
+
+% ALT ALT Commented out subsection above and frame below.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -181,6 +227,13 @@ This is also difficult to verify for the population, but we can check it using t
 
 \end{enumerate}
 
+%---Note---%
+\note{
+
+- Expect you to understand concepts.  Do you understand concept of independence.
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -205,6 +258,15 @@ If the parameter of interest is the population mean, and the point estimate is t
 
 \vfill
 
+%---Note---%
+\note{
+
+1:36
+
+- This is standard error of sample mean.
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -216,6 +278,19 @@ If the parameter of interest is the population mean, and the point estimate is t
 \app{3.1 Confidence interval for a single mean}{See course website for details.}
 
 \vfill
+
+%---Note---%
+\note{
+
+- Give 10 minutes.
+
+- Take students about 15 to finish.
+
+- Popluation distribution, sample distribution, sampling distribution
+
+- Took about 15 minutes to discuss.
+
+}
 
 \end{frame}
 
@@ -247,6 +322,21 @@ If the parameter of interest is the population mean, and the point estimate is t
 }
 }
 
+%---Note---%
+\note{
+
+- Look up using back of the book.
+
+- People will mess this up.
+
+- Given them time to discuss.
+
+- People mess up again.
+
+- May need to go over a bit and give them one more try.
+
+}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -256,7 +346,9 @@ If the parameter of interest is the population mean, and the point estimate is t
 
 \begin{enumerate}
 
-\item \textcolor{gray}{The confidence level of a confidence interval is the probability that a given interval contains the true population parameter.} \\
+\item \textcolor{gray}{The confidence level of a confidence interval is the
+    probability that \textbf{the specific confidence interval you construct
+      after gathering a sample} contains the true population parameter.} \\
 \textit{This is incorrect, CIs are part of the frequentist paradigm and as such the population parameter is fixed but unknown. Consequently, the probability any given CI contains the true value must be 0 or 1 (it does or does not).} \\
 $\:$ \\
 
@@ -273,7 +365,55 @@ $\:$ \\
 
 \end{enumerate}
 
+%---Note---%
+\note{
+
+- Distinction: The confidence interval you construct once does or does not
+contain the true popultion mean.  This is an a priori thing.
+
+}
+
 \end{frame}
+
+% ALT ALT
+
+% Commented out above.  Created below.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+% \frametitle{Common misconceptions about confidence intervals}
+
+% \begin{enumerate}
+
+% \item \textcolor{gray}{The confidence level of a confidence interval is the
+%     probability that the true pop.\ parameter is in the confidence
+%     interval you construct \textbf{for a single sample}.} \\
+%   \textit{The confidence level is equal to the proportion of random samples that result
+%     in confidence intervals that contain the true pop.\ parameter.} \\
+%   $\:$ \\
+
+% \pause
+
+% \item  \textcolor{gray}{A narrower confidence interval is always better.}\\
+
+% \item   \textcolor{gray}{A wider interval means less confidence.} \\
+
+% \hfill \\
+
+% \textit{The width is a function of both the \textbf{confidence level} and \textbf{the standard error}.} \\
+
+% \end{enumerate}
+
+% %---Note---%
+% \note{
+
+% - Distinction: The confidence interval you construct once does or does not
+% contain the true popultion mean.  This is an a priori thing.
+
+% }
+
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -356,7 +496,8 @@ Hypothesis testing framework:
 
 \begin{frame}
 
-\clicker{Which of the following is the correct interpretation of the p-value?}
+\clicker{Which of the following is the correct interpretation of the p-value
+  from App Ex 3.2?}
 
 \begin{enumerate}[(a)]
 \item The probability that average GPA of Duke students has changed since 2001.
@@ -394,6 +535,35 @@ $\:$ \\
 
 \end{frame}
 
+% ALT ALT
+
+% \begin{frame}
+% \frametitle{Common misconceptions about hypothesis testing}
+
+% \begin{enumerate}
+
+% \item \textcolor{gray}{P-value is the probability that the null hypothesis is true} \\
+%   \textit{\small A p-value is the probability of getting a sample that results in a
+%     test statistic as or more extreme than what you actually observed (and in
+%     favor of the null hypothesis) if in fact the null hypothesis is correct. It is a conditional probability, conditioned on the null hypothesis being correct.} \\
+%   $\:$ \\
+
+% \pause
+
+% \item  \textcolor{gray}{A high p-value confirms the null hypothesis.}\\
+% \textit{A high p-value means the data do not provide convincing evidence for the alternative hypothesis and hence that the null hypothesis can't be rejected.} \\
+% $\:$ \\
+
+% \pause
+
+% \item   \textcolor{gray}{A low p-value confirms the alternative hypothesis.} \\
+% \textit{A low p-value means the data provide convincing evidence for the alternative hypothesis, but not necessarily that it is confirmed.} \\
+
+% \end{enumerate}
+
+% \end{frame}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Summary}
@@ -408,6 +578,7 @@ $\:$ \\
 \begin{enumerate}
 
 \item \nameref{mi1}
+% ALT ALT
 
 \item \nameref{mi2}
 
