@@ -1,0 +1,403 @@
+% -*- TeX-engine: xetex; eval: (auto-fill-mode 0); eval: (visual-line-mode 1); -*-
+% Compile with XeLaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% To do before class
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Send the Logistics/Week0Annoucnement (the night before).
+% Send an email reminding students to bring a charged computer (the night before).
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Option 1: Slides: (comment for handouts)   %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
+
+% solution stuff
+\newcommand{\solnMult}[1]{
+\only<1>{#1}
+\only<2->{\red{\textbf{#1}}}
+}
+\newcommand{\soln}[1]{\textit{#1}}
+
+\newcommand{\solnMultOn}[3]{
+\only<#1>{#3}
+\only<{#2}->{\red{\textbf{#3}}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 2: Handouts, without solutions (post before class)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+% \newcommand{\solnMultOn}[3]{#3}
+
+% % % This breaks things for me for some reason.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% %\renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 3: Handouts, with solutions (may post after class if need be)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{\red{\textbf{#1}}}
+% \newcommand{\soln}[1]{\textit{#1}}
+
+% % % This breaks things for me for some reason.
+% % % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% % }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 4: Notes Only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% % See http://tex.stackexchange.com/questions/114219/add-notes-to-latex-beamer
+% \documentclass[10pt,containsverbatim,xcolor=xelatex,dvipsnames,table,notes=only]{beamer}
+
+% % handout layout
+% % \usepackage{pgfpages}
+% % \pgfpagesuselayout{1 on 1}[letterpaper, landscape, border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % Having a problem with this.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
+
+%%%%%%%%%%
+% Load style file, defaults  %
+%%%%%%%%%%
+
+\input{../../lec_style.tex}
+\input{../../definitions_default.tex}
+% ALT ALT
+\input{../../definitions_custom.tex}
+
+%%%%%%%%%%%
+% Cover slide info    %
+%%%%%%%%%%%
+
+\title{Unit 4: Inference for numerical data}
+\subtitle{3. ANOVA}
+\author{Sta 101 - Spring 2015}
+\date{March 4, 2015}
+\institute{Duke University, Department of Statistical Science}
+
+%%%%%%%%%%%
+% Main ideas %
+%%%%%%%%%%%
+
+\newcommand{\mainideaA}{You can use the $F$-test to compare grouping by 2 variables vs. grouping by 1 variable}
+
+\newcommand{\bonferroni}{If you want to test many hypotheses simulteneously, use
+  the Bonferroni correction.}
+
+%%%%%%%%%%%
+% Begin document   %
+%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title Page
+
+\begin{frame}[plain]
+
+\titlepage
+\vfill
+{\scriptsize \webLink{\PersonalSite}{Dr. \LastName{}} \hfill Slides posted at  \webLink{\CourseSite}{\CourseSite}}
+\addtocounter{framenumber}{-1} 
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Housekeeping}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Announcements}
+
+\begin{itemize}
+
+\item 
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Main Ideas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{\bonferroni}
+\label{mi1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{Last time}
+
+  \vfill
+
+  \url{http://imgs.xkcd.com/comics/significant.png}
+
+  \vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{Last time}
+
+  \textbf{Suppose} $\alpha = 0.05$.
+
+  \disc{What is the probability of correctly failing to reject
+    \[
+    H_0: \mu_{\textmd{purple}} = \mu_{\textmd{placebo}} \; ?
+    \]
+    }
+
+    \pause
+
+    \hfill \\
+
+    \clicker{If all the tests are independent and if no color of Jelly bean has any link to acne, what is the
+      probability of making at least one type I error in the 20 trials?}
+      \begin{enumerate}[(a)]
+      \item 5\%
+      \item 36\%
+      \item \solnMultOn{2}{3}{64\%}
+      \item 95\%
+      \end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{Last Time}
+
+Is some jelly bean linked to acne?  Use the $F$-test.
+
+\begin{itemize}
+\item $H_0$: the placebo and all of the jelly beans have the same group means.
+
+\item $H_A$: at least one of the group's has a mean that is different from the others.
+\end{itemize}
+
+\clicker{For the $F$-test, what is the probability of incorrectly rejecting the null?}
+\begin{enumerate}[(a)]
+\item \solnMult{5\%}
+\item 36\%
+\item 64\%
+\item 95\%
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{The Bonferroni correction}
+
+  \vfill 
+
+  \disc{How do we figure out \emph{which} jelly bean(s) is(are) linked to acne?}
+
+  \begin{center}
+  The Bonferroni correction.
+  \end{center}
+
+  \vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{1. \bonferroni}
+
+\vfill
+
+Bonferroni correction: 
+\begin{itemize}
+\item Target type I error rate: $\alpha$.
+
+\item Number of null/alt hypotheses to be tested using the same data set: $K$
+
+\item If you set the significance level for each test to be
+\[
+\alpha^* = \alpha / K,
+\]
+then the probability of making one or more type I errors is $ \leq \alpha$.
+
+\end{itemize}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{1. \bonferroni}
+
+\vspace{-0.5cm}
+{\small
+\begin{align*}
+01.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{purple}} \\
+     &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{purple}}  \\
+02.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{brown}} \\
+     &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{brown}}  \\
+& \ldots \\
+% 19.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{peach}} \\
+%      &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{peach}}  \\
+20.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{orange}} \\
+     &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{orange}} 
+\end{align*}
+}
+
+\clicker{What significance level shoud we use to test all of these hypotheses simultaneously for a type I error rate of 5\%?}
+\begin{center}
+(a) 0.0024 \; (b) \solnMult{0.0025} (c) 0.0026 \; (d) 0.05
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{1. \bonferroni}
+
+\vfill
+
+\app{4.5 ANOVA - Pt 2}{See the course webpage for details.}
+
+\vfill
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{\mainideaA}
+\label{mi1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{2. \mainideaA}
+
+  Cartoon for incorporating cholcolate.
+
+  Jelly beans are associated with Acne.
+  OK.
+  I hear chocholate makes it works.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{2. \mainideaA}
+
+  Treatments:
+
+  \begin{center}
+  \begin{tabular}{l l}
+    purple \& choc.\ & purple \& no choc. \\
+    brown \& choc.\ & brown \& no choc. \\
+    \ldots & \ldots \\
+    orange \& chol.\ & orange \& no choc.
+    \end{tabular}
+    \end{center}
+
+    \clicker{We want to test if eating chocolate and a certain color jelly bean has a different impact than just eating that color jelly bean.  Which type of null hypothesis should we use?}
+    \begin{enumerate}[(a)]
+      \item $H_0$: $\mu_{\textmd{color \& choc.}} = \mu_{\textmd{color \& no choc.}}$ for every color.
+      \item $H_0$: $\mu_{\textmd{color A \& choc.}} = \mu_{\textmd{color B \& choc.}}$ for every pair of colors.
+      \end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{2. \mainideaA}
+
+Picture of within group variation for different scenarios.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{2. \mainideaA}
+
+  $F$-test in terms of difference of within group variation.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{2. \mainideaA}
+
+  App Ex.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Summary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Summary of main ideas}
+
+\vfill
+
+\begin{enumerate}
+
+\item \nameref{mi1}
+
+\end{enumerate}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
