@@ -1,0 +1,93 @@
+---
+title: "Lab 7: (More) Inference for numerical data"
+output:
+  html_document:
+    theme: cerulean
+    highlight: pygments
+    css: ../lab.css
+---
+
+<div id="template">
+Before you begin the lab, download the lab report template. This template makes it very simple to include code and output in your write up from within RStudio as well as ensuring reproducibility of your results.
+```{r template, eval=FALSE}
+download("https://stat.duke.edu/courses/Fall14/sta101.001/labs/sta101_lab8.Rmd", destfile = "sta101_lab8.Rmd")
+```
+</div>
+
+## American salaries
+
+Since 2005, the American Community Survey polls $\sim$3.5 million households yearly. We will work with a randon sample of 2000 observations from the 2012 ACS. You have already worked with this dataset once, as part of your application exercise. In this lab you get a chance to work with it a little more extensively.
+
+```{r eval=FALSE}
+download("http://stat.duke.edu/~mc301/data/acs.RData", destfile = "acs.RData")
+load("acs.RData")
+```
+
+Below is the *codebook* for this dataset:
+
+* `income`: Yearly income (wages and salaries)
+* `employment`: Employment status, not in labor force, unemployed, or employed
+* `hrs_work`: Weekly hours worked
+* `race`: Race, White, Black, Asian, or other
+* `age`: Age
+* `gender`: gender, male or female
+* `citizens`: Whether respondent is a US citizen or not
+* `time_to_work`: Travel time to work
+* `lang`: Language spoken at home, English or other
+* `married`: Whether respondent is married or not
+* `edu`: Education level, hs or lower, college, or grad
+* `disability`: Whether respondent is disabled or not
+* `birth_qrtr`: Quarter in which respondent is born, jan thru mar, apr thru jun, jul thru sep, or oct thru dec
+
+Note that this dataset contains some people who are not in the labor force or not employed. First, let's subset the dataset for those who are employed. We will call this new dataset `acs_sub`. Remember the square-bracket notation for subsetting. The following code grabs the rows of the `acs` dataset where `employment` is equal to `employe`. Within the square brackets the first argument is which rows we want, hence we use `acs$employment == "employed"`. The second argument in the square bracket is the columns we're interested in. Since we want all of the columns, we just don't specify anything for that argument (hence nothing after the comma).
+
+```{r eval=FALSE}
+acs_sub = acs[ acs$employment == "employed", ]
+```
+
+In the next exercise you'll construct a confidence interval for the difference between the average incomes of US males and females using methods based on the central limit theorem and without the `inference` function. To do so, you'll need to calculate the sample means, sample standard deviations, and sample sizes. The `by` function is useful for calaculating sample statistics across levels of a categorical (grouping) variable.
+
+```{r eval=FALSE}
+by(acs_sub$income, acs_sub$gender, mean)
+by(acs_sub$income, acs_sub$gender, sd)
+by(acs_sub$income, acs_sub$gender, length)
+```
+
+To store these values to objects you can make use of the fact that the first element in the output is for males, and the second is for females:
+
+```{r eval=FALSE}
+xbar_m = by(acs_sub$income, acs_sub$gender, mean)[1]
+xbar_f = by(acs_sub$income, acs_sub$gender, mean)[2]
+```
+
+* * *
+
+## On your own
+<div class="oyo">
+
+If you don't have the `inference` function loaded already, you'll first need to load it to complete the following exercises.
+
+```{r eval=FALSE}
+download("https://stat.duke.edu/~mc301/R/inference.RData", destfile = "inference.RData")
+load("inference.RData")
+```
+
+-  Based on the new dataset you created, construct a 90\% confidence interval for the difference between the average incomes of US citizens and non-US citizens using the `inference` function, and interpret this interval. 
+
+- Based on this interval is there a statistically significant difference between the averege incomes of men and women? Why, or why not?
+
+- What is the significance level for the equivalent hypthesis test that evaluates whether there is a significant difference between average incomes of men and women.
+
+- Conduct this hypothesis test using the `inference` function.
+
+- What type of a test would we use to compare the average salaries across the various race / ethnicity groups in this dataset? Explain your reasoning.
+
+- Conduct this hypothesis test using the `inference` function. Note that the response variable is still `income` and the explanatory variable will be `race`. You will need to figure out the remaining arguments for the function. Use a trial-and-error approach, and let the errors inform you as to what else needs to be specified, and how.
+
+- Pick **another** numerical variable from the dataset to be your response variable, and also pick a categorical explanatory variable (can be one we used before). Conduct the appropriate hypothesis test, using the `inference` function, to compare means of the response variable across levels of the explanatory variable. Make sure to state your research question, and interpret your conclusion in context of the dataset. Note that you can use the complete `acs` dataset, the subsetted `acs_sub` dataset, or another subset that you might create.
+
+-   What concepts from the textbook are covered in this lab?  What concepts, if
+any, are not covered in the textbook?  Have you seen these concepts elsewhere, 
+e.g. lecture, discussion section, previous labs, or homework problems?  Be 
+specific in your answer.
+</div>
