@@ -156,72 +156,340 @@
 
 \section{Main Ideas}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \subsection{\bonferroni}
+% \label{mi1}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+%   \frametitle{Last time}
+
+%   \vfill
+
+%   \url{http://imgs.xkcd.com/comics/significant.png}
+
+%   \vfill
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+%   \frametitle{Last time}
+
+%   \textbf{Suppose} $\alpha = 0.05$.
+
+%   \disc{What is the probability of correctly failing to reject
+%     \[
+%     H_0: \mu_{\textmd{purple}} = \mu_{\textmd{placebo}} \; ?
+%     \]
+%     }
+
+%     \pause
+
+%     \hfill \\
+
+%     \clicker{If all the tests are independent and if no color of Jelly bean has any link to acne, what is the
+%       probability of making at least one type I error in the 20 trials?}
+%       \begin{enumerate}[(a)]
+%       \item 5\%
+%       \item 36\%
+%       \item \solnMultOn{2}{3}{64\%}
+%       \item 95\%
+%       \end{enumerate}
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+%   \frametitle{Last Time}
+
+% Is some jelly bean linked to acne?  Use the $F$-test.
+
+% \begin{itemize}
+% \item $H_0$: the placebo and all of the jelly beans have the same group means.
+
+% \item $H_A$: at least one of the group's has a mean that is different from the others.
+% \end{itemize}
+
+% \clicker{For the $F$-test, what is the probability of incorrectly rejecting the null?}
+% \begin{enumerate}[(a)]
+% \item \solnMult{5\%}
+% \item 36\%
+% \item 64\%
+% \item 95\%
+% \end{enumerate}
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+%   \frametitle{The Bonferroni correction}
+
+%   \vfill 
+
+%   \disc{How do we figure out \emph{which} jelly bean(s) is(are) linked to acne?}
+
+%   \begin{center}
+%   The Bonferroni correction.
+%   \end{center}
+
+%   \vfill
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+%   \frametitle{1. \bonferroni}
+
+% \vfill
+
+% Bonferroni correction: 
+% \begin{itemize}
+% \item Target type I error rate: $\alpha$.
+
+% \item Number of null/alt hypotheses to be tested using the same data set: $K$
+
+% \item If you set the significance level for each test to be
+% \[
+% \alpha^* = \alpha / K,
+% \]
+% then the probability of making one or more type I errors is $ \leq \alpha$.
+
+% \end{itemize}
+
+% \vfill
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+%   \frametitle{1. \bonferroni}
+
+% \vspace{-0.5cm}
+% {\small
+% \begin{align*}
+% 01.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{purple}} \\
+%      &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{purple}}  \\
+% 02.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{brown}} \\
+%      &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{brown}}  \\
+% & \ldots \\
+% % 19.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{peach}} \\
+% %      &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{peach}}  \\
+% 20.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{orange}} \\
+%      &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{orange}} 
+% \end{align*}
+% }
+
+% \clicker{What significance level shoud we use to test all of these hypotheses simultaneously for a type I error rate of 5\%?}
+% \begin{center}
+% (a) 0.0024 \; (b) \solnMult{0.0025} (c) 0.0026 \; (d) 0.05
+% \end{center}
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+%   \frametitle{1. \bonferroni}
+
+% \vfill
+
+% \app{4.5 ANOVA - Pt 2}{See the course webpage for details.}
+
+% \vfill
+
+% \end{frame}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \subsection{\mainideaA}
+% \label{mi1}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+%   \frametitle{2. \mainideaA}
+
+%   Cartoon for incorporating cholcolate.
+
+%   Jelly beans are associated with Acne.
+%   OK.
+%   I hear chocholate makes it works.
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+%   \frametitle{2. \mainideaA}
+
+%   Treatments:
+
+%   \begin{center}
+%   \begin{tabular}{l l}
+%     purple \& choc.\ & purple \& no choc. \\
+%     brown \& choc.\ & brown \& no choc. \\
+%     \ldots & \ldots \\
+%     orange \& chol.\ & orange \& no choc.
+%     \end{tabular}
+%     \end{center}
+
+%     \clicker{We want to test if eating chocolate and a certain color jelly bean has a different impact than just eating that color jelly bean.  Which type of null hypothesis should we use?}
+%     \begin{enumerate}[(a)]
+%       \item $H_0$: $\mu_{\textmd{color \& choc.}} = \mu_{\textmd{color \& no choc.}}$ for every color.
+%       \item $H_0$: $\mu_{\textmd{color A \& choc.}} = \mu_{\textmd{color B \& choc.}}$ for every pair of colors.
+%       \end{enumerate}
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+%   \frametitle{2. \mainideaA}
+
+% Picture of within group variation for different scenarios.
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+%   \frametitle{2. \mainideaA}
+
+%   $F$-test in terms of difference of within group variation.
+
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+%   \frametitle{2. \mainideaA}
+
+%   App Ex.
+
+% \end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{\bonferroni}
-\label{mi1}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-  \frametitle{Last time}
+  \frametitle{ANOVA Review}
 
-  \vfill
+\vfill
 
-  \url{http://imgs.xkcd.com/comics/significant.png}
+An example by James G. Scott:
+\begin{quote} 
+[These data are] from an experiment run by a British video-game manufacturer in an attempt to calibrate the level of difficulty of certain tasks in the video game. Subjects in this experiment were presented with a simple “Where’s Waldo?”-style visual scene. The subjects had to find a number (1 or 2) floating somewhere in the scene, to identify the number, and to press the corresponding button as quickly as possible. The response variable is their reaction time.
+\end{quote}
 
-  \vfill
+\vfill
 
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-  \frametitle{Last time}
+\begin{frame}[fragile]
+  \frametitle{ANOVA Review}
+  
+\begin{center}
+{\small
+\begin{verbatim}
+Obs  Subject PictureTarget.RT Littered FarAway
+  1       10              635        0       0
+  2       10             1144        0       0
+  3       10              570        0       0
+  4       10              589        0       0
+  5       10              754        0       0
+  6       10              601        0       0
+\end{verbatim}
+}
+\end{center}
 
-  \textbf{Suppose} $\alpha = 0.05$.
-
-  \disc{What is the probability of correctly failing to reject
-    \[
-    H_0: \mu_{\textmd{purple}} = \mu_{\textmd{placebo}} \; ?
-    \]
-    }
-
-    \pause
-
-    \hfill \\
-
-    \clicker{If all the tests are independent and if no color of Jelly bean has any link to acne, what is the
-      probability of making at least one type I error in the 20 trials?}
-      \begin{enumerate}[(a)]
-      \item 5\%
-      \item 36\%
-      \item \solnMultOn{2}{3}{64\%}
-      \item 95\%
-      \end{enumerate}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-  \frametitle{Last Time}
-
-Is some jelly bean linked to acne?  Use the $F$-test.
-
+\small
+{\tiny From JGS:}
 \begin{itemize}
-\item $H_0$: the placebo and all of the jelly beans have the same group means.
-
-\item $H_A$: at least one of the group's has a mean that is different from the others.
+\item \texttt{PictureTarget.RT}: the subject’s reaction time in milliseconds.
+\item \texttt{Subject}: a numerical identifier for the subject undergoing the test.
+\item \texttt{FarAway}: was the number to be identified far away (1) or near (0) in the visual scene?
+\item \texttt{Littered}: the British way of saying whether the scene was cluttered (1) or mostly free of clutter (0).
 \end{itemize}
 
-\clicker{For the $F$-test, what is the probability of incorrectly rejecting the null?}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{ANOVA Review}
+
+  \disc{Do some subjects in the study have different mean reaction times?}
+
+  \begin{center}
+  \includegraphics[scale=0.6]{figures/rxntime-boxplots.png}
+  \end{center}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+  \frametitle{ANOVA Review}
+
+Number of observations $n = 1920$.
+
+\hfill \\
+
+{\small
+ANOVA Table
+\begin{verbatim}
+              Df   Sum Sq  Mean Sq  Fvalue    Pr(>F)    
+Subject       ??  4060822   369166    20.5   2.2e-16
+Residuals     ?? 35129401    18412
+\end{verbatim}
+}
+
+% Response: PictureTarget.RT
+%                      Df   Sum Sq Mean Sq F value    Pr(>F)    
+% as.factor(Subject)   11  4060822  369166  20.051 < 2.2e-16 ***
+% Residuals          1908 35129401   18412 
+
+\clicker{What are the degrees of freedom?}
 \begin{enumerate}[(a)]
-\item \solnMult{5\%}
-\item 36\%
-\item 64\%
-\item 95\%
+\item  1 and 1909
+\item \solnMult{11 and 1908}
+\item 11 and 1909
+\item 12 and 1908
 \end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+  \frametitle{ANOVA Review}
+
+  \clicker{What is the most appropriate conclusion?}
+  \begin{enumerate}[(a)]
+  \item There is no evidence that the subjects have different mean reaction times.
+  \item There is no evidence that some of the subjects have the same mean reaction times.
+  \item \solnMult{Some pairs of subjects have different mean reaction times.}
+  \item All paris of subjects have different mean reaction times.
+  \end{enumerate}
 
 \end{frame}
 
@@ -232,13 +500,37 @@ Is some jelly bean linked to acne?  Use the $F$-test.
 
   \vfill 
 
-  \disc{How do we figure out \emph{which} jelly bean(s) is(are) linked to acne?}
+  \disc{How do we determine which subjects have a different mean reaction time than Subject 6?}
 
   \begin{center}
   The Bonferroni correction.
   \end{center}
 
   \vfill
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{The Bonferroni correction}
+
+Goal: test 11 different hypotheses:
+
+{\small
+\begin{align*}
+01.\ &  \; \; H_0: \; \mu_{\text{S06}} = \mu_{\text{S08}} \\
+     &  \; \; H_A: \; \mu_{\text{S06}} \neq \mu_{\text{S08}}  \\
+02.\ &  \; \; H_0: \; \mu_{\text{S06}} = \mu_{\text{S09}} \\
+     &  \; \; H_A: \; \mu_{\text{S06}} \neq \mu_{\text{S09}}  \\
+& \ldots \\
+11.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{S26}} \\
+     &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{S26}} 
+\end{align*}
+}
+
+\emph{AND} keep the Type I error rate at or below the significance level.
 
 \end{frame}
 
@@ -269,30 +561,38 @@ then the probability of making one or more type I errors is $ \leq \alpha$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{1. \bonferroni}
 
-\vspace{-0.5cm}
-{\small
-\begin{align*}
-01.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{purple}} \\
-     &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{purple}}  \\
-02.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{brown}} \\
-     &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{brown}}  \\
-& \ldots \\
-% 19.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{peach}} \\
-%      &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{peach}}  \\
-20.\ &  \; \; H_0: \; \mu_{\text{placebo}} = \mu_{\text{orange}} \\
-     &  \; \; H_A: \; \mu_{\text{placebo}} \neq \mu_{\text{orange}} 
-\end{align*}
-}
-
-\clicker{What significance level shoud we use to test all of these hypotheses simultaneously for a type I error rate of 5\%?}
-\begin{center}
-(a) 0.0024 \; (b) \solnMult{0.0025} (c) 0.0026 \; (d) 0.05
-\end{center}
+\begin{minipage}{0.3\textwidth}
+\small
+\begin{verbatim}
+Hyp   p-value
+ 01  4.27e-09 
+ 02   < 2e-16 
+ 03   0.00368 
+ 04  5.68e-07 
+ 05   < 2e-16 
+ 06  1.82e-13 
+ 07  1.11e-09 
+ 08   0.61587    
+ 09  1.42e-14 
+ 10   0.02332 
+ 11  1.91e-07 
+\end{verbatim}
+\end{minipage}%
+\begin{minipage}{0.6\textwidth}
+\clicker{Which null hypotheses should we reject at $\alpha = 0.05$?}
+\begin{enumerate}[(a)]
+\item 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+\item \solnMult{1, 2, 3, 4, 5, 6, 7,    9,     11}
+\item 1, 2,    4, 5, 6, 7,    9,     11
+\item 1, 2,       5, 6, 7,    9,     11
+\end{enumerate}
+\end{minipage}
 
 \end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -307,73 +607,53 @@ then the probability of making one or more type I errors is $ \leq \alpha$.
 
 \end{frame}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{\mainideaA}
-\label{mi1}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-  \frametitle{2. \mainideaA}
+  \frametitle{\mainideaA}
 
-  Cartoon for incorporating cholcolate.
+A new research question:
 
-  Jelly beans are associated with Acne.
-  OK.
-  I hear chocholate makes it works.
+\disc{
+Does "litter" in the image change some subjects' reaction times?
+}
+
+{\small
+\begin{align*}
+01.\ &  \; \; H_0: \; \mu_{\text{S06 \& Litter}} = \mu_{\text{S06 \& No Litter}} \\
+     &  \; \; H_A: \; \mu_{\text{S06 \& Litter}} \neq \mu_{\text{S06 \& No Litter}} \\
+02.\ &  \; \; H_0: \; \mu_{\text{S08 \& Litter}} = \mu_{\text{S08 \& No Litter}} \\
+     &  \; \; H_A: \; \mu_{\text{S08 \& Litter}} \neq \mu_{\text{S08 \& No Litter}} \\
+     & \ldots \\
+12.\ &  \; \; H_0: \; \mu_{\text{S26 \& Litter}} = \mu_{\text{S26 \& No Litter}} \\
+     &  \; \; H_A: \; \mu_{\text{S26 \& Litter}} \neq \mu_{\text{S26 \& No Litter}} 
+\end{align*}
+}
+
+Same problem as before... multpile hypotheses.
 
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-  \frametitle{2. \mainideaA}
+  \frametitle{\mainideaA}
 
-  Treatments:
+Null hypothesis: litter does not change the mean reaction time of anyone.
 
-  \begin{center}
-  \begin{tabular}{l l}
-    purple \& choc.\ & purple \& no choc. \\
-    brown \& choc.\ & brown \& no choc. \\
-    \ldots & \ldots \\
-    orange \& chol.\ & orange \& no choc.
-    \end{tabular}
-    \end{center}
+\hspace \\
 
-    \clicker{We want to test if eating chocolate and a certain color jelly bean has a different impact than just eating that color jelly bean.  Which type of null hypothesis should we use?}
-    \begin{enumerate}[(a)]
-      \item $H_0$: $\mu_{\textmd{color \& choc.}} = \mu_{\textmd{color \& no choc.}}$ for every color.
-      \item $H_0$: $\mu_{\textmd{color A \& choc.}} = \mu_{\textmd{color B \& choc.}}$ for every pair of colors.
-      \end{enumerate}
 
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-  \frametitle{2. \mainideaA}
-
-Picture of within group variation for different scenarios.
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-  \frametitle{2. \mainideaA}
-
-  $F$-test in terms of difference of within group variation.
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-  \frametitle{2. \mainideaA}
-
-  App Ex.
+{\small
+\begin{align*}
+H_0: \; & \mu_{\text{S06 \& Litter}} = \mu_{\text{S06 \& No Litter}} \\
+\textmd{and } \; & \mu_{\text{S08 \& Litter}} = \mu_{\text{S08 \& No Litter}} \\
+\textmd{and } \; & \; \; \; \ldots \\
+\textmd{and } \; & \mu_{\text{S26 \& Litter}} = \mu_{\text{S26 \& No Litter}} \\
+\end{align*}
+}
 
 \end{frame}
 
