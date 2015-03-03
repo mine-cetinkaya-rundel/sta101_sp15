@@ -111,7 +111,7 @@
 % Main ideas %
 %%%%%%%%%%%
 
-\newcommand{\mainideaA}{You can use the $F$-test to compare grouping by 2 variables vs. grouping by 1 variable}
+\newcommand{\ftest}{You can use another version of the $F$-test to compare grouping by 2 variables vs. grouping by 1 variable}
 
 \newcommand{\bonferroni}{If you want to test many hypotheses simulteneously, use
   the Bonferroni correction.}
@@ -310,13 +310,13 @@
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \subsection{\mainideaA}
+% \subsection{\ftest}
 % \label{mi1}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \begin{frame}
-%   \frametitle{2. \mainideaA}
+%   \frametitle{2. \ftest}
 
 %   Cartoon for incorporating cholcolate.
 
@@ -329,7 +329,7 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \begin{frame}
-%   \frametitle{2. \mainideaA}
+%   \frametitle{2. \ftest}
 
 %   Treatments:
 
@@ -353,7 +353,7 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \begin{frame}
-%   \frametitle{2. \mainideaA}
+%   \frametitle{2. \ftest}
 
 % Picture of within group variation for different scenarios.
 
@@ -362,7 +362,7 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \begin{frame}
-%   \frametitle{2. \mainideaA}
+%   \frametitle{2. \ftest}
 
 %   $F$-test in terms of difference of within group variation.
 
@@ -371,7 +371,7 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \begin{frame}
-%   \frametitle{2. \mainideaA}
+%   \frametitle{2. \ftest}
 
 %   App Ex.
 
@@ -385,6 +385,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{\bonferroni}
+\label{mi1}
 
 \begin{frame}
   \frametitle{ANOVA Review}
@@ -609,10 +610,11 @@ Hyp   p-value
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{\mainideaA}
+\subsection{\ftest}
+\label{mi2}
 
 \begin{frame}
-  \frametitle{\mainideaA}
+  \frametitle{\ftest}
 
 A new research question:
 
@@ -639,11 +641,11 @@ Same problem as before... multpile hypotheses.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-  \frametitle{\mainideaA}
+  \frametitle{\ftest}
 
 Null hypothesis: litter does not change the mean reaction time of anyone.
 
-\hspace \\
+\hfill \\
 
 
 {\small
@@ -653,6 +655,72 @@ H_0: \; & \mu_{\text{S06 \& Litter}} = \mu_{\text{S06 \& No Litter}} \\
 \textmd{and } \; & \; \; \; \ldots \\
 \textmd{and } \; & \mu_{\text{S26 \& Litter}} = \mu_{\text{S26 \& No Litter}} \\
 \end{align*}
+}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{\ftest}
+
+If litter does not change the mean reaction time of anyone, then, for instance,
+\begin{equation}
+\label{eqn:anova2}
+\mu_{\text{S06 \& Litter}} = \mu_{\text{S06 \& No Litter}} = \mu_{\text{S06}}.
+\end{equation}
+
+\pause
+
+\hfill \\
+
+Think about within group SS:
+\[
+SSE = \sum_{i=1}^n (y_i - \mu_{\text{group that $y_i$ is in}})^2.
+\]
+
+\pause
+
+If (\ref{eqn:anova2}) is true for every subject, then
+\[
+SSE_{\text{subject}} = SSE_{\text{subject \& litter}}.
+\]
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{\ftest}
+
+To see if there is a difference between some groups, look at percent increase in within group variation when excluding litter as an explanatory variable:
+\only<1>{
+\[
+\frac{SSE_{\text{subject}} - SSE_{\text{subject \& litter}}}{SSE_{\text{subject \& litter}}}.
+\]
+}
+\only<2->{
+\[
+F = \frac{(SSE_{\text{subject}} - SSE_{\text{subject \& litter}}) / (j_{\text{subject \& litter}} - j_{\text{subject}})}
+{SSE_{\text{subject \& litter}} / (n-j_{\text{subject \& litter}})}.
+\]
+}
+
+\begin{itemize}
+\item Small: no difference for any subject.
+\item Large: a difference for some subject.
+\end{itemize}
+
+\hfill \\
+
+\only<3>{
+\small
+$n$: number of obs.
+
+$j_{\text{subject}}$: number of groups by subject.
+
+$j_{\text{subject \& litter}}$: number of groups by subject and litter.
 }
 
 \end{frame}
