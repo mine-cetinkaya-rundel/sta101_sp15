@@ -1,5 +1,5 @@
 ---
-title: "Lab 7: (More) Inference for numerical data"
+title: "Lab 8: (More) Inference for numerical data"
 output:
   html_document:
     theme: cerulean
@@ -16,7 +16,7 @@ download("https://stat.duke.edu/courses/Fall14/sta101.001/labs/sta101_lab8.Rmd",
 
 ## American salaries
 
-Since 2005, the American Community Survey polls $\sim$3.5 million households yearly. We will work with a randon sample of 2000 observations from the 2012 ACS. You have already worked with this dataset once, as part of your application exercise. In this lab you get a chance to work with it a little more extensively.
+Since 2005, the American Community Survey polls ~$3.5 million households yearly. We will work with a randon sample of 2000 observations from the 2012 ACS. You have already worked with this dataset once, as part of your application exercise. In this lab you get a chance to work with it a little more extensively.
 
 ```{r eval=FALSE}
 download("http://stat.duke.edu/~mc301/data/acs.RData", destfile = "acs.RData")
