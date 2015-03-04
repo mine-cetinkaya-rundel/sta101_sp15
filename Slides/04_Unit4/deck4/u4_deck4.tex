@@ -318,11 +318,11 @@
 % \begin{frame}
 %   \frametitle{2. \ftest}
 
-%   Cartoon for incorporating cholcolate.
+%   Cartoon for incorporating chocolate.
 
 %   Jelly beans are associated with Acne.
 %   OK.
-%   I hear chocholate makes it works.
+%   I hear chocolate makes it works.
 
 % \end{frame}
 
@@ -440,7 +440,7 @@ Obs  Subject PictureTarget.RT Littered FarAway
   \disc{Do some subjects in the study have different mean reaction times?}
 
   \begin{center}
-  \includegraphics[scale=0.6]{figures/rxntime-boxplots.png}
+  \includegraphics[scale=0.65]{figures/rxntime-boxplots.png}
   \end{center}
 
 \end{frame}
@@ -484,6 +484,8 @@ Residuals     ?? 35129401    18412
 \begin{frame}[fragile]
   \frametitle{ANOVA Review}
 
+  (Assume $\alpha = 0.05$.)
+
   \clicker{What is the most appropriate conclusion?}
   \begin{enumerate}[(a)]
   \item There is no evidence that the subjects have different mean reaction times.
@@ -502,7 +504,7 @@ Residuals     ?? 35129401    18412
   \vfill 
 
   \disc{How do we determine which subjects have a different mean reaction time than Subject 6?}
-
+  \pause
   \begin{center}
   The Bonferroni correction.
   \end{center}
@@ -634,7 +636,7 @@ Does "litter" in the image change some subjects' reaction times?
 \end{align*}
 }
 
-Same problem as before... multpile hypotheses.
+Same problem as before... multiple hypotheses.
 
 \end{frame}
 
@@ -694,7 +696,9 @@ SSE_{\text{subject}} = SSE_{\text{subject \& litter}}.
 \begin{frame}
   \frametitle{\ftest}
 
+{\small
 To see if there is a difference between some groups, look at percent increase in within group variation when excluding litter as an explanatory variable:
+}
 \only<1>{
 \[
 \frac{SSE_{\text{subject}} - SSE_{\text{subject \& litter}}}{SSE_{\text{subject \& litter}}}.
@@ -727,6 +731,62 @@ $j_{\text{subject \& litter}}$: number of groups by subject and litter.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}
+  \frametitle{\ftest}
+
+\includegraphics[scale=0.7]{figures/rxntime-boxplot-subject-littered.png}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{\ftest}
+
+$df_1 = j_{\text{subject \& litter}} - j_{\text{subject}}$
+
+$df_2 = n - j_{\text{subject \& litter}}$.
+\[
+F_{obs} = \frac{(SSE_{\text{subject}} - SSE_{\text{subject \& litter}}) / (j_{\text{subject \& litter}} - j_{\text{subject}})}
+{SSE_{\text{subject \& litter}} / (n-j_{\text{subject \& litter}})}.
+\]
+\[
+p_{obs} = P(W > F_{obs} \mid H_0) = P(W > F_{obs} \mid W \sim \text{F-dist}_{df_1,df_2}).
+\]
+
+\clicker{$SSE_{\text{subject \& litter}} = 30935621$; $SSE_{\text{subject}} = 35129401$.  There are 1920 obs. Do you reject at the $\alpha = 10^{-5}$ level?}
+
+(A) \solnMult{Yes} (b) No
+
+
+% Model 1: PictureTarget.RT ~ as.factor(Subject)
+% Model 2: PictureTarget.RT ~ as.factor(Subject) * as.factor(Littered)
+%   Res.Df      RSS Df Sum of Sq      F    Pr(>F)    
+% 1   1908 35129401                                  
+% 2   1896 30935621 12   4193781 21.419 < 2.2e-16 ***
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{\ftest}
+
+\clicker{What is the best interpretation of the result?}
+There is evidence that
+\begin{enumerate}[(a)]
+\item \solnMult{some of the subject's reaction times change when the image is littered.}
+\item many subjects reaction times change when the image is littered, since the $F$-value is large.
+\item all of the subject's reaction times change when the image is littered.
+\end{enumerate}
+
+\disc{What would you do to test which subjects' reaction times change when the image is littered?}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Summary}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -739,6 +799,8 @@ $j_{\text{subject \& litter}}$: number of groups by subject and litter.
 \begin{enumerate}
 
 \item \nameref{mi1}
+
+\item \nameref{mi2}
 
 \end{enumerate}
 
