@@ -33,3 +33,8 @@ rxntime.example <- function(write.out=FALSE, width=400, height=300)
 
     
 }
+
+rxntime = read.csv("../data/rxntime.csv")
+anova(lm(rxntime$PictureTarget.RT~as.factor(rxntime$Subject)))
+library(xtable)
+xtable(anova(lm(rxntime$PictureTarget.RT ~ as.factor(rxntime$Subject))))
