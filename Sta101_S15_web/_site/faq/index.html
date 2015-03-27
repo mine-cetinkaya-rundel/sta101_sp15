@@ -122,6 +122,7 @@
   <li><a href="#r7">How can I make a plot visualizing the relationships between all of the variables in my dataset?</a></li>
   <li><a href="#r8">How can I calculate confidence intervals for the slopes in linear regression using R?</a></li>
   <li><a href="#r9">How can I create a new variable based on values in an existing variable in my dataset?</a></li>
+  <li><a href="#r10">How can I resize my plots in RMarkdown?</a></li>
 </ol>
 
 <h3 id="general">General:</h3>
@@ -455,6 +456,22 @@ We can see in the summary output for this variable the number of people whose ti
    above median at/below median            NA's 
             334             449            1217 
 </code></pre>
+
+<hr />
+
+<p><a name="r10">10. How can I resize my plots in RMarkdown?</a></p>
+
+<p>In order to change the size of the plots in your RMarkdown document you need to add some arguments to the piece of code that sets your chunk. These arguments are <code>fig.width</code> for width of your figure, and <code>fig.height</code> for height of your plot. For example</p>
+
+<pre><code>```
+{r fig.width = 5, fig.height = 3}
+plot(d$var)
+```
+</code></pre>
+
+<p>will produce a plot that is 5 x 3 (width x height). Play around with the size until you’re happy with it. But don’t make your plots too small, they should still be readable.</p>
+
+<p>The <a href="http://www.rstudio.com/resources/cheatsheets/">RStudio cheatsheet</a> (scroll down to R Markdown Cheat Sheet) has more information on how to customize your RMarkdown file. Some of it may be too advanced for what you’re trying to do, but some of it might be useful. Feel free to ask on Piazza if you want to do something mentioned there but you’re not sure how.</p>
 
 <hr />
 <hr />
