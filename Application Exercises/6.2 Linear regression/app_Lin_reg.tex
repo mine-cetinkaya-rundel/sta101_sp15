@@ -1,68 +1,61 @@
+% -*- TeX-engine: xetex; eval: (auto-fill-mode 0); eval: (visual-line-mode 1); -*-
+% Compile with XeLaTeX
+
 \documentclass[11pt]{article}
-\usepackage[top=2cm,bottom=2cm,left=2cm,right= 2cm]{geometry}
-%\geometry{landscape}                % Activate for for rotated page geometry
-\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{graphicx}
-\usepackage{amssymb}
-\usepackage{epstopdf}
-\usepackage{setspace}            
-\usepackage{amsmath}            
-\usepackage{multirow}    
-\usepackage{changepage}
-\usepackage{lscape}
-\usepackage{ulem}
-\usepackage{multicol}
-\usepackage{dashrule}
-\usepackage[usenames,dvipsnames]{color}       
-\usepackage{enumerate}
-\newcommand{\urlwofont}[1]{\urlstyle{same}\url{#1}}
-\newcommand{\degree}{\ensuremath{^\circ}}
+\input{../app_style.tex}
 
-\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+%%%%%%%%%%%%%%%%
+% Timing
+%%%%%%%%%%%%%%%%
 
-\newenvironment{choices}{
-\begin{enumerate}[(a)]
-}{\end{enumerate}}
+% 15-20 minutes
 
-\thispagestyle{empty}
+%%%%%%%%%%%%%%%%
+% Sakai link for course
+%%%%%%%%%%%%%%%%
 
-%\newcommand{\soln}[1]{\textcolor{MidnightBlue}{\textit{#1}}}	% delete #1 to get rid of solutions for handouts
-\newcommand{\soln}[1]{ \vspace{2.7cm} }
+% UPDATE FOR OWN COURSE
+% LINK TO ASSIGNMENTS TOOL IN SAKAI
 
-\newcommand{\solnMult}[1]{\textbf{\textcolor{MidnightBlue}{\textit{#1}}}}	% uncomment for solutions
-%\newcommand{\solnMult}[1]{ #1 }	% uncomment for handouts
+\newcommand{\Sakai}[1]
+{\href{https://sakai.duke.edu/portal/site/ba0d1c18-ba55-473f-9d70-b6a1f9559bbe/page/9870858b-a1a9-481e-8497-8a6ffe9e5be2}{Sakai}}
 
-%\newcommand{\pts}[1]{ \textbf{{\footnotesize \textcolor{black}{(#1)}}} }	% uncomment for handouts
-\newcommand{\pts}[1]{ \textbf{{\footnotesize \textcolor{red}{(#1)}}} }	% uncomment for handouts
+%%%%%%%%%%%
+% App Ex number    %
+%%%%%%%%%%%
 
-\newcommand{\note}[1]{ \textbf{\textcolor{red}{[#1]}} }	% uncomment for handouts
+% DON'T FORGET TO UPDATE
 
-\definecolor{oiG}{rgb}{.298,.447,.114}
-\definecolor{oiB}{rgb}{.337,.608,.741}
+\newcommand{\appno}[1]
+{6.2}
 
-\usepackage[colorlinks=false,pdfborder={0 0 0},urlcolor= oiG,colorlinks=true,linkcolor= oiG, citecolor= oiG,backref=true]{hyperref}
+%%%%%%%%%%%%%%
+% Turn on/off solutions       %
+%%%%%%%%%%%%%%
 
-%\usepackage{draftwatermark}
-%\SetWatermarkScale{4}
+% Off
+\newcommand{\soln}[1]{
+\vskip5pt
+}
 
-\usepackage{titlesec}
-\titleformat{\section}
-{\color{oiB}\normalfont\Large\bfseries}
-{\color{oiB}\thesection}{1em}{}
-\titleformat{\subsection}
-{\color{oiB}\normalfont}
-{\color{oiB}\thesubsection}{1em}{}
+%% On
+%\newcommand{\soln}[1]{
+%\textit{\textcolor{custom_darkGray}{#1}}
+%}
 
-\newcommand{\ttl}[1]{ \textsc{{\LARGE \textbf{{\color{oiB} #1} } }}}
-
-\newcommand{\tl}[1]{ \textsc{{\large \textbf{{\color{oiB} #1} } }}}
+%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%
 
 \begin{document}
+\fontspec[Ligatures=TeX]{Helvetica Neue Light}
 
 Dr. \c{C}etinkaya-Rundel \hfill Data Analysis and Statistical Inference \\
 
-\ttl{Application exercise: 6.1 \\
-Estimating and interpreting regression coefficients}
+\ttl{Application exercise \appno{}: \\
+Linear regression}
+
+\inst{Submit your responses on \Sakai{}, under the appropriate assignment. Only one submission per team is required. One team will be randomly selected and their responses will be discussed.}
 
 \section*{Driver age and highway sign-reading distance}
 
@@ -95,8 +88,6 @@ Then,
  
 Include your R code and your write up in your submission. 
 
-If you have questions about the R syntax, refer to \url{https://stat.duke.edu/~mc301/R/Rcommands.pdf} or ask.
-
-%
+If you have questions about the R syntax, refer to \url{https://stat.duke.edu/~mc301/R/Rcommands.html} or ask.
 
 \end{document}
