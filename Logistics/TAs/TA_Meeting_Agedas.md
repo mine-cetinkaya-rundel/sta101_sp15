@@ -89,5 +89,8 @@ Sta 101 TA Meeting Agendas
 * Lab 6 notes:
     + add set seed to lab 6
 
-### Week 7: February 23, 2015
-*
+### Week 9?: March 30, 2015
+* PS late penalty - 30% off from total, not from score
+* Lab grading of students not present
+* Grading schedule and keeping on task
+* Project 1 grading

@@ -277,6 +277,8 @@ Give a score between 0 to 3 reflecting the quality of the writing.
 
 * Did not follow five part format: -5 points
 
+* Overall formatting issues (plots not readable, etc.): 1-5 pt deduction, roughly about 1 per plot
+
 * Difficult to follow, requiring to go back to the data and replicate the analysis: -10 points
 
 * Each page over limit: - 5 points per page (view print preview to confirm length)
