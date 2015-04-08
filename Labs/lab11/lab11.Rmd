@@ -10,7 +10,7 @@ output:
 <div id="template">
 Before you begin the lab, download the lab report template. This template makes it very simple to include code and output in your write up from within RStudio as well as ensuring reproducibility of your results.
 ```{r template, eval=FALSE}
-download("https://stat.duke.edu/courses/Fall14/sta101.001/labs/sta101_lab11.Rmd", destfile = "sta101_lab11.Rmd")
+download("https://stat.duke.edu/courses/Spring15/sta101.001/post/labs/sta101_lab11.Rmd", destfile = "sta101_lab11.Rmd")
 ```
 </div>
 
