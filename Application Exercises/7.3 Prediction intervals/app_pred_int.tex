@@ -1,0 +1,114 @@
+% -*- TeX-engine: xetex; eval: (auto-fill-mode 0); eval: (visual-line-mode 1); -*-
+% Compile with XeLaTeX
+
+\documentclass[11pt]{article}
+\input{../app_style.tex}
+
+%%%%%%%%%%%%%%%%
+% Timing
+%%%%%%%%%%%%%%%%
+
+% 15-20 minutes
+
+%%%%%%%%%%%%%%%%
+% Sakai link for course
+%%%%%%%%%%%%%%%%
+
+% UPDATE FOR OWN COURSE
+% LINK TO ASSIGNMENTS TOOL IN SAKAI
+
+\newcommand{\Sakai}[1]
+{\href{https://sakai.duke.edu/portal/site/ba0d1c18-ba55-473f-9d70-b6a1f9559bbe/page/9870858b-a1a9-481e-8497-8a6ffe9e5be2}{Sakai}}
+
+%%%%%%%%%%%
+% App Ex number    %
+%%%%%%%%%%%
+
+% DON'T FORGET TO UPDATE
+
+\newcommand{\appno}[1]
+{7.3}
+
+%%%%%%%%%%%%%%
+% Turn on/off solutions       %
+%%%%%%%%%%%%%%
+
+% Off
+\newcommand{\soln}[1]{
+\vskip5pt
+}
+
+%% On
+%\newcommand{\soln}[1]{
+%\textit{\textcolor{custom_darkGray}{#1}}
+%}
+
+%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+\fontspec[Ligatures=TeX]{Helvetica Neue Light}
+
+Dr. \c{C}etinkaya-Rundel \hfill Data Analysis and Statistical Inference \\
+
+\ttl{Application exercise \appno{}: \\
+Prediction intervals}
+
+\inst{Submit your responses on \Sakai{}, under the appropriate assignment. Only one submission per team is required. One team will be randomly selected and their responses will be discussed.}
+
+\section*{Nature or nurture}
+
+The model for predicting IQ scores of foster twins based on IQ scores of biological twins is as follows.
+
+$\:$
+\begin{center}
+\begin{verbatim}
+                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)       9.20760    9.29990   0.990    0.332    
+bioIQ             0.90144    0.09633   9.358  1.2e-09
+
+Residual standard error: 7.729 on 25 degrees of freedom
+\end{verbatim}
+\end{center}
+$\:$
+
+
+\begin{enumerate}
+
+\item Calculate (using formulas) a 95\% prediction interval for the average IQ score of foster twins whose biological twins have IQ scores of 100 points. Note that the average IQ score of 27 biological twins in the sample is 95.3 points, with a standard deviation is 15.74 points. 
+
+%We already found that $\hat{y} \approx 99.35$ and $t_{25}^\star = 2.06$. 
+%\begin{eqnarray*}
+%ME &=& 2.06 \times 7.729 \times \sqrt{1 + \frac{1}{27} + \frac{(100 - 95.3)^2}{26 \times 15.74^2}} \approx 16.24 \\ \pause
+%CI &=& 99.35 \pm 16.24 \\ \pause
+%&=& (83.11, 115.59)
+%\end{eqnarray*}
+
+\item Confirm that this interval compares to the corresponding confidence interval as you would expect, i.e. wider, narrower, etc.
+
+\item Now calculate the same interval using R. Remember you need to first load the data, then fit and save the model, and then finally use this mode, and the new data point to make your prediction. Refer to course slides for the necessary code.
+
+%# load data
+%install.packages("faraway") # dataset is in this package
+%library(faraway)
+%data(twins)
+%
+%# fit model
+%m = lm(Foster ~ Biological, data = twins)
+%
+%# create a new data frame for the new observation
+%newdata = data.frame(Biological = 100)
+%
+%# calculate a prediction 
+%# and a confidence interval for the prediction
+%predict(m , newdata, interval = "prediction")
+%
+%     fit      lwr      upr
+% 99.3512 83.11356 115.5888
+
+\end{enumerate}
+
+%
+
+\end{document}
