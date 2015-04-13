@@ -11,6 +11,7 @@
 *.key
 *Key.Rmd
 *Key.html
+*.dropbox
 Private/
 mc301@stat.duke.edu
 *.dropbox
