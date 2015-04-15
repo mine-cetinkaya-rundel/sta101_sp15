@@ -88,7 +88,7 @@ and 2014.
 	  
     * *Prediction*:
 
-        * Using your best model and a movie from 2014 of your choosing, predict its
+        * Using your best model and a movie from 2015 of your choosing, predict its
           audience score. (You will need to find the relevant information about the
           movie online.)
 	  
