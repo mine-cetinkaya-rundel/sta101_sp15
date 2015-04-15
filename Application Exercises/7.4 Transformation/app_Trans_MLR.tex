@@ -91,7 +91,8 @@ List of variables:
 \item Load data, and subset for those who were employed:
 
 \begin{verbatim}
-load(url("http://stat.duke.edu/~mc301/data/acs.RData"))
+download("http://stat.duke.edu/~mc301/data/acs.RData", destfile = "acs.RData")
+load("acs.RData")
 acs_sub = subset(acs, acs$employment == "employed" & acs$income > 0)
 acs_sub = droplevels(acs_sub)
 \end{verbatim}
