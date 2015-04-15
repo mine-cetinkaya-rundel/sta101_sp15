@@ -1,0 +1,126 @@
+% -*- TeX-engine: xetex; eval: (auto-fill-mode 0); eval: (visual-line-mode 1); -*-
+% Compile with XeLaTeX
+
+\documentclass[11pt]{article}
+\input{../app_style.tex}
+
+%%%%%%%%%%%%%%%%
+% Timing
+%%%%%%%%%%%%%%%%
+
+% 15-20 minutes
+
+%%%%%%%%%%%%%%%%
+% Sakai link for course
+%%%%%%%%%%%%%%%%
+
+% UPDATE FOR OWN COURSE
+% LINK TO ASSIGNMENTS TOOL IN SAKAI
+
+\newcommand{\Sakai}[1]
+{\href{https://sakai.duke.edu/portal/site/ba0d1c18-ba55-473f-9d70-b6a1f9559bbe/page/9870858b-a1a9-481e-8497-8a6ffe9e5be2}{Sakai}}
+
+%%%%%%%%%%%
+% App Ex number    %
+%%%%%%%%%%%
+
+% DON'T FORGET TO UPDATE
+
+\newcommand{\appno}[1]
+{7.4}
+
+%%%%%%%%%%%%%%
+% Turn on/off solutions       %
+%%%%%%%%%%%%%%
+
+% Off
+\newcommand{\soln}[1]{
+\vskip5pt
+}
+
+%% On
+%\newcommand{\soln}[1]{
+%\textit{\textcolor{custom_darkGray}{#1}}
+%}
+
+%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+\fontspec[Ligatures=TeX]{Helvetica Neue Light}
+
+Dr. \c{C}etinkaya-Rundel \hfill Data Analysis and Statistical Inference \\
+
+\ttl{Application exercise \appno{}: \\
+Interpreting models with a transformed response}
+
+\inst{Submit your responses on \Sakai{}, under the appropriate assignment. Only one submission per team is required. One team will be randomly selected and their responses will be discussed.}
+
+\section*{Predicting income in the US}
+
+Each year since 2005, the US Census Bureau surveys about 3.5 million households with The American Community Survey (ACS). Data collected from the ACS have been crucial in government and policy decisions, helping to determine the allocation of more than \$400 billion in federal and state funds each year. For example, funds for the Adult Education and Family Literacy Act are distributed to states taking into consideration data from the ACS on number of adults 16 and over without a high school diploma. This act is the primary source of federal funding for adults with low basic skills seeking further education or English language services, and Department of Education uses ACS data to ensure the efficient distribute funds.
+
+In this application exercise we will analyze data from the ACS, and use the fact that it is ``a random survey" to make inferences about the US population at large.
+
+List of variables:
+\begin{enumerate}
+\item \texttt{income}: Yearly income (wages and salaries)
+\item \texttt{employment}: Employment status, not in labor force, unemployed, or employed
+\item \texttt{hrs\_work}: Weekly hours worked
+\item \texttt{race}: Race, White, Black, Asian, or other
+\item \texttt{age}: Age
+\item \texttt{gender}: Male or female
+\item \texttt{citizens}: Whether respondent is a US citizen or not
+\item \texttt{time\_to\_work}: Travel time to work
+\item \texttt{lang}: Language spoken at home, English or other
+\item \texttt{married}: Whether respondent is married or not
+\item \texttt{edu}: Education level, hs or lower, college, or grad
+\item \texttt{disability}: Whether respondent is disabled or not
+\item \texttt{birth\_qrtr}: Quarter in which respondent is born, Jan thru Mar, Apr thru Jun, Jul thru Sep, or Oct thru Dec 
+\end{enumerate}
+
+\pagebreak
+
+\textbf{Setup:}
+
+\begin{itemize}
+
+\item First, open a new R Script. You will save all of your code here (including starting with loading the data). As part of your application exercise you will also export and upload this file (just like you will do in your project).
+
+\item Load data, and subset for those who were employed:
+
+\begin{verbatim}
+load(url("http://stat.duke.edu/~mc301/data/acs.RData"))
+acs_sub = subset(acs, acs$employment == "employed" & acs$income > 0)
+acs_sub = droplevels(acs_sub)
+\end{verbatim}
+
+\item Before you proceed, confirm that this leaves you with 787 observations.
+
+\item Suppose we only want to consider the following explanatory variables: \texttt{hrs\_work}, \texttt{race}, \texttt{age}, \texttt{gender}, \texttt{citizen}.
+
+\end{itemize}
+
+$\:$ \\
+
+\begin{enumerate}
+
+\item Fit the full model using only the explanatory variables listed above, and report its adjusted $R^2$. Remember your response variable is \texttt{log(income)}, not \texttt{income}. Below is a neat trick for getting the just the adjusted $R^2$:
+
+\begin{verbatim}
+m_full = lm(log(income) ~ hrs_work + race + age + gender + citizen, data = acs_sub)
+summary(m_full)$adj.r.squared
+\end{verbatim}
+
+\item Conduct model selection using the backwards adjusted $R^2$ method, and report the adjusted $R^2$ for the final model.
+
+\item Check diagnostics for this model using appropriate plots.
+
+\item Interpret the slope for one numerical and one categorical predictor.
+
+\end{enumerate}
+
+%
+
+\end{document}
