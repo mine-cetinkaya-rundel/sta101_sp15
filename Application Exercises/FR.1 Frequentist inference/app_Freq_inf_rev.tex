@@ -1,0 +1,88 @@
+% -*- TeX-engine: xetex; eval: (auto-fill-mode 0); eval: (visual-line-mode 1); -*-
+% Compile with XeLaTeX
+
+\documentclass[11pt]{article}
+\input{../app_style.tex}
+
+%%%%%%%%%%%%%%%%
+% Timing
+%%%%%%%%%%%%%%%%
+
+% 15-20 minutes
+
+%%%%%%%%%%%%%%%%
+% Sakai link for course
+%%%%%%%%%%%%%%%%
+
+% UPDATE FOR OWN COURSE
+% LINK TO ASSIGNMENTS TOOL IN SAKAI
+
+\newcommand{\Sakai}[1]
+{\href{https://sakai.duke.edu/portal/site/ba0d1c18-ba55-473f-9d70-b6a1f9559bbe/page/9870858b-a1a9-481e-8497-8a6ffe9e5be2}{Sakai}}
+
+%%%%%%%%%%%
+% App Ex number    %
+%%%%%%%%%%%
+
+% DON'T FORGET TO UPDATE
+
+\newcommand{\appno}[1]
+{FR.1}
+
+%%%%%%%%%%%%%%
+% Turn on/off solutions       %
+%%%%%%%%%%%%%%
+
+% Off
+\newcommand{\soln}[1]{
+\vskip5pt
+}
+
+%% On
+%\newcommand{\soln}[1]{
+%\textit{\textcolor{custom_darkGray}{#1}}
+%}
+
+%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+\fontspec[Ligatures=TeX]{Helvetica Neue Light}
+
+Dr. \c{C}etinkaya-Rundel \hfill Data Analysis and Statistical Inference \\
+
+\ttl{Application exercise \appno{}: \\
+Frequentist inference review}
+
+\inst{Submit your responses on \Sakai{}, under the appropriate assignment. Only one submission per team is required. One team will be randomly selected and their responses will be discussed.}
+
+Earlier you decided how many M\&Ms to buy, accordingly your sample is one of the following:
+
+\begin{itemize}
+\item $n = 5 \rightarrow$ $\red{R}\green{G}\yellow{Y}\blue{B}\orange{O}$
+\item $n = 10 \rightarrow$ $\red{R}\green{G}\yellow{Y}\blue{B}\orange{O} \quad \blue{B}\blue{B}\green{G}\orange{O}\yellow{Y}$
+\item $n = 15 \rightarrow$ $\red{R}\green{G}\yellow{Y}\blue{B}\orange{O} \quad \blue{B}\blue{B}\green{G}\orange{O}\yellow{Y} \quad  \yellow{Y}\red{R}\blue{B}\red{R}\red{R} $
+\item $n = 20 \rightarrow$ $\red{R}\green{G}\yellow{Y}\blue{B}\orange{O} \quad \blue{B}\blue{B}\green{G}\orange{O}\yellow{Y} \quad  \yellow{Y}\red{R}\blue{B}\red{R}\red{R} \quad  \green{G}\orange{O}\red{R}\blue{B}\yellow{Y}$
+\end{itemize}
+
+Answer the following questions using your sample only.
+
+\begin{enumerate} 
+
+\item What is your sample size? This is your $n$.
+
+\item How many yellows are in your sample? This is your $k$.
+
+\item Calculate the p-value using the Binomial distribution:
+
+p-value = P(k or more yellows $|$ n, \%yellow is 10\%)
+
+\item Do you reject the null hypothesis based on the $\alpha$ you chose earlier?
+
+\item What is the conclusion of your hypothesis test, i.e. what do you report to your boss?
+
+\end{enumerate}
+%
+
+\end{document}

@@ -1,0 +1,87 @@
+% -*- TeX-engine: xetex; eval: (auto-fill-mode 0); eval: (visual-line-mode 1); -*-
+% Compile with XeLaTeX
+
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\input{../app_style.tex}
+
+%%%%%%%%%%%%%%%%
+% Timing
+%%%%%%%%%%%%%%%%
+
+% 15-20 minutes
+
+%%%%%%%%%%%%%%%%
+% Sakai link for course
+%%%%%%%%%%%%%%%%
+
+% UPDATE FOR OWN COURSE
+% LINK TO ASSIGNMENTS TOOL IN SAKAI
+
+\newcommand{\Sakai}[1]
+{\href{https://sakai.duke.edu/portal/site/ba0d1c18-ba55-473f-9d70-b6a1f9559bbe/page/9870858b-a1a9-481e-8497-8a6ffe9e5be2}{Sakai}}
+
+%%%%%%%%%%%
+% App Ex number    %
+%%%%%%%%%%%
+
+% DON'T FORGET TO UPDATE
+
+\newcommand{\appno}[1]
+{FR.2}
+
+%%%%%%%%%%%%%%
+% Turn on/off solutions       %
+%%%%%%%%%%%%%%
+
+% Off
+\newcommand{\soln}[1]{
+\vskip5pt
+}
+
+%% On
+%\newcommand{\soln}[1]{
+%\textit{\textcolor{custom_darkGray}{#1}}
+%}
+
+%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+\fontspec[Ligatures=TeX]{Helvetica Neue Light}
+
+Dr. \c{C}etinkaya-Rundel \hfill Data Analysis and Statistical Inference \\
+
+\ttl{Application exercise \appno{}: \\
+Bayesian inference review}
+
+\inst{Submit your responses on \Sakai{}, under the appropriate assignment. Only one submission per team is required. One team will be randomly selected and their responses will be discussed.}
+
+Earlier you decided how many M\&Ms to buy, accordingly your sample is one of the following:
+
+\begin{itemize}
+\item $n = 5 \rightarrow$ $\red{R}\green{G}\yellow{Y}\blue{B}\orange{O}$
+\item $n = 10 \rightarrow$ $\red{R}\green{G}\yellow{Y}\blue{B}\orange{O} \quad \blue{B}\blue{B}\green{G}\orange{O}\yellow{Y}$
+\item $n = 15 \rightarrow$ $\red{R}\green{G}\yellow{Y}\blue{B}\orange{O} \quad \blue{B}\blue{B}\green{G}\orange{O}\yellow{Y} \quad  \yellow{Y}\red{R}\blue{B}\red{R}\red{R} $
+\item $n = 20 \rightarrow$ $\red{R}\green{G}\yellow{Y}\blue{B}\orange{O} \quad \blue{B}\blue{B}\green{G}\orange{O}\yellow{Y} \quad  \yellow{Y}\red{R}\blue{B}\red{R}\red{R} \quad  \green{G}\orange{O}\red{R}\blue{B}\yellow{Y}$
+\end{itemize}
+
+Using the data from your sample only and Bayes' theorem, calculate the probability the percentage of yellow is 10\% and 20\% given the observed data in your sample, i.e. 
+\begin{enumerate}
+\item $P(p = 0.10~|~data)$
+\item $P(p = 0.20~|~data)$
+\end{enumerate}
+
+$\:$ \\
+$\:$ \\
+Hint:
+\begin{align*}
+P(p = 0.10~|~data) &= \frac{P(data~|~10\% yellow) \times P(10\% yellow)}{P(data)} \\
+&= \frac{P(data~|~10\% yellow) \times P(10\% yellow)}{P(data~|~10\% yellow) \times P(10\% yellow) + P(data~|~20\% yellow) \times P(20\% yellow)} \\
+&= \frac{Binom(k~|~n, p = 0.10) \times P(H_1: p = 0.10)}{Binom(k~|~n, p = 0.10) \times P(H_1: p = 0.10) + Binom(k~|~n, p = 0.20) \times P(H_2: p = 0.20)} 
+\end{align*}
+
+%
+
+\end{document}

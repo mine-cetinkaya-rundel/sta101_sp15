@@ -1,0 +1,469 @@
+% -*- TeX-engine: xetex; eval: (auto-fill-mode 0); eval: (visual-line-mode 1); -*-
+% Compile with XeLaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% To do before class
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Send the Logistics/Week0Annoucnement (the night before).
+% Send an email reminding students to bring a charged computer (the night before).
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Option 1: Slides: (comment for handouts)   %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%\documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
+%
+%% solution stuff
+%\newcommand{\solnMult}[1]{
+%\only<1>{#1}
+%\only<2->{\red{\textbf{#1}}}
+%}
+%\newcommand{\soln}[1]{\textit{#1}}
+%
+%\newcommand{\solnMultOn}[3]{
+%\only<#1>{#3}
+%\only<{#2}->{\red{\textbf{#3}}}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 2: Handouts, without solutions (post before class)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+ % handout layout
+ \usepackage{pgfpages}
+ \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+ % solution stuff
+ \newcommand{\solnMult}[1]{#1}
+ \newcommand{\soln}[1]{}
+ \newcommand{\solnMultOn}[3]{#3}
+
+ % % This breaks things for me for some reason.
+ % tell pgfpages how to set page sizes in XeLaTeX
+ \renewcommand\pgfsetupphysicalpagesizes{%
+    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 3: Handouts, with solutions (may post after class if need be)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{\red{\textbf{#1}}}
+% \newcommand{\soln}[1]{\textit{#1}}
+
+% % % This breaks things for me for some reason.
+% % % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% % }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 4: Notes Only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% % See http://tex.stackexchange.com/questions/114219/add-notes-to-latex-beamer
+% \documentclass[10pt,containsverbatim,xcolor=xelatex,dvipsnames,table,notes=only]{beamer}
+
+% % handout layout
+% % \usepackage{pgfpages}
+% % \pgfpagesuselayout{1 on 1}[letterpaper, landscape, border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+% % % Having a problem with this.
+% % tell pgfpages how to set page sizes in XeLaTeX
+% % \renewcommand\pgfsetupphysicalpagesizes{%
+% %   \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% %}
+
+%%%%%%%%%%
+% Load style file, defaults  %
+%%%%%%%%%%
+
+\input{../../lec_style.tex}
+\input{../../definitions_default.tex}
+% ALT ALT
+%\input{../../definitions_custom.tex}
+
+%%%%%%%%%%%
+% Cover slide info    %
+%%%%%%%%%%%
+
+\title{Review}
+\subtitle{Bayesian vs. frequentist inference}
+\author{Sta 101 - Spring 2015}
+\date{April 20, 2015}
+\institute{Duke University, Department of Statistical Science}
+
+%%%%%%%%%%%
+% Begin document   %
+%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title Page
+
+\begin{frame}[plain]
+
+\titlepage
+\vfill
+{\scriptsize \webLink{\PersonalSite}{Dr. \LastName{}} \hfill Slides posted at  \webLink{\CourseSite}{\CourseSite}}
+\addtocounter{framenumber}{-1} 
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Housekeeping}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Announcements}
+
+\begin{itemize}
+
+\item Poster sessions in Link Classroom 3 tomorrow, submission on Sakai due by your lab session time.
+
+\item Posttest due by Friday 5/1 at midnight
+
+\item Final exam review: Thursday, 4/30, 5:30 - 6:30pm
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Bayesian vs. frequentist Inference}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{M\&Ms}
+
+\begin{itemize}
+
+\item We have a population of M\&Ms. The percentage of yellow M\&Ms is either 10\% or 20\%.
+
+\item You have been hired as a statistical consultant to decide whether the true percentage of yellow M\&Ms is 10\%. You are being asked to make a decision, and there are associated payoff/losses that you should consider.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Decision table}
+
+\begin{center}
+\renewcommand\arraystretch{1.5}
+\begin{tabular}{l | p{3cm} | p{3cm}}
+				&   \multicolumn{2}{c}{True state of the population} \\
+\hline
+Decision			& \% yellow = 10\%		& \% yellow = 20\% \\
+\hline
+\% yellow = 10\%	& \green{Your boss gives you a bonus, and I'll bring you candy on Wednesday}	& \red{You lose your job, and no candy for you} \\
+\hline
+\%yellow = 20\%	& \red{You lose your job, and no candy for you} 	& \green{Your boss gives you a bonus, and I'll bring you candy on Wednesday} \\
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Data}
+
+\begin{itemize}
+
+\item I will show you a random sample from the population, but you pay \$200 for each M\&M, and you must buy in \$1000 increments.  
+
+\item That is, you may buy 5, 10, 15, or 20 M\&Ms.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Frequentist inference}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Frequentist inference}
+
+\begin{itemize}
+
+\item Hypotheses:
+\begin{itemize}
+\item $H_0$: 10\% yellow M\&Ms
+\item $H_A$: more than 10\% yellow M\&Ms 
+\end{itemize}
+
+\item Your test statistic is the number of yellow M\&Ms you observe in the sample. 
+
+\item The p-value will be the probability of observing this many or more yellow M\&Ms given the null hypothesis is true.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Setup}
+
+\app{Set up -- data: clicker}{[CLICKER] How many M\&Ms would you buy? Decide as a team and vote.}
+
+\begin{multicols}{4}
+\begin{enumerate}[(a)]
+\item 5
+\item 10
+\item 15
+\item 20
+\end{enumerate}
+\end{multicols}
+
+\pause
+
+\app{Set up -- significance level}{[CLICKER] Discuss at what significance level you will reject the null hypothesis. Submit a value between 0 and 1.}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{}
+
+Now we will take a sequence of M\&Ms, and you record the number of yellows in the first n draws.
+
+\begin{itemize}
+\item $n = 5 \rightarrow$ $\red{R}\green{G}\yellow{Y}\blue{B}\orange{O}$
+\item $n = 10 \rightarrow$ $\red{R}\green{G}\yellow{Y}\blue{B}\orange{O} \quad \blue{B}\blue{B}\green{G}\orange{O}\yellow{Y}$
+\item $n = 15 \rightarrow$ $\red{R}\green{G}\yellow{Y}\blue{B}\orange{O} \quad \blue{B}\blue{B}\green{G}\orange{O}\yellow{Y} \quad  \yellow{Y}\red{R}\blue{B}\red{R}\red{R} $
+\item $n = 20 \rightarrow$ $\red{R}\green{G}\yellow{Y}\blue{B}\orange{O} \quad \blue{B}\blue{B}\green{G}\orange{O}\yellow{Y} \quad  \yellow{Y}\red{R}\blue{B}\red{R}\red{R} \quad  \green{G}\orange{O}\red{R}\blue{B}\yellow{Y}$
+\end{itemize}
+
+%\[ \red{R}\green{G}\yellow{Y}\blue{B}\orange{O} \qquad \blue{B}\blue{B}\green{G}\orange{O}\yellow{Y} \qquad  \yellow{Y}\red{R}\blue{B}\red{R}\red{R} \qquad  \green{G}\orange{O}\red{R}\blue{B}\yellow{Y} \]
+
+\app{FR.1 Frequentist inference}{
+\begin{enumerate} 
+
+\item What is your sample size? This is your $n$.
+
+\item How many yellows are in your sample? This is your $k$.
+
+\item Calculate the p-value using the Binomial distribution:
+
+p-value = P(k or more yellows $|$ n, \%yellow is 10\%)
+
+\item Do you reject the null hypothesis based on the $\alpha$ you chose earlier?
+
+\item What is the conclusion of your hypothesis test, i.e. what do you report to your boss?
+
+\end{enumerate}
+}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}[fragile]
+%\frametitle{}
+%
+%Remember $Binomial(n, k) = {n \choose k} p^k (1-p)^{(n-k)}$ \\
+%
+%$\:$ \\
+%\pause 
+%
+%Say you picked $n = 5$, and hence $k = 1$.
+%
+%\begin{eqnarray*}
+%&&P(1~or~more~yellows~|~n = 5,~\%yellow~is~10\%) \\
+%&=& P(K = 1) + P(K = 2) + P(K = 3) + P(K = 4) + P(K = 5) \\
+%\pause
+%&=& \left[ {5 \choose 1} 0.1^1 \times 0.9^4 \right]+ \left[{5 \choose 2} 0.1^2 \times 0.9^3 \right] + \cdots + \left[{5 \choose 5} 0.1^5 \times 0.9^0 \right] \\
+%\pause
+%&=& 0.32805 + 0.0729 + 0.0081 +  0.00045 + 0.00001 \\
+%\pause
+%&\approx& 0.41
+%\end{eqnarray*}
+%
+%
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}[fragile]
+%\frametitle{}
+%
+%Alternatively: \\
+%\pause
+%{\footnotesize
+%\begin{Verbatim}[frame=single, formatcom=\color{blue}]
+%# P(K = 1, n = 5, p = 0.1) 
+%dbinom(1, 5, 0.1)
+%\end{Verbatim}
+%}
+%{\footnotesize
+%\begin{Verbatim}[frame=single, formatcom=\color{gray}]
+%0.32805
+%\end{Verbatim}
+%}
+%
+%... and
+%
+%\pause
+%{\footnotesize
+%\begin{Verbatim}[frame=single, formatcom=\color{blue}]
+%# P(K >= 1, n = 5, p = 0.1) 
+%sum(dbinom(1:5, 5, 0.1))
+%\end{Verbatim}
+%}
+%{\footnotesize
+%\begin{Verbatim}[frame=single, formatcom=\color{gray}]
+%0.40951
+%\end{Verbatim}
+%}
+
+%> round(sum(dbinom(1:5,5,0.1)), 2)
+%[1] 0.41
+%> round(sum(dbinom(2:10,10,0.1)), 2)
+%[1] 0.26
+%> round(sum(dbinom(3:15,15,0.1)), 2)
+%[1] 0.18
+%> round(sum(dbinom(4:20,20,0.1)), 2)
+%[1] 0.13
+
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Bayesian inference}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Priors}
+
+Now we will start over, with 1:1 odds for the two competing hypotheses. These are our priors:
+
+\begin{itemize}
+\item $H_1$: 10\% yellow M\&Ms $\rightarrow$ $P(H_1: p = 0.10) = 0.5$
+\item $H_2$: 20\% yellow M\&Ms $\rightarrow$ $P(H_2: p = 0.10) = 0.5$
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Calculating posteriors}
+
+\app{FR.2 Bayesian inference}{Using the same data and Bayes' theorem to calculate the probability the percentage of yellow is 10\% and 20\% given the observed data in your sample, i.e. 
+\begin{enumerate}
+\item $P(p = 0.10~|~data)$
+\item $P(p = 0.20~|~data)$
+\end{enumerate}
+}
+
+\pause
+
+\vfill
+
+Hint:
+\begin{adjustwidth}{-1in}{-1in}
+{\scriptsize
+\begin{eqnarray*}
+&&P(p = 0.10~|~data) = \frac{P(data~|~10\% yellow) \times P(10\% yellow)}{P(data)} \\
+\pause
+&=& \frac{P(data~|~10\% yellow) \times P(10\% yellow)}{P(data~|~10\% yellow) \times P(10\% yellow) + P(data~|~20\% yellow) \times P(20\% yellow)} \\
+\pause
+&=& \frac{Binom(k~|~n, p = 0.10) \times P(H_1: p = 0.10)}{Binom(k~|~n, p = 0.10) \times P(H_1: p = 0.10) + Binom(k~|~n, p = 0.20) \times P(H_2: p = 0.20)} 
+\end{eqnarray*}
+}
+
+\end{adjustwidth}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Comparison}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Bayesian vs. frequentist inference}
+
+\vfill
+
+\begin{adjustwidth}{-1in}{-1in}
+
+\begin{center}
+{\scriptsize
+\renewcommand\arraystretch{2}
+\begin{tabular}{p{1.8cm} || c | c || c | c }
+		& \multicolumn{2}{c ||}{Frequentist: p-value} & \multicolumn{2}{c}{Bayesian: Posterior} \\
+\hline
+{\tiny \# of yellow M\&Ms in} & P(K $\ge$ k $|$ n, 10\% yellow) & Decision & P(10\% yellow $|$ n, k) & P(20\% yellow $|$ n, k) \\
+\hline
+{\tiny $n = 5: k = 1$} &  &  &  \\
+\hline
+{\tiny $n = 10: k = 2$}  & & & \\
+\hline
+{\tiny $n = 15: k = 3$} & & & \\
+\hline
+{\tiny $n = 20: k = 4$} & & &
+\end{tabular}
+}
+\end{center}
+
+\end{adjustwidth}
+
+\vfill
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Recap}
+
+\begin{itemize}
+
+\item The frequentist approach (using p-values) does not allow us to reject the null hypothesis of 10\% yellow
+
+\item The Bayesian approach yields a higher posterior probability for 20\% yellow
+
+\item The frequentist approach depends on the null hypothesis heavily (we would get different results if we had set $p = 0.20$ as the null hypothesis), but the Bayesian approach allows you to consider an array of hypotheses at once
+
+\item The Bayesian approach also gives you the actual probabilities you want, $P(hypothesis~|~data)$, and brings basic probability into the context of decision making scenarios more naturally than the frequentist p-value
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
