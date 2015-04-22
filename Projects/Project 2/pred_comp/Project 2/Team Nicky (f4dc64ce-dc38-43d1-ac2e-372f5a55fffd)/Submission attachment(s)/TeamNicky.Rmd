@@ -1,0 +1,85 @@
+---
+title: "Project 2"
+author: "Team Nicky"
+date: "4/5/2015"
+output: html_document
+---
+```{r}
+download("https://stat.duke.edu/~mc301/data/movies.Rdata", destfile="movies.Rdata")
+load("movies.Rdata")
+```
+
+###Exploratory Data Analysis:
+```{r}
+actresswin <- subset(movies, best_actress_win == "yes")
+actressno <- subset(movies, best_actress_win == "no")
+actorwin <-subset(movies, best_actor_win == "yes")
+actorno <-subset(movies, best_actor_win == "no")
+directorwin <-subset(movies, best_dir_win == "yes")
+directorno <-subset(movies, best_dir_win == "no")
+```
+```{r}
+par(mfrow = c(1,2))
+plot(actresswin$audience_score ~ actresswin$critics_score, main = "Actress Win", xlab = "Critics Score", ylab = "Audience Score")
+plot(actressno$audience_score, actressno$critics_score, main = "Actress Not Win", xlab = "Critics Score", ylab = "Audience Score")
+cor(actresswin$audience_score, actresswin$critics_score)
+cor(actressno$audience_score, actressno$critics_score)
+```
+```{r}
+par(mfrow = c(1,2))
+plot(actorwin$audience_score ~ actorwin$critics_score, main = "Actor Win", xlab = "Critics Score", ylab = "Audience Score")
+plot(actorno$audience_score, actorno$critics_score, main = "Actor Not Win", xlab = "Critics Score", ylab = "Audience Score")
+cor(actorwin$audience_score, actorwin$critics_score)
+cor(actorno$audience_score, actorno$critics_score)
+```
+```{r}
+par(mfrow = c(1,2))
+plot(directorwin$audience_score ~ directorwin$critics_score, main = "Director Win", xlab = "Critics Score", ylab = "Audience Score")
+plot(directorno$audience_score, directorno$critics_score, main = "Director Not Win", xlab = "Critics Score", ylab = "Audience Score")
+cor(directorwin$audience_score, directorwin$critics_score)
+cor(directorno$audience_score, directorno$critics_score)
+```
+
+###Inference:
+```{r}
+download("https://stat.duke.edu/~mc301/R/inference.RData", destfile = "inference.RData")
+load("inference.RData")
+inference(y= movies$audience_score, x= movies$best_pic_nom, est= "mean", type="ht", method= "theoretical", null= 0, alternative= "twosided", success= "yes", siglevel= 0.05)
+```
+###Modeling:
+```{r}
+mlr1 = lm(audience_score ~ type +genre + runtime + year + mpaa_rating + imdb_num_votes + critics_score + best_pic_nom + best_pic_win + best_actor_win + best_actress_win + best_dir_win + top200_box, data = movies)
+summary(mlr1)
+```
+```{r}
+mlr = lm(audience_score ~ critics_score + genre + imdb_num_votes + type + runtime + year, data = movies)
+summary(mlr)
+```
+```{r}
+plot(mlr$residuals ~ mlr$fitted.values)
+abline(h = 0)
+```
+```{r}
+hist(mlr$residuals)
+qqnorm(mlr$residuals)
+qqline(mlr$residuals)
+```
+
+
+
+
+
+###Prediction:
+
+Insurgent
+Type: Feature Film
+Genre:  Adventure 
+Runtime: 119 minutes
+Year: 2015
+IMDB number of votes: 28072
+Critics Score: 31%
+```{r}
+insurgent = data.frame(critics_score=31, genre = "Action & Adventure", imdb_num_votes= 28072, type= "Feature Film", runtime= 119, year= 2015)
+predict(mlr, insurgent, interval = "prediction")
+```
+
